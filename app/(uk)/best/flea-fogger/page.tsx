@@ -30,12 +30,12 @@ import DecisionBox from '@/components/DecisionBox';
 // FAQ block and FAQPage schema removed together (Law 190).
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Flea Fogger UK 2026: Flea Bombs That Actually Work",
+    title: "Best Flea Fogger UK 2026: Flea Bombs and Sprays Compared",
     description:
       "Our pick of the best flea foggers (flea bombs) in the UK for 2026. An aerosol flea bomb and household flea sprays, with application advice.",
     alternates: { canonical: "https://pestproindex.com/best/flea-fogger" },
     openGraph: {
-      title: "Best Flea Fogger UK 2026: Flea Bombs That Actually Work",
+      title: "Best Flea Fogger UK 2026: Flea Bombs and Sprays Compared",
       description:
         "Our pick of the best flea foggers (flea bombs) in the UK for 2026. An aerosol flea bomb and household flea sprays, with application advice.",
       url: "https://pestproindex.com/best/flea-fogger",
@@ -48,7 +48,7 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Flea Fogger UK 2026: Flea Bombs That Actually Work",
+  headline: "Best Flea Fogger UK 2026: Flea Bombs and Sprays Compared",
   description:
     "Our pick of the best flea foggers (flea bombs) in the UK for 2026. An aerosol flea bomb and household flea sprays, with application advice.",
   datePublished: "2026-03-30",

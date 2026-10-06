@@ -25,12 +25,12 @@ import TopPicks, { ProsList } from "@/components/TopPicks";
 // maker's, naming no illness.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Rat Poison UK 2026: Strongest & Most Effective",
+    title: "Best Rat Poison UK 2026: Strongest",
     description:
       "Our pick of the best rat poison available in the UK for 2026. Brodifacoum blocks, grain bait and pastes, with safety advice.",
     alternates: { canonical: "https://pestproindex.com/best/rat-poison" },
     openGraph: {
-      title: "Best Rat Poison UK 2026: Strongest & Most Effective",
+      title: "Best Rat Poison UK 2026: Strongest",
       description:
         "Our pick of the best rat poison available in the UK for 2026. Brodifacoum blocks, grain bait and pastes, with safety advice.",
       url: "https://pestproindex.com/best/rat-poison",
@@ -43,7 +43,7 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Rat Poison UK 2026: Strongest & Most Effective",
+  headline: "Best Rat Poison UK 2026: Strongest",
   description:
     "Our pick of the best rat poison available in the UK for 2026. Brodifacoum blocks, grain bait and pastes, with safety advice.",
   datePublished: "2026-03-30",

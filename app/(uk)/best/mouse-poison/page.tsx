@@ -21,12 +21,12 @@ import DecisionBox from '@/components/DecisionBox';
 // products are the ones that are not stated brodifacoum.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Mouse Poison UK 2026: Strongest & Most Effective",
+    title: "Best Mouse Poison UK 2026: Strongest",
     description:
       "Our pick of the best mouse poison available in the UK for 2026. Brodifacoum grain bait and bait blocks, with safety advice.",
     alternates: { canonical: "https://pestproindex.com/best/mouse-poison" },
     openGraph: {
-      title: "Best Mouse Poison UK 2026: Strongest & Most Effective",
+      title: "Best Mouse Poison UK 2026: Strongest",
       description:
         "Our pick of the best mouse poison available in the UK for 2026. Brodifacoum grain bait and bait blocks, with safety advice.",
       url: "https://pestproindex.com/best/mouse-poison",
@@ -39,7 +39,7 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Mouse Poison UK 2026: Strongest & Most Effective",
+  headline: "Best Mouse Poison UK 2026: Strongest",
   description:
     "Our pick of the best mouse poison available in the UK for 2026. Brodifacoum grain bait and bait blocks, with safety advice.",
   datePublished: "2026-03-30",

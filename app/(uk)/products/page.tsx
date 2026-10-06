@@ -191,7 +191,7 @@ export default function ProductsPage() {
               <div key={idx} className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
                 <h3 className="font-bold text-lg text-gray-900 mb-2">{product.name}</h3>
                 <div className="flex items-center mb-3">
-                  <span className="text-gray-600 text-sm">({product.note})</span>
+                  {product.note && <span className="text-gray-600 text-sm">({product.note})</span>}
                 </div>
                 <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
                 <a href={getAmazonLink(product.asin)} target="_blank" rel="sponsored nofollow noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
@@ -223,7 +223,7 @@ export default function ProductsPage() {
               <div key={idx} className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
                 <h3 className="font-bold text-lg text-gray-900 mb-2">{product.name}</h3>
                 <div className="flex items-center mb-3">
-                  <span className="text-gray-600 text-sm">({product.note})</span>
+                  {product.note && <span className="text-gray-600 text-sm">({product.note})</span>}
                 </div>
                 <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
                 <a href={getAmazonLink(product.asin)} target="_blank" rel="sponsored nofollow noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
@@ -253,7 +253,7 @@ export default function ProductsPage() {
               <div key={idx} className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
                 <h3 className="font-bold text-lg text-gray-900 mb-2">{product.name}</h3>
                 <div className="flex items-center mb-3">
-                  <span className="text-gray-600 text-sm">({product.note})</span>
+                  {product.note && <span className="text-gray-600 text-sm">({product.note})</span>}
                 </div>
                 <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
                 <a href={getAmazonLink(product.asin)} target="_blank" rel="sponsored nofollow noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
@@ -282,7 +282,7 @@ export default function ProductsPage() {
               <div key={idx} className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
                 <h3 className="font-bold text-lg text-gray-900 mb-2">{product.name}</h3>
                 <div className="flex items-center mb-3">
-                  <span className="text-gray-600 text-sm">({product.note})</span>
+                  {product.note && <span className="text-gray-600 text-sm">({product.note})</span>}
                 </div>
                 <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
                 <a href={getAmazonLink(product.asin)} target="_blank" rel="sponsored nofollow noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
@@ -312,7 +312,7 @@ export default function ProductsPage() {
               <div key={idx} className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
                 <h3 className="font-bold text-lg text-gray-900 mb-2">{product.name}</h3>
                 <div className="flex items-center mb-3">
-                  <span className="text-gray-600 text-sm">({product.note})</span>
+                  {product.note && <span className="text-gray-600 text-sm">({product.note})</span>}
                 </div>
                 <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
                 <a href={getAmazonLink(product.asin)} target="_blank" rel="sponsored nofollow noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
@@ -342,7 +342,7 @@ export default function ProductsPage() {
               <div key={idx} className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
                 <h3 className="font-bold text-lg text-gray-900 mb-2">{product.name}</h3>
                 <div className="flex items-center mb-3">
-                  <span className="text-gray-600 text-sm">({product.note})</span>
+                  {product.note && <span className="text-gray-600 text-sm">({product.note})</span>}
                 </div>
                 <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
                 <a href={getAmazonLink(product.asin)} target="_blank" rel="sponsored nofollow noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
@@ -372,7 +372,7 @@ export default function ProductsPage() {
               <div key={idx} className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
                 <h3 className="font-bold text-lg text-gray-900 mb-2">{product.name}</h3>
                 <div className="flex items-center mb-3">
-                  <span className="text-gray-600 text-sm">({product.note})</span>
+                  {product.note && <span className="text-gray-600 text-sm">({product.note})</span>}
                 </div>
                 <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
                 <a href={getAmazonLink(product.asin)} target="_blank" rel="sponsored nofollow noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
@@ -402,7 +402,7 @@ export default function ProductsPage() {
               <div key={idx} className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
                 <h3 className="font-bold text-lg text-gray-900 mb-2">{product.name}</h3>
                 <div className="flex items-center mb-3">
-                  <span className="text-gray-600 text-sm">({product.note})</span>
+                  {product.note && <span className="text-gray-600 text-sm">({product.note})</span>}
                 </div>
                 <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
                 <a href={getAmazonLink(product.asin)} target="_blank" rel="sponsored nofollow noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
@@ -432,7 +432,7 @@ export default function ProductsPage() {
               <div key={idx} className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
                 <h3 className="font-bold text-lg text-gray-900 mb-2">{product.name}</h3>
                 <div className="flex items-center mb-3">
-                  <span className="text-gray-600 text-sm">({product.note})</span>
+                  {product.note && <span className="text-gray-600 text-sm">({product.note})</span>}
                 </div>
                 <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
                 <a href={getAmazonLink(product.asin)} target="_blank" rel="sponsored nofollow noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
@@ -464,7 +464,7 @@ export default function ProductsPage() {
               <div key={idx} className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
                 <h3 className="font-bold text-lg text-gray-900 mb-2">{product.name}</h3>
                 <div className="flex items-center mb-3">
-                  <span className="text-gray-600 text-sm">({product.note})</span>
+                  {product.note && <span className="text-gray-600 text-sm">({product.note})</span>}
                 </div>
                 <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
                 <a href={getAmazonLink(product.asin)} target="_blank" rel="sponsored nofollow noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
@@ -494,7 +494,7 @@ export default function ProductsPage() {
               <div key={idx} className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
                 <h3 className="font-bold text-lg text-gray-900 mb-2">{product.name}</h3>
                 <div className="flex items-center mb-3">
-                  <span className="text-gray-600 text-sm">({product.note})</span>
+                  {product.note && <span className="text-gray-600 text-sm">({product.note})</span>}
                 </div>
                 <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
                 <a href={getAmazonLink(product.asin)} target="_blank" rel="sponsored nofollow noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
