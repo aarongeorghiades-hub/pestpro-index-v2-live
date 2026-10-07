@@ -114,7 +114,7 @@ export default function BoroughIndexPage() {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-black mb-8">Find a Pest Control Provider</h2>
           <p className="text-lg mb-12 text-blue-100">
-            No lead fees. No commissions. Rankings can&apos;t be bought. Results are sorted by rating. Firms can pay for a clearly labelled Featured slot and a verified profile, never a higher rank.
+            No lead fees. No commissions. Rankings can&apos;t be bought. Results are sorted by rating. Firms can pay for a clearly labelled Featured slot, never a higher rank.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/residential" className="px-8 py-4 bg-white text-blue-600 font-bold rounded-xl hover:bg-blue-50 transition-all">

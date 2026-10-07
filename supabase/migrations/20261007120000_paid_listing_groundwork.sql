@@ -21,7 +21,6 @@
 ALTER TABLE public."Providers"
   ADD COLUMN IF NOT EXISTS tier text NOT NULL DEFAULT 'free',
   ADD COLUMN IF NOT EXISTS claimed_by_email text,
-  ADD COLUMN IF NOT EXISTS verified_at timestamptz,
   ADD COLUMN IF NOT EXISTS stripe_customer_id text,
   ADD COLUMN IF NOT EXISTS stripe_subscription_id text,
   ADD COLUMN IF NOT EXISTS subscription_status text,
@@ -31,19 +30,20 @@ ALTER TABLE public."Providers"
   ADD COLUMN IF NOT EXISTS photos jsonb,
   ADD COLUMN IF NOT EXISTS hours jsonb;
 
-DO $$
-BEGIN
-  IF NOT EXISTS (
-    SELECT 1 FROM pg_constraint WHERE conname = 'providers_tier_check'
-  ) THEN
-    ALTER TABLE public."Providers"
-      ADD CONSTRAINT providers_tier_check
-      CHECK (tier IN ('free', 'verified', 'featured'));
-  END IF;
-END $$;
+-- Two tiers only: free and featured. Drop a check from an earlier draft of this
+-- same file if one was applied, then add the current check. This does not
+-- update or delete any provider row. Every existing row is already 'free'
+-- from the column default above.
+ALTER TABLE public."Providers" DROP CONSTRAINT IF EXISTS providers_tier_check;
+ALTER TABLE public."Providers"
+  ADD CONSTRAINT providers_tier_check
+  CHECK (tier IN ('free', 'featured'));
+
+-- An earlier draft of this file added verified_at. There is no Verified tier.
+ALTER TABLE public."Providers" DROP COLUMN IF EXISTS verified_at;
 
 COMMENT ON COLUMN public."Providers".tier IS
-  'free | verified | featured. Display only. Never an input to rating sort.';
+  'free | featured. Display only. Never an input to rating sort.';
 COMMENT ON COLUMN public."Providers".featured_areas IS
   'Area slugs (london, manchester, ...) where a featured firm may appear. Max 3 shown per area, in the app, not here.';
 COMMENT ON COLUMN public."Providers".stripe_customer_id IS

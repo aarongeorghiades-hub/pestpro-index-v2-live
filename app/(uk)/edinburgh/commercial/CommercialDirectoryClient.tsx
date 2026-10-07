@@ -569,7 +569,7 @@ export default function CommercialDirectoryClient({ initialProviders }: { initia
             <div className="bg-gradient-to-br from-blue-50 to-white rounded-xl shadow-lg p-8 border-t-4 border-[#1e3a8a]">
               <div className="text-5xl font-black text-[#1e3a8a] mb-4">1</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">Rankings can&apos;t be bought</h3>
-              <p className="text-gray-600">Results are sorted by rating. Firms can pay for a clearly labelled Featured slot and a verified profile, never a higher rank. No lead fees, ever.</p>
+              <p className="text-gray-600">Results are sorted by rating. Firms can pay for a clearly labelled Featured slot, never a higher rank. No lead fees, ever.</p>
             </div>
 
             <div className="bg-gradient-to-br from-blue-50 to-white rounded-xl shadow-lg p-8 border-t-4 border-[#1e3a8a]">

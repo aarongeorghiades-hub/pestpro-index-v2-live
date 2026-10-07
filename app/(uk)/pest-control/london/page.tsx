@@ -215,7 +215,7 @@ export default async function LondonPestControlHubPage() {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-black mb-8">Get Listed on PestPro Index</h2>
           <p className="text-lg mb-12 text-blue-100">
-            Are you a pest control provider in London? The basic listing stays free. No lead fees. No commissions. Rankings can&apos;t be bought. Results are sorted by rating. Firms can pay for a clearly labelled Featured slot and a verified profile, never a higher rank.
+            Are you a pest control provider in London? The basic listing stays free. No lead fees. No commissions. Rankings can&apos;t be bought. Results are sorted by rating. Firms can pay for a clearly labelled Featured slot, never a higher rank.
           </p>
           <Link href="/contact" className="inline-block px-8 py-4 bg-white text-blue-600 font-bold rounded-xl hover:bg-blue-50 transition-all">
             Get Listed →

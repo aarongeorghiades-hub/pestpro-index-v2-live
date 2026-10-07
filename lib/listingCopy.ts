@@ -3,4 +3,4 @@
 // labelled box. A basic listing stays free, and there is still no lead fee.
 
 export const RANKINGS_CANT_BE_BOUGHT =
-  "Rankings can't be bought. Results are sorted by rating. Firms can pay for a clearly labelled Featured slot and a verified profile, never a higher rank. No lead fees, ever.";
+  "Rankings can't be bought. Results are sorted by rating. Firms can pay for a clearly labelled Featured slot, never a higher rank. No lead fees, ever.";

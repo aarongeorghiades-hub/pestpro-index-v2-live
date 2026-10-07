@@ -374,8 +374,8 @@ function SubmitForm() {
         </div>
       </section>
 
-      {/* Listing interest. standard stays free. verified and featured record
-          interest only — this form does not take payment. */}
+      {/* Listing interest. standard stays free. featured records interest
+          only — this form does not take payment. */}
       {TIERS.length > 1 && (
       <section className={sectionClass}>
         <h2 className={sectionHeading}>Listing interest</h2>
@@ -406,7 +406,7 @@ function SubmitForm() {
         </div>
         <FieldError message={fieldErrors.tier_interest} />
         <p className="mt-4 text-sm text-gray-600">
-          Choosing Verified Pro or Featured records your interest. Nothing is charged from this form.
+          Choosing Featured records your interest. Nothing is charged from this form.
           Rankings can&apos;t be bought. No lead fees, ever.
         </p>
       </section>

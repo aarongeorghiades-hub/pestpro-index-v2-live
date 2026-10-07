@@ -107,8 +107,9 @@ export default function ClaimForm({
           <CheckCircle className="w-14 h-14 text-green-500 mx-auto mb-4" />
           <h1 className="text-3xl font-black text-gray-900 mb-3">Claim received</h1>
           <p className="text-gray-700">
-            Thanks. We will review this by hand and email {email.trim()} if we need anything else.
-            Nothing on the listing changes until then, and this form does not charge you.
+            Thanks. We will email {email.trim()} if we need anything else. Claiming is free. It only
+            confirms that you run this business. It does not check qualifications, and it does not
+            buy a Featured slot. Nothing on the listing changes until we have looked at it.
           </p>
         </div>
       </div>
@@ -129,8 +130,9 @@ export default function ClaimForm({
           )}
         </p>
         <p className="text-gray-600 text-sm mb-8">
-          We review claims by hand. Nothing is charged from this form, and the listing stays as it
-          is until we have looked at it. No lead fees, ever.
+          Claiming is free. It only confirms that you run this business. We do not check
+          qualifications, and it does not buy a Featured slot. Nothing on the listing changes until
+          we have looked at it. No lead fees, ever.
         </p>
 
         <label htmlFor="claim-email" className={labelClass}>

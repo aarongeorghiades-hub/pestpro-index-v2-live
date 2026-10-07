@@ -78,20 +78,15 @@ export const PEST_KEYS = PEST_GROUPS.flatMap((g) => g.pests.map((p) => p.key));
 
 /**
  * Listing tiers a firm can ask about. standard is free and is the default.
- * verified and featured record interest only — this form does not take payment.
+ * featured records interest only — this form does not take payment.
  * While more than one entry exists, the submit form shows the chooser.
  */
 export const TIERS = [
   { value: 'standard', label: 'Standard listing', hint: 'Free. Stays free. No lead fees.' },
   {
-    value: 'verified',
-    label: 'Verified Pro',
-    hint: 'Optional. We record your interest and review it by hand. A checked profile, not a higher rank. Nothing is charged from this form.',
-  },
-  {
     value: 'featured',
     label: 'Featured',
-    hint: 'Optional. A clearly labelled Featured slot in an area you cover, never a higher rank. Nothing is charged from this form.',
+    hint: 'Optional and paid later. A clearly labelled Featured slot in an area you cover, never a higher rank. Nothing is charged from this form.',
   },
 ];
 

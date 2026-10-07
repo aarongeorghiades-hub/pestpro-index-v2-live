@@ -328,7 +328,7 @@ export default async function PestGuidePage({ params }: Props) {
         {/* Bottom CTA */}
         <div className="p-8 bg-gradient-to-br from-gray-900 to-blue-950 text-white rounded-2xl text-center">
           <h2 className="text-2xl font-black mb-3">Need Professional Help with {pest.name}?</h2>
-          <p className="text-gray-300 mb-6">PestPro Index lists pest controllers across the UK. No lead fees. No commissions. Rankings can&apos;t be bought. Results are sorted by rating. Firms can pay for a clearly labelled Featured slot and a verified profile, never a higher rank.</p>
+          <p className="text-gray-300 mb-6">PestPro Index lists pest controllers across the UK. No lead fees. No commissions. Rankings can&apos;t be bought. Results are sorted by rating. Firms can pay for a clearly labelled Featured slot, never a higher rank.</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link href="/residential" className="px-6 py-3 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-colors">
               Find Residential Controllers

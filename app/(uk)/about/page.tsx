@@ -70,7 +70,7 @@ export default async function AboutPage() {
         <p className="text-gray-700 leading-relaxed mb-4">
           Every provider is listed <strong>free of charge</strong>. We charge no lead fees and take no commission from
           providers. Rankings can&apos;t be bought. Results are sorted by rating. Firms can pay for a clearly labelled
-          Featured slot and a verified profile, never a higher rank. What you see is provider-stated information
+          Featured slot, never a higher rank. What you see is provider-stated information
           alongside publicly available review data. We do not judge outcomes, vet individual jobs, or guarantee
           results; we present the available evidence and let you decide who to contact.
         </p>
