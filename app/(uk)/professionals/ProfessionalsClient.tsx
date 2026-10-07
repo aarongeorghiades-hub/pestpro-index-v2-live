@@ -309,7 +309,11 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
             </div>
 
             <p className="text-center text-gray-600 mt-8">
-              Paid listing options are in development.
+              A standard listing is free and stays free. An optional Featured listing is open for interest — it never buys a higher rank.{' '}
+              <Link href="/professionals/submit" className="text-blue-700 font-semibold hover:underline">
+                Tell us which you want
+              </Link>
+              . No lead fees, ever.
             </p>
           </div>
         </div>
@@ -377,10 +381,10 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
             <div className="card-hover bg-blue-800/50 rounded-xl p-8 shadow-lg border-l-4 border-blue-300 hover:border-blue-200 hover:bg-blue-800/70">
               <div className="flex gap-4 mb-4">
                 <TrendingUp className="w-8 h-8 text-blue-300 flex-shrink-0" />
-                <h3 className="text-xl font-bold text-white">No Paid Placement</h3>
+                <h3 className="text-xl font-bold text-white">Rankings can&apos;t be bought</h3>
               </div>
               <p className="text-blue-100">
-                No provider can pay to appear higher.
+                Results are sorted by rating. Firms can pay for a clearly labelled Featured slot, never a higher rank.
               </p>
             </div>
 
@@ -390,7 +394,7 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
                 <h3 className="text-xl font-bold text-white">Transparent</h3>
               </div>
               <p className="text-blue-100">
-                Customers see real reviews, real certifications, real coverage. No hidden agendas or paid placements.
+                Customers see real reviews, real certifications, real coverage. A Featured slot is labelled as paid and sits apart from the rating order.
               </p>
             </div>
 
@@ -405,6 +409,17 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
             </div>
           </div>
         </div>
+      </div>
+
+      {/* How featured listings work */}
+      <div id="how-featured-listings-work" className="max-w-3xl mx-auto px-4 py-16 scroll-mt-24">
+        <h2 className="text-3xl font-black text-gray-900 mb-4">How featured listings work</h2>
+        <p className="text-lg text-gray-700 leading-relaxed mb-4">
+          Rankings can&apos;t be bought. Results are sorted by rating. Firms can pay for a clearly labelled Featured slot, never a higher rank. No lead fees, ever.
+        </p>
+        <p className="text-lg text-gray-700 leading-relaxed">
+          The Featured box, when a firm is in it, sits above the rating-sorted list and is headed &ldquo;Featured (paid)&rdquo;. At most three firms show in an area, and the order inside the box changes each day. A standard listing stays free and stays in the rating order. Nothing on this site charges a fee per enquiry.
+        </p>
       </div>
 
       {/* FAQ Section */}

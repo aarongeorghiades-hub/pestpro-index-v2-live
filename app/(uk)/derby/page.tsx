@@ -131,6 +131,8 @@ export default async function DerbyHubPage() {
         </div>
       </section>
 
+      <div data-featured-slot />
+
       {/* SERVICE TYPE CARDS */}
       <section className="relative bg-gradient-to-br from-blue-50 to-white py-16 border-b-2 border-blue-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

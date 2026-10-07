@@ -175,7 +175,7 @@ export default function Home({
           <h1 className="mb-4 text-4xl font-black tracking-tighter text-[var(--color-ink)] sm:text-6xl md:text-7xl" style={{fontWeight: 900, letterSpacing: '-0.04em'}}>PestPro Index</h1>
           <p className="mx-auto mb-6 max-w-2xl text-lg text-[var(--color-ink-soft)] md:text-xl">The UK&rsquo;s neutral pest control directory</p>
           <p className="mx-auto mb-14 max-w-2xl text-base leading-relaxed text-[var(--color-ink-soft)]">
-            Find pest controllers near you. No lead fees. No commissions. No sponsored rankings.
+            Find pest controllers near you. No lead fees. No commissions. Rankings can&apos;t be bought. Results are sorted by rating. Firms can pay for a clearly labelled Featured slot, never a higher rank.
           </p>
 
           {/* Stats. The labels were set ALL-CAPS with tracking-widest — an
@@ -299,7 +299,7 @@ export default function Home({
             </p>
 
             <p className="text-xl font-semibold text-[var(--color-ink)] bg-[var(--color-teal-wash)] p-6 rounded-2xl border-l-4 border-[var(--color-teal)]">
-              PestPro Index is a neutral directory. No lead fees. No commissions. No pay-per-enquiry. Every provider gets listed — enhanced listings get extra visibility, but the data speaks for itself. Reviews, certifications, service areas, specialisms — organised so you can make your own informed decision.
+              PestPro Index is a neutral directory. No lead fees. No commissions. No pay-per-enquiry. Every provider gets listed. Rankings can&apos;t be bought: results are sorted by rating. Firms can pay for a clearly labelled Featured slot, never a higher rank. Reviews, certifications, service areas, specialisms — organised so you can make your own informed decision.
             </p>
 
             <p>

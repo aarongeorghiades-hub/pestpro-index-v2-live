@@ -4,7 +4,7 @@ import Navigation from '@/components/Navigation';
 const faqs = [
   {
     question: 'What is PestPro Index?',
-    answer: "PestPro Index is the UK's neutral pest control directory. We don't charge providers lead fees or commissions, and we don't accept sponsored rankings. Our goal is to help you find a pest controller near you.",
+    answer: "PestPro Index is the UK's neutral pest control directory. We don't charge providers lead fees or commissions. Rankings can't be bought. Results are sorted by rating. Firms can pay for a clearly labelled Featured slot, never a higher rank. Our goal is to help you find a pest controller near you.",
   },
   {
     question: 'How do I find a pest controller?',
@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     question: 'How is PestPro different from Checkatrade or Bark?',
-    answer: "Unlike lead-generation platforms, PestPro doesn't charge providers per lead or take commissions. Providers aren't ranked by how much they pay. We're a neutral directory focused on helping you compare providers based on qualifications, reviews, and services.",
+    answer: "Unlike lead-generation platforms, PestPro doesn't charge providers per lead or take commissions. Providers aren't ranked by how much they pay. A firm can pay for a clearly labelled Featured slot, and that slot is not a higher rank. We're a neutral directory focused on helping you compare providers based on qualifications, reviews, and services.",
   },
   {
     question: 'Can I list my pest control company?',

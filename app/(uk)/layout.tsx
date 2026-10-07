@@ -1,5 +1,7 @@
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Footer from '@/components/Footer';
+import FeaturedSlot from '@/components/listing/FeaturedSlot';
+import ListingClickTracker from '@/components/listing/ListingClickTracker';
 import { awaabBannerRoutes } from '@/lib/awaabBannerRoutes';
 
 // THE UK ESTATE'S CHROME, AND NOTHING ELSE.
@@ -25,6 +27,8 @@ import { awaabBannerRoutes } from '@/lib/awaabBannerRoutes';
 export default function UkLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
+      <ListingClickTracker />
+      <FeaturedSlot />
       <AnnouncementBar routes={awaabBannerRoutes()} />
       {children}
       <Footer />

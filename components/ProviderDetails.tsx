@@ -3,7 +3,11 @@ import { MapPin, Phone, Mail, Globe, Star, Award, Briefcase, Home as HomeIcon } 
 import Navigation from '@/components/Navigation';
 import { generateProfileText } from '@/lib/generateProfileText';
 import { activePests } from '@/lib/pests';
-import { externalHref, EXTERNAL_LINK_REL } from '@/lib/externalUrl';
+import {
+  ProviderEmailLink,
+  ProviderPhoneLink,
+  ProviderWebsiteLink,
+} from '@/components/listing/ProviderContactLinks';
 
 // Server-rendered provider detail view. The provider is fetched in the page's
 // Server Component and passed in, so the full content is present in the initial
@@ -55,14 +59,37 @@ function activeBadges(
   return badges.filter((badge) => provider[badge.column] === true);
 }
 
-export default function ProviderDetails({ provider }: { provider: any }) {
+type ProviderDetailsData = {
+  name?: string | null;
+  regions?: string[] | null;
+  google_rating?: number | null;
+  google_review_count?: number | null;
+  profile_text?: string | null;
+  postcode?: string | null;
+  phone?: string | null;
+  email?: string | null;
+  website?: string | null;
+  business_residential?: boolean | null;
+  commercial?: boolean | null;
+  [column: string]: unknown;
+};
+
+export default function ProviderDetails({
+  provider,
+  slug,
+}: {
+  provider: ProviderDetailsData;
+  slug: string;
+}) {
   const pestBadges = activePests(provider);
   const serviceBadges = activeBadges(provider, SERVICE_BADGES);
   const certificationBadges = activeBadges(provider, CERTIFICATION_BADGES);
-  const citySlug = provider.regions?.[0] || 'london';
+  const citySlug = typeof provider.regions?.[0] === 'string' ? provider.regions[0] : 'london';
   const cityName = citySlug.charAt(0).toUpperCase() + citySlug.slice(1);
   const residentialLink = citySlug === 'london' ? '/residential' : `/${citySlug}/residential`;
   const commercialLink = citySlug === 'london' ? '/commercial' : `/${citySlug}/commercial`;
+  const rating = typeof provider.google_rating === 'number' ? provider.google_rating : null;
+  const reviewCount = typeof provider.google_review_count === 'number' ? provider.google_review_count : null;
 
   return (
     <div className="min-h-screen bg-white">
@@ -76,16 +103,16 @@ export default function ProviderDetails({ provider }: { provider: any }) {
             ← Back to {cityName} Residential
           </Link>
           <h1 className="text-4xl font-bold text-gray-900 mb-2">{provider.name}</h1>
-          {provider.google_rating != null && provider.google_rating > 0 && (
+          {rating != null && rating > 0 && (
             <div className="flex items-center gap-2 mt-2">
               <div className="flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={18} className={i < Math.floor(provider.google_rating) ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'} />
+                  <Star key={i} size={18} className={i < Math.floor(rating) ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'} />
                 ))}
               </div>
-              <span className="text-lg font-semibold text-gray-900">{provider.google_rating}</span>
-              {provider.google_review_count && (
-                <span className="text-gray-600"> ({provider.google_review_count.toLocaleString()} {provider.google_review_count === 1 ? 'review' : 'reviews'})</span>
+              <span className="text-lg font-semibold text-gray-900">{rating}</span>
+              {reviewCount != null && reviewCount > 0 && (
+                <span className="text-gray-600"> ({reviewCount.toLocaleString()} {reviewCount === 1 ? 'review' : 'reviews'})</span>
               )}
             </div>
           )}
@@ -124,7 +151,7 @@ export default function ProviderDetails({ provider }: { provider: any }) {
                   {/* href is stripped of whitespace — a space in a tel: URI breaks
                       tap-to-call on some mobile browsers. The displayed number
                       keeps its formatting. */}
-                  <a href={`tel:${String(provider.phone).replace(/\s+/g, '')}`} className="text-lg text-blue-600 hover:underline">{provider.phone}</a>
+                  <ProviderPhoneLink slug={slug} phone={String(provider.phone)} />
                 </div>
               </div>
             )}
@@ -133,7 +160,7 @@ export default function ProviderDetails({ provider }: { provider: any }) {
                 <Mail size={20} className="text-blue-600 mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-sm text-gray-600">Email</p>
-                  <a href={`mailto:${provider.email}`} className="text-lg text-blue-600 hover:underline">{provider.email}</a>
+                  <ProviderEmailLink slug={slug} email={String(provider.email)} />
                 </div>
               </div>
             )}
@@ -142,7 +169,7 @@ export default function ProviderDetails({ provider }: { provider: any }) {
                 <Globe size={20} className="text-blue-600 mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-sm text-gray-600">Website</p>
-                  <a href={externalHref(provider.website)} target="_blank" rel={EXTERNAL_LINK_REL} className="text-lg text-blue-600 hover:underline">Visit Website →</a>
+                  <ProviderWebsiteLink slug={slug} />
                 </div>
               </div>
             )}
@@ -214,6 +241,18 @@ export default function ProviderDetails({ provider }: { provider: any }) {
             </div>
           </div>
         )}
+
+        <div className="mt-10 flex flex-col gap-2 text-sm">
+          <Link
+            href={`/professionals/claim?slug=${encodeURIComponent(slug)}`}
+            className="font-semibold text-blue-600 hover:underline"
+          >
+            Is this your business? Claim this listing
+          </Link>
+          <Link href={`/provider/${slug}/report`} className="text-gray-600 hover:underline">
+            Report / remove this listing
+          </Link>
+        </div>
 
         {/* BACK LINKS */}
         <div className="flex gap-4 mt-12">

@@ -10,6 +10,7 @@ import {
   PEST_GROUPS,
   TIERS,
   TIER_VALUES,
+  DEFAULT_TIER,
   HONEYPOT_FIELD,
   PROFILE_TEXT_MAX,
 } from '@/lib/providerSubmissions';
@@ -46,7 +47,7 @@ function SubmitForm() {
   const [commercial, setCommercial] = useState(false);
   const [profileText, setProfileText] = useState('');
   const [tierInterest, setTierInterest] = useState(
-    TIER_VALUES.includes(paramTier) ? paramTier : ''
+    TIER_VALUES.includes(paramTier) ? paramTier : DEFAULT_TIER
   );
   const [honeypot, setHoneypot] = useState('');
 
@@ -373,10 +374,8 @@ function SubmitForm() {
         </div>
       </section>
 
-      {/* 6. Listing interest — hidden while only one tier is on offer. There is
-          nothing to choose between, so asking would be a pointless step; the
-          server records the default tier. Add a tier to TIERS and this section
-          reappears on its own. */}
+      {/* Listing interest. standard stays free. featured records interest
+          only — this form does not take payment. */}
       {TIERS.length > 1 && (
       <section className={sectionClass}>
         <h2 className={sectionHeading}>Listing interest</h2>
@@ -406,6 +405,10 @@ function SubmitForm() {
           ))}
         </div>
         <FieldError message={fieldErrors.tier_interest} />
+        <p className="mt-4 text-sm text-gray-600">
+          Choosing Featured records your interest. Nothing is charged from this form.
+          Rankings can&apos;t be bought. No lead fees, ever.
+        </p>
       </section>
       )}
 

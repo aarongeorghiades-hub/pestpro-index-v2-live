@@ -398,6 +398,7 @@ export default function ResidentialDirectoryClient({ initialProviders }: { initi
 
             {/* PROVIDER CARDS GRID */}
             <main className="flex-1">
+              <div data-featured-slot />
               {loading ? (
                 <div className="text-center py-12">
                   <p className="text-gray-600">Loading providers...</p>

@@ -208,6 +208,7 @@ export default function PestCityPageClient({ city, pest, initialProviders, initi
             </div>
           ) : (
             <>
+              <div data-featured-slot />
               <p className="text-gray-600 font-medium mb-8">Showing {providers.length} providers sorted by rating</p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {providers.map(provider => {

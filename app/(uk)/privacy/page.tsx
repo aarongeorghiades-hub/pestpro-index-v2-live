@@ -63,7 +63,7 @@ export default async function PrivacyPage() {
             Privacy Notice
           </h1>
           <p className="text-lg sm:text-xl font-light text-blue-100 max-w-2xl mx-auto">
-            Last updated: 7 September 2026
+            Last updated: 7 October 2026
           </p>
         </div>
       </section>
@@ -150,6 +150,23 @@ export default async function PrivacyPage() {
           purchase to us.
         </p>
 
+          <h3 className="text-xl font-bold text-gray-900 mb-2 mt-6">7. Claiming or reporting a listing</h3>
+        <p className={P}>
+          Every provider page has a link to claim the listing and a link to report or ask for removal. The claim form
+          asks for an email address and an optional note. The report form asks for a reason, a short message, and an
+          optional email if you want a reply. Both are sent to our server and stored so we can review them by hand. We
+          do not store your IP address with either form.
+        </p>
+
+        <h3 className="text-xl font-bold text-gray-900 mb-2 mt-6">8. Listing page views and contact clicks</h3>
+        <p className={P}>
+          When you open a provider page, or click that provider&apos;s phone, email or website link, we record that the
+          event happened: which listing, which kind of click, the page path, and the time. We do not store your IP
+          address with these events. Website clicks go through a short redirect on our site that adds campaign labels
+          to the firm&apos;s own web address. This count is separate from Google Analytics, which still loads only if
+          you accept analytics cookies.
+        </p>
+
         <h3 className="text-xl font-bold text-gray-900 mb-2 mt-6">What we do not collect</h3>
         <p className={P}>
           We take no payments on this site and hold no card details. We do not ask for health information or any other
@@ -198,6 +215,16 @@ export default async function PrivacyPage() {
                 <td className="border-b border-gray-200 py-2 pr-4 align-top">Advertising and audience measurement</td>
                 <td className="border-b border-gray-200 py-2 pr-4 align-top">To measure audience and support advertising</td>
                 <td className="border-b border-gray-200 py-2 align-top">Consent</td>
+              </tr>
+              <tr>
+                <td className="border-b border-gray-200 py-2 pr-4 align-top">Listing claims and removal reports</td>
+                <td className="border-b border-gray-200 py-2 pr-4 align-top">To check a firm owns a listing, or to correct or remove one</td>
+                <td className="border-b border-gray-200 py-2 align-top">Legitimate interests — acting on a request you sent us</td>
+              </tr>
+              <tr>
+                <td className="border-b border-gray-200 py-2 pr-4 align-top">Listing views and contact clicks</td>
+                <td className="border-b border-gray-200 py-2 pr-4 align-top">To count how a listing is used, without storing an IP address</td>
+                <td className="border-b border-gray-200 py-2 align-top">Legitimate interests — measuring the directory we operate</td>
               </tr>
             </tbody>
           </table>

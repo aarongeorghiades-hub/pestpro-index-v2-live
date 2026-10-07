@@ -1,9 +1,13 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { after } from 'next/server';
+import { headers } from 'next/headers';
 import ProviderDetails from '@/components/ProviderDetails';
 import ProviderJsonLd from '@/components/ProviderJsonLd';
 import { createServerClient } from '@/utils/supabase-server';
 import { isProviderThin } from '@/lib/provider';
+import { isPrefetch, recordListingEvent } from '@/lib/listingEvents';
+import { getActiveProviderBySlug } from '@/lib/providerLookup';
 
 export const dynamic = 'force-dynamic';
 
@@ -103,10 +107,27 @@ export default async function ProviderPage({
   // Genuinely absent/inactive → real HTTP 404 (replaces the old 200 soft 404).
   if (!provider) notFound();
 
+  // Count a real visit, not a Next.js prefetch. The insert runs after the
+  // response is sent and never changes what the page renders. A missing
+  // listing_events table is logged and ignored.
+  const headerStore = await headers();
+  if (!isPrefetch(headerStore)) {
+    after(async () => {
+      const listed = await getActiveProviderBySlug(slug);
+      if (!listed) return;
+      await recordListingEvent({
+        providerId: listed.canonical_id,
+        type: 'view',
+        pagePath: `/provider/${slug}`,
+        area: listed.area,
+      });
+    });
+  }
+
   return (
     <>
       <ProviderJsonLd provider={provider} />
-      <ProviderDetails provider={provider} />
+      <ProviderDetails provider={provider} slug={slug} />
     </>
   );
 }

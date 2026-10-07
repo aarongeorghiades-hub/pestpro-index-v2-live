@@ -78,6 +78,9 @@ const DENY_PATHS = new Map<string, string>([
   // app/professionals/layout.tsx. Listing a URL that canonicalises elsewhere
   // asks Google to crawl a page that then points it somewhere else.
   ['/professionals/submit', 'canonicalises to /professionals'],
+  // Claim form. Reached from a listing, not a page we want in the index.
+  // The page also sends robots noindex.
+  ['/professionals/claim', 'claim form, noindex'],
   // A council tax band enquiry form, not pest control content. PM ruling,
   // S65 R2: the page STAYS REACHABLE at its URL, because an external funnel may
   // link to it with query parameters, and it is removed from Google's view. It
