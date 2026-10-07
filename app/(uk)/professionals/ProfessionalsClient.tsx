@@ -324,7 +324,7 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
                 </li>
                 <li className="flex gap-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">At most three firms per area</span>
+                  <span className="text-gray-700">Limited Featured spots per area</span>
                 </li>
                 <li className="flex gap-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
@@ -477,7 +477,7 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
           Rankings can&apos;t be bought. Results are sorted by rating. Firms can pay for a clearly labelled Featured slot, never a higher rank. No lead fees, ever.
         </p>
         <p className="text-lg text-gray-700 leading-relaxed">
-          The Featured box, when a firm is in it, sits above the rating-sorted list and is headed &ldquo;Featured (paid)&rdquo;. At most three firms show in an area, and the order inside the box changes each day. A standard listing stays free and stays in the rating order. Nothing on this site charges a fee per enquiry.
+          The Featured box, when a firm is in it, sits above the rating-sorted list and is headed &ldquo;Featured (paid)&rdquo;. Limited Featured spots per area. The order inside the box changes each day. A standard listing stays free and stays in the rating order. Nothing on this site charges a fee per enquiry.
         </p>
         <p className="text-lg text-gray-700 leading-relaxed mt-4">
           Featured is £12 a month or £120 a year. First 30 days free. Cancel with one full calendar month&apos;s notice. The slot can show a logo, photos and a fuller description.

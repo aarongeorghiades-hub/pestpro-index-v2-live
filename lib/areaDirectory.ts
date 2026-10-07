@@ -46,6 +46,32 @@ export async function countServing(
   return inCity(rows, city).length;
 }
 
+/**
+ * Every active firm tagged to the city, including a postcode outside the city.
+ * A place page shows all of these: the based-in section plus "also covering".
+ */
+export async function countTagged(
+  city: string,
+  kind: 'residential' | 'commercial' | 'all' = 'residential',
+): Promise<number | null> {
+  const rows = await fetchAreaRows(city, kind);
+  if (!rows) return null;
+  return rows.length;
+}
+
+/**
+ * Firms a city × pest page actually lists. An empty pest match falls back to
+ * the residential city list, which is what that page renders.
+ */
+export async function countPestPage(city: string, pestColumn: string): Promise<number | null> {
+  if (!PEST_COLUMNS.has(pestColumn)) return null;
+  const rows = await fetchAreaRows(city, 'residential', pestColumn);
+  if (!rows) return null;
+  const matched = inCity(rows, city).length;
+  if (matched > 0) return matched;
+  return countServing(city, 'residential');
+}
+
 /** True when at least one residential firm has a postcode in this place. */
 export async function placeIsIndexable(city: string, placeSlug: string): Promise<boolean> {
   const rows = await fetchAreaRows(city, 'residential');
