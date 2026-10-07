@@ -14,7 +14,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 
-const COOKIE_NAME = 'pp_consent';
+export const CONSENT_COOKIE_NAME = 'pp_consent';
+const COOKIE_NAME = CONSENT_COOKIE_NAME;
 const COOKIE_MAX_AGE = 15552000; // 180 days, in seconds
 const GA_MEASUREMENT_ID = 'G-EGGZMHZ6NL';
 
@@ -36,6 +37,10 @@ type Consent = {
 // injected more than once per page load.
 let gaInjected = false;
 let growInjected = false;
+
+export function analyticsConsentGranted(): boolean {
+  return readConsent()?.analytics === true;
+}
 
 function readConsent(): Consent | null {
   if (typeof document === 'undefined') return null;

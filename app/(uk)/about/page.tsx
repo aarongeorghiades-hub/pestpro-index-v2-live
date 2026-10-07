@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   // Layout template appends "| PestPro Index" — keep a single brand suffix.
   title: 'About PestPro Index — Neutral UK Pest Control Directory',
   description:
-    'PestPro Index is a neutral UK pest control directory. Every provider is listed free — no lead fees, no commissions, no paid rankings. Read who we are, how we stay independent, and our affiliate disclosure.',
+    'PestPro Index is a neutral UK pest control directory. Every basic listing is free — no lead fees, no commissions. Rankings can\'t be bought. Read who we are, how we stay independent, and our affiliate disclosure.',
   alternates: { canonical: 'https://pestproindex.com/about' },
   openGraph: {
     title: 'About PestPro Index',
     description:
-      'A neutral UK pest control directory — no lead fees, no commissions, no paid rankings. How we operate and stay independent.',
+      'A neutral UK pest control directory — no lead fees, no commissions. Rankings can\'t be bought. How we operate and stay independent.',
     url: 'https://pestproindex.com/about',
     siteName: 'PestPro Index',
     locale: 'en_GB',
@@ -28,7 +28,7 @@ export default async function AboutPage() {
     name: 'PestPro Index',
     url: 'https://pestproindex.com',
     description:
-      'A neutral UK pest control directory listing providers free of charge, with no lead fees, commissions or paid rankings.',
+      'A neutral UK pest control directory. Basic listings are free, with no lead fees or commissions. Rankings can\'t be bought.',
     parentOrganization: { '@type': 'Organization', name: 'ENA Enterprises Ltd' },
   };
 
@@ -54,7 +54,7 @@ export default async function AboutPage() {
             About PestPro Index
           </h1>
           <p className="text-lg sm:text-xl font-light text-blue-100 max-w-2xl mx-auto">
-            A neutral UK pest control directory — free to list, free to use, with no lead fees, commissions or paid rankings.
+            A neutral UK pest control directory — free to list, free to use, with no lead fees or commissions. Rankings can&apos;t be bought.
           </p>
         </div>
       </section>
@@ -68,11 +68,11 @@ export default async function AboutPage() {
           pests they treat, their certifications and their public Google review data, then contact them directly.
         </p>
         <p className="text-gray-700 leading-relaxed mb-4">
-          Every provider is listed <strong>free of charge</strong>. We charge no lead fees, take no commission from
-          providers, and sell no ranking positions — there is no way for a company to pay to appear higher in our
-          listings. What you see is provider-stated information alongside publicly available review data. We do not
-          judge outcomes, vet individual jobs, or guarantee results; we present the available evidence and let you
-          decide who to contact.
+          Every provider is listed <strong>free of charge</strong>. We charge no lead fees and take no commission from
+          providers. Rankings can&apos;t be bought. Results are sorted by rating. Firms can pay for a clearly labelled
+          Featured slot and a verified profile, never a higher rank. What you see is provider-stated information
+          alongside publicly available review data. We do not judge outcomes, vet individual jobs, or guarantee
+          results; we present the available evidence and let you decide who to contact.
         </p>
 
         {/* Operated by */}
@@ -87,8 +87,9 @@ export default async function AboutPage() {
         {/* Funding & independence */}
         <h2 className="text-3xl font-black text-gray-900 mb-4 mt-10">How we fund the site &amp; stay independent</h2>
         <p className="text-gray-700 leading-relaxed mb-4">
-          The directory is free to use and free to be listed in, so it isn&apos;t funded by providers. Instead, the site
-          is partly supported by affiliate commissions on some of the pest control <em>products</em> we link to — for
+          The directory is free to use, and a basic listing stays free. Rankings can&apos;t be bought. An optional
+          Featured slot is labelled as paid and does not change the rating order. The site is also partly supported by
+          affiliate commissions on some of the pest control <em>products</em> we link to — for
           example, products available through Amazon. Which products we feature is decided before any of that, and on
           different grounds: each product page sets out the situation you are actually dealing with, the legal position
           that applies to it in the UK, what decides the choice between one product and another, and a comparison table

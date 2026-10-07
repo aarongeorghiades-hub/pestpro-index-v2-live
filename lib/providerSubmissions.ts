@@ -77,16 +77,22 @@ export const PEST_GROUPS: { group: string; pests: { key: string; label: string }
 export const PEST_KEYS = PEST_GROUPS.flatMap((g) => g.pests.map((p) => p.key));
 
 /**
- * Listing tiers offered today. Only the free standard listing exists — the
- * paid Enhanced and Featured tiers were withdrawn because none of their
- * promised features are implemented and there is no billing integration.
- *
- * While this list has a single entry the form hides the tier control entirely
- * and every submission is recorded as 'standard'. Re-adding an entry here is
- * all that is needed to bring the chooser back.
+ * Listing tiers a firm can ask about. standard is free and is the default.
+ * verified and featured record interest only — this form does not take payment.
+ * While more than one entry exists, the submit form shows the chooser.
  */
 export const TIERS = [
-  { value: 'standard', label: 'Standard Listing', hint: 'Free' },
+  { value: 'standard', label: 'Standard listing', hint: 'Free. Stays free. No lead fees.' },
+  {
+    value: 'verified',
+    label: 'Verified Pro',
+    hint: 'Optional. We record your interest and review it by hand. A checked profile, not a higher rank. Nothing is charged from this form.',
+  },
+  {
+    value: 'featured',
+    label: 'Featured',
+    hint: 'Optional. A clearly labelled Featured slot in an area you cover, never a higher rank. Nothing is charged from this form.',
+  },
 ];
 
 export const TIER_VALUES = TIERS.map((t) => t.value);

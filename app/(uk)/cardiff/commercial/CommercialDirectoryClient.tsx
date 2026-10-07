@@ -472,6 +472,7 @@ export default function CommercialDirectoryClient({ initialProviders }: { initia
 
             {/* MAIN CONTENT */}
             <main className="flex-1">
+              <div data-featured-slot />
               {filteredProviders.length === 0 ? (
                 <div className="text-center py-12">
                   <p className="text-gray-600 text-lg">No providers match your filters. Try adjusting your selection.</p>
@@ -566,8 +567,8 @@ export default function CommercialDirectoryClient({ initialProviders }: { initia
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-gradient-to-br from-blue-50 to-white rounded-xl shadow-lg p-8 border-t-4 border-[#1e3a8a]">
               <div className="text-5xl font-black text-[#1e3a8a] mb-4">1</div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">No Paid Placement</h3>
-              <p className="text-gray-600">No provider pays for inclusion.</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">Rankings can&apos;t be bought</h3>
+              <p className="text-gray-600">Results are sorted by rating. Firms can pay for a clearly labelled Featured slot and a verified profile, never a higher rank. No lead fees, ever.</p>
             </div>
 
             <div className="bg-gradient-to-br from-blue-50 to-white rounded-xl shadow-lg p-8 border-t-4 border-[#1e3a8a]">

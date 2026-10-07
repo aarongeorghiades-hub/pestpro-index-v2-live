@@ -86,7 +86,7 @@ export const posts: BlogPost[] = [
 <li>Is transparent about what treatment they're using and why</li>
 </ul>
 
-<p>PestPro Index lists pest control providers across London and Birmingham with their certifications clearly displayed alongside genuine Google ratings. You can <a href="/residential">browse London providers</a> or <a href="/commercial">find commercial pest control contractors</a> without paying lead fees or being pushed toward sponsored results.</p>
+<p>PestPro Index lists pest control providers across London and Birmingham with their certifications clearly displayed alongside genuine Google ratings. You can <a href="/residential">browse London providers</a> or <a href="/commercial">find commercial pest control contractors</a> without paying lead fees. Rankings can't be bought. Any Featured slot is labelled and sits apart from the rating-sorted list.</p>
 
 <h2>Summary</h2>
 
@@ -164,7 +164,7 @@ export const posts: BlogPost[] = [
 
 <h2>Finding a Pest Controller in London</h2>
 
-<p>If you're in London, <a href="/residential">PestPro Index lists qualified rat control specialists across all 33 boroughs</a>. Every provider is listed with their genuine Google rating and review count — no sponsored rankings, no lead fees. <a href="/pest-control">Search by borough</a> to find a local specialist who can assess the situation in person.</p>
+<p>If you're in London, <a href="/residential">PestPro Index lists qualified rat control specialists across all 33 boroughs</a>. Every provider is listed with their genuine Google rating and review count — rankings can't be bought, and there are no lead fees. <a href="/pest-control">Search by borough</a> to find a local specialist who can assess the situation in person.</p>
 
 <h2>Summary</h2>
 
@@ -1437,7 +1437,7 @@ export const posts: BlogPost[] = [
 
 <h2>Find a Provider Today</h2>
 
-<p>Browse East Midlands pest control providers on PestPro Index — filter by pest type, certifications, service features, and more. No lead fees, no commissions, no sponsored rankings.</p>
+<p>Browse East Midlands pest control providers on PestPro Index — filter by pest type, certifications, service features, and more. No lead fees, no commissions. Rankings can't be bought.</p>
 
 <p><a href="/nottingham/residential">Nottingham Residential Directory</a> | <a href="/nottingham/commercial">Nottingham Commercial Directory</a></p>
 `
@@ -2243,7 +2243,7 @@ export const posts: BlogPost[] = [
 
     <h2>Find a Provider in Bradford &amp; West Yorkshire</h2>
 
-    <p>PestPro Index lists pest control providers across Bradford and West Yorkshire. Every listing includes contact details, service coverage, pest specialisms, and — where available — BPCA/NPTA accreditation status, Google ratings, and detailed service filters. No lead fees, no commissions, no sponsored rankings.</p>
+    <p>PestPro Index lists pest control providers across Bradford and West Yorkshire. Every listing includes contact details, service coverage, pest specialisms, and — where available — BPCA/NPTA accreditation status, Google ratings, and detailed service filters. No lead fees, no commissions. Rankings can't be bought.</p>
 
     <p><a href="/bradford/residential">Bradford Residential Directory</a> | <a href="/bradford/commercial">Bradford Commercial Directory</a></p>
     `
