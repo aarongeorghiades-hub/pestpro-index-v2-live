@@ -86,7 +86,7 @@ export const TIERS = [
   {
     value: 'featured',
     label: 'Featured',
-    hint: '£12 a month or £120 a year. First 30 days free. Cancel any time. No contract. At most three firms per area, in a labelled Featured (paid) slot above the rating order, with a logo, photos and a fuller description. Nothing is charged from this form.',
+    hint: '£12 a month or £120 a year. First 30 days free. Cancel with one full calendar month\'s notice. At most three firms per area, in a labelled Featured (paid) slot above the rating order, with a logo, photos and a fuller description. Nothing is charged from this form.',
   },
 ];
 

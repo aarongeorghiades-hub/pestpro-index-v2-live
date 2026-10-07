@@ -312,7 +312,7 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
                 <span className="text-5xl font-black text-blue-600">£12</span>
                 <span className="text-gray-600 font-semibold">/month</span>
               </div>
-              <p className="text-gray-700 mb-6">or £120/year. First 30 days free.</p>
+              <p className="text-gray-700 mb-6">or £120/year. First 30 days free. Cancel with one full calendar month&apos;s notice.</p>
               <ul className="space-y-4 mb-10">
                 <li className="flex gap-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
@@ -328,7 +328,7 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
                 </li>
                 <li className="flex gap-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Cancel any time. No contract.</span>
+                  <span className="text-gray-700">Cancel with one full calendar month&apos;s notice</span>
                 </li>
                 <li className="flex gap-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
@@ -367,6 +367,9 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
                   </Link>
                 )}
               </div>
+              <p className="mt-4 text-sm leading-relaxed text-gray-600">
+                By subscribing you agree to give one full calendar month&apos;s notice to cancel; your listing stays Featured until the notice period ends.
+              </p>
             </div>
           </div>
           <p className="text-center text-gray-600 mt-8 max-w-3xl mx-auto">
@@ -477,7 +480,7 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
           The Featured box, when a firm is in it, sits above the rating-sorted list and is headed &ldquo;Featured (paid)&rdquo;. At most three firms show in an area, and the order inside the box changes each day. A standard listing stays free and stays in the rating order. Nothing on this site charges a fee per enquiry.
         </p>
         <p className="text-lg text-gray-700 leading-relaxed mt-4">
-          Featured is £12 a month or £120 a year. The first 30 days are free. Cancel any time. There is no contract. The slot can show a logo, photos and a fuller description.
+          Featured is £12 a month or £120 a year. First 30 days free. Cancel with one full calendar month&apos;s notice. The slot can show a logo, photos and a fuller description.
         </p>
         <ListingBadge />
       </div>
