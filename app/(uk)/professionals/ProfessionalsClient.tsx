@@ -3,7 +3,16 @@
 import Link from 'next/link';
 import { ChevronDown, CheckCircle, Users, TrendingUp, Lock, Target } from 'lucide-react';
 import Navigation from '@/components/Navigation';
+import ListingBadge from '@/components/listing/ListingBadge';
+import { PROFESSIONALS_FAQS } from '@/lib/professionalsFaq';
 import { useState, useEffect, useRef, useCallback } from 'react';
+
+const FEATURED_MONTHLY = (process.env.NEXT_PUBLIC_STRIPE_FEATURED_MONTHLY_LINK || '').trim();
+const FEATURED_ANNUAL = (process.env.NEXT_PUBLIC_STRIPE_FEATURED_ANNUAL_LINK || '').trim();
+
+function stripeHref(value: string): string | null {
+  return value.startsWith('https://') ? value : null;
+}
 
 // providerCount is counted server-side in page.tsx so the figure is present in
 // the initial HTML for crawlers and no-JS visitors. It is null only when that
@@ -19,20 +28,9 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
 
 
 
-  const faqItems = [
-    {
-      question: 'Is there really no lead fee?',
-      answer: 'Correct. Unlike marketplace directories, we don\'t charge you per enquiry or take commission. Listing is free, and customers contact you directly.'
-    },
-    {
-      question: 'What certifications do you display?',
-      answer: 'We display BPCA membership, RSPH qualifications, CEPA certification, BASIS PROMPT, and local authority approvals.'
-    },
-    {
-      question: 'How do reviews work?',
-      answer: 'Your rating and review count are imported from Google. We do not edit them.'
-    }
-  ];
+  const faqItems = PROFESSIONALS_FAQS;
+  const monthlyHref = stripeHref(FEATURED_MONTHLY);
+  const annualHref = stripeHref(FEATURED_ANNUAL);
 
   const animateStats = useCallback((target: number) => {
     const duration = 2000;
@@ -267,25 +265,24 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-5xl font-black text-gray-900 mb-4 text-center">Simple Pricing</h2>
           <p className="text-xl text-gray-600 text-center mb-20 max-w-3xl mx-auto">
-            Getting listed is free
+            A standard listing is free, always. Featured is optional.
           </p>
 
-          <div className="max-w-md mx-auto">
-            {/* Free Listing */}
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
             <div className="card-hover bg-white rounded-2xl shadow-lg border-2 border-gray-200 p-10">
-              <h3 className="text-3xl font-bold text-gray-900 mb-2">Free Listing</h3>
+              <h3 className="text-3xl font-bold text-gray-900 mb-2">Standard listing</h3>
+              <p className="text-sm font-semibold text-gray-600 mb-2">Free, always</p>
               <div className="mb-8">
                 <span className="text-5xl font-black text-blue-600">£0</span>
-                <span className="text-gray-600 font-semibold">/month</span>
               </div>
               <ul className="space-y-4 mb-10">
                 <li className="flex gap-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Your company details and service areas</span>
+                  <span className="text-gray-700">Listed, and sorted by rating</span>
                 </li>
                 <li className="flex gap-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Contact information (phone, email, website)</span>
+                  <span className="text-gray-700">Your company details, contact information and service areas</span>
                 </li>
                 <li className="flex gap-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
@@ -293,11 +290,11 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
                 </li>
                 <li className="flex gap-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Review rating (where available)</span>
+                  <span className="text-gray-700">Review rating, where one is available</span>
                 </li>
                 <li className="flex gap-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Appear in search results based on your service area and information available online</span>
+                  <span className="text-gray-700">Free to claim</span>
                 </li>
               </ul>
               <Link
@@ -308,14 +305,76 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
               </Link>
             </div>
 
-            <p className="text-center text-gray-600 mt-8">
-              A standard listing is free and stays free. An optional Featured listing is open for interest — it never buys a higher rank.{' '}
-              <Link href="/professionals/submit" className="text-blue-700 font-semibold hover:underline">
-                Tell us which you want
-              </Link>
-              . No lead fees, ever.
-            </p>
+            <div className="card-hover bg-white rounded-2xl shadow-lg border-2 border-amber-400 p-10">
+              <h3 className="text-3xl font-bold text-gray-900 mb-2">Featured</h3>
+              <p className="text-sm font-semibold text-amber-800 mb-2">Optional. Labelled Featured (paid).</p>
+              <div className="mb-2">
+                <span className="text-5xl font-black text-blue-600">£12</span>
+                <span className="text-gray-600 font-semibold">/month</span>
+              </div>
+              <p className="text-gray-700 mb-6">or £120/year. First 30 days free. Cancel with one full calendar month&apos;s notice.</p>
+              <ul className="space-y-4 mb-10">
+                <li className="flex gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">A labelled spot above the list on your area pages</span>
+                </li>
+                <li className="flex gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">Logo, photos and a fuller description</span>
+                </li>
+                <li className="flex gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">At most three firms per area</span>
+                </li>
+                <li className="flex gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">Cancel with one full calendar month&apos;s notice</span>
+                </li>
+                <li className="flex gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">Does not change your place in the rating order</span>
+                </li>
+              </ul>
+              <div className="space-y-3">
+                {monthlyHref ? (
+                  <a
+                    href={monthlyHref}
+                    className="block w-full text-center px-6 py-3 bg-amber-500 text-white font-bold rounded-lg hover:bg-amber-600 transition-all"
+                  >
+                    £12 / month
+                  </a>
+                ) : (
+                  <Link
+                    href="/professionals/submit?tier=featured"
+                    className="block w-full text-center px-6 py-3 bg-amber-500 text-white font-bold rounded-lg hover:bg-amber-600 transition-all"
+                  >
+                    Register interest — £12 / month
+                  </Link>
+                )}
+                {annualHref ? (
+                  <a
+                    href={annualHref}
+                    className="block w-full text-center px-6 py-3 border-2 border-amber-500 text-amber-800 font-bold rounded-lg hover:bg-amber-50 transition-all"
+                  >
+                    £120 / year
+                  </a>
+                ) : (
+                  <Link
+                    href="/professionals/submit?tier=featured"
+                    className="block w-full text-center px-6 py-3 border-2 border-amber-500 text-amber-800 font-bold rounded-lg hover:bg-amber-50 transition-all"
+                  >
+                    Register interest — £120 / year
+                  </Link>
+                )}
+              </div>
+              <p className="mt-4 text-sm leading-relaxed text-gray-600">
+                By subscribing you agree to give one full calendar month&apos;s notice to cancel; your listing stays Featured until the notice period ends.
+              </p>
+            </div>
           </div>
+          <p className="text-center text-gray-600 mt-8 max-w-3xl mx-auto">
+            Rankings can&apos;t be bought. Results are sorted by rating. A Featured slot is labelled and sits apart from that order. No lead fees, ever.
+          </p>
         </div>
       </div>
 
@@ -420,6 +479,10 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
         <p className="text-lg text-gray-700 leading-relaxed">
           The Featured box, when a firm is in it, sits above the rating-sorted list and is headed &ldquo;Featured (paid)&rdquo;. At most three firms show in an area, and the order inside the box changes each day. A standard listing stays free and stays in the rating order. Nothing on this site charges a fee per enquiry.
         </p>
+        <p className="text-lg text-gray-700 leading-relaxed mt-4">
+          Featured is £12 a month or £120 a year. First 30 days free. Cancel with one full calendar month&apos;s notice. The slot can show a logo, photos and a fuller description.
+        </p>
+        <ListingBadge />
       </div>
 
       {/* FAQ Section */}

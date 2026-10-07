@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import Navigation from '@/components/Navigation';
-import { createClient } from '@/utils/supabase';
+import { countForSlug } from '@/lib/regionCounts';
 import { leicesterBoroughs } from '@/lib/leicester-boroughs';
 
 export const dynamic = 'force-dynamic';
@@ -25,15 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default async function LeicesterHubPage() {
-  const supabase = createClient();
-
-  const { count } = await supabase
-    .from('Providers')
-    .select('*', { count: 'exact', head: true })
-    .eq('active', true)
-    .or('regions.cs.["leicester"]');
-
-  const providerCount = count ?? 0;
+  const providerCount = (await countForSlug('leicester')) ?? 0;
 
   const faqSchema = {
     '@context': 'https://schema.org',

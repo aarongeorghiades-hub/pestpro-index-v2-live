@@ -1,5 +1,6 @@
 import { createServerClient } from '@/utils/supabase-server';
 import ProfessionalsClient from './ProfessionalsClient';
+import { PROFESSIONALS_FAQS } from '@/lib/professionalsFaq';
 
 export const dynamic = 'force-dynamic';
 
@@ -23,5 +24,20 @@ export default async function ProfessionalsPage() {
   // the hero sentence rather than showing a stale or invented figure.
   const providerCount = error || typeof count !== 'number' ? null : count;
 
-  return <ProfessionalsClient providerCount={providerCount} />;
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: PROFESSIONALS_FAQS.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <ProfessionalsClient providerCount={providerCount} />
+    </>
+  );
 }

@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
-import { createClient } from '@/utils/supabase';
+import { countForSlug } from '@/lib/regionCounts';
 import { leedsBoroughs } from '@/app/(uk)/pest-control/leeds/leeds-boroughs';
 
 export const dynamic = 'force-dynamic';
@@ -24,15 +24,7 @@ export const metadata: Metadata = {
 };
 
 export default async function LeedsHubPage() {
-  const supabase = createClient();
-
-  const { count } = await supabase
-    .from('Providers')
-    .select('*', { count: 'exact', head: true })
-    .eq('active', true)
-    .or('regions.cs.["leeds"]');
-
-  const providerCount = count ?? 0;
+  const providerCount = (await countForSlug('leeds')) ?? 0;
 
   const faqSchema = {
     '@context': 'https://schema.org',

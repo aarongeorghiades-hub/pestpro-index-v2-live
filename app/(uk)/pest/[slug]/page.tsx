@@ -2,7 +2,9 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Navigation from '@/components/Navigation';
+import FindProfessional from '@/components/listing/FindProfessional';
 import { pestGuides } from '@/data/pest-guides';
+import { LOCATIONS, PESTS } from '@/app/(uk)/pest-control/pest-city-config';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -258,13 +260,26 @@ export default async function PestGuidePage({ params }: Props) {
               ))}
             </ul>
           </div>
-          <div className="mt-6 p-6 bg-green-50 border border-green-200 rounded-xl text-center">
-            <p className="text-gray-900 font-bold mb-2">Find a {pest.name} Controller Near You</p>
-            <p className="text-gray-600 text-sm mb-4">No lead fees. No commissions.</p>
-            <Link href="/residential" className="inline-block px-6 py-3 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-colors">
-              Browse Residential Pest Controllers
-            </Link>
+          <div className="mt-6">
+            <FindProfessional />
           </div>
+          {PESTS.some((item) => item.slug === slug) && (
+            <nav aria-label={`${pest.name} control by city`} className="mt-6">
+              <h3 className="text-lg font-bold text-gray-900 mb-3">{pest.name} control by city</h3>
+              <ul className="flex flex-wrap gap-x-3 gap-y-1">
+                {LOCATIONS.map((location) => (
+                  <li key={location.slug}>
+                    <Link
+                      href={`/pest-control/${location.slug}/${slug}`}
+                      className="text-sm text-blue-700 hover:underline"
+                    >
+                      {location.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )}
         </section>
 
         {/* Costs */}

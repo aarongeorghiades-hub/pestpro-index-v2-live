@@ -3,6 +3,7 @@ export const dynamic = 'force-dynamic';
 
 import Image from 'next/image';
 import Navigation from '@/components/Navigation';
+import FindProfessional from '@/components/listing/FindProfessional';
 import { UK_AMAZON_TAG } from '@/lib/externalUrl';
 
 export default function ProductsPage() {
@@ -35,6 +36,11 @@ export default function ProductsPage() {
           
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100/95 max-w-4xl mx-auto leading-relaxed font-semibold text-center">
             Get the most popular pest control products that are <span className="font-bold text-white">ACTUALLY WORKING</span> for London homeowners <span className="font-bold text-white">RIGHT NOW</span>. Direct Amazon links with live pricing and reviews.
+          </p>
+          <p className="mt-6 text-center">
+            <a href="#find-a-professional" className="text-base font-semibold text-white underline">
+              Rather call a professional? Find pest control near you
+            </a>
           </p>
         </div>
       </div>
@@ -505,6 +511,10 @@ export default function ProductsPage() {
           </div>
         </section>
 
+      </div>
+
+      <div className="max-w-5xl mx-auto px-4 pb-20">
+        <FindProfessional />
       </div>
 
     </div>

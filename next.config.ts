@@ -89,6 +89,16 @@ const nextConfig: NextConfig = {
       permanent: true,
     }));
 
+    // The public London borough URL is /pest-control/{borough}. The long form
+    // is the same page via a beforeFiles rewrite, so it is a duplicate. This
+    // redirect runs before that rewrite and does not match pest slugs such as
+    // /pest-control/london/rats.
+    const londonBoroughCanonicalRedirects = londonBoroughSlugs.map((slug) => ({
+      source: `/pest-control/london/${slug}`,
+      destination: `/pest-control/${slug}`,
+      permanent: true,
+    }));
+
     return [
       {
         source: '/:path*',
@@ -102,6 +112,7 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       ...pestControlCityRedirects,
+      ...londonBoroughCanonicalRedirects,
       {
         source: '/prices',
         destination: '/guides/pest-control-costs',

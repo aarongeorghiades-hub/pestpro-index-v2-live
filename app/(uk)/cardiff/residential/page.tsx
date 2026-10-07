@@ -1,4 +1,5 @@
 import { createServerClient } from '@/utils/supabase-server';
+import { inCity } from '@/lib/serviceArea';
 import ResidentialDirectoryClient, { type Provider } from './ResidentialDirectoryClient';
 import ListingSchema from '@/components/ListingSchema';
 import { cityDirectoryMetadata } from '@/lib/seo';
@@ -23,7 +24,7 @@ export default async function ResidentialPage() {
     .eq('business_residential', true)
     .or('regions.cs.["cardiff"]');
   if (error) console.error('[SSR fetch] cardiff-residential:', error.message);
-  const providers = (data || []).map((p: any) => ({ ...p, postcode: p.postcode || extractPostcode(p.address) }));
+  const providers = inCity((data || []).map((p: any) => ({ ...p, postcode: p.postcode || extractPostcode(p.address) })), 'cardiff');
   return (
     <>
       <ListingSchema

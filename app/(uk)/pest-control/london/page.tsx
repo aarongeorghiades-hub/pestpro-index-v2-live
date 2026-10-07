@@ -63,16 +63,17 @@ export default async function LondonPestControlHubPage() {
     ],
   };
 
-  const localBusinessSchema = {
+  const itemListSchema = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'Pest Control Services in London',
-    description:
-      residential !== null && commercial !== null
-        ? `Directory of ${formatCount(residential)} residential and ${formatCount(commercial)} commercial pest control providers across all 33 London boroughs.`
-        : 'Directory of residential and commercial pest control providers across all 33 London boroughs.',
-    areaServed: { '@type': 'City', name: 'London' },
-    url: 'https://pestproindex.com/pest-control/london',
+    '@type': 'ItemList',
+    name: 'Pest control by London borough',
+    numberOfItems: boroughs.length,
+    itemListElement: boroughs.map((borough, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: borough.name,
+      url: `https://pestproindex.com/pest-control/${borough.slug}`,
+    })),
   };
 
   return (
@@ -83,7 +84,7 @@ export default async function LondonPestControlHubPage() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
       />
       <Navigation />
 
