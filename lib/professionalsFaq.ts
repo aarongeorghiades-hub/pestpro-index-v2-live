@@ -16,7 +16,7 @@ export const PROFESSIONALS_FAQS: { question: string; answer: string }[] = [
   {
     question: 'What does a Featured listing cost?',
     answer:
-      'A standard listing is free, always, and stays in the rating order. Featured is £12 a month or £120 a year. First 30 days free. Cancel with one full calendar month\'s notice. At most three firms are featured in one area. The spot is labelled Featured (paid) and sits above the rating-sorted list. It can show a logo, photos and a fuller description.',
+      'A standard listing is free, always, and stays in the rating order. Featured is £12 a month or £120 a year. First 30 days free. Cancel with one full calendar month\'s notice. Limited Featured spots per area. The spot is labelled Featured (paid) and sits above the rating-sorted list. It can show a logo, photos and a fuller description.',
   },
   {
     question: 'How do I cancel a Featured listing?',

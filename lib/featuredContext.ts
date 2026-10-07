@@ -26,6 +26,15 @@ export type FeaturedQuery = {
   pestColumn?: string;
 };
 
+/**
+ * Which firm list a directory URL renders, so the featured cap can use that
+ * count. `place` is a borough or town page: based-in firms plus also covering.
+ * `none` is a hub that does not list firms.
+ */
+export type ShownList =
+  | { area: string; list: 'residential' | 'commercial' | 'all' | 'place' | 'none' }
+  | { area: string; list: 'pest'; pestColumn: string };
+
 const CITY_SLUGS = new Set(LOCATIONS.map((location) => location.slug));
 
 const PEST_COLUMN_BY_SLUG = new Map(PESTS.map((pest) => [pest.slug, pest.filterColumn]));
@@ -60,6 +69,47 @@ addBoroughs('manchester', manchesterBoroughs);
 addBoroughs('newcastle', newcastleBoroughs);
 addBoroughs('nottingham', nottinghamBoroughs);
 addBoroughs('sheffield', sheffieldBoroughs);
+
+/** Which firm list this URL renders. Null when the path is not a directory page. */
+export function shownListForPath(pathname: string): ShownList | null {
+  const path = normalisePath(pathname);
+  if (path === '/residential') return { area: 'london', list: 'residential' };
+  if (path === '/commercial') return { area: 'london', list: 'commercial' };
+  if (path === '/pest-control') return { area: 'london', list: 'none' };
+
+  const parts = path.split('/').filter(Boolean);
+
+  if (parts.length === 1 && CITY_SLUGS.has(parts[0])) return { area: parts[0], list: 'all' };
+
+  if (parts.length === 2 && CITY_SLUGS.has(parts[0]) && parts[1] === 'residential') {
+    return { area: parts[0], list: 'residential' };
+  }
+  if (parts.length === 2 && CITY_SLUGS.has(parts[0]) && parts[1] === 'commercial') {
+    return { area: parts[0], list: 'commercial' };
+  }
+
+  if (parts[0] !== 'pest-control') return null;
+
+  if (parts.length === 2 && CITY_SLUGS.has(parts[1])) return { area: parts[1], list: 'none' };
+
+  if (parts.length === 2) {
+    const pestColumn = PEST_COLUMN_BY_SLUG.get(parts[1]);
+    const city = BOROUGH_TO_CITY.get(parts[1]);
+    if (pestColumn && city) return { area: city, list: 'pest', pestColumn };
+    return city ? { area: city, list: 'place' } : null;
+  }
+
+  if (parts.length === 3 && CITY_SLUGS.has(parts[1])) {
+    const pestColumn = PEST_COLUMN_BY_SLUG.get(parts[2]);
+    if (pestColumn && FEATURED_PEST_COLUMNS.has(pestColumn)) {
+      return { area: parts[1], list: 'pest', pestColumn };
+    }
+    if (BOROUGH_TO_CITY.get(parts[2]) === parts[1]) return { area: parts[1], list: 'place' };
+    return { area: parts[1], list: 'none' };
+  }
+
+  return null;
+}
 
 /**
  * Which featured box a directory URL should ask for.

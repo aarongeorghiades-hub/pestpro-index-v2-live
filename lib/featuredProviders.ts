@@ -1,8 +1,7 @@
 import { createServerClient } from '@/utils/supabase-server';
 import { dailyShuffle } from '@/lib/dailyShuffle';
+import { featuredSpotCap } from '@/lib/featuredCap';
 import { FEATURED_PEST_COLUMNS, type FeaturedQuery } from '@/lib/featuredContext';
-
-export const FEATURED_LIMIT = 3;
 
 export type FeaturedCard = {
   canonical_id: string | number;
@@ -50,7 +49,7 @@ function shortSummary(value: unknown): string | null {
 // Separate query from every organic list. Those lists sort by rating (or name)
 // and do not read tier. This function is the only place tier = 'featured' is
 // used for display. A missing column (migration not applied) returns [].
-export async function getFeaturedCards(query: FeaturedQuery): Promise<FeaturedCard[]> {
+export async function getFeaturedCards(query: FeaturedQuery, firmsShown: number): Promise<FeaturedCard[]> {
   try {
     const supabase = createServerClient();
     if (query.pestColumn && !FEATURED_PEST_COLUMNS.has(query.pestColumn)) return [];
@@ -100,7 +99,7 @@ export async function getFeaturedCards(query: FeaturedQuery): Promise<FeaturedCa
       profile_text?: unknown;
     }[];
     return dailyShuffle(rows, salt)
-      .slice(0, FEATURED_LIMIT)
+      .slice(0, featuredSpotCap(firmsShown))
       .map((row) => ({
         canonical_id: row.canonical_id,
         name: row.name,
