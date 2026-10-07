@@ -6,7 +6,7 @@ import { getPestBySlug, getLocationBySlug } from '@/app/(uk)/pest-control/pest-c
 import PestCityPageClient from '@/components/PestCityPageClient';
 import ListingSchema from '@/components/ListingSchema';
 import { createServerClient } from '@/utils/supabase-server';
-import { inCity, splitPlace } from '@/lib/serviceArea';
+import { inCity, splitCoverage } from '@/lib/serviceArea';
 import { pestPageFallsBack, placeIsIndexable } from '@/lib/areaDirectory';
 
 export const dynamic = 'force-dynamic';
@@ -117,7 +117,7 @@ export default async function LondonBoroughPage({ params }: Props) {
   const data = getBoroughBySlug(borough);
   if (!data) notFound();
 
-  // Borough page: firms whose postcode district is in this borough.
+  // Borough page: firms based in this borough, then other firms tagged to the parent city.
   const { data: boroughData, error: boroughError } = await supabase
     .from('Providers')
     .select('address, canonical_id, google_rating, google_review_count, name, pest_ants, pest_bed_bugs, pest_cockroaches, pest_fleas, pest_foxes, pest_mice, pest_moths, pest_pigeons, pest_rats, pest_wasps, phone, postcode, service_bpca_certified, service_eco_friendly, service_emergency_24_7, slug, website')
@@ -125,9 +125,10 @@ export default async function LondonBoroughPage({ params }: Props) {
     .eq('business_residential', true)
     .or('regions.cs.["london"]');
   if (boroughError) console.error('[SSR fetch] london-borough:', boroughError.message);
-  const placeSplit = splitPlace(processProviders(boroughData), cityConfig.region, data.slug);
+  const placeSplit = splitCoverage(processProviders(boroughData), cityConfig.region, data.slug);
   const providers = placeSplit.local;
-  const nearbyProviders = placeSplit.nearby;
+  const alsoCovering = placeSplit.alsoCovering;
+  const listed = [...providers, ...alsoCovering];
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -152,7 +153,8 @@ export default async function LondonBoroughPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <ListingSchema
-        providers={providers}
+        providers={listed}
+        maxItems={listed.length}
         listName={`Pest Control Providers Serving ${data.name}`}
         listUrl={`/pest-control/${data.slug}`}
         areaName={data.name}
@@ -163,7 +165,7 @@ export default async function LondonBoroughPage({ params }: Props) {
           { name: data.name, url: `/pest-control/${data.slug}` },
         ]}
       />
-      <LondonBoroughClient borough={data} initialProviders={providers} nearbyProviders={nearbyProviders} />
+      <LondonBoroughClient borough={data} initialProviders={providers} alsoCovering={alsoCovering} />
     </>
   );
 }

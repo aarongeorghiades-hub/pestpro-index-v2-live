@@ -6,7 +6,7 @@ import { externalHref } from '@/lib/externalUrl';
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import CityPestLinks from '@/components/CityPestLinks';
-import NearbyFirms from '@/components/listing/NearbyFirms';
+import AlsoCovering from '@/components/listing/AlsoCovering';
 import { cityDirectoryHref } from '@/lib/seo';
 import type { CardiffBoroughData } from '../cardiff-boroughs';
 
@@ -30,7 +30,7 @@ interface Provider {
   service_bpca_certified: boolean;
 }
 
-export default function CardiffBoroughClient({ borough, initialProviders, nearbyProviders = [] }: { borough: CardiffBoroughData; initialProviders: Provider[]; nearbyProviders?: Provider[] }) {
+export default function CardiffBoroughClient({ borough, initialProviders, alsoCovering = [] }: { borough: CardiffBoroughData; initialProviders: Provider[]; alsoCovering?: { canonical_id?: number; name: string; slug: string; postcode: string | null; phone: string | null; website: string | null; google_rating: number | null; google_review_count: number | null; baseLabel: string }[] }) {
   const providers = initialProviders;
   const loading = false;
   const [isMobile, setIsMobile] = useState(false);
@@ -64,7 +64,7 @@ export default function CardiffBoroughClient({ borough, initialProviders, nearby
             Pest Control in {borough.name}
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl font-bold mb-4 max-w-2xl drop-shadow-lg" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>
-            {providers.length} Providers Serving {borough.name}
+            {providers.length} {providers.length === 1 ? 'firm' : 'firms'} based in {borough.name}{alsoCovering.length > 0 ? ` · ${alsoCovering.length} ${alsoCovering.length === 1 ? 'firm' : 'firms'} also covering ${borough.name}` : ''}
           </p>
           <p className="text-sm sm:text-base md:text-lg font-semibold max-w-2xl drop-shadow-lg" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>
             South Wales &middot; No lead fees &middot; No commissions
@@ -97,6 +97,7 @@ export default function CardiffBoroughClient({ borough, initialProviders, nearby
             </p>
           </div>
 
+          <div data-featured-slot />
           {loading ? (
             <div className="text-center py-12">
               <p className="text-gray-600">Loading providers...</p>
@@ -107,7 +108,6 @@ export default function CardiffBoroughClient({ borough, initialProviders, nearby
             </div>
           ) : (
             <>
-              <div data-featured-slot />
               <p className="text-gray-600 font-medium mb-8">Showing {providers.length} providers sorted by rating</p>
               <p className="text-sm text-gray-600 mb-6">{TROPHY_LEGEND}</p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -160,7 +160,7 @@ export default function CardiffBoroughClient({ borough, initialProviders, nearby
               </div>
             </>
           )}
-          <NearbyFirms firms={nearbyProviders} placeName={borough.name} />
+          <AlsoCovering firms={alsoCovering} placeName={borough.name} />
         </div>
       </section>
 

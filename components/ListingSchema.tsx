@@ -27,14 +27,17 @@ export default function ListingSchema({
   listUrl,
   areaName,
   breadcrumbs,
+  maxItems = MAX_ITEMS,
 }: {
   providers: SchemaProvider[];
   listName: string;
   listUrl: string;
   areaName?: string;
   breadcrumbs: Crumb[];
+  /** Defaults to 50 so a city-wide list stays capped. A page that renders more passes its own length. */
+  maxItems?: number;
 }) {
-  const items = providers.slice(0, MAX_ITEMS);
+  const items = providers.slice(0, maxItems);
 
   const itemList = {
     '@context': 'https://schema.org',

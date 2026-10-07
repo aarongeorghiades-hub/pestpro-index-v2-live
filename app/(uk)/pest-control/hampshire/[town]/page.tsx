@@ -6,7 +6,7 @@ import { getPestBySlug, getLocationBySlug } from '@/app/(uk)/pest-control/pest-c
 import PestCityPageClient from '@/components/PestCityPageClient';
 import ListingSchema from '@/components/ListingSchema';
 import { createServerClient } from '@/utils/supabase-server';
-import { inCity, splitPlace } from '@/lib/serviceArea';
+import { inCity, splitCoverage } from '@/lib/serviceArea';
 import { pestPageFallsBack, placeIsIndexable } from '@/lib/areaDirectory';
 
 export const dynamic = 'force-dynamic';
@@ -115,7 +115,7 @@ export default async function HampshireTownPage({ params }: Props) {
   const data = getTownBySlug(town);
   if (!data) notFound();
 
-  // Town page: all residential providers serving this city/region.
+  // Town page: firms based in this town, then other firms tagged to the parent area.
   const supabase = createServerClient();
   const { data: townData, error: townError } = await supabase
     .from('Providers')
@@ -124,9 +124,10 @@ export default async function HampshireTownPage({ params }: Props) {
     .eq('business_residential', true)
     .or(`regions.cs.["${cityConfig.region}"]`);
   if (townError) console.error(`[SSR fetch] ${cityConfig.slug}-town:`, townError.message);
-  const placeSplit = splitPlace(processProviders(townData), cityConfig.region, data.slug);
+  const placeSplit = splitCoverage(processProviders(townData), cityConfig.region, data.slug);
   const providers = placeSplit.local;
-  const nearbyProviders = placeSplit.nearby;
+  const alsoCovering = placeSplit.alsoCovering;
+  const listed = [...providers, ...alsoCovering];
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -151,7 +152,8 @@ export default async function HampshireTownPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <ListingSchema
-        providers={providers}
+        providers={listed}
+        maxItems={listed.length}
         listName={`Pest Control Providers Serving ${data.name}`}
         listUrl={`/pest-control/${cityConfig.slug}/${data.slug}`}
         areaName={data.name}
@@ -162,7 +164,7 @@ export default async function HampshireTownPage({ params }: Props) {
           { name: data.name, url: `/pest-control/${cityConfig.slug}/${data.slug}` },
         ]}
       />
-      <HampshireTownClient town={data} initialProviders={providers} nearbyProviders={nearbyProviders} />
+      <HampshireTownClient town={data} initialProviders={providers} alsoCovering={alsoCovering} />
     </>
   );
 }

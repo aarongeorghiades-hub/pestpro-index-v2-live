@@ -1,11 +1,16 @@
 // Where a firm is allowed to appear, decided from its own postcode.
 //
-// Borough and town pages used to list every firm tagged with the parent city,
-// so Barnet showed the whole London list, including postcodes in Manchester,
-// Cardiff, Edinburgh and the Highlands. City lists keep a firm whose postcode
-// cannot be read (the region tag is the only evidence). A postcode that can be
-// read and sits outside the city's areas is left off that city. A borough page
-// lists only firms whose postcode district is one of that place's districts.
+// City lists keep a firm whose postcode cannot be read (the region tag is the
+// only evidence). A postcode that can be read and sits outside the city's
+// areas is left off that city list.
+//
+// A borough or town page has two sections. Section 1 is firms whose postcode
+// district is one of that place's districts. Section 2 is every other firm
+// tagged to the parent city, including a postcode outside the city, labelled
+// with the base the postcode actually supports. Same-city postcodes come
+// before out-of-city postcodes. A missing postcode sits between those two,
+// because it is not evidence of either. Rating order is preserved inside
+// each group. Nothing here is a distance.
 //
 // This file is pure data plus functions. It does not read the database.
 
@@ -294,11 +299,6 @@ const PLACES: Record<string, Record<string, Place>> = {
 
 const ADDRESS_POSTCODE = /[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}/i;
 
-/** Show a nearby list when the place itself has fewer firms than this. */
-export const NEARBY_BELOW = 3;
-/** Cap the nearby list so a thin page does not become the whole city again. */
-export const NEARBY_CAP = 12;
-
 export function extractPostcode(address: string | null | undefined): string | null {
   if (!address) return null;
   const match = address.match(ADDRESS_POSTCODE);
@@ -386,24 +386,65 @@ export function inCity<T extends { postcode?: string | null; address?: string | 
   return rows.filter((row) => servesCity(effectivePostcode(row), city));
 }
 
-export function splitPlace<T extends { postcode?: string | null; address?: string | null }>(
+/**
+ * The words under a firm that is not based in this place.
+ * One matching town or borough is named. A district shared by two places
+ * stays as the district, so the page does not pick a borough. No readable
+ * postcode produces no place name.
+ */
+export function baseLabel(postcode: string | null | undefined): string {
+  const parts = parsePostcode(postcode);
+  if (!parts) return 'Base not shown on the listing';
+  const hits: string[] = [];
+  for (const places of Object.values(PLACES)) {
+    for (const place of Object.values(places)) {
+      if (districtHits(parts.district, place.districts) && !hits.includes(place.name)) {
+        hits.push(place.name);
+      }
+    }
+  }
+  if (hits.length === 1) return `Based in ${hits[0]}`;
+  return `Based in ${parts.district}`;
+}
+
+export type CoveringRow<T> = T & { baseLabel: string };
+
+/**
+ * Section 1 is the place itself. Section 2 is everyone else already tagged
+ * to the parent city. Callers pass rows in rating order; each group keeps
+ * that order.
+ */
+export function splitCoverage<T extends { postcode?: string | null; address?: string | null }>(
   rows: T[],
   city: string,
   placeSlug: string,
-): { local: T[]; nearby: T[] } {
+): { local: T[]; alsoCovering: CoveringRow<T>[] } {
   const local: T[] = [];
-  const others: T[] = [];
+  const sameCity: CoveringRow<T>[] = [];
+  const unreadable: CoveringRow<T>[] = [];
+  const outside: CoveringRow<T>[] = [];
   for (const row of rows) {
     const postcode = effectivePostcode(row);
     if (inPlace(postcode, city, placeSlug)) {
       local.push(row);
       continue;
     }
+    const labelled = { ...row, baseLabel: baseLabel(postcode) };
     const parts = parsePostcode(postcode);
-    if (parts && servesCity(postcode, city)) others.push(row);
+    if (!parts) unreadable.push(labelled);
+    else if (servesCity(postcode, city)) sameCity.push(labelled);
+    else outside.push(labelled);
   }
-  const nearby = local.length < NEARBY_BELOW ? others.slice(0, NEARBY_CAP) : [];
-  return { local, nearby };
+  return { local, alsoCovering: [...sameCity, ...unreadable, ...outside] };
+}
+
+/** Local firms only. Used by indexing and counts, which do not render section 2. */
+export function splitPlace<T extends { postcode?: string | null; address?: string | null }>(
+  rows: T[],
+  city: string,
+  placeSlug: string,
+): { local: T[] } {
+  return { local: splitCoverage(rows, city, placeSlug).local };
 }
 
 /**
