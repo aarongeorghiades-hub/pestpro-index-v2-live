@@ -7,6 +7,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Navigation from '@/components/Navigation';
 import CityPestLinks from '@/components/CityPestLinks';
+import NearbyFirms from '@/components/listing/NearbyFirms';
 import { cityDirectoryHref } from '@/lib/seo';
 import type { LeedsBoroughData } from '../leeds-boroughs';
 
@@ -30,7 +31,7 @@ interface Provider {
   service_bpca_certified: boolean;
 }
 
-export default function LeedsBoroughClient({ borough, initialProviders }: { borough: LeedsBoroughData; initialProviders: Provider[] }) {
+export default function LeedsBoroughClient({ borough, initialProviders, nearbyProviders = [] }: { borough: LeedsBoroughData; initialProviders: Provider[]; nearbyProviders?: Provider[] }) {
   const providers = initialProviders;
   const loading = false;
   const [isMobile, setIsMobile] = useState(false);
@@ -102,7 +103,7 @@ export default function LeedsBoroughClient({ borough, initialProviders }: { boro
               Pest Control Providers Serving {borough.name}
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              All {providers.length} providers cover the West Yorkshire area including {borough.name}
+              Firms with a postcode in {borough.name}, sorted by rating
             </p>
           </div>
 
@@ -112,7 +113,7 @@ export default function LeedsBoroughClient({ borough, initialProviders }: { boro
             </div>
           ) : providers.length === 0 ? (
             <div className="text-center py-12">
-              <p className="text-gray-600 text-lg">No providers found. Please try again later.</p>
+              <p className="text-gray-600 text-lg">No firm with a postcode in this area is listed yet.</p>
             </div>
           ) : (
             <>
@@ -169,6 +170,7 @@ export default function LeedsBoroughClient({ borough, initialProviders }: { boro
               </div>
             </>
           )}
+          <NearbyFirms firms={nearbyProviders} placeName={borough.name} />
         </div>
       </section>
 

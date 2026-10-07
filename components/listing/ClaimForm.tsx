@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { AlertCircle, CheckCircle, Loader2 } from 'lucide-react';
 import { HONEYPOT_FIELD } from '@/lib/providerSubmissions';
+import ListingBadge from '@/components/listing/ListingBadge';
 
 const inputClass =
   'w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-600 text-gray-900';
@@ -111,6 +112,7 @@ export default function ClaimForm({
             confirms that you run this business. It does not check qualifications, and it does not
             buy a Featured slot. Nothing on the listing changes until we have looked at it.
           </p>
+          <ListingBadge slug={slug} />
         </div>
       </div>
     );

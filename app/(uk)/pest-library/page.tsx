@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
+import FindProfessional from '@/components/listing/FindProfessional';
 import { pestGuides } from '@/data/pest-guides';
 
 export const metadata: Metadata = {
@@ -82,6 +83,10 @@ export default function PestLibraryPage() {
           </p>
         </div>
       </section>
+
+      <div className="max-w-5xl mx-auto px-4 pt-10">
+        <FindProfessional />
+      </div>
 
       <div className="max-w-5xl mx-auto px-4 py-16">
         {categoryOrder.map((category) => {

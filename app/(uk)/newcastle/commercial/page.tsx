@@ -1,4 +1,5 @@
 import { createServerClient } from '@/utils/supabase-server';
+import { inCity } from '@/lib/serviceArea';
 import CommercialDirectoryClient, { type Provider } from './CommercialDirectoryClient';
 import type { Metadata } from 'next';
 
@@ -23,6 +24,6 @@ export default async function CommercialPage() {
     .eq('commercial', true)
     .or('regions.cs.["newcastle"]');
   if (error) console.error('[SSR fetch] newcastle-commercial:', error.message);
-  const providers = (data || []).map((p: any) => ({ ...p, postcode: p.postcode || extractPostcode(p.address) }));
+  const providers = inCity((data || []).map((p: any) => ({ ...p, postcode: p.postcode || extractPostcode(p.address) })), 'newcastle');
   return <CommercialDirectoryClient initialProviders={providers as Provider[]} />;
 }

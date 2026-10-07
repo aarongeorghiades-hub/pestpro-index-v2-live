@@ -2,7 +2,8 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import Navigation from '@/components/Navigation';
-import { createClient } from '@/utils/supabase';
+import { countForSlug } from '@/lib/regionCounts';
+import { localCounts } from '@/lib/areaDirectory';
 import { hampshireTowns } from '@/lib/hampshire-towns';
 
 export const dynamic = 'force-dynamic';
@@ -25,23 +26,12 @@ export const metadata: Metadata = {
 };
 
 export default async function HampshireHubPage() {
-  const supabase = createClient();
-
-  const { data: allProviders, count } = await supabase
-    .from('Providers')
-    .select('city', { count: 'exact' })
-    .eq('active', true)
-    .or('regions.cs.["hampshire"]');
-
-  const providerCount = count ?? 0;
-
-  // Compute per-town provider counts from city field
-  const townCounts: Record<string, number> = {};
-  hampshireTowns.forEach(town => {
-    townCounts[town.slug] = (allProviders || []).filter(p =>
-      town.cityNames.some(cn => cn.toLowerCase() === (p.city || '').toLowerCase())
-    ).length;
-  });
+  const [counted, townCountsRaw] = await Promise.all([
+    countForSlug('hampshire'),
+    localCounts('hampshire'),
+  ]);
+  const providerCount = counted ?? 0;
+  const townCounts: Record<string, number> = townCountsRaw ?? {};
 
   const faqSchema = {
     '@context': 'https://schema.org',

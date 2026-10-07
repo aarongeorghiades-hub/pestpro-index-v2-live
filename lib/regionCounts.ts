@@ -1,16 +1,15 @@
 // SERVER-ONLY helpers for counting providers behind the /pest-control region
 // data. Imported by server components; do not import from a client component.
 //
-// Counts are always head-only: .select('canonical_id', { count: 'exact',
-// head: true }) returns the count header with no rows. Nothing here selects or
-// paginates rows — PostgREST caps a response at 1,000 and there are more active
-// providers than that, so any "fetch all and tally" approach undercounts.
+// The figure is firms whose postcode actually sits in that city, not every row
+// tagged with the region. A head count cannot apply that rule, so the read is
+// paginated (PostgREST stops at 1,000 rows) and then filtered.
 //
 // regions is jsonb, so containment must be cs.["slug"]. supabase-js .contains()
 // emits the Postgres array form cs.{"slug"}, which Postgres rejects with 22P02.
 
-import { createServerClient } from '@/utils/supabase-server';
 import { formatCount } from '@/lib/formatCount';
+import { countServing } from '@/lib/areaDirectory';
 import type { Region, RegionCity } from '@/app/(uk)/pest-control/data/regions';
 
 /** Which directory a city entry points at, and therefore how to count it. */
@@ -39,37 +38,16 @@ export function cityTarget(city: RegionCity): CityTarget | null {
   return m ? { slug: m[1], kind } : null;
 }
 
-function countQuery(slug: string) {
-  return createServerClient()
-    .from('Providers')
-    .select('canonical_id', { count: 'exact', head: true })
-    .eq('active', true)
-    .or(`regions.cs.["${slug}"]`);
-}
-
-/** Active providers in a slug, optionally narrowed to one directory. */
+/** Active providers in a slug, narrowed to the directory the city link points at. */
 export async function countForTarget(target: CityTarget): Promise<number | null> {
-  let q = countQuery(target.slug);
   // The commercial directories filter on `commercial`, not business_commercial —
   // the two differ substantially and only `commercial` matches what they list.
-  q = target.kind === 'residential' ? q.eq('business_residential', true) : q.eq('commercial', true);
-
-  const { count, error } = await q;
-  if (error) {
-    console.error(`[SSR fetch] ${target.kind} count ${target.slug}:`, error.message);
-    return null;
-  }
-  return typeof count === 'number' ? count : null;
+  return countServing(target.slug, target.kind);
 }
 
-/** Total active providers in a slug, ignoring the residential/commercial split. */
+/** Active providers in a slug whose postcode is in that city. */
 export async function countForSlug(slug: string): Promise<number | null> {
-  const { count, error } = await countQuery(slug);
-  if (error) {
-    console.error(`[SSR fetch] slug count ${slug}:`, error.message);
-    return null;
-  }
-  return typeof count === 'number' ? count : null;
+  return countServing(slug, 'all');
 }
 
 /**

@@ -2,8 +2,8 @@ import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import { getAllBoroughs } from './borough-data';
 import { Metadata } from 'next';
-import { createServerClient } from '@/utils/supabase-server';
 import { formatCount } from '@/lib/formatCount';
+import { countForTarget } from '@/lib/regionCounts';
 
 export async function generateMetadata(): Promise<Metadata> {
   // Both figures use the same filters as the pages they describe, so the
@@ -11,16 +11,11 @@ export async function generateMetadata(): Promise<Metadata> {
   // active + business_residential + london, /commercial lists active +
   // commercial + london. Note `commercial`, not `business_commercial` -
   // different columns, different totals.
-  const supabase = createServerClient()
-  const [res, com] = await Promise.all([
-    supabase.from('Providers').select('canonical_id', { count: 'exact', head: true })
-      .eq('active', true).eq('business_residential', true).or('regions.cs.["london"]'),
-    supabase.from('Providers').select('canonical_id', { count: 'exact', head: true })
-      .eq('active', true).eq('commercial', true).or('regions.cs.["london"]'),
+  // Same postcode rule as the directory pages these sentences describe.
+  const [residentialCount, commercialCount] = await Promise.all([
+    countForTarget({ slug: 'london', kind: 'residential' }),
+    countForTarget({ slug: 'london', kind: 'commercial' }),
   ])
-  // Ruling 4 posture: a failed or null count renders no number at all.
-  const residentialCount = res.error ? null : res.count
-  const commercialCount = com.error ? null : com.count
   const boroughCount = getAllBoroughs().length
   const compare =
     residentialCount == null || commercialCount == null

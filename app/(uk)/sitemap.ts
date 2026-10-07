@@ -19,10 +19,12 @@ import { getAllBoroughs as getAllLeicesterBoroughs } from './pest-control/leices
 import { getAllTowns as getAllHampshireTowns } from './pest-control/hampshire/hampshire-towns';
 import { getAllBoroughs as getAllCoventryBoroughs } from './pest-control/coventry/coventry-boroughs';
 import { getAllBoroughs as getAllBelfastBoroughs } from './pest-control/belfast/belfast-boroughs';
+import { getAllBoroughs as getAllBirminghamBoroughs } from './pest-control/birmingham/birmingham-boroughs';
 import { getAllBoroughs as getAllDerbyBoroughs } from './pest-control/derby/derby-boroughs';
 import { posts } from './blog/data/posts';
 import { pestGuides } from '@/data/pest-guides';
 import { LOCATIONS, PESTS } from './pest-control/pest-city-config';
+import { loadDirectoryIndex } from '@/lib/areaDirectory';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -221,11 +223,38 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // exact Cardiff duplicates), and excluding thin listings that the provider
   // page marks noindex — so the sitemap lists only indexable, 200-status URLs.
   const supabase = createServerClient();
-  const { data: providerRows, error: providerError } = await supabase
-    .from('Providers')
-    .select('slug, phone, website, email, google_rating, google_review_count, profile_text')
-    .eq('active', true);
-  if (providerError) console.error('[sitemap] providers:', providerError.message);
+  const providerRows: {
+    slug: string | null;
+    phone: string | null;
+    website: string | null;
+    email: string | null;
+    google_rating: number | null;
+    google_review_count: number | null;
+    profile_text: string | null;
+  }[] = [];
+  const pageSize = 1000;
+  for (let from = 0; ; from += pageSize) {
+    const { data, error: providerError } = await supabase
+      .from('Providers')
+      .select('slug, phone, website, email, google_rating, google_review_count, profile_text')
+      .eq('active', true)
+      .range(from, from + pageSize - 1);
+    if (providerError) {
+      console.error('[sitemap] providers:', providerError.message);
+      break;
+    }
+    providerRows.push(...(data || []));
+    if (!data || data.length < pageSize) break;
+  }
+
+  // Null means the read failed: keep every place URL. A successful read omits
+  // a place or pest page that has no in-area firm, matching the noindex rule.
+  const directoryIndex = await loadDirectoryIndex();
+  const listedPlaces = <T extends { slug: string }>(city: string, rows: T[]): T[] => {
+    if (!directoryIndex) return rows;
+    const allowed = new Set(directoryIndex.places[city] || []);
+    return rows.filter((row) => allowed.has(row.slug));
+  };
 
   const seenSlugs = new Set<string>();
   const providerUrls = (providerRows || [])
@@ -248,7 +277,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Get all London boroughs (short-URL form — matches the canonical
   // rendered by the [borough] route and the rewrite in next.config.ts)
-  const boroughs = getAllBoroughs();
+  const boroughs = listedPlaces('london', getAllBoroughs());
   const boroughUrls = boroughs.map((borough) => ({
     url: `${baseUrl}/pest-control/${borough.slug}`,
     lastModified: new Date(),
@@ -257,7 +286,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // Get all Manchester boroughs
-  const manchesterBoroughs = getAllManchesterBoroughs();
+  const manchesterBoroughs = listedPlaces('manchester', getAllManchesterBoroughs());
   const manchesterBoroughUrls = manchesterBoroughs.map((borough) => ({
     url: `${baseUrl}/pest-control/manchester/${borough.slug}`,
     lastModified: new Date(),
@@ -266,7 +295,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // Get all Liverpool boroughs
-  const liverpoolBoroughs = getAllLiverpoolBoroughs();
+  const liverpoolBoroughs = listedPlaces('liverpool', getAllLiverpoolBoroughs());
   const liverpoolBoroughUrls = liverpoolBoroughs.map((borough) => ({
     url: `${baseUrl}/pest-control/liverpool/${borough.slug}`,
     lastModified: new Date(),
@@ -275,7 +304,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // Get all Leeds boroughs
-  const leedsBoroughs = getAllLeedsBoroughs();
+  const leedsBoroughs = listedPlaces('leeds', getAllLeedsBoroughs());
   const leedsBoroughUrls = leedsBoroughs.map((borough) => ({
     url: `${baseUrl}/pest-control/leeds/${borough.slug}`,
     lastModified: new Date(),
@@ -284,7 +313,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // Get all Nottingham boroughs
-  const nottinghamBoroughs = getAllNottinghamBoroughs();
+  const nottinghamBoroughs = listedPlaces('nottingham', getAllNottinghamBoroughs());
   const nottinghamBoroughUrls = nottinghamBoroughs.map((borough) => ({
     url: `${baseUrl}/pest-control/nottingham/${borough.slug}`,
     lastModified: new Date(),
@@ -293,7 +322,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // Get all Brighton boroughs
-  const brightonBoroughs = getAllBrightonBoroughs();
+  const brightonBoroughs = listedPlaces('brighton', getAllBrightonBoroughs());
   const brightonBoroughUrls = brightonBoroughs.map((borough) => ({
     url: `${baseUrl}/pest-control/brighton/${borough.slug}`,
     lastModified: new Date(),
@@ -302,7 +331,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // Get all Sheffield boroughs
-  const sheffieldBoroughs = getAllSheffieldBoroughs();
+  const sheffieldBoroughs = listedPlaces('sheffield', getAllSheffieldBoroughs());
   const sheffieldBoroughUrls = sheffieldBoroughs.map((borough) => ({
     url: `${baseUrl}/pest-control/sheffield/${borough.slug}`,
     lastModified: new Date(),
@@ -311,7 +340,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // Get all Bristol boroughs
-  const bristolBoroughs = getAllBristolBoroughs();
+  const bristolBoroughs = listedPlaces('bristol', getAllBristolBoroughs());
   const bristolBoroughUrls = bristolBoroughs.map((borough) => ({
     url: `${baseUrl}/pest-control/bristol/${borough.slug}`,
     lastModified: new Date(),
@@ -320,7 +349,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // Get all Glasgow boroughs
-  const glasgowBoroughs = getAllGlasgowBoroughs();
+  const glasgowBoroughs = listedPlaces('glasgow', getAllGlasgowBoroughs());
   const glasgowBoroughUrls = glasgowBoroughs.map((borough) => ({
     url: `${baseUrl}/pest-control/glasgow/${borough.slug}`,
     lastModified: new Date(),
@@ -329,7 +358,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // Get all Bradford boroughs
-  const bradfordBoroughs = getAllBradfordBoroughs();
+  const bradfordBoroughs = listedPlaces('bradford', getAllBradfordBoroughs());
   const bradfordBoroughUrls = bradfordBoroughs.map((borough) => ({
     url: `${baseUrl}/pest-control/bradford/${borough.slug}`,
     lastModified: new Date(),
@@ -338,7 +367,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // Get all Newcastle boroughs
-  const newcastleBoroughs = getAllNewcastleBoroughs();
+  const newcastleBoroughs = listedPlaces('newcastle', getAllNewcastleBoroughs());
   const newcastleBoroughUrls = newcastleBoroughs.map((borough) => ({
     url: `${baseUrl}/pest-control/newcastle/${borough.slug}`,
     lastModified: new Date(),
@@ -347,7 +376,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // Get all Cardiff boroughs
-  const cardiffBoroughs = getAllCardiffBoroughs();
+  const cardiffBoroughs = listedPlaces('cardiff', getAllCardiffBoroughs());
   const cardiffBoroughUrls = cardiffBoroughs.map((borough) => ({
     url: `${baseUrl}/pest-control/cardiff/${borough.slug}`,
     lastModified: new Date(),
@@ -356,7 +385,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // Get all Edinburgh boroughs
-  const edinburghBoroughs = getAllEdinburghBoroughs();
+  const edinburghBoroughs = listedPlaces('edinburgh', getAllEdinburghBoroughs());
   const edinburghBoroughUrls = edinburghBoroughs.map((borough) => ({
     url: `${baseUrl}/pest-control/edinburgh/${borough.slug}`,
     lastModified: new Date(),
@@ -365,7 +394,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // Get all Leicester boroughs
-  const leicesterBoroughs = getAllLeicesterBoroughs();
+  const leicesterBoroughs = listedPlaces('leicester', getAllLeicesterBoroughs());
   const leicesterBoroughUrls = leicesterBoroughs.map((borough) => ({
     url: `${baseUrl}/pest-control/leicester/${borough.slug}`,
     lastModified: new Date(),
@@ -374,7 +403,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // Get all Coventry boroughs
-  const coventryBoroughs = getAllCoventryBoroughs();
+  const coventryBoroughs = listedPlaces('coventry', getAllCoventryBoroughs());
   const coventryBoroughUrls = coventryBoroughs.map((borough) => ({
     url: `${baseUrl}/pest-control/coventry/${borough.slug}`,
     lastModified: new Date(),
@@ -383,7 +412,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // Get all Belfast boroughs
-  const belfastBoroughs = getAllBelfastBoroughs();
+  const belfastBoroughs = listedPlaces('belfast', getAllBelfastBoroughs());
   const belfastBoroughUrls = belfastBoroughs.map((borough) => ({
     url: `${baseUrl}/pest-control/belfast/${borough.slug}`,
     lastModified: new Date(),
@@ -392,7 +421,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // Get all Derby boroughs
-  const derbyBoroughs = getAllDerbyBoroughs();
+  const derbyBoroughs = listedPlaces('derby', getAllDerbyBoroughs());
   const derbyBoroughUrls = derbyBoroughs.map((borough) => ({
     url: `${baseUrl}/pest-control/derby/${borough.slug}`,
     lastModified: new Date(),
@@ -401,7 +430,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // Get all Hampshire towns
-  const hampshireTowns = getAllHampshireTowns();
+  const hampshireTowns = listedPlaces('hampshire', getAllHampshireTowns());
   const hampshireTownUrls = hampshireTowns.map((town) => ({
     url: `${baseUrl}/pest-control/hampshire/${town.slug}`,
     lastModified: new Date(),
@@ -409,9 +438,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  // Pest-specific city pages (180 = 18 locations × 10 pests)
+  // Birmingham borough pages were missing from this list. Same shape as the others.
+  const birminghamBoroughs = listedPlaces('birmingham', getAllBirminghamBoroughs());
+  const birminghamBoroughUrls = birminghamBoroughs.map((borough) => ({
+    url: `${baseUrl}/pest-control/birmingham/${borough.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Pest-specific city pages, one per location in LOCATIONS and pest in PESTS.
+  // A page with no in-city firm for that pest is omitted when the read succeeds,
+  // matching the noindex on the page itself.
   const pestCityUrls = LOCATIONS.flatMap((location) =>
-    PESTS.map((pest) => ({
+    PESTS.filter(
+      (pest) => !directoryIndex || directoryIndex.pests.includes(`${location.slug}/${pest.slug}`),
+    ).map((pest) => ({
       url: `${baseUrl}/pest-control/${location.slug}/${pest.slug}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
@@ -464,6 +506,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...coventryBoroughUrls,
     ...belfastBoroughUrls,
     ...derbyBoroughUrls,
+    ...birminghamBoroughUrls,
     ...pestCityUrls,
   ];
 

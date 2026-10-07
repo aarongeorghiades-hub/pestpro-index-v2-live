@@ -6,6 +6,7 @@ import { externalHref } from '@/lib/externalUrl';
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import CityPestLinks from '@/components/CityPestLinks';
+import NearbyFirms from '@/components/listing/NearbyFirms';
 import { cityDirectoryHref } from '@/lib/seo';
 import type { HampshireTownData } from '../hampshire-towns';
 
@@ -29,7 +30,7 @@ interface Provider {
   service_bpca_certified: boolean;
 }
 
-export default function HampshireTownClient({ town, initialProviders }: { town: HampshireTownData; initialProviders: Provider[] }) {
+export default function HampshireTownClient({ town, initialProviders, nearbyProviders = [] }: { town: HampshireTownData; initialProviders: Provider[]; nearbyProviders?: Provider[] }) {
   const providers = initialProviders;
   const loading = false;
   const [isMobile, setIsMobile] = useState(false);
@@ -92,7 +93,7 @@ export default function HampshireTownClient({ town, initialProviders }: { town: 
               Pest Control Providers Serving {town.name}
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              All {providers.length} providers cover the Hampshire area including {town.name}
+              Firms with a postcode in {town.name}, sorted by rating
             </p>
           </div>
 
@@ -102,7 +103,7 @@ export default function HampshireTownClient({ town, initialProviders }: { town: 
             </div>
           ) : providers.length === 0 ? (
             <div className="text-center py-12">
-              <p className="text-gray-600 text-lg">No providers found. Please try again later.</p>
+              <p className="text-gray-600 text-lg">No firm with a postcode in this area is listed yet.</p>
             </div>
           ) : (
             <>
@@ -159,6 +160,7 @@ export default function HampshireTownClient({ town, initialProviders }: { town: 
               </div>
             </>
           )}
+          <NearbyFirms firms={nearbyProviders} placeName={town.name} />
         </div>
       </section>
 

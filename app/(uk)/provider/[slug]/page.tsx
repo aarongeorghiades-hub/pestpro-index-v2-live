@@ -126,7 +126,7 @@ export default async function ProviderPage({
 
   return (
     <>
-      <ProviderJsonLd provider={provider} />
+      <ProviderJsonLd provider={provider} slug={slug} />
       <ProviderDetails provider={provider} slug={slug} />
     </>
   );

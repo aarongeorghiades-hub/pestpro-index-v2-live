@@ -7,9 +7,11 @@ import type { FeaturedCard } from '@/lib/featuredProviders';
 export default function FeaturedBlock({
   providers,
   fromPath,
+  context = 'directory',
 }: {
   providers: FeaturedCard[];
   fromPath: string;
+  context?: 'directory' | 'finder';
 }) {
   if (providers.length === 0) return null;
 
@@ -28,17 +30,27 @@ export default function FeaturedBlock({
         </Link>
       </div>
       <p className="mb-4 text-sm leading-relaxed text-gray-700">
-        These firms pay for this slot. It is separate from the list below, which is sorted by rating.
-        Paying does not change that order.
+        {context === 'finder'
+          ? 'These firms pay for a labelled slot on their area page. Paying does not change the rating order of the directory.'
+          : 'These firms pay for this slot. It is separate from the list below, which is sorted by rating. Paying does not change that order.'}
       </p>
       <ul className="grid grid-cols-1 gap-4 md:grid-cols-3">
         {providers.map((provider) => (
           <li key={String(provider.canonical_id)} className="rounded-lg border border-amber-200 bg-white p-4">
+            {(provider.logoUrl || provider.photoUrl) && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={provider.logoUrl || provider.photoUrl || ''}
+                alt=""
+                className="mb-3 h-12 w-auto max-w-[140px] object-contain"
+              />
+            )}
             <h3 className="mb-1 font-bold leading-tight text-gray-900">
               <Link href={`/provider/${provider.slug}`} className="text-blue-700 hover:underline">
                 {provider.name}
               </Link>
             </h3>
+            {provider.summary && <p className="mb-2 text-sm leading-relaxed text-gray-700">{provider.summary}</p>}
             {provider.postcode && <p className="mb-1 text-xs text-gray-600">{provider.postcode}</p>}
             {provider.google_rating != null && provider.google_rating > 0 && (
               <p className="mb-3 text-sm text-gray-700">

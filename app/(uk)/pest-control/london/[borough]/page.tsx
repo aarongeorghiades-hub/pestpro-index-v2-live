@@ -6,6 +6,8 @@ import { getPestBySlug, getLocationBySlug } from '@/app/(uk)/pest-control/pest-c
 import PestCityPageClient from '@/components/PestCityPageClient';
 import ListingSchema from '@/components/ListingSchema';
 import { createServerClient } from '@/utils/supabase-server';
+import { inCity, splitPlace } from '@/lib/serviceArea';
+import { pestPageFallsBack, placeIsIndexable } from '@/lib/areaDirectory';
 
 export const dynamic = 'force-dynamic';
 
@@ -42,15 +44,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (pest) {
     // noindex when the pest-filtered query is empty and the page falls back to
     // the city-residential set (duplicate). Mirrors the fallback in the page body.
-    const supabase = createServerClient();
-    const { count } = await supabase
-      .from('Providers')
-      .select('canonical_id', { count: 'exact', head: true })
-      .eq('active', true)
-      .eq('business_residential', true)
-      .eq(pest.filterColumn, true)
-      .or(`regions.cs.["${cityConfig.region}"]`);
-    const isFallback = (count ?? 0) === 0;
+    const isFallback = await pestPageFallsBack(cityConfig.region, pest.filterColumn);
     return {
       title: `${pest.name} Control ${cityConfig.name} — Find ${pest.name} Specialists`,
       description: `Find ${pest.namePlural.toLowerCase()} control specialists in ${cityConfig.name}. Compare providers with ratings, certifications, and service details. No lead fees, no commissions.`,
@@ -66,7 +60,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `Pest Control in ${data.name} — ${cityConfig.name} Specialists`,
     description: data.metaDescription,
-    robots: { index: false, follow: true },
+    ...(!(await placeIsIndexable(cityConfig.region, data.slug)) && { robots: { index: false, follow: true } }),
     alternates: {
       canonical: `https://pestproindex.com/pest-control/${data.slug}`,
     },
@@ -89,7 +83,7 @@ export default async function LondonBoroughPage({ params }: Props) {
       .or(`regions.cs.["${cityConfig.region}"]`);
     if (pestError) console.error('[SSR fetch] london-pest-primary:', pestError.message);
 
-    let providers = processProviders(pestData);
+    let providers = inCity(processProviders(pestData), cityConfig.region);
     let isFallback = false;
 
     // Fallback: all residential providers for the region.
@@ -101,7 +95,7 @@ export default async function LondonBoroughPage({ params }: Props) {
         .eq('business_residential', true)
         .or(`regions.cs.["${cityConfig.region}"]`);
       if (fallbackError) console.error('[SSR fetch] london-pest-fallback:', fallbackError.message);
-      providers = processProviders(fallbackData);
+      providers = inCity(processProviders(fallbackData), cityConfig.region);
       isFallback = true;
     }
 
@@ -123,7 +117,7 @@ export default async function LondonBoroughPage({ params }: Props) {
   const data = getBoroughBySlug(borough);
   if (!data) notFound();
 
-  // Borough page: all residential providers serving London.
+  // Borough page: firms whose postcode district is in this borough.
   const { data: boroughData, error: boroughError } = await supabase
     .from('Providers')
     .select('address, canonical_id, google_rating, google_review_count, name, pest_ants, pest_bed_bugs, pest_cockroaches, pest_fleas, pest_foxes, pest_mice, pest_moths, pest_pigeons, pest_rats, pest_wasps, phone, postcode, service_bpca_certified, service_eco_friendly, service_emergency_24_7, slug, website')
@@ -131,7 +125,9 @@ export default async function LondonBoroughPage({ params }: Props) {
     .eq('business_residential', true)
     .or('regions.cs.["london"]');
   if (boroughError) console.error('[SSR fetch] london-borough:', boroughError.message);
-  const providers = processProviders(boroughData);
+  const placeSplit = splitPlace(processProviders(boroughData), cityConfig.region, data.slug);
+  const providers = placeSplit.local;
+  const nearbyProviders = placeSplit.nearby;
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -158,16 +154,16 @@ export default async function LondonBoroughPage({ params }: Props) {
       <ListingSchema
         providers={providers}
         listName={`Pest Control Providers Serving ${data.name}`}
-        listUrl={`/pest-control/${cityConfig.slug}/${data.slug}`}
+        listUrl={`/pest-control/${data.slug}`}
         areaName={data.name}
         breadcrumbs={[
           { name: 'Home', url: '/' },
           { name: 'Pest Control', url: '/pest-control' },
           { name: cityConfig.name, url: '/residential' },
-          { name: data.name, url: `/pest-control/${cityConfig.slug}/${data.slug}` },
+          { name: data.name, url: `/pest-control/${data.slug}` },
         ]}
       />
-      <LondonBoroughClient borough={data} initialProviders={providers} />
+      <LondonBoroughClient borough={data} initialProviders={providers} nearbyProviders={nearbyProviders} />
     </>
   );
 }

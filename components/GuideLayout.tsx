@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import ProgressRail from '@/components/ProgressRail';
+import FindProfessional from '@/components/listing/FindProfessional';
 
 interface TocItem {
   id: string;
@@ -178,12 +179,12 @@ export default function GuideLayout({
                 <div className="mt-8 rounded-xl border border-[var(--color-teal-edge)] bg-[var(--color-teal-wash)] p-4">
                   <h4 className="font-bold text-[var(--color-ink)] mb-2 text-sm">Need a Professional?</h4>
                   <p className="text-xs text-[var(--color-ink-soft)] mb-3">Compare pest control providers near you — no fees, no commissions.</p>
-                  <Link
-                    href="/pest-control/regions"
+                  <a
+                    href="#find-a-professional"
                     className="block rounded-lg bg-[var(--color-teal-deep)] px-4 py-2 text-center text-sm font-semibold text-white transition-colors hover:bg-[var(--color-teal)]"
                   >
-                    Find providers
-                  </Link>
+                    Find pest control near you
+                  </a>
                 </div>
 
                 {/* Related Guides */}
@@ -212,6 +213,10 @@ export default function GuideLayout({
             </article>
           </main>
         </div>
+      </div>
+
+      <div className="mx-auto max-w-7xl px-4 pb-12">
+        <FindProfessional />
       </div>
 
       {/* Related content grid at bottom */}

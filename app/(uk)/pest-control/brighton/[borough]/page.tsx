@@ -6,6 +6,8 @@ import { getPestBySlug, getLocationBySlug } from '@/app/(uk)/pest-control/pest-c
 import PestCityPageClient from '@/components/PestCityPageClient';
 import ListingSchema from '@/components/ListingSchema';
 import { createServerClient } from '@/utils/supabase-server';
+import { inCity, splitPlace } from '@/lib/serviceArea';
+import { pestPageFallsBack, placeIsIndexable } from '@/lib/areaDirectory';
 
 export const dynamic = 'force-dynamic';
 
@@ -42,15 +44,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (pest) {
     // noindex when the pest-filtered query is empty and the page falls back to
     // the city-residential set (duplicate). Mirrors the fallback in the page body.
-    const supabase = createServerClient();
-    const { count } = await supabase
-      .from('Providers')
-      .select('canonical_id', { count: 'exact', head: true })
-      .eq('active', true)
-      .eq('business_residential', true)
-      .eq(pest.filterColumn, true)
-      .or(`regions.cs.["${cityConfig.region}"]`);
-    const isFallback = (count ?? 0) === 0;
+    const isFallback = await pestPageFallsBack(cityConfig.region, pest.filterColumn);
     return {
       title: `${pest.name} Control ${cityConfig.name} — Find ${pest.name} Specialists`,
       description: `Find ${pest.namePlural.toLowerCase()} control specialists in ${cityConfig.name}. Compare providers with ratings, certifications, and service details. No lead fees, no commissions.`,
@@ -66,7 +60,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `Pest Control in ${data.name} — ${cityConfig.name} Specialists`,
     description: data.metaDescription,
-    robots: { index: false, follow: true },
+    ...(!(await placeIsIndexable(cityConfig.region, data.slug)) && { robots: { index: false, follow: true } }),
     alternates: {
       canonical: `https://pestproindex.com/pest-control/brighton/${data.slug}`,
     },
@@ -88,7 +82,7 @@ export default async function BrightonBoroughPage({ params }: Props) {
       .or(`regions.cs.["${cityConfig.region}"]`);
     if (pestError) console.error(`[SSR fetch] ${cityConfig.slug}-pest-primary:`, pestError.message);
 
-    let providers = processProviders(pestData);
+    let providers = inCity(processProviders(pestData), cityConfig.region);
     let isFallback = false;
 
     if (providers.length === 0) {
@@ -99,7 +93,7 @@ export default async function BrightonBoroughPage({ params }: Props) {
         .eq('business_residential', true)
         .or(`regions.cs.["${cityConfig.region}"]`);
       if (fallbackError) console.error(`[SSR fetch] ${cityConfig.slug}-pest-fallback:`, fallbackError.message);
-      providers = processProviders(fallbackData);
+      providers = inCity(processProviders(fallbackData), cityConfig.region);
       isFallback = true;
     }
 
@@ -130,7 +124,9 @@ export default async function BrightonBoroughPage({ params }: Props) {
     .eq('business_residential', true)
     .or(`regions.cs.["${cityConfig.region}"]`);
   if (boroughError) console.error(`[SSR fetch] ${cityConfig.slug}-borough:`, boroughError.message);
-  const providers = processProviders(boroughData);
+  const placeSplit = splitPlace(processProviders(boroughData), cityConfig.region, data.slug);
+  const providers = placeSplit.local;
+  const nearbyProviders = placeSplit.nearby;
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -166,7 +162,7 @@ export default async function BrightonBoroughPage({ params }: Props) {
           { name: data.name, url: `/pest-control/${cityConfig.slug}/${data.slug}` },
         ]}
       />
-      <BrightonBoroughClient borough={data} initialProviders={providers} />
+      <BrightonBoroughClient borough={data} initialProviders={providers} nearbyProviders={nearbyProviders} />
     </>
   );
 }
