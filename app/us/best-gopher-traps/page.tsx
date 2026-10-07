@@ -197,7 +197,12 @@ const products: ProductRecord[] = [
 // the images are what settled it, and that is stated on the card itself.
 //
 // The history is recorded here rather than erased. What follows is the array as it
-// now stands: four dead listings and one that was marked unavailable.
+// now stands: the Cinch kit that was marked unavailable.
+//
+// 2026-10-07: B0F8WBHWTB, B0009PURDU, B000BX4RWK and B004H8AGWY were removed from
+// this unrendered list after amazon.com/dp returned HTTP 404 Page Not Found for
+// each of them (amazon.co.uk returned the same). They were never rendered, so
+// no card, heading or schema changed.
 const REJECTED_PRODUCTS: { asin: string; titleAsFetched: string; reason: string }[] = [
   {
     asin: 'B00KZJG4JC',
@@ -205,10 +210,6 @@ const REJECTED_PRODUCTS: { asin: string; titleAsFetched: string; reason: string 
     reason:
       'HTTP 200 and title confirmed, but the body carries "Currently unavailable. We don\'t know when or if this item will be back in stock." UNAVAILABLE is not DEAD: it needs waiting, not re-sourcing. Not carded because a reader cannot buy it.',
   },
-  { asin: 'B0F8WBHWTB', titleAsFetched: 'Page Not Found', reason: 'HTTP 404 — dead listing.' },
-  { asin: 'B0009PURDU', titleAsFetched: 'Page Not Found', reason: 'HTTP 404 — dead listing.' },
-  { asin: 'B000BX4RWK', titleAsFetched: 'Page Not Found', reason: 'HTTP 404 — dead listing.' },
-  { asin: 'B004H8AGWY', titleAsFetched: 'Page Not Found', reason: 'HTTP 404 — dead listing.' },
 ];
 void REJECTED_PRODUCTS;
 
