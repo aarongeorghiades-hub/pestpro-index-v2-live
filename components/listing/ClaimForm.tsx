@@ -85,7 +85,7 @@ export default function ClaimForm({
 
   if (!slug) {
     return (
-      <div className="dir-wrap max-w-2xl py-12 md:py-16">
+      <div className="dir-wrap max-w-2xl py-16 md:py-24">
         <div className="border-t border-[var(--color-ink)] pt-8">
           <h1 className="dir-display text-5xl text-[var(--color-ink)] mb-5">Claim a listing</h1>
           <p className="text-[var(--color-ink-soft)] leading-relaxed mb-6">
@@ -103,7 +103,7 @@ export default function ClaimForm({
 
   if (submitted) {
     return (
-      <div className="dir-wrap max-w-2xl py-12 md:py-16">
+      <div className="dir-wrap max-w-2xl py-16 md:py-24">
         <div className="border-t border-[var(--color-ink)] pt-8">
           <CheckCircle className="w-10 h-10 text-[var(--color-ok)] mb-4" />
           <h1 className="dir-display text-5xl text-[var(--color-ink)] mb-5">Claim received</h1>
@@ -119,7 +119,7 @@ export default function ClaimForm({
   }
 
   return (
-    <div className="dir-wrap max-w-2xl py-12 md:py-16">
+    <div className="dir-wrap max-w-2xl py-16 md:py-24">
       <div className="border-t border-[var(--color-ink)] pt-8">
         <h1 className="dir-display text-5xl text-[var(--color-ink)] mb-5">Claim this listing</h1>
         <p className="text-[var(--color-ink)] mb-2">

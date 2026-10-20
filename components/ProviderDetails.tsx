@@ -102,7 +102,7 @@ export default function ProviderDetails({
 
   const sectionHead = 'border-b-2 border-[var(--color-ink)] pb-2 text-lg font-bold text-[var(--color-ink)]';
   const factList = 'grid grid-cols-1 sm:grid-cols-2';
-  const factItem = 'border-b border-[var(--color-rule)] py-2.5 text-[0.9375rem] text-[var(--color-ink-soft)]';
+  const factItem = 'border-b border-[var(--color-rule)] py-2.5 text-base text-[var(--color-ink-soft)]';
 
   return (
     <div className="min-h-screen bg-[var(--color-stock)]">
@@ -118,8 +118,9 @@ export default function ProviderDetails({
         featured={isFeatured}
         label={
           isFeatured ? (
-            <span className="rounded-[3px] border border-[var(--color-marigold-edge)] bg-[var(--color-stock)] px-2 py-[0.4rem] text-[0.8125rem] font-bold leading-none text-[var(--color-marigold-deep)]">
-              Featured · Paid placement
+            <span className="flex items-center gap-2 text-[0.8125rem] font-semibold text-[var(--color-marigold-deep)]">
+              <span className="dir-tab !py-1">Featured</span>
+              Paid placement
             </span>
           ) : null
         }
@@ -148,11 +149,11 @@ export default function ProviderDetails({
         }
       />
 
-      <div className="dir-wrap grid gap-12 py-12 md:py-16 lg:grid-cols-[minmax(0,1.6fr)_minmax(18rem,1fr)] lg:gap-16">
+      <div className="dir-wrap grid gap-12 pb-16 pt-10 md:pb-24 md:pt-12 lg:grid-cols-[minmax(0,1.6fr)_minmax(18rem,1fr)] lg:gap-16">
         {/* CONTACT: first on a phone, a sticky panel beside the profile on desktop. */}
         <aside className="lg:order-2">
-          <div className="rounded-md border border-[var(--color-ink)] bg-[var(--color-stock)] p-6 lg:sticky lg:top-24">
-            <h2 className="text-[0.9375rem] font-bold text-[var(--color-ink)]">Contact details</h2>
+          <div className="dir-card p-6 lg:sticky lg:top-24">
+            <h2 className="text-base font-bold text-[var(--color-ink)]">Contact details</h2>
             {provider.phone && (
               <div className="mt-4">
                 <ProviderPhoneLink
@@ -161,7 +162,7 @@ export default function ProviderDetails({
                   className="dir-btn dir-btn-ink w-full !min-h-14 text-lg"
                 >
                   <Phone aria-hidden="true" className="h-5 w-5" />
-                  <span className="dir-num">{String(provider.phone)}</span>
+                  <span className="dir-num dir-condensed text-[1.375rem] font-bold tracking-[-0.01em]">{String(provider.phone)}</span>
                 </ProviderPhoneLink>
               </div>
             )}
@@ -173,7 +174,7 @@ export default function ProviderDetails({
                 </ProviderWebsiteLink>
               </div>
             )}
-            <dl className="mt-5 space-y-3 border-t border-[var(--color-rule)] pt-5 text-[0.9375rem]">
+            <dl className="mt-5 space-y-3 border-t border-[var(--color-rule)] pt-5 text-base">
               {provider.postcode && (
                 <div className="flex items-baseline justify-between gap-4">
                   <dt className="text-[var(--color-ink-mute)]">Location</dt>
@@ -201,7 +202,7 @@ export default function ProviderDetails({
           {profileText && (
             <p
               className={`max-w-[62ch] text-lg leading-relaxed text-[var(--color-ink)] md:text-xl ${
-                isFeatured ? 'border-l-0 border-t border-[var(--color-marigold-edge)] pt-6' : ''
+                isFeatured ? 'border-t border-[var(--color-rule)] pt-6' : ''
               }`}
             >
               {profileText}

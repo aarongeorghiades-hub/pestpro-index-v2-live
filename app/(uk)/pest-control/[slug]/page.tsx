@@ -108,7 +108,7 @@ export default async function DynamicPage({ params }: Props) {
         {/* Cities/Areas index */}
         <section className="border-b border-[var(--color-rule-strong)]">
           <div className="dir-wrap py-14 md:py-20">
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">
+            <h2 className="dir-h2 text-[var(--color-ink)]">
               {region.status === 'live' ? 'Browse by Area' : 'Planned Coverage'}
             </h2>
 
@@ -128,7 +128,7 @@ export default async function DynamicPage({ params }: Props) {
                       ) : null}
                     </div>
                     {(city.residentialLink || city.commercialLink || city.areasLink) && (
-                      <div className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-[0.9375rem]">
+                      <div className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-base">
                         {city.residentialLink && (
                           <Link href={city.residentialLink} className="dir-link font-semibold">
                             Browse Residential Providers
@@ -154,8 +154,8 @@ export default async function DynamicPage({ params }: Props) {
 
         {/* Provider CTA */}
         <section className="bg-[var(--color-paper)]">
-          <div className="dir-wrap py-14 md:py-16">
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">
+          <div className="dir-wrap py-20 md:py-28">
+            <h2 className="dir-h2 text-[var(--color-ink)]">
               {`Are you a pest control provider in ${region.name}?`}
             </h2>
             <p className="mt-4 max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">

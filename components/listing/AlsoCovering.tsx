@@ -53,7 +53,7 @@ export default function AlsoCovering({
 
   return (
     <section id="also-covering" className="mt-16 border-t border-[var(--color-ink)] pt-10">
-      <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">Also covering {placeName}</h2>
+      <h2 className="dir-h2 text-[var(--color-ink)]">Also covering {placeName}</h2>
       <p className="mb-6 mt-3 max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">
         These firms are listed for the wider area and are based somewhere else. Firms with a postcode in
         the same city come first, in rating order. Firms with no postcode on the listing come next.

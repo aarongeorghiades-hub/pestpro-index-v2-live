@@ -6,7 +6,7 @@ import { TROPHY_ARIA_LABEL } from '@/lib/trophy';
 export default function TopRatedMark() {
   return (
     <span
-      className="inline-flex items-center gap-1 rounded-[3px] border border-[var(--color-ink)] px-1.5 py-[3px] text-[0.6875rem] font-bold leading-none text-[var(--color-ink)]"
+      className="inline-flex items-center gap-1 rounded-[4px] border border-[var(--color-ink)]/70 px-1.5 py-[3px] text-[0.6875rem] font-bold leading-none text-[var(--color-ink)]"
       title={TROPHY_ARIA_LABEL}
     >
       <Star aria-hidden="true" className="h-3 w-3 fill-current" strokeWidth={0} />

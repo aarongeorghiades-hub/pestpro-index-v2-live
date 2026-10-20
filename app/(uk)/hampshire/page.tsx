@@ -80,10 +80,10 @@ export default async function HampshireHubPage() {
         title="Pest Control in Hampshire"
         standfirst={<>Independent pest controllers based in and around Hampshire</>}
       >
-        <p className="max-w-[60ch] text-[0.9375rem] leading-relaxed text-[var(--color-ink-soft)]">
+        <p className="max-w-[60ch] text-base leading-relaxed text-[var(--color-ink-soft)]">
           Local firms for your home, and local firms for your business: shops, restaurants, offices, warehouses and landlords. No national chains, no commissions.
         </p>
-        <p className="dir-num mt-5 border-t border-[var(--color-rule)] pt-5 text-[0.9375rem] font-semibold text-[var(--color-ink)]">
+        <p className="dir-num mt-4 text-base font-semibold text-[var(--color-ink)]">
           {providerCount} providers · 20 areas covered · South East region
         </p>
       </AreaHead>
@@ -93,7 +93,7 @@ export default async function HampshireHubPage() {
       {/* HOMES / BUSINESSES */}
       <section className="border-b border-[var(--color-rule-strong)]">
         <div className="dir-wrap py-14 md:py-20">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">Browse by Service Type</h2>
+          <h2 className="dir-h2 text-[var(--color-ink)]">Browse by Service Type</h2>
           <div className="mt-4 space-y-3">
             <LocalOnlyNote>We only list independent, local pest controllers who serve this area. National chains are not included, so this isn’t every firm that covers Hampshire, just the local ones.</LocalOnlyNote>
             <p className="max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">
@@ -129,7 +129,7 @@ export default async function HampshireHubPage() {
       {/* AREA INDEX, A TO Z */}
       <section className="border-b border-[var(--color-rule-strong)]">
         <div className="dir-wrap py-14 md:py-20">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">Browse by Town</h2>
+          <h2 className="dir-h2 text-[var(--color-ink)]">Browse by Town</h2>
           <p className="mt-4 max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">
             Find pest control providers in your area of Hampshire. Select your town to see local providers and area-specific pest information.
           </p>
@@ -158,7 +158,7 @@ export default async function HampshireHubPage() {
       <section className="border-b border-[var(--color-rule-strong)]">
         <div className="dir-wrap grid gap-10 py-14 md:py-20 lg:grid-cols-2 lg:gap-16">
           <div>
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">Common Pests in Hampshire</h2>
+            <h2 className="dir-h2 text-[var(--color-ink)]">Common Pests in Hampshire</h2>
             <p className="mt-4 max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">
               Hampshire&apos;s mix of historic cities, coastal towns, rural villages, and proximity to the New Forest creates varied pest pressures. Rats, mice, wasps, seagulls, and squirrels are among the most common call-outs across the county.
             </p>

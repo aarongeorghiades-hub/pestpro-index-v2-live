@@ -231,14 +231,14 @@ export default function ResidentialDirectoryClient({ initialProviders }: { initi
           </>
         }
       >
-        <p className="text-sm text-[var(--color-ink-mute)]">No endorsements · No commissions · Transparent, provider-stated information</p>
+        <p className="text-base font-semibold text-[var(--color-ink)]">No endorsements · No commissions · Transparent, provider-stated information</p>
       </AreaHead>
 
       {/* FULL PROVIDER LIST */}
-      <section className="bg-[var(--color-stock)] py-14 md:py-16">
+      <section className="bg-[var(--color-stock)] pb-20 pt-10 md:pb-28 md:pt-12">
         <div className="dir-wrap">
           <div className="mb-8 max-w-[68ch]">
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">
+            <h2 className="dir-h2 text-[var(--color-ink)]">
               Full List of Birmingham & West Midlands Pest Control Providers
             </h2>
             <p className="mt-3 leading-relaxed text-[var(--color-ink-soft)]">
@@ -389,10 +389,10 @@ export default function ResidentialDirectoryClient({ initialProviders }: { initi
       </section>
 
       {/* DIY PRODUCTS */}
-      <section className="border-t border-[var(--color-rule-strong)] bg-[var(--color-stock)] py-14 md:py-16">
+      <section className="border-t border-[var(--color-rule)] bg-[var(--color-stock)] py-20 md:py-28">
         <div className="dir-wrap">
           <div className="max-w-[68ch]">
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">
+            <h2 className="dir-h2 text-[var(--color-ink)]">
               Need DIY Products?
             </h2>
             <ul className="mt-5 list-disc space-y-2 pl-5 leading-relaxed text-[var(--color-ink-soft)] marker:text-[var(--color-ink-mute)]">
@@ -410,9 +410,9 @@ export default function ResidentialDirectoryClient({ initialProviders }: { initi
       </section>
 
       {/* FIND SPECIALISTS BY PEST TYPE */}
-      <section className="border-t border-[var(--color-rule-strong)] bg-[var(--color-stock)] py-14">
+      <section className="border-t border-[var(--color-rule)] bg-[var(--color-stock)] py-14">
         <div className="dir-wrap">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">Find Specialists by Pest Type</h2>
+          <h2 className="dir-h2 text-[var(--color-ink)]">Find Specialists by Pest Type</h2>
           <p className="mt-2 text-[var(--color-ink-soft)]">Browse Birmingham providers who specialise in specific pests</p>
           <ul className="mt-6 columns-2 gap-x-8 border-t border-[var(--color-rule-strong)] sm:columns-3 md:columns-5 [&>li]:break-inside-avoid">
             <li className="border-b border-[var(--color-rule)] py-2.5">
@@ -450,7 +450,7 @@ export default function ResidentialDirectoryClient({ initialProviders }: { initi
       </section>
 
       {/* DIY GUIDES */}
-      <section className="border-t border-[var(--color-rule-strong)] bg-[var(--color-stock)] py-12">
+      <section className="border-t border-[var(--color-rule)] bg-[var(--color-stock)] py-12">
         <div className="dir-wrap">
           <p className="text-lg font-bold text-[var(--color-ink)]">DIY First? Read Our Guides</p>
           <p className="mt-1 text-sm text-[var(--color-ink-soft)]">Expert advice to help you tackle pest problems yourself</p>

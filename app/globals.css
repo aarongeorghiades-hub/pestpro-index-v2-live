@@ -23,16 +23,16 @@
      blue lowest, i.e. warm). Ours inverts that relationship: BLUE IS THE
      HIGHEST CHANNEL on every ground tone below, so the paper reads cool-neutral
      and never sepia. */
-  --color-paper: #f6f7f5; /* 245 247 248 — B > G > R */
-  --color-paper-sunk: #edf0ec; /* recessed bands, still cool */
+  --color-paper: #f4f6f3; /* 245 247 248 — B > G > R */
+  --color-paper-sunk: #eaeee8; /* recessed bands, still cool */
   --color-surface: #ffffff; /* cards and panels sit ABOVE the paper */
 
   /* INK — deep navy, not black and not a tinted near-black.
      ANTI-TARGET: #0B0B0B / #111111, the near-black tell. Ours is unmistakably
      a hue: blue is 25 points above red, and it is nowhere near 0. */
-  --color-ink: #13241d; /* 26 36 51 */
-  --color-ink-soft: #3f5048; /* body copy at length */
-  --color-ink-mute: #5f6f67; /* captions, meta, disabled */
+  --color-ink: #0f211a; /* 26 36 51 */
+  --color-ink-soft: #3a4a43; /* body copy at length */
+  --color-ink-mute: #5b6a63; /* captions, meta, disabled */
 
   /* PRIMARY ACCENT — muted ochre. Verdicts, CTAs, rank-1 emphasis.
      ANTI-TARGET: #D97757, Anthropic terracotta (217 119 87). Ours is
@@ -53,8 +53,8 @@
   --color-teal-edge: #bcd3d6;
 
   /* STRUCTURE */
-  --color-rule: #dde3de; /* hairlines and table rules */
-  --color-rule-strong: #b9c4bc;
+  --color-rule: #e1e6e1; /* hairlines and table rules */
+  --color-rule-strong: #c5cec7;
 
   /* SEMANTIC — STATUS, NOT BRAND.
      A warning must read as a warning; flattening it into the brand ochre would
@@ -77,11 +77,13 @@
   /* LOCAL DIRECTORY (2026-10 redesign). Marigold is the directory's one accent:
      it owns the area tab, the active state and the Featured wash, nothing else.
      Text never sits in marigold itself; -deep carries text at 7:1 on white. */
-  --color-marigold: #f2b705;
-  --color-marigold-deep: #6b5000;
-  --color-marigold-wash: #fdf7e1;
-  --color-marigold-edge: #e7cd73;
+  --color-marigold: #e4a91c;
+  --color-marigold-deep: #634800;
+  --color-marigold-wash: #fcf7e8;
+  --color-marigold-edge: #e9d39a;
   --color-stock: #ffffff;
+  --color-forest: #11261d;
+  --font-accent: var(--font-caslon), Georgia, serif;
   --font-display: var(--font-archivo), var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -469,12 +471,28 @@
 
 @layer components {
   .dir-display {
-    font-family: var(--font-display);
-    font-stretch: 72%;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    line-height: 0.92;
+    font-family: var(--font-caslon-display), Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 0.98;
     text-wrap: balance;
+  }
+  .dir-h2 {
+    font-family: var(--font-caslon-display), Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(1.75rem, 3.2vw, 2.375rem);
+    letter-spacing: -0.022em;
+    line-height: 1.06;
+    text-wrap: balance;
+  }
+  /* The accent voice: Libre Caslon italic, the English printer's face. Used
+     for a phrase inside a headline or a standfirst, never for a whole block. */
+  .dir-accent {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-weight: 400;
+    font-stretch: normal;
+    letter-spacing: -0.01em;
   }
   .dir-condensed {
     font-stretch: 80%;
@@ -500,13 +518,14 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: var(--color-marigold);
-    color: var(--color-ink);
-    font-weight: 700;
+    background: var(--color-marigold-wash);
+    color: var(--color-marigold-deep);
+    box-shadow: inset 0 0 0 1px var(--color-marigold-edge);
+    font-weight: 600;
     font-size: 0.8125rem;
     line-height: 1;
     padding: 0.45rem 0.7rem 0.4rem;
-    border-radius: 3px;
+    border-radius: 4px;
   }
 
   /* Entries are separated by hairline rules that draw in from the left as the
@@ -539,6 +558,7 @@
   }
 
   .dir-btn {
+    border-radius: 8px !important;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -547,7 +567,7 @@
     padding: 0.6rem 1.1rem;
     border-radius: 4px;
     font-weight: 700;
-    font-size: 0.9375rem;
+    font-size: 1rem;
     line-height: 1.1;
     transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
   }
@@ -559,7 +579,7 @@
     color: var(--color-stock);
   }
   .dir-btn-ink:hover {
-    background: #1f3a2f;
+    background: var(--color-forest);
   }
   .dir-btn-line {
     border: 1px solid var(--color-rule-strong);
@@ -574,7 +594,7 @@
     color: var(--color-ink);
   }
   .dir-btn-marigold:hover {
-    background: #ffc61a;
+    background: var(--color-marigold-edge);
   }
 
   .dir-link {
@@ -597,32 +617,6 @@
   to { opacity: 1; transform: none; }
 }
 
-/* Homepage signature: a marigold highlighter stroke drawn once behind the word
-   "local", the way you would mark an entry in a printed directory. Visible by
-   default; the draw-in only runs when motion is welcome. */
-@layer components {
-  .home-mark::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: -0.04em;
-    bottom: 0.06em;
-    height: 0.36em;
-    background: var(--color-marigold);
-    border-radius: 2px;
-    transform-origin: left center;
-    transform: skewX(-8deg);
-  }
-  @media (prefers-reduced-motion: no-preference) {
-    .home-mark::before {
-      animation: home-mark-draw 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
-    }
-  }
-}
-@keyframes home-mark-draw {
-  from { transform: skewX(-8deg) scaleX(0); }
-  to { transform: skewX(-8deg) scaleX(1); }
-}
 
 /* The area running head: hidden at the top of the page (the H1 is in view),
    eased in as the head scrolls away. Without scroll timelines it simply shows. */
@@ -640,3 +634,86 @@
   1% { visibility: visible; }
   to { opacity: 1; transform: none; visibility: visible; }
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   POLISH PASS — cards, icons, micro-interactions, reveals.
+   Everything here is CSS: reveals ride view timelines, so nothing waits on
+   JavaScript and nothing is hidden when timelines are unsupported.
+   ══════════════════════════════════════════════════════════════════════════ */
+@layer base {
+  /* One stroke weight for every icon on the site. */
+  svg.lucide {
+    stroke-width: 1.75;
+  }
+}
+
+@layer components {
+  .dir-card {
+    background: var(--color-stock);
+    border: 1px solid var(--color-rule);
+    border-radius: 12px;
+    box-shadow:
+      0 1px 2px rgba(15, 33, 26, 0.04),
+      0 8px 24px -16px rgba(15, 33, 26, 0.14);
+    transition:
+      box-shadow 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+      border-color 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+      transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .dir-card-hover:hover {
+    border-color: var(--color-rule-strong);
+    transform: translateY(-1px);
+    box-shadow:
+      0 1px 2px rgba(15, 33, 26, 0.05),
+      0 16px 36px -18px rgba(15, 33, 26, 0.22);
+  }
+  .dir-card-featured {
+    background: var(--color-marigold-wash);
+    border-color: var(--color-marigold-edge);
+    box-shadow:
+      0 1px 2px rgba(99, 72, 0, 0.06),
+      0 12px 32px -18px rgba(99, 72, 0, 0.3);
+  }
+
+  /* Underlines that draw in rather than snap. */
+  .dir-link {
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor), linear-gradient(var(--color-rule-strong), var(--color-rule-strong));
+    background-size: 0% 1px, 100% 1px;
+    background-position: 0 100%, 0 100%;
+    background-repeat: no-repeat;
+    padding-bottom: 1px;
+    transition: background-size 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .dir-link:hover {
+    background-size: 100% 1px, 100% 1px;
+  }
+
+  /* Header panels ease in. */
+  .dir-panel {
+    animation: dir-panel-in 0.28s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .dir-reveal {
+        animation: dir-reveal linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 40%;
+      }
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .dir-panel { animation: none; }
+    .dir-card, .dir-link { transition: none; }
+  }
+}
+@keyframes dir-reveal {
+  from { opacity: 0.001; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes dir-panel-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: none; }
+}
+

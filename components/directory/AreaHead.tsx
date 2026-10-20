@@ -35,7 +35,7 @@ export default function AreaHead({
 }) {
   return (
     <>
-    <header className={featured ? 'border-b border-[var(--color-marigold-edge)] bg-[var(--color-marigold-wash)]' : 'border-b border-[var(--color-ink)] bg-[var(--color-stock)]'}>
+    <header className={featured ? 'border-b border-[var(--color-marigold-edge)] bg-[var(--color-marigold-wash)]' : 'border-b border-[var(--color-rule)] bg-[var(--color-stock)]'}>
       <div className="dir-wrap pb-8 pt-5 md:pb-10 md:pt-6">
         <nav aria-label="Breadcrumb" className="text-[0.8125rem] text-[var(--color-ink-mute)]">
           <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
@@ -70,7 +70,7 @@ export default function AreaHead({
       // THE RUNNING HEAD. The directory's thumb-tab, pinned under the site
       // header so the place stays named all the way down a long list. It fades
       // in once the page head has scrolled away (scroll-driven, CSS only).
-      <div className="dir-runhead sticky top-[65px] z-40 -mb-10 border-b border-[var(--color-rule-strong)] bg-[var(--color-stock)]">
+      <div className="dir-runhead sticky top-[65px] z-40 -mb-10 border-b border-[var(--color-rule)] bg-[var(--color-stock)]">
         <div className="dir-wrap flex h-10 items-center gap-3">
           <span className="dir-tab !py-1">{tab}</span>
           <span className="truncate text-sm font-semibold text-[var(--color-ink)]">{textOf(title)}</span>
@@ -85,7 +85,7 @@ export default function AreaHead({
 // this only gives it a consistent, quiet setting beside the list.
 export function LocalOnlyNote({ children }: { children: ReactNode }) {
   return (
-    <p className="max-w-[68ch] border-l-0 text-[0.9375rem] leading-relaxed text-[var(--color-ink-soft)]">
+    <p className="max-w-[68ch] border-l-0 text-base leading-relaxed text-[var(--color-ink-soft)]">
       <span className="mr-2 inline-block h-2 w-2 translate-y-[-1px] rounded-full bg-[var(--color-marigold)] align-middle" aria-hidden="true" />
       {children}
     </p>

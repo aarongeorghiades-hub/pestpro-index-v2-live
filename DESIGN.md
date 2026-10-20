@@ -2,30 +2,31 @@
 name: PestPro Index
 description: A UK directory of independent local pest control firms, set as a modern printed local directory.
 colors:
-  marigold: "#f2b705"
-  marigold-deep: "#6b5000"
-  marigold-wash: "#fdf7e1"
-  marigold-edge: "#e7cd73"
-  ink: "#13241d"
-  ink-soft: "#3f5048"
-  ink-mute: "#5f6f67"
+  marigold: "#e4a91c"
+  marigold-deep: "#634800"
+  marigold-wash: "#fcf7e8"
+  marigold-edge: "#e9d39a"
+  ink: "#0f211a"
+  ink-soft: "#3a4a43"
+  ink-mute: "#5b6a63"
   stock: "#ffffff"
-  paper: "#f6f7f5"
-  paper-sunk: "#edf0ec"
-  rule: "#dde3de"
-  rule-strong: "#b9c4bc"
+  forest: "#11261d"
+  paper: "#f4f6f3"
+  paper-sunk: "#eaeee8"
+  rule: "#e1e6e1"
+  rule-strong: "#c5cec7"
 typography:
   display:
-    fontFamily: "Archivo, Geist, Arial, sans-serif"
+    fontFamily: "Libre Caslon Display, Georgia, serif"
     fontSize: "clamp(2.75rem, 9vw, 6.5rem)"
-    fontWeight: 800
+    fontWeight: 400
     lineHeight: 0.92
     letterSpacing: "-0.02em"
     fontVariation: "'wdth' 72"
   headline:
-    fontFamily: "Archivo, Geist, Arial, sans-serif"
+    fontFamily: "Libre Caslon Display, Georgia, serif"
     fontSize: "clamp(2.25rem, 5vw, 3.75rem)"
-    fontWeight: 800
+    fontWeight: 400
     lineHeight: 0.92
     letterSpacing: "-0.02em"
     fontVariation: "'wdth' 72"
@@ -63,6 +64,8 @@ rounded:
   tab: "3px"
   control: "4px"
   panel: "6px"
+  button: "8px"
+  card: "12px"
 spacing:
   gutter-mobile: "1.25rem"
   gutter-desktop: "2rem"
@@ -266,3 +269,15 @@ A marigold stroke behind the word "local" in the homepage H1 (0.36em tall, skewe
 - **Don't** use emoji or icon tiles. Keep icons as inline line icons at text size.
 - **Don't** round corners past 6px.
 - **Don't** pull in the guide pages' ochre and teal tokens. They belong to the legacy guide world, not the directory.
+
+
+## Refinement, 2026-10-20
+
+What changed in the second pass, recorded from the shipped build:
+
+- **Type pairing.** Headings (H1 and section H2, `.dir-display` / `.dir-h2`) are Libre Caslon Display 400. Libre Caslon Text italic (`.dir-accent`) sets one phrase inside a headline, such as "for local people". Archivo carries text, UI and phone numbers; the condensed width (`.dir-condensed`) is now reserved for phone numbers.
+- **Palette.** Ink is a richer green-black (#0f211a). The accent is a deeper, quieter gold (#e4a91c). Dark bands use forest (#11261d).
+- **Cards.** `.dir-card` has a 1px rule border, a 12px radius and a soft two-layer shadow. A firm list is one card holding ruled rows; only the Featured entry is a standalone card (`.dir-card-featured`: gold wash, gold edge, warm shadow). Buttons and fields use 8px.
+- **Motion.** Rows and section headings reveal on scroll through CSS view timelines (`.dir-reveal`); header panels ease in (`.dir-panel`); `.dir-link` underlines draw in. Everything is CSS, and every effect is turned off under prefers-reduced-motion.
+- **Icons.** Lucide, one 1.75 stroke weight site-wide.
+- **Gold as accent only.** Tabs (area running head, Featured) are gold text on the gold wash with a hairline gold edge, not solid gold. Solid gold survives only as the active-nav underline and the small local-only bullet. The wordmark's "Index" tag is ink.

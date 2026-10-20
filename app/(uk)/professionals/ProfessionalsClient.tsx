@@ -75,7 +75,7 @@ const PUBLICATIONS = [
 
 function Includes({ items }: { items: string[] }) {
   return (
-    <ul className="space-y-2 text-[0.9375rem] text-[var(--color-ink-soft)]">
+    <ul className="space-y-2 text-base text-[var(--color-ink-soft)]">
       {items.map((item) => (
         <li key={item} className="flex gap-3">
           <span aria-hidden="true" className="mt-[0.6em] h-px w-3 flex-shrink-0 bg-[var(--color-ink-mute)]" />
@@ -100,7 +100,7 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
       <Navigation />
 
       {/* Hero */}
-      <header className="border-b border-[var(--color-ink)] bg-[var(--color-stock)]">
+      <header className="border-b border-[var(--color-rule)] bg-[var(--color-stock)]">
         <div className="dir-wrap pb-12 pt-12 md:pb-16 md:pt-20">
           <h1 className="dir-display max-w-[16ch] text-[clamp(2.75rem,9vw,6rem)] text-[var(--color-ink)]">
             List your pest control firm for free
@@ -110,7 +110,7 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
             the page for your area and contact you directly. A standard listing costs nothing. A
             Featured spot is optional.
           </p>
-          <p className="mt-4 text-[0.9375rem] font-semibold text-[var(--color-ink)]">
+          <p className="mt-4 text-base font-semibold text-[var(--color-ink)]">
             Independent local firms · No national chains · No lead fees · No commissions
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -122,24 +122,24 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
             </a>
           </div>
 
-          <p className="dir-num mt-10 max-w-xl border-t border-[var(--color-rule-strong)] pt-4 text-[0.9375rem] font-semibold text-[var(--color-ink)]">
+          <p className="dir-num mt-10 max-w-xl border-t border-[var(--color-rule-strong)] pt-4 text-base font-semibold text-[var(--color-ink)]">
             {providerCount !== null ? <>{providerCount.toLocaleString()} independent firms listed · </> : null}No lead fees · No commissions
           </p>
         </div>
       </header>
 
       {/* Rate card */}
-      <section id="rates" className="scroll-mt-24 bg-[var(--color-stock)] py-16 md:py-24">
+      <section id="rates" className="scroll-mt-24 bg-[var(--color-stock)] py-20 md:py-28">
         <div className="dir-wrap">
           <h2 className={H2}>Simple pricing</h2>
           <p className={`mt-3 max-w-[60ch] text-lg ${BODY}`}>
             A standard listing is free, always. Featured is optional.
           </p>
 
-          <div className="mt-10 border-y border-[var(--color-ink)]">
+          <div className="dir-card mt-12 overflow-hidden">
             <div
               aria-hidden="true"
-              className="hidden grid-cols-[13rem_1fr_9rem_15rem] gap-6 border-b border-[var(--color-rule-strong)] px-4 py-3 text-sm text-[var(--color-ink-mute)] lg:grid"
+              className="hidden grid-cols-[13rem_1fr_9rem_15rem] gap-6 border-b border-[var(--color-rule)] bg-[var(--color-paper)] px-7 py-3 text-sm text-[var(--color-ink-mute)] lg:grid"
             >
               <span>Listing</span>
               <span>What you get</span>
@@ -148,7 +148,7 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
             </div>
 
             {/* Standard */}
-            <div className="grid gap-5 px-4 py-7 lg:grid-cols-[13rem_1fr_9rem_15rem] lg:gap-6">
+            <div className="grid gap-5 px-6 py-8 md:px-7 lg:grid-cols-[13rem_1fr_9rem_15rem] lg:gap-6">
               <div>
                 <h3 className="text-xl font-bold">Standard listing</h3>
                 <p className="mt-1 text-sm text-[var(--color-ink-mute)]">Free, always</p>
@@ -163,7 +163,7 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
             </div>
 
             {/* Featured */}
-            <div className="grid gap-5 border-t border-[var(--color-rule-strong)] bg-[var(--color-marigold-wash)] px-4 py-7 lg:grid-cols-[13rem_1fr_9rem_15rem] lg:gap-6">
+            <div className="grid gap-5 border-t border-[var(--color-marigold-edge)] bg-[var(--color-marigold-wash)] px-6 py-8 md:px-7 lg:grid-cols-[13rem_1fr_9rem_15rem] lg:gap-6">
               <div>
                 <h3 className="text-xl font-bold">Featured</h3>
                 <p className="mt-1 text-sm font-semibold text-[var(--color-marigold-deep)]">
@@ -224,7 +224,7 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
       </section>
 
       {/* How it works */}
-      <section className="border-t border-[var(--color-rule)] bg-[var(--color-paper)] py-16 md:py-24">
+      <section className="border-t border-[var(--color-rule)] bg-[var(--color-paper)] py-20 md:py-28">
         <div className="dir-wrap">
           <h2 className={H2}>How it works</h2>
           <p className={`mt-3 text-lg ${BODY}`}>Get listed in three steps.</p>
@@ -241,7 +241,7 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
       </section>
 
       {/* Why PestPro Index */}
-      <section className="py-16 md:py-24">
+      <section className="py-20 md:py-28">
         <div className="dir-wrap">
           <h2 className={H2}>Why PestPro Index</h2>
           <ul className="mt-10 grid gap-x-12 md:grid-cols-2">
@@ -258,7 +258,7 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
       {/* How featured listings work */}
       <section
         id="how-featured-listings-work"
-        className="scroll-mt-24 border-t border-[var(--color-rule)] bg-[var(--color-paper)] py-16 md:py-24"
+        className="scroll-mt-24 border-t border-[var(--color-rule)] bg-[var(--color-paper)] py-20 md:py-28"
       >
         <div className="dir-wrap grid gap-10 lg:grid-cols-[minmax(0,68ch)_1fr]">
           <div>
@@ -285,7 +285,7 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
       </section>
 
       {/* FAQ */}
-      <section className="py-16 md:py-24">
+      <section className="py-20 md:py-28">
         <div className="dir-wrap">
           <h2 className={H2}>Frequently asked questions</h2>
           <p className={`mt-3 text-lg ${BODY}`}>About listing on PestPro Index.</p>
@@ -307,7 +307,7 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
       </section>
 
       {/* Final call to action */}
-      <section className="border-y border-[var(--color-ink)] bg-[var(--color-stock)] py-16 md:py-20">
+      <section className="border-y border-[var(--color-rule)] bg-[var(--color-stock)] py-20 md:py-28">
         <div className="dir-wrap flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div>
             <h2 className="dir-display text-[clamp(2.25rem,6vw,4rem)]">Get your firm listed</h2>

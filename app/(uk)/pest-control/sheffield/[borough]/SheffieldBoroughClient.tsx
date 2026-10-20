@@ -71,7 +71,7 @@ export default function SheffieldBoroughClient({ borough, initialProviders, also
           </>
         }
       >
-        <p className="text-[0.9375rem] font-semibold text-[var(--color-ink)]">
+        <p className="text-base font-semibold text-[var(--color-ink)]">
           Independent local firms · No national chains · No lead fees · No commissions
         </p>
       </AreaHead>
@@ -79,7 +79,7 @@ export default function SheffieldBoroughClient({ borough, initialProviders, also
       {/* PROVIDERS */}
       <section className="bg-[var(--color-stock)]">
         <div className="dir-wrap pb-14 pt-8 md:pb-16 md:pt-10">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">
+          <h2 className="dir-h2 text-[var(--color-ink)]">
             Pest Control Providers Serving {borough.name}
           </h2>
           <div className="mt-4">
@@ -116,12 +116,12 @@ export default function SheffieldBoroughClient({ borough, initialProviders, also
 
       {/* INTRO & COMMON PESTS */}
       <section className="border-t border-[var(--color-rule)] bg-[var(--color-stock)]">
-        <div className="dir-wrap grid gap-10 py-14 md:py-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.8fr)] lg:gap-16">
+        <div className="dir-wrap grid gap-10 py-20 md:py-28 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.8fr)] lg:gap-16">
           <p className="max-w-[68ch] text-lg leading-relaxed text-[var(--color-ink-soft)]">
             {borough.intro}
           </p>
           <div className="border-t border-[var(--color-rule-strong)] pt-6">
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">Common Pests in {borough.name}</h2>
+            <h2 className="dir-h2 text-[var(--color-ink)]">Common Pests in {borough.name}</h2>
             <p className="mt-4 max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">{borough.commonPests}</p>
           </div>
         </div>
@@ -130,7 +130,7 @@ export default function SheffieldBoroughClient({ borough, initialProviders, also
       {/* BACK LINK & CROSS-LINKING */}
       <section className="border-t border-[var(--color-rule)] bg-[var(--color-paper)]">
         <div className="dir-wrap py-8">
-          <ul className="flex flex-wrap items-center gap-x-8 gap-y-3 text-[0.9375rem]">
+          <ul className="flex flex-wrap items-center gap-x-8 gap-y-3 text-base">
             <li>
               <Link href="/sheffield/residential" className="dir-link inline-flex items-center gap-1.5 font-semibold">
                 <ArrowLeft aria-hidden="true" className="h-4 w-4" strokeWidth={2} />

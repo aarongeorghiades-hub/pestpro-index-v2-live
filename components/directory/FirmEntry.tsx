@@ -50,11 +50,11 @@ export default function FirmEntry({
   return (
     <article
       data-firm-entry={slug}
-      className={`grid grid-cols-1 gap-x-8 gap-y-4 py-6 md:grid-cols-[minmax(0,1fr)_auto] md:items-center ${featured ? 'px-5 md:px-7' : ''}`}
+      className="grid grid-cols-1 gap-x-8 gap-y-4 px-5 py-5 md:grid-cols-[minmax(0,1fr)_auto] md:items-center md:px-7 md:py-6"
     >
       <div className="min-w-0">
         <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
-          <h3 className="text-[1.1875rem] font-bold leading-snug tracking-[-0.01em] text-[var(--color-ink)] md:text-[1.3125rem]">
+          <h3 className="text-[1.1875rem] font-semibold leading-snug tracking-[-0.015em] text-[var(--color-ink)] md:text-[1.3125rem]">
             <Link href={`/provider/${slug}`} className="decoration-[var(--color-rule-strong)] underline-offset-[0.2em] hover:underline">
               {name}
             </Link>
@@ -86,7 +86,7 @@ export default function FirmEntry({
         </p>
 
         {summary && (
-          <p className={`mt-3 max-w-[62ch] leading-relaxed ${featured ? 'text-base text-[var(--color-ink)] md:text-[1.0625rem]' : 'text-[0.9375rem] text-[var(--color-ink-soft)]'}`}>
+          <p className={`mt-3 max-w-[62ch] leading-relaxed ${featured ? 'text-base text-[var(--color-ink)] md:text-base' : 'text-base text-[var(--color-ink-soft)]'}`}>
             {summary}
           </p>
         )}

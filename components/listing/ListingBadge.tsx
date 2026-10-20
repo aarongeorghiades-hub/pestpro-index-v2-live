@@ -26,7 +26,7 @@ export default function ListingBadge({ slug }: { slug?: string | null }) {
   }
 
   return (
-    <div className="mt-6 rounded-[4px] border border-[var(--color-rule-strong)] bg-[var(--color-stock)] p-5 text-left">
+    <div className="mt-6 rounded-[4px] border border-[var(--color-rule)] bg-[var(--color-stock)] p-5 text-left">
       <h2 className="text-lg font-bold text-[var(--color-ink)]">Find us on PestPro Index</h2>
       <p className="mt-1 text-sm leading-relaxed text-[var(--color-ink-soft)]">
         {example

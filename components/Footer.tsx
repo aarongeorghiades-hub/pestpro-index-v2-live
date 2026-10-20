@@ -30,7 +30,7 @@ import { ukCardCarryingRoutes } from '@/lib/ukCardRoutes';
 export default function Footer() {
   const cardCarryingRoutes = ukCardCarryingRoutes();
   return (
-    <footer className="bg-[var(--color-ink)] pb-10 pt-16 text-white/70 md:pt-20">
+    <footer className="bg-[var(--color-forest)] pb-12 pt-20 text-white/70 md:pt-28">
       <div className="dir-wrap">
         <div className="mb-14 flex flex-col gap-6 border-b border-white/15 pb-12 md:flex-row md:items-end md:justify-between">
           <div>
@@ -43,8 +43,8 @@ export default function Footer() {
         </div>
         <div className="mb-12 grid gap-x-10 gap-y-2 md:grid-cols-3 md:gap-y-10 lg:grid-cols-5">
           <details className="footer-group border-b border-white/10 py-3 md:border-0 md:py-0">
-            <summary className="mb-0 text-[0.9375rem] font-bold text-white md:mb-4">Browse</summary>
-            <ul className="space-y-2.5 pb-3 pt-3 text-[0.9375rem] md:pt-0">
+            <summary className="mb-0 text-sm font-bold text-white md:mb-4">Browse</summary>
+            <ul className="space-y-2.5 pb-3 pt-3 text-sm md:pt-0">
               <li><Link href="/pest-control/regions" className="underline-offset-4 transition-colors hover:text-white hover:underline">Find Pest Control</Link></li>
               <li><Link href="/pest-control" className="underline-offset-4 transition-colors hover:text-white hover:underline">By Borough</Link></li>
               <li><Link href="/residential" className="underline-offset-4 transition-colors hover:text-white hover:underline">Residential Pest Control</Link></li>
@@ -88,8 +88,8 @@ export default function Footer() {
             </ul>
           </details>
           <details className="footer-group border-b border-white/10 py-3 md:border-0 md:py-0">
-            <summary className="mb-0 text-[0.9375rem] font-bold text-white md:mb-4">Products</summary>
-            <ul className="space-y-2.5 pb-3 pt-3 text-[0.9375rem] md:pt-0">
+            <summary className="mb-0 text-sm font-bold text-white md:mb-4">Products</summary>
+            <ul className="space-y-2.5 pb-3 pt-3 text-sm md:pt-0">
               <li><Link href="/products" className="underline-offset-4 transition-colors hover:text-white hover:underline">Home Products</Link></li>
               <li><Link href="/commercial-products" className="underline-offset-4 transition-colors hover:text-white hover:underline">Commercial Products</Link></li>
               <li><Link href="/best" className="underline-offset-4 transition-colors hover:text-white hover:underline">Best Pest Control Products</Link></li>
@@ -115,8 +115,8 @@ export default function Footer() {
             </ul>
           </details>
           <details className="footer-group border-b border-white/10 py-3 md:border-0 md:py-0">
-            <summary className="mb-0 text-[0.9375rem] font-bold text-white md:mb-4">Resources</summary>
-            <ul className="space-y-2.5 pb-3 pt-3 text-[0.9375rem] md:pt-0">
+            <summary className="mb-0 text-sm font-bold text-white md:mb-4">Resources</summary>
+            <ul className="space-y-2.5 pb-3 pt-3 text-sm md:pt-0">
               <li><Link href="/guides" className="underline-offset-4 transition-colors hover:text-white hover:underline">Pest Control Guides &amp; Expert Advice</Link></li>
               <li><Link href="/pest-library" className="underline-offset-4 transition-colors hover:text-white hover:underline">Pest Library</Link></li>
               <li><Link href="/blog" className="underline-offset-4 transition-colors hover:text-white hover:underline">Blog</Link></li>
@@ -140,8 +140,8 @@ export default function Footer() {
             </ul>
           </details>
           <details className="footer-group border-b border-white/10 py-3 md:border-0 md:py-0">
-            <summary className="mb-0 text-[0.9375rem] font-bold text-white md:mb-4">For Professionals</summary>
-            <ul className="space-y-2.5 pb-3 pt-3 text-[0.9375rem] md:pt-0">
+            <summary className="mb-0 text-sm font-bold text-white md:mb-4">For Professionals</summary>
+            <ul className="space-y-2.5 pb-3 pt-3 text-sm md:pt-0">
               <li><Link href="/professionals" className="underline-offset-4 transition-colors hover:text-white hover:underline">For Pest Professionals</Link></li>
               <li><Link href="/guides/commercial-pest-control" className="underline-offset-4 transition-colors hover:text-white hover:underline">Commercial Pest Control</Link></li>
               <li><Link href="/guides/restaurant-pest-control" className="underline-offset-4 transition-colors hover:text-white hover:underline">Restaurant Pest Control</Link></li>
@@ -152,8 +152,8 @@ export default function Footer() {
             </ul>
           </details>
           <details className="footer-group border-b border-white/10 py-3 md:border-0 md:py-0">
-            <summary className="mb-0 text-[0.9375rem] font-bold text-white md:mb-4">Company</summary>
-            <ul className="space-y-2.5 pb-3 pt-3 text-[0.9375rem] md:pt-0">
+            <summary className="mb-0 text-sm font-bold text-white md:mb-4">Company</summary>
+            <ul className="space-y-2.5 pb-3 pt-3 text-sm md:pt-0">
               <li><Link href="/" className="underline-offset-4 transition-colors hover:text-white hover:underline">Home</Link></li>
               <li><Link href="/about" className="underline-offset-4 transition-colors hover:text-white hover:underline">About</Link></li>
               <li><Link href="/contact" className="underline-offset-4 transition-colors hover:text-white hover:underline">Contact</Link></li>
@@ -162,8 +162,8 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 border-t border-white/15 pt-8">
-          <h4 className="mb-3 text-[0.9375rem] font-bold text-white">Sister Sites</h4>
-          <ul className="flex flex-wrap gap-x-8 gap-y-2 text-[0.9375rem]">
+          <h4 className="mb-3 text-sm font-bold text-white">Sister Sites</h4>
+          <ul className="flex flex-wrap gap-x-8 gap-y-2 text-sm">
             <li><a href="https://taxbandcheck.co.uk" target="_blank" rel="noopener nofollow" className="underline-offset-4 transition-colors hover:text-white hover:underline">TaxBandCheck: Free Council Tax Band Checker</a></li>
             <li><a href="https://findakitchen.co.uk" target="_blank" rel="noopener nofollow" className="underline-offset-4 transition-colors hover:text-white hover:underline">FindAKitchen: Temporary Kitchen Hire UK</a></li>
             <li><a href="https://stampdutyback.co.uk" target="_blank" rel="noopener nofollow" className="underline-offset-4 transition-colors hover:text-white hover:underline">StampDutyBack: Stamp Duty Refund Calculator</a></li>

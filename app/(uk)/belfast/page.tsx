@@ -74,10 +74,10 @@ export default async function BelfastHubPage() {
         title="Pest Control in Belfast"
         standfirst={<>Independent pest controllers based in and around Belfast &amp; Northern Ireland</>}
       >
-        <p className="max-w-[60ch] text-[0.9375rem] leading-relaxed text-[var(--color-ink-soft)]">
+        <p className="max-w-[60ch] text-base leading-relaxed text-[var(--color-ink-soft)]">
           Local firms for your home, and local firms for your business: shops, restaurants, offices, warehouses and landlords. No national chains, no commissions.
         </p>
-        <p className="dir-num mt-5 border-t border-[var(--color-rule)] pt-5 text-[0.9375rem] font-semibold text-[var(--color-ink)]">
+        <p className="dir-num mt-4 text-base font-semibold text-[var(--color-ink)]">
           {providerCount} providers · 8 areas covered · Northern Ireland region
         </p>
       </AreaHead>
@@ -87,7 +87,7 @@ export default async function BelfastHubPage() {
       {/* HOMES / BUSINESSES */}
       <section className="border-b border-[var(--color-rule-strong)]">
         <div className="dir-wrap py-14 md:py-20">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">Browse by Service Type</h2>
+          <h2 className="dir-h2 text-[var(--color-ink)]">Browse by Service Type</h2>
           <div className="mt-4 space-y-3">
             <LocalOnlyNote>We only list independent, local pest controllers who serve this area. National chains are not included, so this isn’t every firm that covers Belfast, just the local ones.</LocalOnlyNote>
             <p className="max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">
@@ -123,7 +123,7 @@ export default async function BelfastHubPage() {
       {/* AREA INDEX, A TO Z */}
       <section className="border-b border-[var(--color-rule-strong)]">
         <div className="dir-wrap py-14 md:py-20">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">Browse by Area</h2>
+          <h2 className="dir-h2 text-[var(--color-ink)]">Browse by Area</h2>
           <p className="mt-4 max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">
             Find pest control providers in your area of Belfast. Select your area to see local providers and area-specific pest information.
           </p>
@@ -149,7 +149,7 @@ export default async function BelfastHubPage() {
       <section className="border-b border-[var(--color-rule-strong)]">
         <div className="dir-wrap grid gap-10 py-14 md:py-20 lg:grid-cols-2 lg:gap-16">
           <div>
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">Common Pests in Belfast</h2>
+            <h2 className="dir-h2 text-[var(--color-ink)]">Common Pests in Belfast</h2>
             <p className="mt-4 max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">
               Belfast&apos;s mix of Victorian terraced housing, post-war estates, modern waterfront developments, and proximity to Belfast Lough and the surrounding hills creates varied pest pressures. Rats and mice are the most common call-outs, particularly along the River Lagan and in the older streets of the inner city. Wasps and squirrels thrive in the leafy suburbs of South and East Belfast.
             </p>

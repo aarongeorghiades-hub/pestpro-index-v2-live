@@ -169,7 +169,7 @@ function SubmitForm() {
   }
 
   return (
-    <div className="dir-wrap max-w-4xl py-12 md:py-16 space-y-10">
+    <div className="dir-wrap max-w-4xl py-16 md:py-24 space-y-10">
       {/* 1. Your business */}
       <section className={sectionClass}>
         <h2 className={sectionHeading}>Your business</h2>

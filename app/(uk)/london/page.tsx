@@ -74,10 +74,10 @@ export default async function LondonHubPage() {
         title="Pest Control in London"
         standfirst={<>Independent pest controllers based in and around all 33 London boroughs</>}
       >
-        <p className="max-w-[60ch] text-[0.9375rem] leading-relaxed text-[var(--color-ink-soft)]">
+        <p className="max-w-[60ch] text-base leading-relaxed text-[var(--color-ink-soft)]">
           Local firms for your home, and local firms for your business: shops, restaurants, offices, warehouses and landlords. No national chains, no commissions.
         </p>
-        <p className="dir-num mt-5 border-t border-[var(--color-rule)] pt-5 text-[0.9375rem] font-semibold text-[var(--color-ink)]">
+        <p className="dir-num mt-4 text-base font-semibold text-[var(--color-ink)]">
           {providerCount} providers · {londonBoroughs.length} london boroughs · no referral fees
         </p>
       </AreaHead>
@@ -87,7 +87,7 @@ export default async function LondonHubPage() {
       {/* HOMES / BUSINESSES */}
       <section className="border-b border-[var(--color-rule-strong)]">
         <div className="dir-wrap py-14 md:py-20">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">Browse by Service Type</h2>
+          <h2 className="dir-h2 text-[var(--color-ink)]">Browse by Service Type</h2>
           <div className="mt-4 space-y-3">
             <LocalOnlyNote>We only list independent, local pest controllers who serve this area. National chains are not included, so this isn’t every firm that covers all 33 London boroughs, just the local ones.</LocalOnlyNote>
             <p className="max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">
@@ -123,7 +123,7 @@ export default async function LondonHubPage() {
       {/* AREA INDEX, A TO Z */}
       <section className="border-b border-[var(--color-rule-strong)]">
         <div className="dir-wrap py-14 md:py-20">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">Browse by Borough</h2>
+          <h2 className="dir-h2 text-[var(--color-ink)]">Browse by Borough</h2>
           <p className="mt-4 max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">
             Find pest control providers in your area of London. Select your borough to see local providers and area-specific pest information.
           </p>
@@ -149,7 +149,7 @@ export default async function LondonHubPage() {
       <section className="border-b border-[var(--color-rule-strong)]">
         <div className="dir-wrap grid gap-10 py-14 md:py-20 lg:grid-cols-2 lg:gap-16">
           <div>
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">Common Pests in London</h2>
+            <h2 className="dir-h2 text-[var(--color-ink)]">Common Pests in London</h2>
             <p className="mt-4 max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">
               London&apos;s dense urban environment makes it one of the UK&apos;s most challenging cities for pest control. Rats and mice thrive in the Underground network and older Victorian housing stock. Bed bugs are prevalent in hotels, rental properties and HMOs. Wasps, foxes, pigeons and cockroaches are widespread across all boroughs. Bed bug infestations have increased significantly in recent years linked to international travel through London&apos;s airports.
             </p>

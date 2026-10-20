@@ -37,7 +37,7 @@ export default async function RegionsIndexPage() {
           <ul className="border-b border-[var(--color-rule-strong)]">
             {regions.map((region) => (
               <li key={region.slug} className="dir-entry grid gap-x-10 gap-y-2 py-6 md:grid-cols-[minmax(0,16rem)_minmax(0,1fr)_auto] md:items-baseline">
-                <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)]">
+                <h2 className="dir-h2 text-[var(--color-ink)]">
                   <Link href={`/pest-control/${region.slug}`} className="dir-link">
                     {region.name}
                   </Link>
@@ -65,8 +65,8 @@ export default async function RegionsIndexPage() {
 
       {/* Provider CTA */}
       <section className="bg-[var(--color-paper)]">
-        <div className="dir-wrap py-14 md:py-16">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">
+        <div className="dir-wrap py-20 md:py-28">
+          <h2 className="dir-h2 text-[var(--color-ink)]">
             Are you a pest control provider?
           </h2>
           <p className="mt-4 max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">

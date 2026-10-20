@@ -89,29 +89,29 @@ export default function PestCityPageClient({ city, pest, initialProviders, initi
         title={<>{pest.name} Control in {city.name}</>}
         standfirst={<>Find {pest.name} Specialists</>}
       >
-        <p className="text-[0.9375rem] font-semibold text-[var(--color-ink)]">
+        <p className="text-base font-semibold text-[var(--color-ink)]">
           No lead fees · No commissions · Free to contact
         </p>
       </AreaHead>
 
       {/* SEO CONTENT */}
       <section className="bg-[var(--color-stock)]">
-        <div className="dir-wrap py-14 md:py-16">
+        <div className="dir-wrap py-20 md:py-28">
           <p className="max-w-[68ch] text-lg leading-relaxed text-[var(--color-ink-soft)]">{introText}</p>
 
           <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-2">
             <div className="border-t border-[var(--color-rule-strong)] pt-6">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">Signs of {pest.namePlural}</h2>
+              <h2 className="dir-h2 text-[var(--color-ink)]">Signs of {pest.namePlural}</h2>
               <p className="mt-4 max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">{pest.signs}</p>
             </div>
             <div className="border-t border-[var(--color-rule-strong)] pt-6">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">Health &amp; Property Risks</h2>
+              <h2 className="dir-h2 text-[var(--color-ink)]">Health &amp; Property Risks</h2>
               <p className="mt-4 max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">{pest.risks}</p>
             </div>
           </div>
 
           <div className="mt-10 border-t border-[var(--color-rule-strong)] pt-6">
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">Typical Cost of {pest.name} Control in {city.name}</h2>
+            <h2 className="dir-h2 text-[var(--color-ink)]">Typical Cost of {pest.name} Control in {city.name}</h2>
             <p className="mt-4 max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">{pest.typicalCost}</p>
           </div>
         </div>
@@ -121,8 +121,8 @@ export default function PestCityPageClient({ city, pest, initialProviders, initi
           Keys off pest.slug only, so it renders correctly on fallback pest pages too. */}
       {(topProductsByPest[pest.slug]?.length ?? 0) > 0 && (
         <section className="border-t border-[var(--color-rule)] bg-[var(--color-paper)]">
-          <div className="dir-wrap py-14 md:py-16">
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">
+          <div className="dir-wrap py-20 md:py-28">
+            <h2 className="dir-h2 text-[var(--color-ink)]">
               Top DIY {pest.name} Products
             </h2>
             <p className="mb-8 mt-3 max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">
@@ -152,8 +152,8 @@ export default function PestCityPageClient({ city, pest, initialProviders, initi
 
       {/* PROVIDERS */}
       <section className="border-t border-[var(--color-rule)] bg-[var(--color-stock)]">
-        <div className="dir-wrap py-14 md:py-16">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">
+        <div className="dir-wrap py-20 md:py-28">
+          <h2 className="dir-h2 text-[var(--color-ink)]">
             {pest.name} Control Providers in {city.name}
           </h2>
           {isFallback ? (
@@ -161,7 +161,7 @@ export default function PestCityPageClient({ city, pest, initialProviders, initi
               <p className="text-sm text-[var(--color-ink-mute)]">
                 Showing all {providers.length} residential pest control providers in {city.name}
               </p>
-              <p className="mt-4 rounded-[4px] border border-[var(--color-rule)] bg-[var(--color-paper)] p-4 text-[0.9375rem] leading-relaxed text-[var(--color-ink-soft)]">
+              <p className="mt-4 rounded-[4px] border border-[var(--color-rule)] bg-[var(--color-paper)] p-4 text-base leading-relaxed text-[var(--color-ink-soft)]">
                 We haven&apos;t yet confirmed which {city.name} providers specialise in {pest.namePlural.toLowerCase()}, but all of the providers below serve {city.name} and can help with most pest issues. Contact them directly to discuss your {pest.namePlural.toLowerCase()} problem.
               </p>
             </div>
@@ -204,8 +204,8 @@ export default function PestCityPageClient({ city, pest, initialProviders, initi
 
       {/* WHAT TO DO */}
       <section className="border-t border-[var(--color-rule)] bg-[var(--color-stock)]">
-        <div className="dir-wrap py-14 md:py-16">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">What to Do If You Have {pest.namePlural}</h2>
+        <div className="dir-wrap py-20 md:py-28">
+          <h2 className="dir-h2 text-[var(--color-ink)]">What to Do If You Have {pest.namePlural}</h2>
           <ul className="mt-6 max-w-[68ch] border-b border-[var(--color-rule)]">
             <li className="flex items-start gap-3 border-t border-[var(--color-rule)] py-4">
               <BookOpen aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-[var(--color-ink-mute)]" strokeWidth={2} />
@@ -241,7 +241,7 @@ export default function PestCityPageClient({ city, pest, initialProviders, initi
           {/* Other pest services in this city */}
           <div className="mb-10">
             <h3 className="mb-4 text-lg font-bold text-[var(--color-ink)]">Other Pest Control Services in {city.name}</h3>
-            <ul className="flex flex-wrap gap-x-6 gap-y-2 text-[0.9375rem]">
+            <ul className="flex flex-wrap gap-x-6 gap-y-2 text-base">
               {otherPests.map(p => (
                 <li key={p.slug}>
                   <Link href={`/pest-control/${city.slug}/${p.slug}`} className="dir-link font-semibold">
@@ -255,7 +255,7 @@ export default function PestCityPageClient({ city, pest, initialProviders, initi
           {/* Same pest in other cities */}
           <div className="mb-10">
             <h3 className="mb-4 text-lg font-bold text-[var(--color-ink)]">{pest.name} Control in Other Cities</h3>
-            <ul className="flex flex-wrap gap-x-6 gap-y-2 text-[0.9375rem]">
+            <ul className="flex flex-wrap gap-x-6 gap-y-2 text-base">
               {otherCities.map(l => (
                 <li key={l.slug}>
                   <Link href={`/pest-control/${l.slug}/${pest.slug}`} className="dir-link font-semibold">

@@ -95,8 +95,8 @@ const RESOURCE_PREFIXES = ['/blog', '/resources', '/frequently-asked-questions',
 export function Wordmark({ inverse = false }: { inverse?: boolean }) {
   return (
     <span className={`inline-flex items-baseline gap-1.5 text-[1.375rem] leading-none ${inverse ? 'text-white' : 'text-[var(--color-ink)]'}`}>
-      <span className="dir-display text-[1.5rem] tracking-[-0.01em]">PestPro</span>
-      <span className="rounded-[3px] bg-[var(--color-marigold)] px-1.5 py-[3px] text-[0.8125rem] font-bold leading-none text-[var(--color-ink)]">Index</span>
+      <span className="dir-display text-[1.625rem]">PestPro</span>
+      <span className="rounded-[4px] bg-[var(--color-ink)] px-1.5 py-[3px] font-sans text-[0.75rem] font-semibold leading-none tracking-[0.01em] text-white">Index</span>
     </span>
   );
 }
@@ -132,11 +132,11 @@ export default function Navigation() {
 
 
   const topLink = (active: boolean) =>
-    `relative px-3 py-2 text-[0.9375rem] font-semibold transition-colors duration-150 ${
+    `relative px-3 py-2 text-sm font-semibold transition-colors duration-150 ${
       active ? 'text-[var(--color-ink)] after:absolute after:inset-x-3 after:-bottom-[17px] after:h-[3px] after:bg-[var(--color-marigold)]' : 'text-[var(--color-ink-soft)] hover:text-[var(--color-ink)]'
     }`;
 
-  const panelLink = 'block py-1.5 text-[0.9375rem] text-[var(--color-ink-soft)] hover:text-[var(--color-ink)] hover:underline underline-offset-4';
+  const panelLink = 'block py-1.5 text-sm text-[var(--color-ink-soft)] hover:text-[var(--color-ink)] hover:underline underline-offset-4';
   const panelHead = 'mb-2 text-[0.8125rem] font-bold text-[var(--color-ink)]';
 
   return (
@@ -150,7 +150,7 @@ export default function Navigation() {
           setMobileOpen(false);
         }
       }}
-      className="nav-header sticky top-0 z-50 border-b border-[var(--color-rule-strong)] bg-[var(--color-stock)]">
+      className="nav-header sticky top-0 z-50 border-b border-[var(--color-rule)] bg-[var(--color-stock)]">
       <div className="dir-wrap flex h-16 items-center justify-between gap-6">
         <Link href="/" aria-label="PestPro Index home" className="shrink-0">
           <Wordmark />
@@ -206,7 +206,7 @@ export default function Navigation() {
 
       {/* Desktop panels */}
       {menu === 'find' && (
-        <div id="nav-find" className="absolute inset-x-0 top-full hidden border-b border-[var(--color-rule-strong)] bg-[var(--color-stock)] shadow-[0_18px_40px_-24px_rgba(19,36,29,0.35)] lg:block">
+        <div id="nav-find" className="dir-panel absolute inset-x-0 top-full hidden border-b border-[var(--color-rule)] bg-[var(--color-stock)] shadow-[0_18px_40px_-24px_rgba(19,36,29,0.35)] lg:block">
           <div className="dir-wrap grid grid-cols-[2fr_1fr] gap-12 py-8">
             <div>
               <p className={panelHead}>Browse by region</p>
@@ -233,7 +233,7 @@ export default function Navigation() {
         </div>
       )}
       {menu === 'guides' && (
-        <div id="nav-guides" className="absolute inset-x-0 top-full hidden max-h-[calc(100vh-4rem)] overflow-y-auto border-b border-[var(--color-rule-strong)] bg-[var(--color-stock)] shadow-[0_18px_40px_-24px_rgba(19,36,29,0.35)] lg:block">
+        <div id="nav-guides" className="dir-panel absolute inset-x-0 top-full hidden max-h-[calc(100vh-4rem)] overflow-y-auto border-b border-[var(--color-rule)] bg-[var(--color-stock)] shadow-[0_18px_40px_-24px_rgba(19,36,29,0.35)] lg:block">
           <div className="dir-wrap grid grid-cols-[1fr_3fr_1.4fr] gap-10 py-8">
             <div>
               <p className={panelHead}>Start here</p>
@@ -253,7 +253,7 @@ export default function Navigation() {
 
       {/* Mobile menu: every group is a native <details>, so it works by touch and keyboard alike. */}
       {mobileOpen && (
-        <div id="nav-mobile" className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-[var(--color-rule)] bg-[var(--color-stock)] lg:hidden">
+        <div id="nav-mobile" className="dir-panel max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-[var(--color-rule)] bg-[var(--color-stock)] lg:hidden">
           <div className="dir-wrap py-4">
             <ul className="divide-y divide-[var(--color-rule)] border-b border-[var(--color-rule)]">
               <li><Link href="/" className="block py-3.5 text-lg font-semibold text-[var(--color-ink)]">Home</Link></li>

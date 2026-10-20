@@ -12,16 +12,16 @@ export default function CityPestLinks({
   cityName: string;
 }) {
   return (
-    <section className="border-t border-[var(--color-rule-strong)] bg-[var(--color-stock)]">
-      <div className="dir-wrap py-14 md:py-16">
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">Pest Control by Type in {cityName}</h2>
+    <section className="border-t border-[var(--color-rule)] bg-[var(--color-stock)]">
+      <div className="dir-wrap py-20 md:py-28">
+        <h2 className="dir-h2 text-[var(--color-ink)]">Pest Control by Type in {cityName}</h2>
         <p className="mt-2 text-[var(--color-ink-soft)]">Find {cityName} providers who specialise in a specific pest</p>
         <ul className="mt-6 grid grid-cols-1 gap-x-8 border-t border-[var(--color-ink)] sm:grid-cols-2 lg:grid-cols-4">
           {PESTS.map((p) => (
             <li key={p.slug} className="border-b border-[var(--color-rule)]">
               <Link
                 href={`/pest-control/${citySlug}/${p.slug}`}
-                className="block py-3 text-[0.9375rem] font-semibold text-[var(--color-ink)] underline-offset-4 hover:underline"
+                className="block py-3 text-base font-semibold text-[var(--color-ink)] underline-offset-4 hover:underline"
               >
                 {p.name} Control
               </Link>

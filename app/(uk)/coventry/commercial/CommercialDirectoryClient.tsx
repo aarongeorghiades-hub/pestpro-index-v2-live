@@ -272,9 +272,9 @@ export default function CommercialDirectoryClient({ initialProviders }: { initia
 
       {/* TOP RATED PROVIDERS */}
       {providers.some(p => p.google_rating != null) && (
-      <section className="border-b border-[var(--color-rule)] bg-[var(--color-stock)] py-12 md:py-16">
+      <section className="border-b border-[var(--color-rule)] bg-[var(--color-stock)] py-16 md:py-24">
         <div className="dir-wrap">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">Top Rated Providers</h2>
+          <h2 className="dir-h2 text-[var(--color-ink)]">Top Rated Providers</h2>
           <p className="mt-2 max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">Highest-rated commercial pest control providers in Coventry &amp; the West Midlands</p>
 
           <div className="mt-8">
@@ -307,9 +307,9 @@ export default function CommercialDirectoryClient({ initialProviders }: { initia
       )}
 
       {/* FULL PROVIDER LIST WITH FILTERS */}
-      <section className="bg-[var(--color-stock)] py-12 md:py-16">
+      <section className="bg-[var(--color-stock)] py-16 md:py-24">
         <div className="dir-wrap">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">Full List of Commercial Providers</h2>
+          <h2 className="dir-h2 text-[var(--color-ink)]">Full List of Commercial Providers</h2>
           <p className="mt-2 text-[var(--color-ink-soft)]">All {providers.length} commercial providers with advanced filtering</p>
           <div className="mt-5">
             <LocalOnlyNote>
@@ -344,7 +344,7 @@ export default function CommercialDirectoryClient({ initialProviders }: { initia
                   ['credentials', 'Credentials'],
                 ] as const).map(([group, title]) => (
                   <div key={group} className="mt-5 border-t border-[var(--color-rule)] pt-4">
-                    <h4 className="text-[0.9375rem] font-bold text-[var(--color-ink)]">{title}</h4>
+                    <h4 className="text-base font-bold text-[var(--color-ink)]">{title}</h4>
                     <div className="mt-2 space-y-0.5">
                       {filterCategories[group].map(filter => (
                         <label key={filter.key} className="flex cursor-pointer items-center gap-3 rounded-[4px] px-1.5 py-1.5 hover:bg-[var(--color-paper)]">
@@ -409,9 +409,9 @@ export default function CommercialDirectoryClient({ initialProviders }: { initia
       </section>
 
       {/* HOW IT WORKS SECTION */}
-      <section className="border-t border-[var(--color-rule)] bg-[var(--color-stock)] py-12 md:py-16">
+      <section className="border-t border-[var(--color-rule)] bg-[var(--color-stock)] py-16 md:py-24">
         <div className="dir-wrap">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">How It Works</h2>
+          <h2 className="dir-h2 text-[var(--color-ink)]">How It Works</h2>
           <p className="mt-2 max-w-[68ch] text-[var(--color-ink-soft)]">Our methodology for finding the right commercial provider</p>
 
           <ol className="mt-8 grid grid-cols-1 gap-x-10 md:grid-cols-3">
@@ -435,10 +435,10 @@ export default function CommercialDirectoryClient({ initialProviders }: { initia
       </section>
 
       {/* PRODUCTS PAGE LINK AND COMMERCIAL GUIDES */}
-      <section className="border-t border-[var(--color-rule)] bg-[var(--color-stock)] py-12 md:py-16">
+      <section className="border-t border-[var(--color-rule)] bg-[var(--color-stock)] py-16 md:py-24">
         <div className="dir-wrap grid grid-cols-1 gap-10 lg:grid-cols-2">
           <div>
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)]">Running a Food Business?</h2>
+            <h2 className="dir-h2 text-[var(--color-ink)]">Running a Food Business?</h2>
             <p className="mt-2 max-w-[60ch] leading-relaxed text-[var(--color-ink-soft)]">Our commercial pest control guides cover EHO compliance, HACCP requirements, and choosing the right equipment for your business.</p>
             <Link href="/guides/commercial-pest-control" className="dir-btn dir-btn-ink mt-5">
               Commercial Pest Control Hub

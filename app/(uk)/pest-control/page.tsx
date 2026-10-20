@@ -94,8 +94,8 @@ export default function BoroughIndexPage() {
 
       {/* Homes / businesses */}
       <section className="bg-[var(--color-paper)]">
-        <div className="dir-wrap py-14 md:py-16">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">Find a Pest Control Provider</h2>
+        <div className="dir-wrap py-20 md:py-28">
+          <h2 className="dir-h2 text-[var(--color-ink)]">Find a Pest Control Provider</h2>
           <p className="mt-4 max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">
             No lead fees. No commissions. Rankings can&apos;t be bought. Results are sorted by rating. Firms can pay for a clearly labelled Featured slot, never a higher rank.
           </p>
