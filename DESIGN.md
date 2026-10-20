@@ -10,7 +10,13 @@ colors:
   ink-soft: "#3a4a43"
   ink-mute: "#5b6a63"
   stock: "#ffffff"
-  forest: "#11261d"
+  forest: "#0b2f24"
+  primary: "#0e3b2e"
+  primary-wash: "#e8f1ec"
+  on-primary-soft: "#b9d3c5"
+  saffron: "#f0a830"
+  saffron-wash: "#fdf1d8"
+  apricot-wash: "#fbe7d6"
   paper: "#f4f6f3"
   paper-sunk: "#eaeee8"
   rule: "#e1e6e1"
@@ -65,6 +71,7 @@ rounded:
   control: "4px"
   panel: "6px"
   button: "8px"
+  tile: "10px"
   card: "12px"
 spacing:
   gutter-mobile: "1.25rem"
@@ -281,3 +288,13 @@ What changed in the second pass, recorded from the shipped build:
 - **Motion.** Rows and section headings reveal on scroll through CSS view timelines (`.dir-reveal`); header panels ease in (`.dir-panel`); `.dir-link` underlines draw in. Everything is CSS, and every effect is turned off under prefers-reduced-motion.
 - **Icons.** Lucide, one 1.75 stroke weight site-wide.
 - **Gold as accent only.** Tabs (area running head, Featured) are gold text on the gold wash with a hairline gold edge, not solid gold. Solid gold survives only as the active-nav underline and the small local-only bullet. The wordmark's "Index" tag is ink.
+
+
+## Round 3, 2026-10-20: brand colour, header, scroll chapters
+
+- **Palette roles.** Deep bottle green (`primary` #0e3b2e) owns regions: area, city and directory head bands (white type, ink classes remapped by `.area-head-dark`), the homepage rules chapter, the closing band, primary buttons, the active nav pill and the wordmark tag. Saffron (#f0a830) is the warm accent: the Featured tab, the promise rail, accent buttons and arrow chips. The green, saffron and apricot washes are tints for tiles, way-in cards and section bands. The Featured firm's own profile keeps the saffron-wash head: gold marks paid, green marks place.
+- **Header.** 76px. Wordmark "PestPro" in Libre Caslon Text bold, 2rem to 2.25rem, with a green "Index" tag. Nav items at 1rem semibold in pills; hover is a soft wash, active is a solid green pill. "For professionals" turns saffron on its own section.
+- **Featured.** Server-rendered in place by `FeaturedHere` (path from the `x-pp-pathname` header set in `proxy.ts`), so it is in the first HTML and causes no layout shift.
+- **Homepage scroll chapters** (scroll-craft, chaptered editorial grammar): hero lines assemble and area tiles cascade on load; "How this directory works" pins on md+ (230vh) while its four rules light along a saffron rail; "Why we built it" wipes open; the guides ground drifts to the green wash. All are CSS scroll/view timelines on opacity, transform, clip-path or background colour, and every one is off under reduced motion.
+- **Wordmark weight.** The bold Caslon wordmark is deliberately heavier than the headings: the owner asked for more logo presence. It is Libre Caslon Text's real 700 cut, not a synthetic bold.
+- **Phone numbers** stay Archivo condensed, deliberately: the number is the loudest element of each entry.

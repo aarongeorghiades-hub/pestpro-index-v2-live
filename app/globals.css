@@ -761,7 +761,7 @@
     view-timeline-axis: block;
   }
   @media (min-width: 768px) {
-    .rules-chapter { height: 230vh; }
+    .rules-chapter { height: 200vh; }
     .rules-frame {
       position: sticky;
       top: 76px;
@@ -834,5 +834,14 @@
   .area-head-dark .border-\[var\(--color-ink\)\]\/70 { border-color: rgba(255, 255, 255, 0.7); }
 }
 @layer base {
-  select { border-radius: 8px; }
+  /* Native selects take the palette: no system chrome, an ink chevron. */
+  select {
+    border-radius: 8px;
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 2.25rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230f211a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+  }
 }

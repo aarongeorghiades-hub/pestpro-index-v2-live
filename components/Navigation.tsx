@@ -96,7 +96,7 @@ export function Wordmark({ inverse = false }: { inverse?: boolean }) {
   return (
     <span className={`inline-flex items-baseline gap-1.5 text-[1.375rem] leading-none ${inverse ? 'text-white' : 'text-[var(--color-ink)]'}`}>
       <span className="font-[family-name:var(--font-caslon)] text-[2rem] font-bold leading-none tracking-[-0.03em] md:text-[2.25rem]">PestPro</span>
-      <span className="translate-y-[-0.2em] rounded-[6px] bg-[var(--color-primary)] px-2 py-[5px] font-sans text-[0.875rem] font-semibold leading-none tracking-[0.01em] text-white">Index</span>
+      <span className="translate-y-[-0.34em] rounded-[6px] bg-[var(--color-primary)] px-2 py-[5px] font-sans text-[0.875rem] font-semibold leading-none tracking-[0.01em] text-white">Index</span>
     </span>
   );
 }

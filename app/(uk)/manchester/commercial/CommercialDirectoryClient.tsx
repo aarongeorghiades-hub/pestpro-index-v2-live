@@ -387,7 +387,7 @@ export default function CommercialDirectoryClient({ featured, initialProviders }
                     value={sortBy}
                     onChange={(e) => { setSortBy(e.target.value); applyFilters(providers, selectedFilters); }}
                     aria-label="Sort providers"
-                    className="h-10 rounded-[4px] border border-[var(--color-rule-strong)] bg-white px-3 text-sm font-semibold text-[var(--color-ink)] focus:border-[var(--color-ink)] focus:outline-none"
+                    className="h-10 rounded-[8px] border border-[var(--color-rule-strong)] bg-white px-3 text-sm font-semibold text-[var(--color-ink)] focus:border-[var(--color-ink)] focus:outline-none"
                   >
                     <option value="quality">Sort by Quality Score</option>
                     <option value="name">Sort by Name</option>

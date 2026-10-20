@@ -336,7 +336,7 @@ export default function ResidentialDirectoryClient({ featured, initialProviders 
                   <select
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value)}
-                    className="h-10 rounded-[4px] border border-[var(--color-rule-strong)] bg-white px-3 text-sm font-semibold text-[var(--color-ink)] focus:border-[var(--color-ink)] focus:outline-none"
+                    className="h-10 rounded-[8px] border border-[var(--color-rule-strong)] bg-white px-3 text-sm font-semibold text-[var(--color-ink)] focus:border-[var(--color-ink)] focus:outline-none"
                   >
                     <option value="quality">By Rating</option>
                     <option value="name">By Name (A-Z)</option>

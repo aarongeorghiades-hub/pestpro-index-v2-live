@@ -118,7 +118,7 @@ export default function ProviderDetails({
         featured={isFeatured}
         label={
           isFeatured ? (
-            <span className="flex items-center gap-2 text-[0.8125rem] font-semibold text-[var(--color-marigold-deep)]">
+            <span className="flex items-center gap-2 text-[0.8125rem] font-semibold text-[var(--color-ink-soft)]">
               <span className="dir-tab !bg-[var(--color-saffron)] !py-1 !text-[var(--color-ink)] !shadow-none">Featured</span>
               Paid placement
             </span>
