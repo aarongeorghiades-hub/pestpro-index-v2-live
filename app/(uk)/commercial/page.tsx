@@ -1,6 +1,7 @@
 import { createServerClient } from '@/utils/supabase-server';
 import { inCity } from '@/lib/serviceArea';
 import CommercialDirectoryClient, { type Provider } from './CommercialDirectoryClient';
+import FeaturedHere from '@/components/listing/FeaturedHere';
 
 export const dynamic = 'force-dynamic';
 
@@ -17,5 +18,5 @@ export default async function CommercialPage() {
     .or('regions.cs.["london"]');
   if (error) console.error('[SSR fetch] commercial:', error.message);
 
-  return <CommercialDirectoryClient initialProviders={inCity((data || []) as Provider[], 'london')} />;
+  return <CommercialDirectoryClient featured={<FeaturedHere />} initialProviders={inCity((data || []) as Provider[], 'london')} />;
 }

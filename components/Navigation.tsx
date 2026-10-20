@@ -1,1005 +1,294 @@
-'use client';
+"use client";
 
 import Link from 'next/link';
-import Image from 'next/image';
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
+import { ChevronDown, Menu, X } from 'lucide-react';
+
+// THE UK HEADER. White stock, one hairline, a set wordmark. Every link the old
+// header carried is still here: regions and directories under "Find a firm",
+// the full guides list under "Guides", products, professionals and contact.
+
+const regions = [
+  { name: 'Greater London', href: '/pest-control/greater-london' },
+  { name: 'West Midlands', href: '/pest-control/west-midlands' },
+  { name: 'North West', href: '/pest-control/north-west' },
+  { name: 'Yorkshire & the Humber', href: '/pest-control/yorkshire-and-the-humber' },
+  { name: 'East Midlands', href: '/pest-control/east-midlands' },
+  { name: 'South East', href: '/pest-control/south-east' },
+  { name: 'South West', href: '/pest-control/south-west' },
+  { name: 'Scotland', href: '/pest-control/scotland' },
+  { name: 'North East', href: '/pest-control/north-east' },
+  { name: 'Wales', href: '/pest-control/wales' },
+  { name: 'Northern Ireland', href: '/pest-control/northern-ireland' },
+];
+
+const directories = [
+  { href: '/residential', label: 'Residential Directory' },
+  { href: '/commercial', label: 'Commercial Directory' },
+];
+
+const pestProducts = [
+  { label: 'Home Products', href: '/products' },
+  { label: 'Commercial Products', href: '/commercial-products' },
+];
+
+const startHere = [
+  { href: '/pest-library', label: 'Pest Guides' },
+  { href: '/guides/pest-control-costs', label: 'Pest Control Costs' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/frequently-asked-questions', label: 'Pest Control FAQ' },
+  { href: '/useful-links', label: 'Useful Links' },
+  { href: '/guides', label: 'All Guides' },
+];
+
+const pestGuides = [
+  { href: '/guides/how-to-get-rid-of-rats', label: 'Rat Control Guide' },
+  { href: '/best/rat-traps', label: 'Best Rat Traps' },
+  { href: '/guides/how-to-get-rid-of-mice', label: 'Mouse Control Guide' },
+  { href: '/best/mouse-traps', label: 'Best Mouse Traps' },
+  { href: '/best/rodent-proofing', label: 'Best Rodent Proofing' },
+  { href: '/guides/wasp-nest-removal', label: 'Wasp Nest Removal Guide' },
+  { href: '/best/wasp-killers', label: 'Best Wasp Killers' },
+  { href: '/guides/how-to-get-rid-of-bed-bugs', label: 'Bed Bug Guide' },
+  { href: '/best/bed-bug-treatments', label: 'Best Bed Bug Treatments' },
+  { href: '/guides/how-to-get-rid-of-cockroaches', label: 'Cockroach Guide' },
+  { href: '/best/cockroach-killers', label: 'Best Cockroach Killers' },
+  { href: '/guides/how-to-get-rid-of-fleas', label: 'Flea Control Guide' },
+  { href: '/best/flea-treatments', label: 'Best Flea Treatments' },
+  { href: '/guides/how-to-get-rid-of-ants', label: 'Ant Control Guide' },
+  { href: '/best/ant-killers', label: 'Best Ant Killers' },
+  { href: '/guides/how-to-get-rid-of-squirrels', label: 'Squirrel Control Guide' },
+  { href: '/best/squirrel-deterrents', label: 'Best Squirrel Deterrents' },
+  { href: '/guides/how-to-get-rid-of-foxes', label: 'Fox Control Guide' },
+  { href: '/best/fox-deterrents', label: 'Best Fox Deterrents' },
+  { href: '/best/cat-deterrents', label: 'Best Cat Deterrents' },
+  { href: '/guides/how-to-get-rid-of-silverfish', label: 'Silverfish Control Guide' },
+  { href: '/best/silverfish-treatments', label: 'Best Silverfish Treatments' },
+  { href: '/guides/woodworm-treatment', label: 'Woodworm Treatment Guide' },
+  { href: '/best/woodworm-treatments', label: 'Best Woodworm Treatments' },
+  { href: '/guides/carpet-beetle-control', label: 'Carpet Beetle Control Guide' },
+  { href: '/best/carpet-beetle-treatments', label: 'Best Carpet Beetle Treatments' },
+  { href: '/best/spider-repellent', label: 'Best Spider Repellent' },
+  { href: '/guides/pigeon-control', label: 'Pigeon Control Guide' },
+  { href: '/best/bird-deterrents', label: 'Best Bird Deterrents' },
+  { href: '/guides/how-to-get-rid-of-moths', label: 'Moth Control Guide' },
+  { href: '/best/moth-killers', label: 'Best Moth Killers' },
+];
+
+const commercialGuides = [
+  { href: '/guides/commercial-pest-control', label: 'Commercial Pest Control' },
+  { href: '/guides/restaurant-pest-control', label: 'Restaurant Pest Control' },
+  { href: '/guides/warehouse-pest-management', label: 'Warehouse Pest Management' },
+  { href: '/best/commercial-fly-killers', label: 'Best Commercial Fly Killers' },
+  { href: '/best/commercial-rodent-bait-stations', label: 'Best Commercial Bait Stations' },
+  { href: '/guides/hotel-pest-control', label: 'Hotel Pest Control' },
+  { href: '/guides/office-pest-control', label: 'Office Pest Control' },
+  { href: '/guides/landlord-pest-control', label: 'Landlord Pest Control' },
+  { href: '/best/commercial-insect-monitors', label: 'Best Commercial Insect Monitors' },
+  { href: '/best/commercial-bird-proofing', label: 'Best Commercial Bird Proofing' },
+];
+
+const CITY_PREFIXES = ['/residential', '/commercial', '/birmingham', '/manchester', '/liverpool', '/leeds', '/nottingham', '/brighton', '/sheffield', '/bristol', '/glasgow', '/bradford', '/newcastle', '/cardiff', '/edinburgh', '/leicester', '/hampshire', '/coventry', '/belfast', '/derby', '/pest-control', '/provider'];
+const RESOURCE_PREFIXES = ['/blog', '/resources', '/frequently-asked-questions', '/pest-library', '/pest/', '/useful-links', '/guides', '/best'];
+
+export function Wordmark({ inverse = false }: { inverse?: boolean }) {
+  return (
+    <span className={`inline-flex items-baseline gap-1.5 text-[1.375rem] leading-none ${inverse ? 'text-white' : 'text-[var(--color-ink)]'}`}>
+      <span className="font-[family-name:var(--font-caslon)] text-[2rem] font-bold leading-none tracking-[-0.03em] md:text-[2.25rem]">PestPro</span>
+      <span className="translate-y-[-0.34em] rounded-[6px] bg-[var(--color-primary)] px-2 py-[5px] font-sans text-[0.875rem] font-semibold leading-none tracking-[0.01em] text-white">Index</span>
+    </span>
+  );
+}
+
+type Menu = 'find' | 'guides' | null;
 
 export default function Navigation() {
-  const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
-  const [isFindProviderOpen, setIsFindProviderOpen] = useState(false);
-  const [isResourcesOpen, setIsResourcesOpen] = useState(false);
+  const pathname = usePathname() || '/';
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [menu, setMenu] = useState<Menu>(null);
   const navRef = useRef<HTMLDivElement>(null);
 
-  const isHomeActive = pathname === '/';
-  const isFindProviderActive = pathname?.startsWith('/residential') || pathname?.startsWith('/commercial') || pathname?.startsWith('/birmingham') || pathname?.startsWith('/manchester') || pathname?.startsWith('/liverpool') || pathname?.startsWith('/leeds') || pathname?.startsWith('/nottingham') || pathname?.startsWith('/brighton') || pathname?.startsWith('/sheffield') || pathname?.startsWith('/bristol') || pathname?.startsWith('/glasgow') || pathname?.startsWith('/bradford') || pathname?.startsWith('/newcastle') || pathname?.startsWith('/cardiff') || pathname?.startsWith('/edinburgh') || pathname?.startsWith('/leicester') || pathname?.startsWith('/hampshire') || pathname?.startsWith('/coventry') || pathname?.startsWith('/belfast') || pathname?.startsWith('/derby') || pathname?.startsWith('/pest-control');
-  const isProfessionalsActive = pathname === '/professionals';
-  const isResourcesActive = pathname?.startsWith('/blog') || pathname?.startsWith('/resources') || pathname?.startsWith('/frequently-asked-questions') || pathname?.startsWith('/pest-library') || pathname?.startsWith('/pest/') || pathname?.startsWith('/useful-links') || pathname?.startsWith('/guides') || pathname?.startsWith('/best');
-  const isContactActive = pathname === '/contact';
+  const isFindActive = CITY_PREFIXES.some((p) => pathname.startsWith(p));
+  const isGuidesActive = RESOURCE_PREFIXES.some((p) => pathname.startsWith(p));
 
-  // Close all dropdowns when clicking outside the nav
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (navRef.current && !navRef.current.contains(event.target as Node)) {
-        setIsFindProviderOpen(false);
-        setIsResourcesOpen(false);
+    const onDown = (event: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) setMenu(null);
+    };
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setMenu(null);
+        setMobileOpen(false);
       }
     };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener('mousedown', onDown);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('mousedown', onDown);
+      document.removeEventListener('keydown', onKey);
+    };
   }, []);
 
-  const regions = [
-    { name: 'Greater London', href: '/pest-control/greater-london', status: 'live' },
-    { name: 'West Midlands', href: '/pest-control/west-midlands', status: 'live' },
-    { name: 'North West', href: '/pest-control/north-west', status: 'live' },
-    { name: 'Yorkshire & the Humber', href: '/pest-control/yorkshire-and-the-humber', status: 'live' },
-    { name: 'East Midlands', href: '/pest-control/east-midlands', status: 'live' },
-    { name: 'South East', href: '/pest-control/south-east', status: 'live' },
-    { name: 'South West', href: '/pest-control/south-west', status: 'live' },
-    { name: 'Scotland', href: '/pest-control/scotland', status: 'live' },
-    { name: 'North East', href: '/pest-control/north-east', status: 'live' },
-    { name: 'Wales', href: '/pest-control/wales', status: 'live' },
-    { name: 'Northern Ireland', href: '/pest-control/northern-ireland', status: 'live' },
-  ];
 
-  const pestProducts = [
-    { label: 'Home Products', href: '/products' },
-    { label: 'Commercial Products', href: '/commercial-products' },
-  ];
+  const topLink = (active: boolean) =>
+    `relative rounded-full px-4 py-2.5 text-base font-semibold transition-[background-color,color] duration-200 ${
+      active
+        ? 'bg-[var(--color-primary)] text-white'
+        : 'text-[var(--color-ink)] hover:bg-[var(--color-paper-sunk)] hover:text-[var(--color-primary)]'
+    }`;
+
+  const panelLink = 'block py-1.5 text-sm text-[var(--color-ink-soft)] hover:text-[var(--color-ink)] hover:underline underline-offset-4';
+  const panelHead = 'mb-2 text-[0.8125rem] font-bold text-[var(--color-ink)]';
 
   return (
-    <>
-      <style>{`
-        @media (min-width: 768px) {
-          .logo-container {
-            background: transparent !important;
-            padding: 0 !important;
-            border-radius: 0 !important;
-          }
+    <nav
+      ref={navRef}
+      aria-label="Main"
+      onClick={(event) => {
+        // Any link followed from the header closes whatever menu is open.
+        if ((event.target as Element).closest('a')) {
+          setMenu(null);
+          setMobileOpen(false);
         }
-      `}</style>
-      <nav ref={navRef} className="nav-header sticky top-0 z-50 bg-[var(--color-ink)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex-shrink-0 logo-container bg-white rounded-lg p-2">
-            <Image
-              src="/logo-header.png"
-              alt="PestPro Index Logo"
-              width={230}
-              height={56}
-              className="h-auto"
-            />
-          </Link>
+      }}
+      className="nav-header sticky top-0 z-50 border-b border-[var(--color-rule)] bg-[var(--color-stock)]">
+      <div className="dir-wrap flex h-[76px] items-center justify-between gap-6">
+        <Link href="/" aria-label="PestPro Index home" className="shrink-0">
+          <Wordmark />
+        </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-3">
-          <Link
-            href="/"
-            className={`px-4 py-2 font-semibold text-base transition-colors duration-200 ${isHomeActive ? 'text-[var(--color-paper)]' : 'text-[var(--color-paper)]/75 hover:text-[var(--color-paper)]'}`}
+        <div className="hidden items-center gap-1.5 lg:flex">
+          <button
+            type="button"
+            aria-expanded={menu === 'find'}
+            aria-controls="nav-find"
+            onClick={() => setMenu(menu === 'find' ? null : 'find')}
+            className={`${topLink(isFindActive)} inline-flex items-center gap-1`}
           >
-            Home
-          </Link>
-
-          {/* Find a Provider Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => { setIsFindProviderOpen(!isFindProviderOpen); setIsResourcesOpen(false); }}
-              className={`px-4 py-2 font-semibold text-base transition-colors duration-200 flex items-center gap-1 ${isFindProviderActive ? 'text-[var(--color-paper)]' : 'text-[var(--color-paper)]/75 hover:text-[var(--color-paper)]'}`}
-            >
-              Find a Provider ▾
-            </button>
-
-            {isFindProviderOpen && (
-              <div className="absolute top-full mt-2 left-0 bg-[var(--color-ink)] border border-[var(--color-paper)]/15 rounded-xl shadow-lg min-w-[300px] max-h-[500px] overflow-y-auto z-50">
-                {/* Browse by Region Section */}
-                <div className="px-4 py-3 text-[var(--color-paper)]/60 text-xs font-semibold uppercase tracking-wider border-b border-[var(--color-paper)]/15">
-                  Browse by Region
-                </div>
-                {regions.map((region) => (
-                  region.status === 'live' ? (
-                    <Link
-                      key={region.href}
-                      href={region.href}
-                      className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors border-b border-[var(--color-paper)]/15"
-                      onClick={() => setIsFindProviderOpen(false)}
-                    >
-                      <div className="flex items-center gap-3">
-                        <span className="text-[var(--color-paper)]">{region.name}</span>
-                      </div>
-                    </Link>
-                  ) : (
-                    <span
-                      key={region.href}
-                      className="block px-6 py-3 text-[var(--color-paper)]/60 cursor-default border-b border-[var(--color-paper)]/15"
-                    >
-                      <div className="flex items-center justify-between gap-3">
-                        <span>{region.name}</span>
-                        <span className="text-xs px-2 py-0.5 bg-[var(--color-paper)]/10 text-[var(--color-paper)]/60 rounded font-semibold">
-                          Soon
-                        </span>
-                      </div>
-                    </span>
-                  )
-                ))}
-
-                {/* Divider */}
-                <div className="border-t-2 border-[var(--color-paper)]/15 my-2"></div>
-
-                {/* Directory Links */}
-                <Link
-                  href="/residential"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsFindProviderOpen(false)}
-                >
-                  Residential Directory
-                </Link>
-                <Link
-                  href="/commercial"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsFindProviderOpen(false)}
-                >
-                  Commercial Directory
-                </Link>
-              </div>
-            )}
-          </div>
-
-          {/* Product pages sit at the top level rather than inside a dropdown:
-              a dropdown item is two interactions away and its markup only exists
-              once client state has opened it, so neither page was reachable in a
-              single click. Each renders as its own always-present nav link. */}
+            Find a firm
+            <ChevronDown aria-hidden="true" className={`h-4 w-4 transition-transform duration-200 ${menu === 'find' ? 'rotate-180' : ''}`} />
+          </button>
           {pestProducts.map((product) => (
-            <Link
-              key={product.href}
-              href={product.href}
-              className={`px-4 py-2 font-semibold text-base transition-colors duration-200 ${pathname === product.href ? 'text-[var(--color-paper)]' : 'text-[var(--color-paper)]/75 hover:text-[var(--color-paper)]'}`}
-            >
+            <Link key={product.href} href={product.href} className={topLink(pathname === product.href)}>
               {product.label}
             </Link>
           ))}
-
-          <Link
-            href="/professionals"
-            className={`px-4 py-2 font-semibold text-base transition-colors duration-200 ${isProfessionalsActive ? 'text-[var(--color-paper)]' : 'text-[var(--color-paper)]/75 hover:text-[var(--color-paper)]'}`}
+          <button
+            type="button"
+            aria-expanded={menu === 'guides'}
+            aria-controls="nav-guides"
+            onClick={() => setMenu(menu === 'guides' ? null : 'guides')}
+            className={`${topLink(isGuidesActive)} inline-flex items-center gap-1`}
           >
-            For Professionals
-          </Link>
-
-          {/* Resources Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => { setIsResourcesOpen(!isResourcesOpen); setIsFindProviderOpen(false); }}
-              className={`px-4 py-2 font-semibold text-base transition-colors duration-200 flex items-center gap-1 ${isResourcesActive ? 'text-[var(--color-paper)]' : 'text-[var(--color-paper)]/75 hover:text-[var(--color-paper)]'}`}
-            >
-              Resources ▾
-            </button>
-
-            {isResourcesOpen && (
-              // This dropdown renders 47 links and measured 2,267px tall at
-              // 1400x900 with max-height:none and overflow-y:visible, so the
-              // lower two thirds could not be clicked - page scroll moves an
-              // absolutely-positioned dropdown under a sticky header by only
-              // 36px. It now scrolls inside itself. The dropdown opens at
-              // y=130 on that viewport, so 11rem of headroom keeps its bottom
-              // edge clear of the fold at any viewport height. Desktop only:
-              // the mobile menu is a separate block and already scrolls with
-              // the page.
-              <div className="absolute top-full mt-2 left-0 bg-[var(--color-ink)] border border-[var(--color-paper)]/15 rounded-xl shadow-lg min-w-max z-50 max-h-[calc(100vh-11rem)] overflow-y-auto">
-                <Link
-                  href="/pest-library"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Pest Guides
-                </Link>
-                <Link
-                  href="/guides/pest-control-costs"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Pest Control Costs
-                </Link>
-                <Link
-                  href="/blog"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Blog
-                </Link>
-                <Link
-                  href="/frequently-asked-questions"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Pest Control FAQ
-                </Link>
-                <Link
-                  href="/useful-links"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Useful Links
-                </Link>
-                <div className="border-t border-[var(--color-paper)]/15 my-1"></div>
-                <Link
-                  href="/guides"
-                  className="block px-6 py-3 text-[var(--color-paper)] font-semibold hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  All Guides
-                </Link>
-                <Link
-                  href="/guides/how-to-get-rid-of-rats"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Rat Control Guide
-                </Link>
-                <Link
-                  href="/best/rat-traps"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Best Rat Traps
-                </Link>
-                <Link
-                  href="/guides/how-to-get-rid-of-mice"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Mouse Control Guide
-                </Link>
-                <Link
-                  href="/best/mouse-traps"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Best Mouse Traps
-                </Link>
-                <Link
-                  href="/best/rodent-proofing"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Best Rodent Proofing
-                </Link>
-                <Link
-                  href="/guides/wasp-nest-removal"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Wasp Nest Removal Guide
-                </Link>
-                <Link
-                  href="/best/wasp-killers"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Best Wasp Killers
-                </Link>
-                <Link
-                  href="/guides/how-to-get-rid-of-bed-bugs"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Bed Bug Guide
-                </Link>
-                <Link
-                  href="/best/bed-bug-treatments"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Best Bed Bug Treatments
-                </Link>
-                <Link
-                  href="/guides/how-to-get-rid-of-cockroaches"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Cockroach Guide
-                </Link>
-                <Link
-                  href="/best/cockroach-killers"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Best Cockroach Killers
-                </Link>
-                <Link
-                  href="/guides/how-to-get-rid-of-fleas"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Flea Control Guide
-                </Link>
-                <Link
-                  href="/best/flea-treatments"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Best Flea Treatments
-                </Link>
-                <Link
-                  href="/guides/how-to-get-rid-of-ants"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Ant Control Guide
-                </Link>
-                <Link
-                  href="/best/ant-killers"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Best Ant Killers
-                </Link>
-                <Link
-                  href="/guides/how-to-get-rid-of-squirrels"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Squirrel Control Guide
-                </Link>
-                <Link
-                  href="/best/squirrel-deterrents"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Best Squirrel Deterrents
-                </Link>
-                <Link
-                  href="/guides/how-to-get-rid-of-foxes"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Fox Control Guide
-                </Link>
-                <Link
-                  href="/best/fox-deterrents"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Best Fox Deterrents
-                </Link>
-                <Link
-                  href="/best/cat-deterrents"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Best Cat Deterrents
-                </Link>
-                <Link
-                  href="/guides/how-to-get-rid-of-silverfish"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Silverfish Control Guide
-                </Link>
-                <Link
-                  href="/best/silverfish-treatments"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Best Silverfish Treatments
-                </Link>
-                <Link
-                  href="/guides/woodworm-treatment"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Woodworm Treatment Guide
-                </Link>
-                <Link
-                  href="/best/woodworm-treatments"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Best Woodworm Treatments
-                </Link>
-                <Link
-                  href="/guides/carpet-beetle-control"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Carpet Beetle Control Guide
-                </Link>
-                <Link
-                  href="/best/carpet-beetle-treatments"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Best Carpet Beetle Treatments
-                </Link>
-                <Link
-                  href="/best/spider-repellent"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Best Spider Repellent
-                </Link>
-                <Link
-                  href="/guides/pigeon-control"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Pigeon Control Guide
-                </Link>
-                <Link
-                  href="/best/bird-deterrents"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Best Bird Deterrents
-                </Link>
-                <Link
-                  href="/guides/how-to-get-rid-of-moths"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Moth Control Guide
-                </Link>
-                <Link
-                  href="/best/moth-killers"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Best Moth Killers
-                </Link>
-                <Link
-                  href="/guides/commercial-pest-control"
-                  className="block px-6 py-3 text-[var(--color-paper)] font-semibold hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Commercial Pest Control
-                </Link>
-                <Link
-                  href="/guides/restaurant-pest-control"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Restaurant Pest Control
-                </Link>
-                <Link
-                  href="/guides/warehouse-pest-management"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Warehouse Pest Management
-                </Link>
-                <Link
-                  href="/best/commercial-fly-killers"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Best Commercial Fly Killers
-                </Link>
-                <Link
-                  href="/best/commercial-rodent-bait-stations"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Best Commercial Bait Stations
-                </Link>
-                <Link
-                  href="/guides/hotel-pest-control"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Hotel Pest Control
-                </Link>
-                <Link
-                  href="/guides/office-pest-control"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Office Pest Control
-                </Link>
-                <Link
-                  href="/guides/landlord-pest-control"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Landlord Pest Control
-                </Link>
-                <Link
-                  href="/best/commercial-insect-monitors"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Best Commercial Insect Monitors
-                </Link>
-                <Link
-                  href="/best/commercial-bird-proofing"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Best Commercial Bird Proofing
-                </Link>
-                <Link
-                  href="/guides/pest-control-costs"
-                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
-                  onClick={() => setIsResourcesOpen(false)}
-                >
-                  Pest Control Costs
-                </Link>
-              </div>
-            )}
-          </div>
-
-          <Link
-            href="/contact"
-            className={`px-4 py-2 font-semibold text-base transition-colors duration-200 ${isContactActive ? 'text-[var(--color-paper)]' : 'text-[var(--color-paper)]/75 hover:text-[var(--color-paper)]'}`}
-          >
+            Guides
+            <ChevronDown aria-hidden="true" className={`h-4 w-4 transition-transform duration-200 ${menu === 'guides' ? 'rotate-180' : ''}`} />
+          </button>
+          <Link href="/contact" className={topLink(pathname === '/contact')}>
             Contact
           </Link>
         </div>
 
-        {/* Mobile Hamburger Button */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-          aria-label="Toggle menu"
-        >
-          {isOpen ? (
-            <X className="w-6 h-6" />
-          ) : (
-            <Menu className="w-6 h-6" />
-          )}
-        </button>
+        <div className="flex items-center gap-2">
+          <Link href="/professionals" className={`dir-btn hidden !min-h-11 px-5 text-base lg:inline-flex ${pathname.startsWith('/professionals') ? 'dir-btn-marigold' : 'dir-btn-ink'}`}>
+            For professionals
+          </Link>
+          <button
+            type="button"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-[4px] text-[var(--color-ink)] hover:bg-[var(--color-paper-sunk)] lg:hidden"
+            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileOpen}
+            aria-controls="nav-mobile"
+          >
+            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile Navigation Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-[var(--color-ink)] border-t border-[var(--color-paper)]/15">
-          <div className="px-4 py-4 space-y-2">
-            <Link
-              href="/"
-              className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              Home
-            </Link>
+      {/* Desktop panels */}
+      {menu === 'find' && (
+        <div id="nav-find" className="dir-panel absolute inset-x-0 top-full hidden border-b border-[var(--color-rule)] bg-[var(--color-stock)] shadow-[0_18px_40px_-24px_rgba(19,36,29,0.35)] lg:block">
+          <div className="dir-wrap grid grid-cols-[2fr_1fr] gap-12 py-8">
+            <div>
+              <p className={panelHead}>Browse by region</p>
+              <ul className="columns-2 gap-10">
+                {regions.map((region) => (
+                  <li key={region.href} className="break-inside-avoid">
+                    <Link href={region.href} className={panelLink}>{region.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="border-l border-[var(--color-rule)] pl-10">
+              <p className={panelHead}>Directories</p>
+              <ul>
+                {directories.map((d) => (
+                  <li key={d.href}><Link href={d.href} className={panelLink}>{d.label}</Link></li>
+                ))}
+              </ul>
+              <p className="mt-6 max-w-[30ch] text-sm leading-relaxed text-[var(--color-ink-mute)]">
+                Independent local firms only. No national chains.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+      {menu === 'guides' && (
+        <div id="nav-guides" className="dir-panel absolute inset-x-0 top-full hidden max-h-[calc(100vh-76px)] overflow-y-auto border-b border-[var(--color-rule)] bg-[var(--color-stock)] shadow-[0_18px_40px_-24px_rgba(19,36,29,0.35)] lg:block">
+          <div className="dir-wrap grid grid-cols-[1fr_3fr_1.4fr] gap-10 py-8">
+            <div>
+              <p className={panelHead}>Start here</p>
+              <ul>{startHere.map((l) => <li key={l.href}><Link href={l.href} className={panelLink}>{l.label}</Link></li>)}</ul>
+            </div>
+            <div>
+              <p className={panelHead}>Pests</p>
+              <ul className="columns-3 gap-8">{pestGuides.map((l) => <li key={l.href} className="break-inside-avoid"><Link href={l.href} className={panelLink}>{l.label}</Link></li>)}</ul>
+            </div>
+            <div className="border-l border-[var(--color-rule)] pl-10">
+              <p className={panelHead}>Commercial</p>
+              <ul>{commercialGuides.map((l) => <li key={l.href}><Link href={l.href} className={panelLink}>{l.label}</Link></li>)}</ul>
+            </div>
+          </div>
+        </div>
+      )}
 
-            {/* Mobile Find a Provider Section */}
-            <div className="border-t border-[var(--color-paper)]/15 mt-2 pt-2">
-              <div className="px-4 py-2 text-[var(--color-paper)]/60 text-xs font-semibold uppercase tracking-wider">
-                Find a Provider
-              </div>
-
-              {/* Browse by Region */}
-              <div className="px-4 py-2 text-[var(--color-paper)]/60 text-xs font-light">
-                Browse by Region
-              </div>
-              {regions.map((region) => (
-                region.status === 'live' ? (
-                  <Link
-                    key={region.href}
-                    href={region.href}
-                    className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <div className="flex items-center">
-                      <span className="text-[var(--color-paper)]">{region.name}</span>
-                    </div>
-                  </Link>
-                ) : (
-                  <span
-                    key={region.href}
-                    className="block px-4 py-3 text-[var(--color-paper)]/60 cursor-default rounded-lg"
-                  >
-                    <div className="flex items-center justify-between">
-                      <span>{region.name}</span>
-                      <span className="text-xs px-2 py-0.5 bg-[var(--color-paper)]/10 text-[var(--color-paper)]/60 rounded font-semibold">
-                        Soon
-                      </span>
-                    </div>
-                  </span>
-                )
+      {/* Mobile menu: every group is a native <details>, so it works by touch and keyboard alike. */}
+      {mobileOpen && (
+        <div id="nav-mobile" className="dir-panel max-h-[calc(100dvh-76px)] overflow-y-auto border-t border-[var(--color-rule)] bg-[var(--color-stock)] lg:hidden">
+          <div className="dir-wrap py-4">
+            <ul className="divide-y divide-[var(--color-rule)] border-b border-[var(--color-rule)]">
+              <li><Link href="/" className="block py-3.5 text-lg font-semibold text-[var(--color-ink)]">Home</Link></li>
+              <li>
+                <details className="group" open={isFindActive}>
+                  <summary className="flex cursor-pointer list-none items-center justify-between py-3.5 text-lg font-semibold text-[var(--color-ink)] [&::-webkit-details-marker]:hidden">
+                    Find a firm <ChevronDown aria-hidden="true" className="h-5 w-5 transition-transform group-open:rotate-180" />
+                  </summary>
+                  <ul className="pb-3">
+                    {regions.map((r) => <li key={r.href}><Link href={r.href} className={panelLink}>{r.name}</Link></li>)}
+                    {directories.map((d) => <li key={d.href}><Link href={d.href} className={`${panelLink} font-semibold text-[var(--color-ink)]`}>{d.label}</Link></li>)}
+                  </ul>
+                </details>
+              </li>
+              {pestProducts.map((p) => (
+                <li key={p.href}><Link href={p.href} className="block py-3.5 text-lg font-semibold text-[var(--color-ink)]">{p.label}</Link></li>
               ))}
-
-              {/* Directory Links */}
-              <div className="border-t border-[var(--color-paper)]/15 mt-2 pt-2">
-                <Link
-                  href="/residential"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Residential Directory
-                </Link>
-                <Link
-                  href="/commercial"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Commercial Directory
-                </Link>
-              </div>
-            </div>
-
-            {/* Mobile Pest Products Section */}
-            <div className="border-t border-[var(--color-paper)]/15 mt-2 pt-2">
-              <div className="px-4 py-2 text-[var(--color-paper)]/60 text-xs font-semibold uppercase tracking-wider">
-                Pest Products
-              </div>
-              {pestProducts.map((product) => (
-                <Link
-                  key={product.href}
-                  href={product.href}
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {product.label}
-                </Link>
-              ))}
-            </div>
-
-            <Link
-              href="/professionals"
-              className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              For Professionals
-            </Link>
-
-            {/* Mobile Resources Section */}
-            <div className="border-t border-[var(--color-paper)]/15 mt-2 pt-2">
-              <div className="px-4 py-2 text-[var(--color-paper)]/60 text-xs font-semibold uppercase tracking-wider">
-                Resources
-              </div>
-              <Link
-                href="/pest-library"
-                className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Pest Guides
-              </Link>
-              <Link
-                href="/guides/pest-control-costs"
-                className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Pest Control Costs
-              </Link>
-              <Link
-                href="/blog"
-                className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Blog
-              </Link>
-              <Link
-                href="/frequently-asked-questions"
-                className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Pest Control FAQ
-              </Link>
-              <Link
-                href="/useful-links"
-                className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Useful Links
-              </Link>
-              <div className="border-t border-[var(--color-paper)]/15 mt-2 pt-2">
-                <Link
-                  href="/guides"
-                  className="block px-4 py-3 text-[var(--color-paper)] font-semibold hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  All Guides
-                </Link>
-                <Link
-                  href="/guides/how-to-get-rid-of-rats"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Rat Control Guide
-                </Link>
-                <Link
-                  href="/best/rat-traps"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Best Rat Traps
-                </Link>
-                <Link
-                  href="/guides/how-to-get-rid-of-mice"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Mouse Control Guide
-                </Link>
-                <Link
-                  href="/best/mouse-traps"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Best Mouse Traps
-                </Link>
-                <Link
-                  href="/best/rodent-proofing"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Best Rodent Proofing
-                </Link>
-                <Link
-                  href="/guides/wasp-nest-removal"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Wasp Nest Removal Guide
-                </Link>
-                <Link
-                  href="/best/wasp-killers"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Best Wasp Killers
-                </Link>
-                <Link
-                  href="/guides/how-to-get-rid-of-bed-bugs"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Bed Bug Guide
-                </Link>
-                <Link
-                  href="/best/bed-bug-treatments"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Best Bed Bug Treatments
-                </Link>
-                <Link
-                  href="/guides/how-to-get-rid-of-cockroaches"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Cockroach Guide
-                </Link>
-                <Link
-                  href="/best/cockroach-killers"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Best Cockroach Killers
-                </Link>
-                <Link
-                  href="/guides/how-to-get-rid-of-fleas"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Flea Control Guide
-                </Link>
-                <Link
-                  href="/best/flea-treatments"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Best Flea Treatments
-                </Link>
-                <Link
-                  href="/guides/how-to-get-rid-of-ants"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Ant Control Guide
-                </Link>
-                <Link
-                  href="/best/ant-killers"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Best Ant Killers
-                </Link>
-                <Link
-                  href="/guides/how-to-get-rid-of-squirrels"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Squirrel Control Guide
-                </Link>
-                <Link
-                  href="/best/squirrel-deterrents"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Best Squirrel Deterrents
-                </Link>
-                <Link
-                  href="/guides/how-to-get-rid-of-foxes"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Fox Control Guide
-                </Link>
-                <Link
-                  href="/best/fox-deterrents"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Best Fox Deterrents
-                </Link>
-                <Link
-                  href="/best/cat-deterrents"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Best Cat Deterrents
-                </Link>
-                <Link
-                  href="/guides/how-to-get-rid-of-silverfish"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Silverfish Control Guide
-                </Link>
-                <Link
-                  href="/best/silverfish-treatments"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Best Silverfish Treatments
-                </Link>
-                <Link
-                  href="/guides/woodworm-treatment"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Woodworm Treatment Guide
-                </Link>
-                <Link
-                  href="/best/woodworm-treatments"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Best Woodworm Treatments
-                </Link>
-                <Link
-                  href="/guides/carpet-beetle-control"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Carpet Beetle Control Guide
-                </Link>
-                <Link
-                  href="/best/carpet-beetle-treatments"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Best Carpet Beetle Treatments
-                </Link>
-                <Link
-                  href="/best/spider-repellent"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Best Spider Repellent
-                </Link>
-                <Link
-                  href="/guides/pigeon-control"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Pigeon Control Guide
-                </Link>
-                <Link
-                  href="/best/bird-deterrents"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Best Bird Deterrents
-                </Link>
-                <Link
-                  href="/guides/how-to-get-rid-of-moths"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Moth Control Guide
-                </Link>
-                <Link
-                  href="/best/moth-killers"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Best Moth Killers
-                </Link>
-                <Link
-                  href="/guides/commercial-pest-control"
-                  className="block px-4 py-3 text-[var(--color-paper)] font-semibold hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Commercial Pest Control
-                </Link>
-                <Link
-                  href="/guides/restaurant-pest-control"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Restaurant Pest Control
-                </Link>
-                <Link
-                  href="/guides/warehouse-pest-management"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Warehouse Pest Management
-                </Link>
-                <Link
-                  href="/best/commercial-fly-killers"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Best Commercial Fly Killers
-                </Link>
-                <Link
-                  href="/best/commercial-rodent-bait-stations"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Best Commercial Bait Stations
-                </Link>
-                <Link
-                  href="/guides/hotel-pest-control"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Hotel Pest Control
-                </Link>
-                <Link
-                  href="/guides/office-pest-control"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Office Pest Control
-                </Link>
-                <Link
-                  href="/guides/landlord-pest-control"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Landlord Pest Control
-                </Link>
-                <Link
-                  href="/best/commercial-insect-monitors"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Best Commercial Insect Monitors
-                </Link>
-                <Link
-                  href="/best/commercial-bird-proofing"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Best Commercial Bird Proofing
-                </Link>
-                <Link
-                  href="/guides/pest-control-costs"
-                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Pest Control Costs
-                </Link>
-              </div>
-            </div>
-
-            <Link
-              href="/contact"
-              className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              Contact
-            </Link>
+              <li>
+                <details className="group">
+                  <summary className="flex cursor-pointer list-none items-center justify-between py-3.5 text-lg font-semibold text-[var(--color-ink)] [&::-webkit-details-marker]:hidden">
+                    Guides <ChevronDown aria-hidden="true" className="h-5 w-5 transition-transform group-open:rotate-180" />
+                  </summary>
+                  <ul className="pb-3">
+                    {[...startHere, ...pestGuides, ...commercialGuides].map((l) => <li key={l.href}><Link href={l.href} className={panelLink}>{l.label}</Link></li>)}
+                  </ul>
+                </details>
+              </li>
+              <li><Link href="/contact" className="block py-3.5 text-lg font-semibold text-[var(--color-ink)]">Contact</Link></li>
+            </ul>
+            <Link href="/professionals" className="dir-btn dir-btn-ink mt-5 w-full">For professionals</Link>
           </div>
         </div>
       )}
     </nav>
-    </>
   );
 }

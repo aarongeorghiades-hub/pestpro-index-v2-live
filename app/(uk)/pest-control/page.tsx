@@ -1,9 +1,12 @@
 import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import Navigation from '@/components/Navigation';
+import AreaHead, { LocalOnlyNote } from '@/components/directory/AreaHead';
 import { getAllBoroughs } from './borough-data';
 import { Metadata } from 'next';
 import { formatCount } from '@/lib/formatCount';
 import { countForTarget } from '@/lib/regionCounts';
+import FeaturedHere from '@/components/listing/FeaturedHere';
 
 export async function generateMetadata(): Promise<Metadata> {
   // Both figures use the same filters as the pages they describe, so the
@@ -48,81 +51,67 @@ export default function BoroughIndexPage() {
   const boroughs = getAllBoroughs();
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[var(--color-stock)]">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#1e293b] via-[#1e3a8a] to-[#2563eb] text-white py-32">
-        {/* Layer 1: Center glow */}
-        <div className="absolute inset-0" style={{background: 'radial-gradient(ellipse 800px 600px at center 20%, rgba(59, 130, 246, 0.5) 0%, transparent 60%)'}}></div>
-        
-        {/* Layer 2: Edge vignette */}
-        <div className="absolute inset-0" style={{background: 'radial-gradient(ellipse at center, transparent 20%, rgba(15, 23, 42, 0.85) 100%)'}}></div>
-        
-        {/* Layer 3: Bottom darkening */}
-        <div className="absolute inset-0" style={{background: 'linear-gradient(to bottom, transparent 0%, rgba(15, 23, 42, 0.3) 100%)'}}></div>
-        
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter mb-4" style={{fontWeight: 900, letterSpacing: '-0.05em'}}>
-            Pest Control by London Borough
-          </h1>
-          <p className="text-lg sm:text-xl md:text-2xl font-light mb-8 tracking-widest">
-            Independent local pest controllers in your London borough. No national chains.
-          </p>
-        </div>
-      </section>
+      <AreaHead
+        crumbs={[{ label: 'Home', href: '/' }, { label: 'London boroughs' }]}
+        tab="Greater London"
+        title="Pest Control by London Borough"
+        standfirst={<>Independent local pest controllers in your London borough. No national chains.</>}
+      />
 
-      {/* Intro Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
-          <p className="text-sm text-gray-600 mb-4">We only list independent, local pest controllers who serve this area. National chains are not included, so this isn’t every firm that covers London, just the local ones.</p>
-          <p className="text-lg text-gray-700 leading-relaxed">
+      {/* Intro */}
+      <section className="border-b border-[var(--color-rule-strong)]">
+        <div className="dir-wrap space-y-3 py-10 md:py-12">
+          <LocalOnlyNote>We only list independent, local pest controllers who serve this area. National chains are not included, so this isn’t every firm that covers London, just the local ones.</LocalOnlyNote>
+          <p className="max-w-[68ch] text-lg leading-relaxed text-[var(--color-ink-soft)]">
             Find independent pest controllers based in your London borough, for homes and businesses. Select your area below to learn about local pest issues and connect with providers.
           </p>
         </div>
       </section>
 
-      <div data-featured-slot />
+      <div className="dir-wrap pt-10 empty:hidden"><FeaturedHere /></div>
 
-      {/* Borough Grid */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {boroughs.map((borough) => (
-              <Link key={borough.slug} href={`/pest-control/${borough.slug}`}>
-                <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 h-full hover:-translate-y-1 cursor-pointer border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{borough.name}</h3>
-                  <p className="text-gray-600 text-sm line-clamp-3">
-                    {borough.intro.substring(0, 100)}...
-                  </p>
-                  <div className="mt-4 flex items-center text-blue-600 font-semibold text-sm">
-                    View Borough →
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
+      {/* Borough index, A to Z */}
+      <section className="border-b border-[var(--color-rule-strong)]">
+        <div className="dir-wrap py-14 md:py-20">
+          <ul className="columns-1 gap-x-10 sm:columns-2 lg:columns-3">
+            {[...boroughs]
+              .sort((a, b) => a.name.localeCompare(b.name))
+              .map((borough) => (
+                <li key={borough.slug} className="break-inside-avoid border-t border-[var(--color-rule)]">
+                  <Link
+                    href={`/pest-control/${borough.slug}`}
+                    className="dir-link flex items-baseline justify-between gap-4 py-3 font-semibold"
+                  >
+                    <span>{borough.name}</span>
+                  </Link>
+                </li>
+              ))}
+          </ul>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-black mb-8">Find a Pest Control Provider</h2>
-          <p className="text-lg mb-12 text-blue-100">
+      {/* Homes / businesses */}
+      <section className="bg-[var(--color-paper)]">
+        <div className="dir-wrap py-20 md:py-28">
+          <h2 className="dir-h2 text-[var(--color-ink)]">Find a Pest Control Provider</h2>
+          <p className="mt-4 max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">
             No lead fees. No commissions. Rankings can&apos;t be bought. Results are sorted by rating. Firms can pay for a clearly labelled Featured slot, never a higher rank.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/residential" className="px-8 py-4 bg-white text-blue-600 font-bold rounded-xl hover:bg-blue-50 transition-all">
-              Browse Residential Providers →
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/residential" className="dir-btn dir-btn-ink">
+              Browse Residential Providers
+              <ArrowRight size={16} aria-hidden="true" />
             </Link>
-            <Link href="/commercial" className="px-8 py-4 bg-blue-500 text-white font-bold rounded-xl hover:bg-blue-600 transition-all border-2 border-white">
-              Browse Commercial Providers →
+            <Link href="/commercial" className="dir-btn dir-btn-line">
+              Browse Commercial Providers
+              <ArrowRight size={16} aria-hidden="true" />
             </Link>
           </div>
         </div>
       </section>
-
     </div>
   );
 }

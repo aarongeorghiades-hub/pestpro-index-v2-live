@@ -8,6 +8,7 @@ import ListingSchema from '@/components/ListingSchema';
 import { createServerClient } from '@/utils/supabase-server';
 import { inCity, splitCoverage } from '@/lib/serviceArea';
 import { pestPageFallsBack, placeIsIndexable } from '@/lib/areaDirectory';
+import FeaturedHere from '@/components/listing/FeaturedHere';
 
 export const dynamic = 'force-dynamic';
 
@@ -107,7 +108,7 @@ export default async function HampshireTownPage({ params }: Props) {
     return (
       <>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-        <PestCityPageClient city={cityConfig} pest={pest} initialProviders={providers} initialIsFallback={isFallback} areas={getAllTowns().map(b => ({ name: b.name, slug: b.slug }))} />
+        <PestCityPageClient featured={<FeaturedHere />} city={cityConfig} pest={pest} initialProviders={providers} initialIsFallback={isFallback} areas={getAllTowns().map(b => ({ name: b.name, slug: b.slug }))} />
       </>
     );
   }
@@ -164,7 +165,7 @@ export default async function HampshireTownPage({ params }: Props) {
           { name: data.name, url: `/pest-control/${cityConfig.slug}/${data.slug}` },
         ]}
       />
-      <HampshireTownClient town={data} initialProviders={providers} alsoCovering={alsoCovering} />
+      <HampshireTownClient featured={<FeaturedHere />} town={data} initialProviders={providers} alsoCovering={alsoCovering} />
     </>
   );
 }

@@ -1,5 +1,7 @@
 import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import Navigation from '@/components/Navigation';
+import AreaHead from '@/components/directory/AreaHead';
 import { getAllRegions } from '../data/regions';
 import { countsByRegion, withCount } from '@/lib/regionCounts';
 import { formatCount } from '@/lib/formatCount';
@@ -19,94 +21,60 @@ export default async function RegionsIndexPage() {
   const regionCounts = await countsByRegion(regions);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[var(--color-stock)]">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#1e293b] via-[#1e3a8a] to-[#2563eb] text-white py-32">
-        {/* Layer 1: Center glow */}
-        <div className="absolute inset-0" style={{background: 'radial-gradient(ellipse 800px 600px at center 20%, rgba(59, 130, 246, 0.5) 0%, transparent 60%)'}}></div>
-        
-        {/* Layer 2: Edge vignette */}
-        <div className="absolute inset-0" style={{background: 'radial-gradient(ellipse at center, transparent 20%, rgba(15, 23, 42, 0.85) 100%)'}}></div>
-        
-        {/* Layer 3: Bottom darkening */}
-        <div className="absolute inset-0" style={{background: 'linear-gradient(to bottom, transparent 0%, rgba(15, 23, 42, 0.3) 100%)'}}></div>
-        
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter mb-4" style={{fontWeight: 900, letterSpacing: '-0.05em'}}>
-            Pest Control Across the UK
-          </h1>
-          <p className="text-lg sm:text-xl md:text-2xl font-light mb-8 max-w-3xl mx-auto">
-            PestPro Index lists local, independent pest controllers. Browse by region to find providers near you. National chains are not included.
-          </p>
-        </div>
-      </section>
+      <AreaHead
+        crumbs={[{ label: 'Home', href: '/' }, { label: 'Regions' }]}
+        tab="United Kingdom"
+        title="Pest Control Across the UK"
+        standfirst={<>PestPro Index lists local, independent pest controllers. Browse by region to find providers near you. National chains are not included.</>}
+      />
 
-      {/* Regions Grid */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Region index */}
+      <section className="border-b border-[var(--color-rule-strong)]">
+        <div className="dir-wrap py-14 md:py-20">
+          <ul className="border-b border-[var(--color-rule-strong)]">
             {regions.map((region) => (
-              <Link
-                key={region.slug}
-                href={`/pest-control/${region.slug}`}
-                className="group"
-              >
-                <div className="bg-white rounded-2xl p-8 border-[3px] border-gray-200 hover:border-blue-400 transition-all duration-300 h-full hover:shadow-xl">
-                  <div className="flex items-start justify-between mb-4">
-                    <h2 className="text-2xl font-black text-gray-900 group-hover:text-blue-600 transition-colors">
-                      {region.name}
-                    </h2>
-                    {region.status === 'live' && (
-                      <span className="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">
-                        LIVE
-                      </span>
-                    )}
-                    {region.status === 'coming-soon' && (
-                      <span className="px-3 py-1 bg-blue-100 text-blue-600 text-xs font-bold rounded-full">
-                        SOON
-                      </span>
-                    )}
-                  </div>
-
-                  <p className="text-gray-600 mb-6 line-clamp-3">
-                    {/* The description carries a {count} placeholder so the figure is
-                        computed rather than hardcoded. It must be resolved here as
-                        well as on the region page, or the literal token renders. */}
-                    {withCount(region.description, regionCounts[region.slug])}
-                  </p>
-
-                  {region.status === 'live' && regionCounts[region.slug] !== null && (
-                    <div className="text-sm text-gray-700 mb-4">
-                      <strong>{formatCount(regionCounts[region.slug] as number)}</strong> providers
-                    </div>
-                  )}
-
-                  <div className="text-blue-600 font-bold group-hover:translate-x-2 transition-transform inline-block">
-                    {region.status === 'live' ? 'Browse Providers' : 'Learn More'} →
-                  </div>
-                </div>
-              </Link>
+              <li key={region.slug} className="dir-entry grid gap-x-10 gap-y-2 py-6 md:grid-cols-[minmax(0,16rem)_minmax(0,1fr)_auto] md:items-baseline">
+                <h2 className="dir-h2 text-[var(--color-ink)]">
+                  <Link href={`/pest-control/${region.slug}`} className="dir-link">
+                    {region.name}
+                  </Link>
+                </h2>
+                <p className="max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">
+                  {/* The description carries a {count} placeholder so the figure is
+                      computed rather than hardcoded. It must be resolved here as
+                      well as on the region page, or the literal token renders. */}
+                  {withCount(region.description, regionCounts[region.slug])}
+                </p>
+                <p className="text-sm text-[var(--color-ink-mute)] md:text-right">
+                  {region.status === 'live' && regionCounts[region.slug] !== null ? (
+                    <>
+                      <span className="dir-num font-bold text-[var(--color-ink)]">{formatCount(regionCounts[region.slug] as number)}</span> providers
+                    </>
+                  ) : region.status === 'coming-soon' ? (
+                    'Coming soon'
+                  ) : null}
+                </p>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-black mb-8">
+      {/* Provider CTA */}
+      <section className="bg-[var(--color-paper)]">
+        <div className="dir-wrap py-20 md:py-28">
+          <h2 className="dir-h2 text-[var(--color-ink)]">
             Are you a pest control provider?
           </h2>
-          <p className="text-lg mb-12 text-blue-100">
-            Get listed on PestPro Index — no lead fees, no commissions, just honest directory listings. We're expanding across the UK.
+          <p className="mt-4 max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">
+            Get listed on PestPro Index. No lead fees, no commissions, just honest directory listings. We&apos;re expanding across the UK.
           </p>
-          <Link
-            href="/contact"
-            className="inline-block px-8 py-4 bg-white text-blue-600 font-bold rounded-xl hover:bg-blue-50 transition-all"
-          >
-            Get Listed →
+          <Link href="/contact" className="dir-btn dir-btn-ink mt-6">
+            Get Listed
+            <ArrowRight size={16} aria-hidden="true" />
           </Link>
         </div>
       </section>

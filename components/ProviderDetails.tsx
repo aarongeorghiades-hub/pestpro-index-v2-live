@@ -1,5 +1,8 @@
 import Link from 'next/link';
-import { MapPin, Phone, Mail, Globe, Star, Award, Briefcase, Home as HomeIcon } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, Briefcase, Home as HomeIcon, Mail, MapPin, Phone, Star } from 'lucide-react';
+import AreaHead from '@/components/directory/AreaHead';
+import TopRatedMark from '@/components/directory/TopRatedMark';
+import { isTrophyProvider } from '@/lib/trophy';
 import Navigation from '@/components/Navigation';
 import { generateProfileText } from '@/lib/generateProfileText';
 import { activePests } from '@/lib/pests';
@@ -91,202 +94,198 @@ export default function ProviderDetails({
   const commercialLink = citySlug === 'london' ? '/commercial' : `/${citySlug}/commercial`;
   const rating = typeof provider.google_rating === 'number' ? provider.google_rating : null;
   const reviewCount = typeof provider.google_review_count === 'number' ? provider.google_review_count : null;
+
+  const profileText = provider.profile_text || generateProfileText(provider);
+  // A Featured firm's own page carries the same quiet treatment as its card.
   const isFeatured = provider.tier === 'featured';
-  const profileCopy = provider.profile_text || generateProfileText(provider);
+  const topRated = isTrophyProvider({ google_rating: rating, google_review_count: reviewCount });
+
+  const sectionHead = 'border-b-2 border-[var(--color-ink)] pb-2 text-lg font-bold text-[var(--color-ink)]';
+  const factList = 'grid grid-cols-1 sm:grid-cols-2';
+  const factItem = 'border-b border-[var(--color-rule)] py-2.5 text-base text-[var(--color-ink-soft)]';
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* NAVIGATION */}
+    <div className="min-h-screen bg-[var(--color-stock)]">
       <Navigation />
 
-      {/* PROVIDER HEADER */}
-      <div
-        className={
-          isFeatured
-            ? 'border-b border-[var(--color-ochre-edge)] bg-gradient-to-b from-[var(--color-ochre-wash)] to-white py-12 sm:py-14'
-            : 'bg-gradient-to-r from-blue-50 to-blue-100 border-b border-blue-200 py-12'
+      <AreaHead
+        crumbs={[
+          { label: 'Home', href: '/' },
+          { label: `${cityName} Residential`, href: residentialLink },
+          { label: String(provider.name ?? '') },
+        ]}
+        tab={cityName}
+        featured={isFeatured}
+        label={
+          isFeatured ? (
+            <span className="flex items-center gap-2 text-[0.8125rem] font-semibold text-[var(--color-ink-soft)]">
+              <span className="dir-tab !bg-[var(--color-saffron)] !py-1 !text-[var(--color-ink)] !shadow-none">Featured</span>
+              Paid placement
+            </span>
+          ) : null
         }
-      >
-        <div className="max-w-4xl mx-auto px-4">
-          <Link href={residentialLink} className="text-blue-600 hover:text-blue-800 font-semibold mb-4 inline-block">
-            ← Back to {cityName} Residential
-          </Link>
-          {isFeatured && (
-            <p className="mb-3">
-              <span className="inline-flex items-center rounded-full border border-[var(--color-ochre-edge)] bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.08em] text-[var(--color-ochre-deep)]">
-                Featured
+        title={provider.name}
+        standfirst={
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-base md:text-lg">
+            {rating != null && rating > 0 && (
+              <span className="inline-flex items-center gap-2">
+                <Star aria-hidden="true" className="h-5 w-5 fill-[var(--color-ink)] text-[var(--color-ink)]" strokeWidth={0} />
+                <span className="dir-num font-bold text-[var(--color-ink)]">{rating.toFixed(1)}</span>
+                {reviewCount != null && reviewCount > 0 && (
+                  <span className="dir-num">
+                    from {reviewCount.toLocaleString()} Google {reviewCount === 1 ? 'review' : 'reviews'}
+                  </span>
+                )}
               </span>
-            </p>
-          )}
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">{provider.name}</h1>
-          {rating != null && rating > 0 && (
-            <div className="flex items-center gap-2 mt-2">
-              <div className="flex items-center gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={18} className={i < Math.floor(rating) ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'} />
-                ))}
-              </div>
-              <span className="text-lg font-semibold text-gray-900">{rating}</span>
-              {reviewCount != null && reviewCount > 0 && (
-                <span className="text-gray-600"> ({reviewCount.toLocaleString()} {reviewCount === 1 ? 'review' : 'reviews'})</span>
-              )}
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* MAIN CONTENT */}
-      <div className="max-w-4xl mx-auto px-4 py-12">
-        {/* PROFILE TEXT (AUTO-GENERATED IF NULL) */}
-        {profileCopy && (
-          <div
-            className={
-              isFeatured
-                ? 'mb-8 rounded-2xl border border-[var(--color-ochre-edge)] border-l-[3px] border-l-[var(--color-ochre)] bg-gradient-to-b from-[var(--color-ochre-wash)] to-white p-6 sm:p-8'
-                : 'bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8'
-            }
-          >
-            <p className={isFeatured ? 'text-lg leading-relaxed text-[var(--color-ink)]' : 'text-gray-700 leading-relaxed'}>
-              {profileCopy}
-            </p>
-          </div>
-        )}
-
-        {/* CONTACT DETAILS */}
-        <div className="bg-white border border-gray-200 rounded-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Contact Details</h2>
-          <div className="space-y-4">
+            )}
+            {topRated && <TopRatedMark />}
             {provider.postcode && (
-              <div className="flex items-start gap-3">
-                <MapPin size={20} className="text-blue-600 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-sm text-gray-600">Location</p>
-                  <p className="text-lg text-gray-900">{provider.postcode}</p>
-                </div>
-              </div>
+              <span className="inline-flex items-center gap-1.5">
+                <MapPin aria-hidden="true" className="h-4 w-4 text-[var(--color-ink-mute)]" />
+                <span className="dir-num font-semibold text-[var(--color-ink)]">{provider.postcode}</span>
+              </span>
             )}
+          </div>
+        }
+      />
+
+      <div className="dir-wrap grid gap-12 pb-16 pt-10 md:pb-24 md:pt-12 lg:grid-cols-[minmax(0,1.6fr)_minmax(18rem,1fr)] lg:gap-16">
+        {/* CONTACT: first on a phone, a sticky panel beside the profile on desktop. */}
+        <aside className="lg:order-2">
+          <div className="dir-card p-6 lg:sticky lg:top-24">
+            <h2 className="text-base font-bold text-[var(--color-ink)]">Contact details</h2>
             {provider.phone && (
-              <div className="flex items-start gap-3">
-                <Phone size={20} className="text-blue-600 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-sm text-gray-600">Phone</p>
-                  {/* href is stripped of whitespace — a space in a tel: URI breaks
-                      tap-to-call on some mobile browsers. The displayed number
-                      keeps its formatting. */}
-                  <ProviderPhoneLink slug={slug} phone={String(provider.phone)} />
-                </div>
-              </div>
-            )}
-            {provider.email && (
-              <div className="flex items-start gap-3">
-                <Mail size={20} className="text-blue-600 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-sm text-gray-600">Email</p>
-                  <ProviderEmailLink slug={slug} email={String(provider.email)} />
-                </div>
+              <div className="mt-4">
+                <ProviderPhoneLink
+                  slug={slug}
+                  phone={String(provider.phone)}
+                  className="dir-btn dir-btn-ink w-full !min-h-14 text-lg"
+                >
+                  <Phone aria-hidden="true" className="h-5 w-5" />
+                  <span className="dir-num dir-condensed text-[1.375rem] font-bold tracking-[-0.01em]">{String(provider.phone)}</span>
+                </ProviderPhoneLink>
               </div>
             )}
             {provider.website && (
-              <div className="flex items-start gap-3">
-                <Globe size={20} className="text-blue-600 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-sm text-gray-600">Website</p>
-                  <ProviderWebsiteLink slug={slug} />
-                </div>
+              <div className="mt-2">
+                <ProviderWebsiteLink slug={slug} className="dir-btn dir-btn-line w-full">
+                  Visit website
+                  <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
+                </ProviderWebsiteLink>
               </div>
             )}
-          </div>
-        </div>
-
-        {/* CERTIFICATIONS */}
-        {certificationBadges.length > 0 && (
-          <div className="bg-white border border-gray-200 rounded-lg p-8 mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-              <Award size={24} className="text-blue-600" />
-              Certifications & Memberships
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {certificationBadges.map((badge) => (
-                <div key={badge.column} className="bg-blue-50 border border-blue-200 rounded p-3 text-center">
-                  <p className="font-semibold text-blue-900">{badge.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* PEST TYPES */}
-        {pestBadges.length > 0 && (
-          <div className="bg-white border border-gray-200 rounded-lg p-8 mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Pest Types Handled</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              {pestBadges.map((badge) => (
-                <div key={badge.column} className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">
-                  {badge.label}
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* SERVICES */}
-        {serviceBadges.length > 0 && (
-          <div className="bg-white border border-gray-200 rounded-lg p-8 mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Services Offered</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              {serviceBadges.map((badge) => (
-                <div key={badge.column} className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">
-                  {badge.label}
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* BUSINESS TYPES */}
-        {(provider.business_residential || provider.commercial) && (
-          <div className="bg-white border border-gray-200 rounded-lg p-8 mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Business Types Served</h2>
-            <div className="grid grid-cols-2 gap-4">
-              {provider.business_residential && (
-                <div className="flex items-center gap-2 bg-green-50 border border-green-200 rounded p-3">
-                  <HomeIcon size={20} className="text-green-600" />
-                  <span className="font-medium text-green-900">Residential</span>
+            <dl className="mt-5 space-y-3 border-t border-[var(--color-rule)] pt-5 text-base">
+              {provider.postcode && (
+                <div className="flex items-baseline justify-between gap-4">
+                  <dt className="text-[var(--color-ink-mute)]">Location</dt>
+                  <dd className="dir-num font-semibold text-[var(--color-ink)]">{provider.postcode}</dd>
                 </div>
               )}
-              {provider.commercial && (
-                <div className="flex items-center gap-2 bg-green-50 border border-green-200 rounded p-3">
-                  <Briefcase size={20} className="text-green-600" />
-                  <span className="font-medium text-green-900">Commercial</span>
+              {provider.email && (
+                <div className="flex flex-col gap-1">
+                  <dt className="inline-flex items-center gap-1.5 text-[var(--color-ink-mute)]">
+                    <Mail aria-hidden="true" className="h-4 w-4" /> Email
+                  </dt>
+                  <dd className="break-all">
+                    <ProviderEmailLink slug={slug} email={String(provider.email)} className="dir-link font-semibold" />
+                  </dd>
                 </div>
               )}
-            </div>
+            </dl>
+            <p className="mt-5 text-xs leading-relaxed text-[var(--color-ink-mute)]">
+              You contact the firm directly. PestPro Index takes no lead fees or commission.
+            </p>
           </div>
-        )}
+        </aside>
 
-        <div className="mt-10 flex flex-col gap-2 text-sm">
-          <Link
-            href={`/professionals/claim?slug=${encodeURIComponent(slug)}`}
-            className="font-semibold text-blue-600 hover:underline"
-          >
-            Is this your business? Claim this listing
-          </Link>
-          <Link href={`/provider/${slug}/report`} className="text-gray-600 hover:underline">
-            Report / remove this listing
-          </Link>
-        </div>
+        <div className="space-y-12 lg:order-1">
+          {profileText && (
+            <p
+              className={`max-w-[62ch] text-lg leading-relaxed text-[var(--color-ink)] md:text-xl ${
+                isFeatured ? 'border-t border-[var(--color-rule)] pt-6' : ''
+              }`}
+            >
+              {profileText}
+            </p>
+          )}
 
-        {/* BACK LINKS */}
-        <div className="flex gap-4 mt-12">
-          <Link href={residentialLink} className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-            ← Back to {cityName} Residential
-          </Link>
-          <Link href={commercialLink} className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-            ← Back to {cityName} Commercial
-          </Link>
+          {(provider.business_residential || provider.commercial) && (
+            <section>
+              <h2 className={sectionHead}>Business Types Served</h2>
+              <ul className="grid grid-cols-1 sm:grid-cols-2">
+                {provider.business_residential && (
+                  <li className="flex items-center gap-2.5 border-b border-[var(--color-rule)] py-3 font-semibold text-[var(--color-ink)]">
+                    <HomeIcon aria-hidden="true" className="h-5 w-5 text-[var(--color-ink-mute)]" /> Residential
+                  </li>
+                )}
+                {provider.commercial && (
+                  <li className="flex items-center gap-2.5 border-b border-[var(--color-rule)] py-3 font-semibold text-[var(--color-ink)]">
+                    <Briefcase aria-hidden="true" className="h-5 w-5 text-[var(--color-ink-mute)]" /> Commercial
+                  </li>
+                )}
+              </ul>
+            </section>
+          )}
+
+          {pestBadges.length > 0 && (
+            <section>
+              <h2 className={sectionHead}>Pest Types Handled</h2>
+              <ul className={`${factList} md:grid-cols-3`}>
+                {pestBadges.map((badge) => (
+                  <li key={badge.column} className={factItem}>{badge.label}</li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          {serviceBadges.length > 0 && (
+            <section>
+              <h2 className={sectionHead}>Services Offered</h2>
+              <ul className={factList}>
+                {serviceBadges.map((badge) => (
+                  <li key={badge.column} className={factItem}>{badge.label}</li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          {certificationBadges.length > 0 && (
+            <section>
+              <h2 className={sectionHead}>Certifications & Memberships</h2>
+              <ul className={factList}>
+                {certificationBadges.map((badge) => (
+                  <li key={badge.column} className={`${factItem} font-semibold text-[var(--color-ink)]`}>{badge.label}</li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          <p className="text-xs leading-relaxed text-[var(--color-ink-mute)]">
+            Services and certifications are as stated by the firm. We do not judge outcomes.
+          </p>
+
+          <div className="flex flex-col gap-2 border-t border-[var(--color-rule)] pt-6 text-sm">
+            <Link
+              href={`/professionals/claim?slug=${encodeURIComponent(slug)}`}
+              className="dir-link font-semibold"
+            >
+              Is this your business? Claim this listing
+            </Link>
+            <Link href={`/provider/${slug}/report`} className="text-[var(--color-ink-mute)] hover:text-[var(--color-ink)] hover:underline">
+              Report / remove this listing
+            </Link>
+          </div>
+
+          <div className="flex flex-wrap gap-3">
+            <Link href={residentialLink} className="dir-btn dir-btn-line">
+              <ArrowLeft aria-hidden="true" className="h-4 w-4" /> Back to {cityName} Residential
+            </Link>
+            <Link href={commercialLink} className="dir-btn dir-btn-line">
+              <ArrowLeft aria-hidden="true" className="h-4 w-4" /> Back to {cityName} Commercial
+            </Link>
+          </div>
         </div>
       </div>
-
     </div>
   );
 }

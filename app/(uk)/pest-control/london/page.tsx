@@ -4,6 +4,7 @@ import { getAllBoroughs } from './london-boroughs';
 import { Metadata } from 'next';
 import { countForTarget } from '@/lib/regionCounts';
 import { formatCount } from '@/lib/formatCount';
+import FeaturedHere from '@/components/listing/FeaturedHere';
 
 async function londonCounts() {
   const [residential, commercial] = await Promise.all([
@@ -188,7 +189,7 @@ export default async function LondonPestControlHubPage() {
         </div>
       </section>
 
-      <div data-featured-slot />
+      <FeaturedHere />
 
       {/* Borough Grid */}
       <section className="py-24 bg-white">

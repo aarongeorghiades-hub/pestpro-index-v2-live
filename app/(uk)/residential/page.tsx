@@ -3,6 +3,7 @@ import { createServerClient } from '@/utils/supabase-server';
 import { inCity } from '@/lib/serviceArea';
 import ResidentialDirectoryClient, { type Provider } from './ResidentialDirectoryClient';
 import ListingSchema from '@/components/ListingSchema';
+import FeaturedHere from '@/components/listing/FeaturedHere';
 
 export const dynamic = 'force-dynamic';
 
@@ -46,7 +47,7 @@ export default async function ResidentialPage() {
           { name: 'London', url: '/residential' },
         ]}
       />
-      <ResidentialDirectoryClient initialProviders={providers} />
+      <ResidentialDirectoryClient featured={<FeaturedHere />} initialProviders={providers} />
     </>
   );
 }

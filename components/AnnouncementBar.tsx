@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import { X } from 'lucide-react';
 
 // S66 R7 — SCOPED BY ROUTE. This banner used to render on 177 of 179 UK
 // documents. It is a landlord damp-and-mould notice, and on /best/mole-traps it
@@ -27,21 +28,21 @@ export default function AnnouncementBar({ routes }: { routes: string[] }) {
   return (
     <div className="flex items-center justify-between gap-4 bg-[var(--color-ink)] px-4 py-2 text-sm text-[var(--color-paper)]">
       <div className="flex items-center gap-2 flex-1 justify-center text-center">
-        <span className="font-medium">🏠 Awaab&apos;s Law 2026:</span>
-        <span className="hidden sm:inline">Landlords — act now on damp and mould.</span>
+        <span className="font-bold">Awaab&apos;s Law 2026:</span>
+        <span className="hidden sm:inline">Landlords, act now on damp and mould.</span>
         <Link
           href="/best/awaabs-law-damp-mould-equipment"
-          className="whitespace-nowrap font-semibold underline hover:text-[var(--color-ochre-edge)]"
+          className="whitespace-nowrap font-semibold underline underline-offset-4 hover:text-[var(--color-marigold)]"
         >
           See the compliance equipment guide
         </Link>
       </div>
       <button
         onClick={() => setDismissed(true)}
-        className="flex-shrink-0 text-lg leading-none text-[var(--color-paper)]/60 hover:text-[var(--color-paper)]"
+        className="inline-flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-[3px] text-[var(--color-paper)]/70 hover:bg-white/10 hover:text-[var(--color-paper)]"
         aria-label="Dismiss"
       >
-        ×
+        <X aria-hidden="true" className="h-4 w-4" />
       </button>
     </div>
   );

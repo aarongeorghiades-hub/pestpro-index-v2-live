@@ -14,13 +14,38 @@
 // global: the html/body shell, the fonts, globals.css, the site metadata
 // defaults and the consent gate.
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Archivo, Geist, Geist_Mono, Libre_Caslon_Display, Libre_Caslon_Text } from "next/font/google";
 import ConsentManager from "@/components/ConsentManager";
 import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+});
+
+// Archivo is variable on weight AND width. The width axis is what gives the
+// directory its condensed display voice without loading a second family.
+const archivo = Archivo({
+  variable: "--font-archivo",
+  subsets: ["latin"],
+  axes: ["wdth"],
+});
+
+// Libre Caslon italic is the accent voice beside Archivo: the English
+// printer's face, for a phrase in a headline, never a whole block.
+const caslon = Libre_Caslon_Text({
+  variable: "--font-caslon",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
+});
+
+// Libre Caslon Display sets the headings; Archivo carries text, UI and the
+// phone numbers. Caslon is the English printer's face: a local directory's.
+const caslonDisplay = Libre_Caslon_Display({
+  variable: "--font-caslon-display",
+  subsets: ["latin"],
+  weight: ["400"],
 });
 
 const geistMono = Geist_Mono({
@@ -67,7 +92,7 @@ export default function RootLayout({
   // unlayered Arial rule in globals.css, and fixing only the Arial rule would
   // have landed the estate on system-ui while still never loading Geist.
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${archivo.variable} ${caslon.variable} ${caslonDisplay.variable} ${geistSans.variable} ${geistMono.variable}`}>
       <head></head>
       <body className="antialiased">
         {children}

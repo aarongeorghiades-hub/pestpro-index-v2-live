@@ -128,13 +128,13 @@ export default function SearchBar({ onSearch, allProviders, onClear }: SearchBar
   return (
     <div className="mb-6">
       <div className="relative">
-        <Search className="absolute left-3 top-3 text-gray-400" size={20} />
+        <Search className="absolute left-3 top-3.5 text-[var(--color-ink-mute)]" size={20} />
         <input
           type="text"
           value={searchInput}
           onChange={(e) => handleSearch(e.target.value)}
           placeholder="Search by postcode or provider name..."
-          className="w-full pl-10 pr-10 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-600 text-black"
+          className="h-12 w-full rounded-[8px] border border-[var(--color-rule-strong)] bg-white pl-10 pr-10 text-[var(--color-ink)] transition-colors focus:border-[var(--color-ink)] focus:outline-none"
         />
         {searchInput && (
           <button
@@ -146,7 +146,7 @@ export default function SearchBar({ onSearch, allProviders, onClear }: SearchBar
         )}
         {isLoading && (
           <div className="absolute right-3 top-3">
-            <div className="animate-spin h-5 w-5 border-2 border-blue-600 border-t-transparent rounded-full"></div>
+            <div className="animate-spin h-5 w-5 border-2 border-[var(--color-ink)] border-t-transparent rounded-full"></div>
           </div>
         )}
       </div>

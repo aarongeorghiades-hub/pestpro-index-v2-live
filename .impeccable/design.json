@@ -1,0 +1,406 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-20T18:03:29+00:00",
+  "title": "Design System: PestPro Index",
+  "extensions": {
+    "colorMeta": {
+      "marigold": {
+        "role": "primary",
+        "displayName": "Directory Marigold",
+        "canonical": "oklch(81.1% 0.166 85.0)",
+        "tonalRamp": [
+          "#1a0500",
+          "#401c00",
+          "#623d00",
+          "#855f00",
+          "#aa821e",
+          "#d1a84b",
+          "#f5cb70",
+          "#ffebae"
+        ]
+      },
+      "marigold-deep": {
+        "role": "primary",
+        "displayName": "Marigold Deep",
+        "canonical": "oklch(44.7% 0.092 86.1)",
+        "tonalRamp": [
+          "#170700",
+          "#3a2100",
+          "#5b4000",
+          "#7d621d",
+          "#a28543",
+          "#c8aa68",
+          "#eccd8a",
+          "#ffecbe"
+        ]
+      },
+      "marigold-wash": {
+        "role": "primary",
+        "displayName": "Featured Wash",
+        "canonical": "oklch(97.5% 0.030 94.3)",
+        "tonalRamp": [
+          "#0e0b03",
+          "#2b2615",
+          "#4a4533",
+          "#6b6653",
+          "#8f8975",
+          "#b4ae99",
+          "#d7d1bc",
+          "#f3efdf"
+        ]
+      },
+      "marigold-edge": {
+        "role": "primary",
+        "displayName": "Featured Edge",
+        "canonical": "oklch(85.1% 0.114 93.7)",
+        "tonalRamp": [
+          "#160800",
+          "#392200",
+          "#5a4200",
+          "#7c6300",
+          "#a08728",
+          "#c6ac52",
+          "#ead076",
+          "#ffeeb1"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Directory Ink",
+        "canonical": "oklch(24.3% 0.027 166.3)",
+        "tonalRamp": [
+          "#040e09",
+          "#1a2b23",
+          "#384a42",
+          "#586b63",
+          "#7b8f85",
+          "#9fb4aa",
+          "#c1d7cd",
+          "#e3f3ec"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Ink Soft",
+        "canonical": "oklch(41.4% 0.025 164.9)",
+        "tonalRamp": [
+          "#050e09",
+          "#1b2a23",
+          "#394942",
+          "#596b62",
+          "#7c8e85",
+          "#a0b3aa",
+          "#c3d7cd",
+          "#e4f2eb"
+        ]
+      },
+      "ink-mute": {
+        "role": "neutral",
+        "displayName": "Ink Mute",
+        "canonical": "oklch(52.6% 0.023 163.9)",
+        "tonalRamp": [
+          "#050d09",
+          "#1c2a23",
+          "#3a4942",
+          "#5b6a62",
+          "#7d8e85",
+          "#a1b3aa",
+          "#c4d6cd",
+          "#e5f2ec"
+        ]
+      },
+      "stock": {
+        "role": "neutral",
+        "displayName": "Stock",
+        "canonical": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262626",
+          "#454545",
+          "#666666",
+          "#898989",
+          "#aeaeae",
+          "#d1d1d1",
+          "#eeeeee"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Cool Paper",
+        "canonical": "oklch(97.5% 0.003 128.5)",
+        "tonalRamp": [
+          "#0b0b0a",
+          "#262725",
+          "#444544",
+          "#656665",
+          "#888988",
+          "#adaeac",
+          "#d0d1cf",
+          "#eeefed"
+        ]
+      },
+      "paper-sunk": {
+        "role": "neutral",
+        "displayName": "Paper Sunk",
+        "canonical": "oklch(95.2% 0.006 137.8)",
+        "tonalRamp": [
+          "#0a0c0a",
+          "#252724",
+          "#434643",
+          "#646763",
+          "#878a86",
+          "#acafab",
+          "#cfd2ce",
+          "#edefec"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(91.0% 0.009 150.7)",
+        "tonalRamp": [
+          "#090c0a",
+          "#232824",
+          "#424642",
+          "#626863",
+          "#858b86",
+          "#aab0ab",
+          "#cdd3ce",
+          "#ebf0ec"
+        ]
+      },
+      "rule-strong": {
+        "role": "neutral",
+        "displayName": "Strong Hairline",
+        "canonical": "oklch(80.9% 0.016 154.4)",
+        "tonalRamp": [
+          "#080d09",
+          "#202923",
+          "#3e4841",
+          "#5f6962",
+          "#828c85",
+          "#a6b1a9",
+          "#c9d4cc",
+          "#e9f1eb"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Area names and page H1s; condensed heavy Archivo."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section heads, large prices and step numbers."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Firm names in entries; route lines and definition terms."
+      },
+      "phone": {
+        "displayName": "Phone",
+        "purpose": "Phone numbers: the loudest element of every entry."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Copy at ink-soft, 56-62ch."
+      },
+      "meta": {
+        "displayName": "Meta",
+        "purpose": "Postcode, place, rating and review lines."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Tabs, list heads, panel heads; sentence case."
+      }
+    },
+    "shadows": [
+      {
+        "name": "nav-panel",
+        "value": "0 18px 40px -24px rgba(19,36,29,0.35)",
+        "purpose": "Desktop navigation drop panels only."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Button press and the homepage highlighter draw."
+      },
+      {
+        "name": "state-transition",
+        "value": "0.18s ease",
+        "purpose": "Button and link color/border changes."
+      },
+      {
+        "name": "rule-draw",
+        "value": "scaleX(0 to 1), animation-timeline: view(), range entry 0% to entry 60%",
+        "purpose": "Entry rules draw in from the left as rows scroll into view; reduced-motion shows the static rule."
+      },
+      {
+        "name": "rise",
+        "value": "translateY(12px) and fade, animation-timeline: view(), range entry 0% to entry 45%",
+        "purpose": "Section headlines rising on entry."
+      },
+      {
+        "name": "highlighter-draw",
+        "value": "1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s",
+        "purpose": "The marigold stroke under 'local' on the homepage H1, once."
+      },
+      {
+        "name": "runhead-in",
+        "value": "animation-timeline: scroll(root), range 120px to 320px",
+        "purpose": "Area running head fades and slides in as the page head scrolls away."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1280px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Ink Button",
+      "kind": "button",
+      "refersTo": "button-ink",
+      "description": "Primary action: Call, Get listed, the header For Professionals link.",
+      "html": "<a class=\"ds-btn ds-btn-ink\" href=\"#\">Get your firm listed</a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:2.75rem;padding:.6rem 1.1rem;border-radius:4px;font-weight:700;font-size:.9375rem;line-height:1.1;text-decoration:none;font-family: var(--font-archivo), Arial, sans-serif;transition:background-color .18s ease,color .18s ease,border-color .18s ease,transform .18s cubic-bezier(.16,1,.3,1);} .ds-btn:active{transform:translateY(1px);} .ds-btn:focus-visible{outline:2px solid var(--color-ink,#13241d);outline-offset:2px;} .ds-btn-ink{background:var(--color-ink,#13241d);color:var(--color-stock,#fff);} .ds-btn-ink:hover{background:#1f3a2f;}"
+    },
+    {
+      "name": "Line Button",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "Secondary action: Website, product links, rates anchor.",
+      "html": "<a class=\"ds-btn-line\" href=\"#\">Website <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></a>",
+      "css": ".ds-btn-line{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:2.75rem;padding:.6rem 1.1rem;border-radius:4px;font-weight:700;font-size:.9375rem;line-height:1.1;text-decoration:none;font-family: var(--font-archivo), Arial, sans-serif;background:var(--color-stock,#fff);color:var(--color-ink,#13241d);border:1px solid var(--color-rule-strong,#b9c4bc);transition:border-color .18s ease,transform .18s cubic-bezier(.16,1,.3,1);} .ds-btn-line:hover{border-color:var(--color-ink,#13241d);} .ds-btn-line:active{transform:translateY(1px);} .ds-btn-line:focus-visible{outline:2px solid var(--color-ink,#13241d);outline-offset:2px;}"
+    },
+    {
+      "name": "Mobile Call Button",
+      "kind": "button",
+      "refersTo": "call-button-mobile",
+      "description": "Below md, the phone becomes a full-width ink tap-to-call button.",
+      "html": "<a class=\"ds-call\" href=\"tel:01610000000\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z\"/></svg><span class=\"ds-call-k\">Call</span><span class=\"ds-call-n\">0161 000 0000</span></a>",
+      "css": ".ds-call{display:flex;width:100%;max-width:22rem;align-items:center;justify-content:center;gap:.5rem;min-height:3.25rem;padding:.6rem 1.1rem;border-radius:4px;background:var(--color-ink,#13241d);color:#fff;text-decoration:none;font-family: var(--font-archivo), Arial, sans-serif;transition:background-color .18s ease,transform .18s cubic-bezier(.16,1,.3,1);} .ds-call:hover{background:#1f3a2f;} .ds-call:active{transform:translateY(1px);} .ds-call:focus-visible{outline:2px solid var(--color-ink,#13241d);outline-offset:2px;} .ds-call-k{font-size:.8125rem;font-weight:600;color:rgba(255,255,255,.75);} .ds-call-n{font-size:1.375rem;font-weight:700;line-height:1;letter-spacing:-.01em;font-stretch:80%;font-variant-numeric:tabular-nums;}"
+    },
+    {
+      "name": "Area Tab",
+      "kind": "chip",
+      "refersTo": "area-tab",
+      "description": "The marigold thumb-tab: running head area name, Featured label.",
+      "html": "<span class=\"ds-tab\">Greater Manchester</span>",
+      "css": ".ds-tab{display:inline-flex;align-items:center;gap:.5rem;background:var(--color-marigold,#f2b705);color:var(--color-ink,#13241d);font-weight:700;font-size:.8125rem;line-height:1;padding:.45rem .7rem .4rem;border-radius:3px;font-family: var(--font-archivo), Arial, sans-serif;}"
+    },
+    {
+      "name": "Top Rated Mark",
+      "kind": "chip",
+      "refersTo": "top-rated-mark",
+      "description": "Typographic fact for 4.5+ from 30+ Google reviews.",
+      "html": "<span class=\"ds-top\"><svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\"/></svg>Top rated</span>",
+      "css": ".ds-top{display:inline-flex;align-items:center;gap:.25rem;border:1px solid var(--color-ink,#13241d);border-radius:3px;padding:3px .375rem;font-size:.6875rem;font-weight:700;line-height:1;color:var(--color-ink,#13241d);font-family: var(--font-archivo), Arial, sans-serif;}"
+    },
+    {
+      "name": "Service Tag",
+      "kind": "chip",
+      "refersTo": "service-tag",
+      "description": "Provider-stated service fact on an entry.",
+      "html": "<span class=\"ds-tag\">Commercial</span>",
+      "css": ".ds-tag{display:inline-block;border-radius:3px;background:var(--color-paper-sunk,#edf0ec);color:var(--color-ink-soft,#3f5048);padding:.25rem .5rem;font-size:.75rem;font-weight:600;font-family: var(--font-archivo), Arial, sans-serif;}"
+    },
+    {
+      "name": "Directory Entry",
+      "kind": "custom",
+      "refersTo": "directory-entry",
+      "description": "One ruled firm row; the phone is the loudest thing on the line.",
+      "html": "<article class=\"ds-entry\"><div><h3 class=\"ds-entry-name\"><a href=\"#\">Northside Pest Control</a></h3><p class=\"ds-entry-meta\"><b>M14 5AB</b> Based in Fallowfield <b>4.8</b> 126 Google reviews</p></div><div class=\"ds-entry-act\"><span class=\"ds-entry-phone\">0161 000 0000</span></div></article>",
+      "css": ".ds-entry{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:1rem 2rem;padding:1.5rem 0;border-top:1px solid var(--color-rule-strong,#b9c4bc);border-bottom:1px solid var(--color-rule-strong,#b9c4bc);font-family: var(--font-archivo), Arial, sans-serif;color:var(--color-ink,#13241d);} .ds-entry-name{margin:0;font-size:1.3125rem;font-weight:700;letter-spacing:-.01em;line-height:1.375;} .ds-entry-name a{color:inherit;text-decoration:none;} .ds-entry-name a:hover{text-decoration:underline;text-decoration-color:var(--color-rule-strong,#b9c4bc);text-underline-offset:.2em;} .ds-entry-name a:focus-visible{outline:2px solid var(--color-ink,#13241d);outline-offset:2px;} .ds-entry-meta{margin:.375rem 0 0;font-size:.875rem;color:var(--color-ink-soft,#3f5048);font-variant-numeric:tabular-nums;} .ds-entry-meta b{color:var(--color-ink,#13241d);font-weight:600;margin-right:.25rem;} .ds-entry-phone{font-size:1.625rem;font-weight:700;line-height:1;letter-spacing:-.01em;font-stretch:80%;font-variant-numeric:tabular-nums;white-space:nowrap;}"
+    },
+    {
+      "name": "Featured Entry",
+      "kind": "card",
+      "refersTo": "featured-entry",
+      "description": "Paid placement: marigold wash, labelled, above and outside the rated list.",
+      "html": "<div class=\"ds-feat\"><div class=\"ds-feat-head\"><span class=\"ds-feat-tab\">Featured</span><span class=\"ds-feat-paid\">Paid placement</span></div><div class=\"ds-feat-body\"><strong>North West Pest Away UK Ltd</strong><span class=\"ds-feat-phone\">0161 000 0000</span></div></div>",
+      "css": ".ds-feat{overflow:hidden;border:1px solid var(--color-marigold-edge,#e7cd73);border-radius:6px;background:var(--color-marigold-wash,#fdf7e1);color:var(--color-ink,#13241d);font-family: var(--font-archivo), Arial, sans-serif;} .ds-feat-head{display:flex;align-items:center;gap:.5rem;padding:.625rem 1.75rem;border-bottom:1px solid var(--color-marigold-edge,#e7cd73);font-size:.8125rem;font-weight:700;} .ds-feat-tab{background:var(--color-marigold,#f2b705);padding:.25rem .7rem;border-radius:3px;line-height:1;} .ds-feat-paid{color:var(--color-marigold-deep,#6b5000);font-weight:600;} .ds-feat-body{display:flex;justify-content:space-between;align-items:center;gap:2rem;padding:1.5rem 1.75rem;font-size:1.3125rem;} .ds-feat-phone{font-size:1.625rem;font-weight:700;font-stretch:80%;font-variant-numeric:tabular-nums;}"
+    },
+    {
+      "name": "Site Header",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Sticky stock header; active link carries a 3px marigold underline.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-logo\"><span class=\"ds-logo-w\">PestPro</span><span class=\"ds-logo-t\">Index</span></span><span class=\"ds-nav-links\"><a href=\"#\" class=\"is-active\">Find pest control</a><a href=\"#\">Guides</a><a href=\"#\">Contact</a></span></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;height:4rem;padding:0 2rem;background:var(--color-stock,#fff);border-bottom:1px solid var(--color-rule-strong,#b9c4bc);font-family: var(--font-archivo), Arial, sans-serif;} .ds-logo{display:inline-flex;align-items:baseline;gap:.375rem;color:var(--color-ink,#13241d);} .ds-logo-w{font-size:1.5rem;font-weight:800;font-stretch:72%;letter-spacing:-.01em;} .ds-logo-t{background:var(--color-marigold,#f2b705);border-radius:3px;padding:3px .375rem;font-size:.8125rem;font-weight:700;line-height:1;} .ds-nav-links{display:flex;gap:.25rem;height:100%;} .ds-nav-links a{position:relative;display:flex;align-items:center;padding:0 .75rem;font-size:.9375rem;font-weight:600;color:var(--color-ink-soft,#3f5048);text-decoration:none;} .ds-nav-links a:hover{color:var(--color-ink,#13241d);} .ds-nav-links a:focus-visible{outline:2px solid var(--color-ink,#13241d);outline-offset:2px;} .ds-nav-links a.is-active{color:var(--color-ink,#13241d);} .ds-nav-links a.is-active::after{content:\"\";position:absolute;left:.75rem;right:.75rem;bottom:-1px;height:3px;background:var(--color-marigold,#f2b705);}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Local Directory, Rebuilt",
+    "overview": "The UK estate is set like a modern printed local directory: white stock, deep ink-green type, hairline rules, and one marigold accent used the way a directory uses its thumb-tabs and highlighter. Place names are set huge in condensed heavy Archivo. Firms are ruled entries in one even column, and the phone number is the loudest thing on each line. The page reads as a list you scan and call from, not as a set of floating cards.\n\nDensity is high but calm. Rows keep an even rhythm, numbers line up in tabular figures, and structure comes from rules (1px hairlines, 2px ink rules over list heads), not from boxes or shadows. Depth is almost absent: the only shadow sits under the desktop navigation drop panels. Motion is printed-matter motion. Rules draw in from the left as entries scroll into view, a marigold highlighter stroke draws once under \"local\" on the homepage, and the area running head eases in as the page head scrolls away.\n\nWhat it refuses, as shipped: the blue gradient hero, the floating search box, and the grid of shadowed rounded cards. No emoji and no icon tiles. Lucide line icons appear only inline, at text size, beside the fact they label (postcode, rating, call, external link).",
+    "keyCharacteristics": [
+      "White stock ground, ink-green type, hairline ink-green rules.",
+      "One marigold accent, used as a mark (tab, active underline, highlighter, Featured wash), never as text color.",
+      "Archivo variable font: condensed heavy (wdth 72, weight 800) for display, wdth 80 for phone numbers, normal width for text.",
+      "Tabular numerals for phone numbers, counts, ratings, postcodes and prices.",
+      "Square-ish corners (2 to 6px). Flat surfaces.",
+      "Ruled entries of equal rhythm, with a static closing rule at the end of each list."
+    ],
+    "rules": [
+      {
+        "name": "The Thumb-Tab Rule",
+        "body": "Marigold is a mark, not a surface: tabs, an active underline, a highlighter stroke, a dot, selection. The only marigold area larger than a label is the pale Featured wash, and that is reserved for paid placement.",
+        "section": "colors"
+      },
+      {
+        "name": "The No Marigold Text Rule",
+        "body": "Text never sits in marigold itself. Text on marigold is ink. Accent-colored text uses marigold-deep.",
+        "section": "colors"
+      },
+      {
+        "name": "The Width Not Family Rule",
+        "body": "Hierarchy comes from Archivo's width and weight axes. Do not add a second display face.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Numbers Rule",
+        "body": "Every phone number, count, rating, review count, postcode and price is set with tabular figures so columns align like a printed directory.",
+        "section": "typography"
+      },
+      {
+        "name": "The Rules Not Shadows Rule",
+        "body": "Separate content with 1px strong hairlines and 2px ink rules. Entries, Featured blocks and panels carry no shadow.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do make the phone number the loudest element in every firm entry: condensed, bold, tabular, ink.",
+      "Do separate entries with strong hairlines of equal rhythm (1.5rem row padding) and close every list with a static rule.",
+      "Do keep marigold to tabs, the active underline, the highlighter, selection and the Featured wash. Set accent text in marigold-deep.",
+      "Do set every count, rating, postcode, phone number and price in tabular figures.",
+      "Do label paid placement in words (\"Featured\", \"Paid placement\") and keep it outside the rated list.",
+      "Do design empty lists as a ruled column with a sentence, not as blank space.",
+      "Do gate every entrance animation behind prefers-reduced-motion and show the static end state without it."
+    ],
+    "donts": [
+      "Don't use a blue gradient hero, a floating search box, or a grid of shadowed rounded cards.",
+      "Don't put text in marigold, and don't use marigold as a large fill outside the Featured wash.",
+      "Don't add shadows to entries, Featured blocks or panels. The nav drop panel is the only lifted surface.",
+      "Don't use emoji or icon tiles. Keep icons as inline line icons at text size.",
+      "Don't round corners past 6px.",
+      "Don't pull in the guide pages' ochre and teal tokens. They belong to the legacy guide world, not the directory."
+    ]
+  }
+}

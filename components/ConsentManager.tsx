@@ -173,8 +173,8 @@ export default function ConsentManager() {
   // element type with the same padding, font size, font weight, border and
   // colour, so neither is nudged ahead of the other.
   const choiceButton =
-    'w-full sm:w-auto px-5 py-2.5 text-sm font-semibold rounded-lg border-2 ' +
-    'border-slate-900 bg-white text-slate-900 hover:bg-slate-100 ' +
+    'w-full sm:w-auto px-5 py-2.5 text-sm font-semibold rounded-[8px] border ' +
+    'border-[var(--color-ink)] bg-white text-[var(--color-ink)] hover:bg-[var(--color-paper)] ' +
     'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-900';
 
   return (
@@ -182,13 +182,13 @@ export default function ConsentManager() {
       role="dialog"
       aria-label="Cookie choices"
       aria-modal="false"
-      className="fixed bottom-0 left-0 right-0 z-[9999] bg-white border-t-2 border-slate-900 shadow-[0_-4px_16px_rgba(0,0,0,0.15)]"
+      className="fixed bottom-0 left-0 right-0 z-[9999] bg-white border-t border-[var(--color-rule-strong)] shadow-[0_-8px_24px_-12px_rgba(15,33,26,0.18)]"
     >
       <div className="max-w-5xl mx-auto px-4 py-4 sm:py-5">
-        <p className="text-sm text-slate-800 leading-relaxed">
+        <p className="text-sm text-[var(--color-ink-soft)] leading-relaxed">
           We use cookies to measure how this site is used and to support advertising. Nothing loads
           until you choose. Read our{' '}
-          <Link href="/cookies" className="underline font-semibold hover:text-slate-900">
+          <Link href="/cookies" className="underline font-semibold hover:text-[var(--color-ink)]">
             cookie policy
           </Link>
           .
@@ -204,7 +204,7 @@ export default function ConsentManager() {
           <button
             type="button"
             aria-expanded={showPrefs}
-            className="w-full sm:w-auto px-5 py-2.5 text-sm font-medium rounded-lg border-2 border-transparent bg-transparent text-slate-700 underline hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-900"
+            className="w-full sm:w-auto px-5 py-2.5 text-sm font-medium rounded-[8px] border border-transparent bg-transparent text-[var(--color-ink-soft)] underline hover:text-[var(--color-ink)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-900"
             onClick={() => setShowPrefs((v) => !v)}
           >
             Manage preferences
@@ -212,14 +212,14 @@ export default function ConsentManager() {
 
           <Link
             href="/privacy"
-            className="sm:ml-auto text-sm text-slate-600 underline hover:text-slate-900"
+            className="sm:ml-auto text-sm text-[var(--color-ink-mute)] underline hover:text-[var(--color-ink)]"
           >
             Privacy notice
           </Link>
         </div>
 
         {showPrefs && (
-          <div className="mt-4 border-t border-slate-200 pt-4">
+          <div className="mt-4 border-t border-[var(--color-rule)] pt-4">
             <label className="flex items-start gap-3 mb-3 cursor-pointer">
               <input
                 type="checkbox"
@@ -227,7 +227,7 @@ export default function ConsentManager() {
                 checked={analytics}
                 onChange={(e) => setAnalytics(e.target.checked)}
               />
-              <span className="text-sm text-slate-800">Analytics</span>
+              <span className="text-sm text-[var(--color-ink-soft)]">Analytics</span>
             </label>
 
             <label className="flex items-start gap-3 mb-4 cursor-pointer">
@@ -237,7 +237,7 @@ export default function ConsentManager() {
                 checked={ads}
                 onChange={(e) => setAds(e.target.checked)}
               />
-              <span className="text-sm text-slate-800">Advertising and audience measurement</span>
+              <span className="text-sm text-[var(--color-ink-soft)]">Advertising and audience measurement</span>
             </label>
 
             <button

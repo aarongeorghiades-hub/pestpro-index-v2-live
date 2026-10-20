@@ -23,16 +23,16 @@
      blue lowest, i.e. warm). Ours inverts that relationship: BLUE IS THE
      HIGHEST CHANNEL on every ground tone below, so the paper reads cool-neutral
      and never sepia. */
-  --color-paper: #f5f7f8; /* 245 247 248 — B > G > R */
-  --color-paper-sunk: #eceff2; /* recessed bands, still cool */
+  --color-paper: #f4f6f3; /* 245 247 248 — B > G > R */
+  --color-paper-sunk: #eaeee8; /* recessed bands, still cool */
   --color-surface: #ffffff; /* cards and panels sit ABOVE the paper */
 
   /* INK — deep navy, not black and not a tinted near-black.
      ANTI-TARGET: #0B0B0B / #111111, the near-black tell. Ours is unmistakably
      a hue: blue is 25 points above red, and it is nowhere near 0. */
-  --color-ink: #1a2433; /* 26 36 51 */
-  --color-ink-soft: #47566b; /* body copy at length */
-  --color-ink-mute: #6d7c90; /* captions, meta, disabled */
+  --color-ink: #0f211a; /* 26 36 51 */
+  --color-ink-soft: #3a4a43; /* body copy at length */
+  --color-ink-mute: #5b6a63; /* captions, meta, disabled */
 
   /* PRIMARY ACCENT — muted ochre. Verdicts, CTAs, rank-1 emphasis.
      ANTI-TARGET: #D97757, Anthropic terracotta (217 119 87). Ours is
@@ -53,8 +53,8 @@
   --color-teal-edge: #bcd3d6;
 
   /* STRUCTURE */
-  --color-rule: #dde3e8; /* hairlines and table rules */
-  --color-rule-strong: #c3ccd6;
+  --color-rule: #e1e6e1; /* hairlines and table rules */
+  --color-rule-strong: #c5cec7;
 
   /* SEMANTIC — STATUS, NOT BRAND.
      A warning must read as a warning; flattening it into the brand ochre would
@@ -72,7 +72,30 @@
   /* TYPEFACE. Geist Sans is the ONLY typeface. Geist Mono is reserved for
      genuine spec and measurement figures and is never used decoratively —
      see .spec-figure below, which is its only consumer. */
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-archivo), var(--font-geist-sans);
+
+  /* LOCAL DIRECTORY (2026-10 redesign). Marigold is the directory's one accent:
+     it owns the area tab, the active state and the Featured wash, nothing else.
+     Text never sits in marigold itself; -deep carries text at 7:1 on white. */
+  --color-marigold: #e4a91c;
+  --color-marigold-deep: #634800;
+  --color-marigold-wash: #fcf7e8;
+  --color-marigold-edge: #e9d39a;
+  --color-stock: #ffffff;
+  --color-forest: #0b2f24;
+  /* BRAND PALETTE (round 3). Deep bottle green is the primary: bands, primary
+     buttons, active nav. Saffron is the warm accent: Featured, the promise
+     rail, accent buttons. Apricot is a soft warm tint for area cards. */
+  --color-primary: #0e3b2e;
+  --color-primary-hover: #0b2f24;
+  --color-primary-soft: #cfe1d6;
+  --color-primary-wash: #e8f1ec;
+  --color-on-primary-soft: #b9d3c5;
+  --color-saffron: #f0a830;
+  --color-saffron-wash: #fdf1d8;
+  --color-apricot-wash: #fbe7d6;
+  --font-accent: var(--font-caslon), Georgia, serif;
+  --font-display: var(--font-archivo), var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -126,7 +149,7 @@
   body {
     background: var(--background);
     color: var(--foreground);
-    font-family: var(--font-geist-sans, Arial), Arial, Helvetica, sans-serif;
+    font-family: var(--font-archivo, var(--font-geist-sans, Arial)), Arial, Helvetica, sans-serif;
   }
 }
 
@@ -430,5 +453,395 @@
     font-size: 0.92em;
     letter-spacing: -0.01em;
     color: var(--color-ink);
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   LOCAL DIRECTORY — the shared grammar of the UK directory estate.
+   Display type is Archivo at a condensed width; numbers are tabular so phone
+   numbers and counts line up down a column like a printed directory.
+   ══════════════════════════════════════════════════════════════════════════ */
+@layer base {
+  ::selection {
+    background: var(--color-marigold);
+    color: var(--color-ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  a {
+    text-underline-offset: 0.18em;
+    text-decoration-thickness: 1px;
+  }
+  html {
+    scrollbar-color: var(--color-rule-strong) transparent;
+  }
+}
+
+@layer components {
+  .dir-display {
+    font-family: var(--font-caslon-display), Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1.08;
+    text-wrap: balance;
+  }
+  .dir-h2 {
+    font-family: var(--font-caslon-display), Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(1.75rem, 3.2vw, 2.375rem);
+    letter-spacing: -0.022em;
+    line-height: 1.06;
+    text-wrap: balance;
+  }
+  /* The accent voice: Libre Caslon italic, the English printer's face. Used
+     for a phrase inside a headline or a standfirst, never for a whole block. */
+  .dir-accent {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-weight: 400;
+    font-stretch: normal;
+    letter-spacing: -0.01em;
+  }
+  .dir-condensed {
+    font-stretch: 80%;
+  }
+  .dir-num {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+  }
+  .dir-wrap {
+    width: 100%;
+    max-width: 76rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .dir-wrap {
+      padding-inline: 2rem;
+    }
+  }
+
+  /* The area tab: a marigold thumb-tab, as on the edge of a printed directory. */
+  .dir-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--color-marigold-wash);
+    color: var(--color-marigold-deep);
+    box-shadow: inset 0 0 0 1px var(--color-marigold-edge);
+    font-weight: 600;
+    font-size: 0.8125rem;
+    line-height: 1;
+    padding: 0.45rem 0.7rem 0.4rem;
+    border-radius: 4px;
+  }
+
+  /* Entries are separated by hairline rules that draw in from the left as the
+     entry scrolls into view. Pure CSS scroll-driven animation: browsers
+     without view timelines simply show the rule. */
+  .dir-entry {
+    position: relative;
+  }
+  .dir-entry::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 1px;
+    background: var(--color-rule-strong);
+    transform-origin: left center;
+  }
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .dir-entry::before {
+        animation: dir-rule-draw linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 60%;
+      }
+      .dir-rise {
+        animation: dir-rise linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 45%;
+      }
+    }
+  }
+
+  .dir-btn {
+    border-radius: 8px !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+    padding: 0.6rem 1.1rem;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.1;
+    transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .dir-btn:active {
+    transform: translateY(1px);
+  }
+  .dir-btn-ink {
+    background: var(--color-primary);
+    color: var(--color-stock);
+  }
+  .dir-btn-ink:hover {
+    background: var(--color-primary-hover);
+  }
+  .dir-btn-line {
+    border: 1px solid var(--color-rule-strong);
+    color: var(--color-ink);
+    background: var(--color-stock);
+  }
+  .dir-btn-line:hover {
+    border-color: var(--color-ink);
+  }
+  .dir-btn-marigold {
+    background: var(--color-saffron);
+    color: var(--color-ink);
+  }
+  .dir-btn-marigold:hover {
+    background: var(--color-marigold-edge);
+  }
+
+  .dir-link {
+    color: var(--color-ink);
+    text-decoration: underline;
+    text-decoration-color: var(--color-rule-strong);
+    transition: text-decoration-color 0.18s ease;
+  }
+  .dir-link:hover {
+    text-decoration-color: var(--color-ink);
+  }
+}
+
+@keyframes dir-rule-draw {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes dir-rise {
+  from { opacity: 0.001; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
+
+/* The area running head: hidden at the top of the page (the H1 is in view),
+   eased in as the head scrolls away. Without scroll timelines it simply shows. */
+@layer components {
+  @supports (animation-timeline: scroll()) {
+    .dir-runhead {
+      animation: dir-runhead-in linear both;
+      animation-timeline: scroll(root);
+      animation-range: 120px 320px;
+    }
+  }
+}
+@keyframes dir-runhead-in {
+  from { opacity: 0; transform: translateY(-100%); visibility: hidden; }
+  1% { visibility: visible; }
+  to { opacity: 1; transform: none; visibility: visible; }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   POLISH PASS — cards, icons, micro-interactions, reveals.
+   Everything here is CSS: reveals ride view timelines, so nothing waits on
+   JavaScript and nothing is hidden when timelines are unsupported.
+   ══════════════════════════════════════════════════════════════════════════ */
+@layer base {
+  /* One stroke weight for every icon on the site. */
+  svg.lucide {
+    stroke-width: 1.75;
+  }
+}
+
+@layer components {
+  .dir-card {
+    background: var(--color-stock);
+    border: 1px solid var(--color-rule);
+    border-radius: 12px;
+    box-shadow:
+      0 1px 2px rgba(15, 33, 26, 0.04),
+      0 8px 24px -16px rgba(15, 33, 26, 0.14);
+    transition:
+      box-shadow 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+      border-color 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+      transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .dir-card-hover:hover {
+    border-color: var(--color-rule-strong);
+    transform: translateY(-1px);
+    box-shadow:
+      0 1px 2px rgba(15, 33, 26, 0.05),
+      0 16px 36px -18px rgba(15, 33, 26, 0.22);
+  }
+  .dir-card-featured {
+    background: var(--color-marigold-wash);
+    border-color: var(--color-marigold-edge);
+    box-shadow:
+      0 1px 2px rgba(99, 72, 0, 0.06),
+      0 12px 32px -18px rgba(99, 72, 0, 0.3);
+  }
+
+  /* Underlines that draw in rather than snap. */
+  .dir-link {
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor), linear-gradient(var(--color-rule-strong), var(--color-rule-strong));
+    background-size: 0% 1px, 100% 1px;
+    background-position: 0 100%, 0 100%;
+    background-repeat: no-repeat;
+    padding-bottom: 1px;
+    transition: background-size 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .dir-link:hover {
+    background-size: 100% 1px, 100% 1px;
+  }
+
+  /* Header panels ease in. */
+  .dir-panel {
+    animation: dir-panel-in 0.28s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .dir-reveal {
+        animation: dir-reveal linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 25%;
+      }
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .dir-panel { animation: none; }
+    .dir-card, .dir-link { transition: none; }
+  }
+}
+@keyframes dir-reveal {
+  from { opacity: 0.35; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes dir-panel-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: none; }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   HOMEPAGE SCROLL CHAPTERS (scroll-craft score, round 3)
+   hero: kinetic lines + staggered area cascade (time-based, on load)
+   rules: PINNED chapter, promises light in turn on a saffron rail (the peak)
+   why: saffron band wipes open (clip-path)
+   guides: ground drifts from white to the green wash (ink text throughout)
+   Compositor-only properties (opacity, transform, clip-path) plus one
+   background-color drift; no element changes size, so nothing shifts.
+   Every effect is off under prefers-reduced-motion and absent where scroll
+   timelines are unsupported, leaving the static, fully visible page.
+   ══════════════════════════════════════════════════════════════════════════ */
+@layer components {
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-line {
+      display: block;
+      animation: hero-line-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-delay: calc(var(--i, 0) * 110ms + 80ms);
+    }
+    .hero-rise {
+      animation: hero-rise-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-delay: calc(var(--i, 0) * 45ms + 350ms);
+    }
+  }
+  .hero-line { display: block; }
+
+  /* The promise rail: the chapter is taller than the screen on md+, its inner
+     frame sticks, and each promise lights as the chapter scrolls through. */
+  .rules-chapter {
+    view-timeline-name: --rules;
+    view-timeline-axis: block;
+  }
+  @media (min-width: 768px) {
+    .rules-chapter { height: 200vh; }
+    .rules-frame {
+      position: sticky;
+      top: 76px;
+      min-height: calc(100vh - 76px);
+      display: flex;
+      align-items: center;
+    }
+  }
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) and (min-width: 768px) {
+      .rule-item {
+        animation: rule-light linear both;
+        animation-timeline: --rules;
+        animation-range: contain calc(var(--i) * 18% - 6%) contain calc(var(--i) * 18% + 10%);
+      }
+      .rule-rail-fill {
+        transform-origin: top;
+        animation: rail-fill linear both;
+        animation-timeline: --rules;
+        animation-range: contain 0% contain 80%;
+      }
+      .why-band {
+        animation: band-wipe linear both;
+        animation-timeline: view();
+        animation-range: entry 10% entry 70%;
+      }
+      .ground-drift {
+        animation: ground-drift linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 70%;
+      }
+    }
+  }
+}
+@keyframes hero-line-in {
+  from { opacity: 0; transform: translateY(0.35em); clip-path: inset(-0.3em -0.4em 100% -0.4em); }
+  to { opacity: 1; transform: none; clip-path: inset(-0.3em -0.4em -0.4em -0.4em); }
+}
+@keyframes hero-rise-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes rule-light {
+  from { opacity: 0.5; transform: translateX(-6px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes rail-fill {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+@keyframes band-wipe {
+  from { clip-path: inset(0 3% 0 3% round 20px); }
+  to { clip-path: inset(0 0 0 0 round 0); }
+}
+@keyframes ground-drift {
+  from { background-color: var(--color-stock); }
+  to { background-color: var(--color-primary-wash); }
+}
+
+/* Area head on the deep green band: page-supplied lines keep their own ink
+   classes, so remap the ink family to the on-green tones inside the band.
+   In the utilities layer on purpose: a components-layer rule loses to any
+   utility, whatever its specificity. */
+@layer utilities {
+  .area-head-dark .text-\[var\(--color-ink\)\] { color: #ffffff; }
+  .area-head-dark .text-\[var\(--color-ink-soft\)\] { color: var(--color-on-primary-soft); }
+  .area-head-dark .text-\[var\(--color-ink-mute\)\] { color: var(--color-on-primary-soft); }
+  .area-head-dark nav a:hover { color: #ffffff; }
+  .area-head-dark .fill-\[var\(--color-ink\)\] { fill: var(--color-saffron); color: var(--color-saffron); }
+  .area-head-dark .border-\[var\(--color-ink\)\]\/70 { border-color: rgba(255, 255, 255, 0.7); }
+}
+@layer base {
+  /* Native selects take the palette: no system chrome, an ink chevron. */
+  select {
+    border-radius: 8px;
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 2.25rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230f211a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
   }
 }

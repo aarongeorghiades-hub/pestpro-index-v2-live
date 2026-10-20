@@ -12,23 +12,22 @@ export default function CityPestLinks({
   cityName: string;
 }) {
   return (
-    <section className="bg-gradient-to-br from-blue-50 to-white border-t-2 border-blue-200 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl font-black text-gray-900 mb-2">Pest Control by Type in {cityName}</h2>
-          <p className="text-gray-600">Find {cityName} providers who specialise in a specific pest</p>
-        </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+    <section className="border-t border-[var(--color-rule)] bg-[var(--color-stock)]">
+      <div className="dir-wrap py-20 md:py-28">
+        <h2 className="dir-h2 text-[var(--color-ink)]">Pest Control by Type in {cityName}</h2>
+        <p className="mt-2 text-[var(--color-ink-soft)]">Find {cityName} providers who specialise in a specific pest</p>
+        <ul className="mt-6 grid grid-cols-1 gap-x-8 border-t border-[var(--color-ink)] sm:grid-cols-2 lg:grid-cols-4">
           {PESTS.map((p) => (
-            <Link
-              key={p.slug}
-              href={`/pest-control/${citySlug}/${p.slug}`}
-              className="flex items-center justify-center text-center px-4 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all font-semibold text-sm text-gray-800"
-            >
-              {p.name} Control
-            </Link>
+            <li key={p.slug} className="border-b border-[var(--color-rule)]">
+              <Link
+                href={`/pest-control/${citySlug}/${p.slug}`}
+                className="block py-3 text-base font-semibold text-[var(--color-ink)] underline-offset-4 hover:underline"
+              >
+                {p.name} Control
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

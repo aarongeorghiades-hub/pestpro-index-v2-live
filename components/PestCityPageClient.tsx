@@ -1,11 +1,16 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import type { ReactNode } from 'react';
+
 import { externalHref } from '@/lib/externalUrl';
 import Link from 'next/link';
+import { ArrowLeft, ArrowRight, BookOpen, Phone, ShoppingCart } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import ListingSchema from '@/components/ListingSchema';
 import CityAreaLinks from '@/components/CityAreaLinks';
+import AreaHead from '@/components/directory/AreaHead';
+import FirmEntry from '@/components/directory/FirmEntry';
+import { FirmList, FirmListItem, FirmListEmpty } from '@/components/directory/FirmList';
 import ProductCard from '@/components/ProductCard';
 import { topProductsByPest } from '@/data/pest-products';
 import { cityDirectoryHref } from '@/lib/seo';
@@ -41,25 +46,25 @@ interface Props {
   areas?: { name: string; slug: string }[];
 }
 
-export default function PestCityPageClient({ city, pest, initialProviders, initialIsFallback, areas }: Props) {
-  const providers = initialProviders;
-  const loading = false;
-  const isFallback = initialIsFallback ?? false;
-  const [isMobile, setIsMobile] = useState(false);
+// Provider-stated service facts only, shown as small tags on each entry.
+function serviceTags(provider: Provider): string[] {
+  const tags: string[] = [];
+  if (provider.service_bpca_certified) tags.push('BPCA certified');
+  if (provider.service_emergency_24_7) tags.push('24/7 emergency');
+  if (provider.service_eco_friendly) tags.push('Eco-friendly');
+  return tags;
+}
 
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
+export default function PestCityPageClient({ featured, city, pest, initialProviders, initialIsFallback, areas }: Props & { featured?: ReactNode }) {
+  const providers = initialProviders;
+  const isFallback = initialIsFallback ?? false;
 
   const introText = pest.seoIntro.replace(/\{city\}/g, city.name);
   const otherPests = PESTS.filter(p => p.slug !== pest.slug);
   const otherCities = LOCATIONS.filter(l => l.slug !== city.slug);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[var(--color-stock)]">
       <Navigation />
 
       <ListingSchema
@@ -75,81 +80,57 @@ export default function PestCityPageClient({ city, pest, initialProviders, initi
         ]}
       />
 
-      {/* Breadcrumb trail */}
-      <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 text-sm text-gray-500">
-        <Link href="/" className="hover:text-blue-600">Home</Link>
-        <span className="mx-2">/</span>
-        <Link href="/pest-control" className="hover:text-blue-600">Pest Control</Link>
-        <span className="mx-2">/</span>
-        <Link href={cityDirectoryHref(city.slug)} className="hover:text-blue-600">{city.name}</Link>
-        <span className="mx-2">/</span>
-        <span className="text-gray-700">{pest.name} Control</span>
-      </nav>
-
-      {/* HERO */}
-      <section className="relative h-[400px] overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050812] via-[#1e3a8a] to-[#050812]"></div>
-        </div>
-        <div className="relative h-full flex flex-col items-center justify-center text-center text-white px-4">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 max-w-3xl drop-shadow-lg" style={{ textShadow: '0 4px 6px rgba(0,0,0,0.3)' }}>
-            {pest.name} Control in {city.name}
-          </h1>
-          <p className="text-lg sm:text-xl md:text-2xl font-bold mb-4 max-w-2xl drop-shadow-lg" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>
-            Find {pest.name} Specialists
-          </p>
-          <p className="text-sm sm:text-base md:text-lg font-semibold max-w-2xl drop-shadow-lg" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>
-            No lead fees &middot; No commissions &middot; Free to contact
-          </p>
-        </div>
-      </section>
+      <AreaHead
+        crumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Pest Control', href: '/pest-control' },
+          { label: city.name, href: cityDirectoryHref(city.slug) },
+          { label: `${pest.name} Control` },
+        ]}
+        tab={city.name}
+        title={<>{pest.name} Control in {city.name}</>}
+        standfirst={<>Find {pest.name} Specialists</>}
+      >
+        <p className="text-base font-semibold text-[var(--color-ink)]">
+          No lead fees · No commissions · Free to contact
+        </p>
+      </AreaHead>
 
       {/* SEO CONTENT */}
-      <section className="py-12 bg-gradient-to-br from-blue-50 to-white border-b-2 border-blue-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-lg text-gray-700 leading-relaxed mb-8">{introText}</p>
+      <section className="bg-[var(--color-stock)]">
+        <div className="dir-wrap py-20 md:py-28">
+          <p className="max-w-[68ch] text-lg leading-relaxed text-[var(--color-ink-soft)]">{introText}</p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            {/* Signs */}
-            <div className="bg-white rounded-2xl shadow-lg p-6 border-l-4 border-amber-500">
-              <h2 className="text-xl font-black text-gray-900 mb-3">Signs of {pest.namePlural}</h2>
-              <p className="text-gray-700 leading-relaxed text-sm">{pest.signs}</p>
+          <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-2">
+            <div className="border-t border-[var(--color-rule-strong)] pt-6">
+              <h2 className="dir-h2 text-[var(--color-ink)]">Signs of {pest.namePlural}</h2>
+              <p className="mt-4 max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">{pest.signs}</p>
             </div>
-
-            {/* Risks */}
-            <div className="bg-white rounded-2xl shadow-lg p-6 border-l-4 border-red-500">
-              <h2 className="text-xl font-black text-gray-900 mb-3">Health &amp; Property Risks</h2>
-              <p className="text-gray-700 leading-relaxed text-sm">{pest.risks}</p>
+            <div className="border-t border-[var(--color-rule-strong)] pt-6">
+              <h2 className="dir-h2 text-[var(--color-ink)]">Health &amp; Property Risks</h2>
+              <p className="mt-4 max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">{pest.risks}</p>
             </div>
           </div>
 
-          {/* Typical Cost */}
-          <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6">
-            <div className="flex items-start gap-3">
-              <span className="text-2xl">💰</span>
-              <div>
-                <h2 className="text-lg font-bold text-gray-900 mb-1">Typical Cost of {pest.name} Control in {city.name}</h2>
-                <p className="text-gray-700">{pest.typicalCost}</p>
-              </div>
-            </div>
+          <div className="mt-10 border-t border-[var(--color-rule-strong)] pt-6">
+            <h2 className="dir-h2 text-[var(--color-ink)]">Typical Cost of {pest.name} Control in {city.name}</h2>
+            <p className="mt-4 max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">{pest.typicalCost}</p>
           </div>
         </div>
       </section>
 
-      {/* TOP DIY PRODUCTS — reuses the rank 1-3 products from the matching /best page.
+      {/* TOP DIY PRODUCTS: reuses the rank 1-3 products from the matching /best page.
           Keys off pest.slug only, so it renders correctly on fallback pest pages too. */}
       {(topProductsByPest[pest.slug]?.length ?? 0) > 0 && (
-        <section className="py-16 bg-white border-b-2 border-gray-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-black text-gray-900 mb-4">
-                Top DIY {pest.name} Products
-              </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Our top-rated picks for treating {pest.namePlural.toLowerCase()} yourself
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <section className="border-t border-[var(--color-rule)] bg-[var(--color-paper)]">
+          <div className="dir-wrap py-20 md:py-28">
+            <h2 className="dir-h2 text-[var(--color-ink)]">
+              Top DIY {pest.name} Products
+            </h2>
+            <p className="mb-8 mt-3 max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">
+              Our top-rated picks for treating {pest.namePlural.toLowerCase()} yourself
+            </p>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               {topProductsByPest[pest.slug].map((product, i) => (
                 <ProductCard
                   key={product.asin}
@@ -161,148 +142,95 @@ export default function PestCityPageClient({ city, pest, initialProviders, initi
                 />
               ))}
             </div>
-            <div className="text-center mt-10">
-              <Link href={pest.reviewUrl} className="text-blue-600 hover:underline font-semibold text-lg">
-                See all {pest.name} products &rarr;
+            <div className="mt-8">
+              <Link href={pest.reviewUrl} className="dir-link inline-flex items-center gap-1.5 font-semibold">
+                See all {pest.name} products
+                <ArrowRight aria-hidden="true" className="h-4 w-4" strokeWidth={2} />
               </Link>
             </div>
           </div>
         </section>
       )}
 
-      {/* PROVIDER CARDS */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-gray-900 mb-4">
-              {pest.name} Control Providers in {city.name}
-            </h2>
-            {isFallback ? (
-              <div className="max-w-3xl mx-auto">
-                <p className="text-lg text-gray-600 mb-4">
-                  Showing all {providers.length} residential pest control providers in {city.name}
-                </p>
-                <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-left">
-                  <p className="text-blue-800 text-sm">
-                    We haven&apos;t yet confirmed which {city.name} providers specialise in {pest.namePlural.toLowerCase()}, but all of the providers below serve {city.name} and can help with most pest issues. Contact them directly to discuss your {pest.namePlural.toLowerCase()} problem.
-                  </p>
-                </div>
-              </div>
-            ) : (
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                {providers.length} {pest.description} serving {city.name}
+      {/* PROVIDERS */}
+      <section className="border-t border-[var(--color-rule)] bg-[var(--color-stock)]">
+        <div className="dir-wrap py-20 md:py-28">
+          <h2 className="dir-h2 text-[var(--color-ink)]">
+            {pest.name} Control Providers in {city.name}
+          </h2>
+          {isFallback ? (
+            <div className="mb-6 mt-3 max-w-[68ch]">
+              <p className="text-sm text-[var(--color-ink-mute)]">
+                Showing all {providers.length} residential pest control providers in {city.name}
               </p>
-            )}
-          </div>
-
-          {loading ? (
-            <div className="text-center py-12">
-              <p className="text-gray-600">Loading providers...</p>
-            </div>
-          ) : providers.length === 0 ? (
-            <div className="text-center py-12">
-              <p className="text-gray-600 text-lg mb-4">No providers found for this area. Please try again later.</p>
-              <Link href={`/pest-control/${city.slug}`} className="text-blue-600 hover:underline font-semibold">
-                View all {city.name} providers &rarr;
-              </Link>
+              <p className="mt-4 rounded-[4px] border border-[var(--color-rule)] bg-[var(--color-paper)] p-4 text-base leading-relaxed text-[var(--color-ink-soft)]">
+                We haven&apos;t yet confirmed which {city.name} providers specialise in {pest.namePlural.toLowerCase()}, but all of the providers below serve {city.name} and can help with most pest issues. Contact them directly to discuss your {pest.namePlural.toLowerCase()} problem.
+              </p>
             </div>
           ) : (
-            <>
-              <div data-featured-slot />
-              <p className="text-gray-600 font-medium mb-8">Showing {providers.length} providers sorted by rating</p>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {providers.map(provider => {
-                  const isTrophy = provider.google_rating && provider.google_rating >= 4.5 &&
-                    provider.google_review_count && provider.google_review_count >= 30;
-                  const borderClass = isTrophy ? 'border-l-4 border-amber-500' : 'border-l-4 border-[#1e3a8a]';
+            <p className="mb-6 mt-3 text-sm text-[var(--color-ink-mute)]">
+              {providers.length} {pest.description} serving {city.name}, sorted by rating
+            </p>
+          )}
 
-                  return (
-                    <div key={provider.canonical_id} className={`bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 ${borderClass}`}>
-                      {isTrophy && <div className="text-2xl mb-2">🏆</div>}
-                      <h3 className="font-bold text-base text-gray-900 mb-2 leading-tight line-clamp-2">
-                        <Link href={`/provider/${provider.slug}`} className="text-blue-600 hover:underline">
-                          {provider.name}
-                        </Link>
-                      </h3>
-                      {provider.postcode && (
-                        <div className="flex items-start gap-1 mb-2 text-xs text-gray-600">
-                          <span className="text-red-500">📍</span>
-                          <span className="line-clamp-1">{provider.postcode}</span>
-                        </div>
-                      )}
-                      {provider.google_rating && (
-                        <div className="flex items-center gap-1 mb-3">
-                          <span className="text-yellow-500">⭐</span>
-                          <span className="text-sm font-bold text-gray-900">{provider.google_rating.toFixed(1)}</span>
-                          <span className="text-xs text-gray-600">({provider.google_review_count})</span>
-                        </div>
-                      )}
-                      {/* Badges */}
-                      <div className="flex flex-wrap gap-1 mb-3">
-                        {provider.service_bpca_certified && (
-                          <span className="px-2 py-0.5 bg-green-100 text-green-800 text-xs font-semibold rounded">BPCA</span>
-                        )}
-                        {provider.service_emergency_24_7 && (
-                          <span className="px-2 py-0.5 bg-red-100 text-red-800 text-xs font-semibold rounded">24/7</span>
-                        )}
-                        {provider.service_eco_friendly && (
-                          <span className="px-2 py-0.5 bg-emerald-100 text-emerald-800 text-xs font-semibold rounded">Eco</span>
-                        )}
-                      </div>
-                      <div className="space-y-2">
-                        {provider.phone && (
-                          isMobile ? (
-                            <a href={`tel:${provider.phone}`} className="block text-center px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold rounded-lg whitespace-nowrap overflow-hidden text-ellipsis">
-                              📞 {provider.phone}
-                            </a>
-                          ) : (
-                            <span className="block text-center px-3 py-2 bg-blue-600 text-white text-sm font-bold rounded-lg cursor-default whitespace-nowrap overflow-hidden text-ellipsis">
-                              📞 {provider.phone}
-                            </span>
-                          )
-                        )}
-                        {provider.website && (
-                          <a href={externalHref(provider.website)} target="_blank" rel="nofollow noopener noreferrer" className="block text-center px-3 py-2 border border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 text-sm font-semibold rounded-lg">
-                            Website
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
+          {providers.length === 0 ? (
+            <FirmListEmpty>
+              No providers found for this area. Please try again later.{' '}
+              <Link href={`/pest-control/${city.slug}`} className="dir-link font-semibold">
+                View all {city.name} providers
+              </Link>
+            </FirmListEmpty>
+          ) : (
+            <>
+              {featured}
+              <FirmList>
+                {providers.map((provider) => (
+                  <FirmListItem key={provider.canonical_id ?? provider.slug}>
+                    <FirmEntry
+                      name={provider.name}
+                      slug={provider.slug}
+                      postcode={provider.postcode}
+                      rating={provider.google_rating}
+                      reviewCount={provider.google_review_count}
+                      phone={provider.phone}
+                      websiteHref={provider.website ? externalHref(provider.website) : null}
+                      tags={serviceTags(provider)}
+                    />
+                  </FirmListItem>
+                ))}
+              </FirmList>
             </>
           )}
         </div>
       </section>
 
       {/* WHAT TO DO */}
-      <section className="py-12 bg-gradient-to-br from-blue-50 to-white border-t-2 border-blue-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-black text-gray-900 mb-6">What to Do If You Have {pest.namePlural}</h2>
-          <ul className="space-y-4">
-            <li className="flex items-start gap-3">
-              <span className="text-blue-600 text-xl mt-0.5">📖</span>
-              <p className="text-gray-700">
+      <section className="border-t border-[var(--color-rule)] bg-[var(--color-stock)]">
+        <div className="dir-wrap py-20 md:py-28">
+          <h2 className="dir-h2 text-[var(--color-ink)]">What to Do If You Have {pest.namePlural}</h2>
+          <ul className="mt-6 max-w-[68ch] border-b border-[var(--color-rule)]">
+            <li className="flex items-start gap-3 border-t border-[var(--color-rule)] py-4">
+              <BookOpen aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-[var(--color-ink-mute)]" strokeWidth={2} />
+              <p className="text-[var(--color-ink-soft)]">
                 Read our complete guide:{' '}
-                <Link href={pest.guideUrl} className="text-blue-600 hover:underline font-semibold">
-                  How to Get Rid of {pest.namePlural} &rarr;
+                <Link href={pest.guideUrl} className="dir-link font-semibold">
+                  How to Get Rid of {pest.namePlural}
                 </Link>
               </p>
             </li>
-            <li className="flex items-start gap-3">
-              <span className="text-blue-600 text-xl mt-0.5">🛒</span>
-              <p className="text-gray-700">
+            <li className="flex items-start gap-3 border-t border-[var(--color-rule)] py-4">
+              <ShoppingCart aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-[var(--color-ink-mute)]" strokeWidth={2} />
+              <p className="text-[var(--color-ink-soft)]">
                 See our top-rated products:{' '}
-                <Link href={pest.reviewUrl} className="text-blue-600 hover:underline font-semibold">
-                  Best {pest.name} Products UK 2026 &rarr;
+                <Link href={pest.reviewUrl} className="dir-link font-semibold">
+                  Best {pest.name} Products UK 2026
                 </Link>
               </p>
             </li>
-            <li className="flex items-start gap-3">
-              <span className="text-blue-600 text-xl mt-0.5">📞</span>
-              <p className="text-gray-700">
-                Contact a provider above for a quote &mdash; all listings on PestPro Index are free to contact with no lead fees.
+            <li className="flex items-start gap-3 border-t border-[var(--color-rule)] py-4">
+              <Phone aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-[var(--color-ink-mute)]" strokeWidth={2} />
+              <p className="text-[var(--color-ink-soft)]">
+                Contact a provider above for a quote. All listings on PestPro Index are free to contact with no lead fees.
               </p>
             </li>
           </ul>
@@ -310,45 +238,41 @@ export default function PestCityPageClient({ city, pest, initialProviders, initi
       </section>
 
       {/* CROSS-LINKS */}
-      <section className="bg-gray-50 border-t border-gray-200 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
+      <section className="border-t border-[var(--color-rule)] bg-[var(--color-paper)]">
+        <div className="dir-wrap py-12">
           {/* Other pest services in this city */}
           <div className="mb-10">
-            <h3 className="text-lg font-bold text-gray-900 mb-4">Other Pest Control Services in {city.name}</h3>
-            <div className="flex flex-wrap gap-2">
+            <h3 className="mb-4 text-lg font-bold text-[var(--color-ink)]">Other Pest Control Services in {city.name}</h3>
+            <ul className="flex flex-wrap gap-x-6 gap-y-2 text-base">
               {otherPests.map(p => (
-                <Link
-                  key={p.slug}
-                  href={`/pest-control/${city.slug}/${p.slug}`}
-                  className="px-3 py-2 bg-white border border-gray-200 rounded-lg text-sm text-blue-600 hover:border-blue-400 hover:bg-blue-50 transition-colors font-medium"
-                >
-                  {p.name} Control
-                </Link>
+                <li key={p.slug}>
+                  <Link href={`/pest-control/${city.slug}/${p.slug}`} className="dir-link font-semibold">
+                    {p.name} Control
+                  </Link>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
 
           {/* Same pest in other cities */}
           <div className="mb-10">
-            <h3 className="text-lg font-bold text-gray-900 mb-4">{pest.name} Control in Other Cities</h3>
-            <div className="flex flex-wrap gap-2">
+            <h3 className="mb-4 text-lg font-bold text-[var(--color-ink)]">{pest.name} Control in Other Cities</h3>
+            <ul className="flex flex-wrap gap-x-6 gap-y-2 text-base">
               {otherCities.map(l => (
-                <Link
-                  key={l.slug}
-                  href={`/pest-control/${l.slug}/${pest.slug}`}
-                  className="px-3 py-2 bg-white border border-gray-200 rounded-lg text-sm text-blue-600 hover:border-blue-400 hover:bg-blue-50 transition-colors font-medium"
-                >
-                  {l.name}
-                </Link>
+                <li key={l.slug}>
+                  <Link href={`/pest-control/${l.slug}/${pest.slug}`} className="dir-link font-semibold">
+                    {l.name}
+                  </Link>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
 
           {/* Back to city hub */}
-          <div className="text-center pt-4 border-t border-gray-200">
-            <Link href={cityDirectoryHref(city.slug)} className="text-blue-600 hover:underline font-semibold">
-              &larr; Back to {city.name} Pest Control Directory
+          <div className="border-t border-[var(--color-rule-strong)] pt-6">
+            <Link href={cityDirectoryHref(city.slug)} className="dir-link inline-flex items-center gap-1.5 font-semibold">
+              <ArrowLeft aria-hidden="true" className="h-4 w-4" strokeWidth={2} />
+              Back to {city.name} Pest Control Directory
             </Link>
           </div>
         </div>

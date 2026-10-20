@@ -1,12 +1,14 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, type ReactNode } from 'react';
 import { externalHref } from '@/lib/externalUrl';
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Phone, MapPin, ShieldCheck, Award, CheckCircle2 } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Navigation from '@/components/Navigation';
+import AreaHead, { LocalOnlyNote } from '@/components/directory/AreaHead';
+import FirmEntry from '@/components/directory/FirmEntry';
+import { FirmList, FirmListItem, FirmListEmpty } from '@/components/directory/FirmList';
 
 export interface Provider {
   canonical_id: number;
@@ -130,7 +132,16 @@ function computeFilterCounts(data: Provider[]): FilterCounts {
   return counts;
 }
 
-export default function CommercialDirectoryClient({ initialProviders }: { initialProviders: Provider[] }) {
+// Service facts the old card showed as badges, now FirmEntry tags.
+function firmTags(provider: Provider): string[] {
+  const tags: string[] = [];
+  if (provider.bpca_member) tags.push('BPCA Member');
+  if (provider.npta_member) tags.push('NPTA Member');
+  if (provider.basis_prompt) tags.push('BASIS Prompt');
+  return tags;
+}
+
+export default function CommercialDirectoryClient({ featured, initialProviders }: { featured?: ReactNode; initialProviders: Provider[] }) {
   const providers = initialProviders;
   const [filteredProviders, setFilteredProviders] = useState<Provider[]>(() => {
     const sorted = [...initialProviders];
@@ -140,19 +151,8 @@ export default function CommercialDirectoryClient({ initialProviders }: { initia
   const [filterCounts] = useState<FilterCounts>(() => computeFilterCounts(initialProviders));
   const [selectedFilters, setSelectedFilters] = useState<Set<string>>(new Set());
   const [sortBy, setSortBy] = useState('quality');
-  const [isMobile, setIsMobile] = useState(false);
   const pathname = usePathname();
 
-  // Mobile detection hook
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   // Navigation items
   const navItems = [
@@ -178,19 +178,6 @@ export default function CommercialDirectoryClient({ initialProviders }: { initia
       });
     });
     return score;
-  };
-
-  // Render stars
-  const renderStars = (rating: number) => {
-    const stars = [];
-    for (let i = 0; i < 5; i++) {
-      stars.push(
-        <span key={i} className="text-yellow-400">
-          {i < Math.round(rating) ? '★' : '☆'}
-        </span>
-      );
-    }
-    return <div className="flex gap-0.5">{stars}</div>;
   };
 
   // Apply filters
@@ -276,302 +263,157 @@ export default function CommercialDirectoryClient({ initialProviders }: { initia
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* NAVIGATION */}
+    <div className="min-h-screen bg-[var(--color-stock)]">
       <Navigation />
 
-      {/* HERO SECTION */}
-      <section className="relative h-[500px] overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/liverpool-skyline.png"
-            alt="Liverpool skyline illustration"
-            fill
-            className="object-cover opacity-95"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#1e3a8a]/50 via-[#2563eb]/45 to-[#1e3a8a]/50"></div>
-        </div>
+      <AreaHead
+        crumbs={[{ label: 'Home', href: '/' }, { label: 'Liverpool', href: '/liverpool' }, { label: 'Commercial' }]}
+        tab="Liverpool & Merseyside"
+        title="Commercial Pest Control"
+        standfirst={
+          <>
+            <p>
+              Local commercial pest control in Liverpool. Independent firms near your premises for contracts, inspections and urgent call-outs, filtered by sector and accreditation.
+            </p>
+            <p className="mt-3 text-base font-semibold text-[var(--color-ink)]">
+              <span className="dir-num">{filteredProviders.length} Providers in Liverpool & Merseyside</span>
+            </p>
+          </>
+        }
+      />
 
-        <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-8 tracking-tighter leading-[0.9] text-white drop-shadow-[0_12px_36px_rgba(0,0,0,0.95)]">
-            Commercial Pest Control
-          </h1>
-          <p className="text-lg sm:text-xl md:text-3xl lg:text-4xl mb-6 font-extralight tracking-[0.15em] text-white drop-shadow-[0_8px_20px_rgba(0,0,0,0.9)]">
-            {filteredProviders.length} Providers in Liverpool & Merseyside
-          </p>
-          <p className="text-xl text-white font-semibold max-w-3xl leading-relaxed drop-shadow-[0_6px_16px_rgba(0,0,0,0.85)] opacity-95">
-            Local commercial pest control in Liverpool. Independent firms near your premises for contracts, inspections and urgent call-outs, filtered by sector and accreditation.</p>
-          <p className="text-sm text-white/90 max-w-3xl mt-3">We only list independent, local pest controllers who serve this area. National chains are not included, so this isn’t every firm that covers Liverpool, just the local ones.
-          </p>
-        </div>
-      </section>
-
-      {/* TOP RATED PROVIDERS - ONLY SHOW IF RATINGS EXIST */}
+      {/* TOP RATED PROVIDERS */}
       {providers.some(p => p.google_rating != null) && (
-      <section className="relative bg-gradient-to-br from-yellow-50 to-white py-16 border-b-2 border-yellow-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-gray-900 mb-4">Top Rated Providers</h2>
-            <p className="text-lg text-gray-600">Highest-rated commercial pest control providers in Liverpool & Merseyside</p>
-          </div>
+      <section className="border-b border-[var(--color-rule)] bg-[var(--color-stock)] py-16 md:py-24">
+        <div className="dir-wrap">
+          <h2 className="dir-h2 text-[var(--color-ink)]">Top Rated Providers</h2>
+          <p className="mt-2 max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">Highest-rated commercial pest control providers in Liverpool & Merseyside</p>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {[...providers]
-              .filter(p => p.google_review_count > 0)
-              .sort((a, b) => {
-                if (b.google_rating !== a.google_rating) return b.google_rating - a.google_rating;
-                return b.google_review_count - a.google_review_count;
-              })
-              .slice(0, 8)
-              .map(provider => (
-                <div key={provider.canonical_id} className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all border-l-4 border-yellow-500 p-6">
-                  <span className="inline-block bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">TOP RATED</span>
-                  <h3 className="text-lg font-black text-gray-900 mb-3">
-                    <Link href={`/provider/${provider.slug}`} className="text-blue-600 hover:underline">
-                      {provider.name}
-                    </Link>
-                  </h3>
-                  <div className="flex items-center gap-2 mb-2">{renderStars(provider.google_rating)}</div>
-                  <span className="text-sm text-gray-600 mb-3 block">{provider.google_rating?.toFixed(1)} ({provider.google_review_count} reviews)</span>
-                  <div className="flex flex-wrap gap-1 mb-4">
-                    {provider.bpca_member && (
-                      <span className="inline-block bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded-full">BPCA</span>
-                    )}
-                    {provider.npta_member && (
-                      <span className="inline-block bg-green-100 text-green-800 text-xs font-bold px-2 py-0.5 rounded-full">NPTA</span>
-                    )}
-                    {provider.basis_prompt && (
-                      <span className="inline-block bg-purple-100 text-purple-800 text-xs font-bold px-2 py-0.5 rounded-full">BASIS PROMPT</span>
-                    )}
-                  </div>
-                  {provider.phone && (
-                    <div className="flex items-center gap-2 mb-2 whitespace-nowrap">
-                      <Phone size={14} className="text-blue-600 flex-shrink-0" />
-                      {isMobile ? (
-                        <a href={`tel:${provider.phone}`} className="text-sm text-blue-600 hover:underline whitespace-nowrap">{provider.phone}</a>
-                      ) : (
-                        <span className="text-sm text-gray-700 whitespace-nowrap">{provider.phone}</span>
-                      )}
-                    </div>
-                  )}
-
-                  {provider.postcode && (
-                    <div className="flex items-center gap-2 mb-2">
-                      <MapPin size={14} className="text-blue-600" />
-                      <span className="text-sm text-gray-700">{provider.postcode}</span>
-                    </div>
-                  )}
-                  {provider.website && (
-                    <Link
-                      href={externalHref(provider.website)}
-                      target="_blank"
-                      rel="nofollow noopener noreferrer"
-                      className="block text-center px-3 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition text-xs mt-3"
-                    >
-                      Visit Website →
-                    </Link>
-                  )}
-                </div>
-              ))}
+          <div className="mt-8">
+            <FirmList legend={false}>
+              {[...providers]
+                .filter(p => p.google_review_count > 0)
+                .sort((a, b) => {
+                  if (b.google_rating !== a.google_rating) return b.google_rating - a.google_rating;
+                  return b.google_review_count - a.google_review_count;
+                })
+                .slice(0, 8)
+                .map(provider => (
+                  <FirmListItem key={provider.canonical_id}>
+                    <FirmEntry
+                      name={provider.name}
+                      slug={provider.slug}
+                      postcode={provider.postcode}
+                      rating={provider.google_rating}
+                      reviewCount={provider.google_review_count}
+                      phone={provider.phone}
+                      websiteHref={provider.website ? externalHref(provider.website) : null}
+                      tags={firmTags(provider)}
+                    />
+                  </FirmListItem>
+                ))}
+            </FirmList>
           </div>
         </div>
       </section>
       )}
 
-
       {/* FULL PROVIDER LIST WITH FILTERS */}
-      <section className="relative bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-gray-900 mb-4">Full List of Commercial Providers</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">All {providers.length} commercial providers with advanced filtering</p>
+      <section className="bg-[var(--color-stock)] py-16 md:py-24">
+        <div className="dir-wrap">
+          <h2 className="dir-h2 text-[var(--color-ink)]">Full List of Commercial Providers</h2>
+          <p className="mt-2 text-[var(--color-ink-soft)]">All {providers.length} commercial providers with advanced filtering</p>
+          <div className="mt-5">
+            <LocalOnlyNote>
+              We only list independent, local pest controllers who serve this area. National chains are not included, so this isn’t every firm that covers Liverpool, just the local ones.
+            </LocalOnlyNote>
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-8">
+          <div className="mt-10 flex flex-col gap-10 lg:flex-row">
             {/* FILTER SIDEBAR */}
-            <aside className="w-full lg:w-80 lg:flex-shrink-0">
-              <div className="bg-white rounded-2xl shadow-lg p-6 lg:sticky lg:top-24 border border-gray-100 max-h-[calc(100vh-7rem)] overflow-y-auto">
-                <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-xl font-bold text-gray-900">Filters</h3>
+            <aside className="w-full lg:w-72 lg:flex-shrink-0">
+              <div className="max-h-[calc(100vh-7rem)] overflow-y-auto border-t border-[var(--color-ink)] pt-4 lg:sticky lg:top-24">
+                <div className="flex items-baseline justify-between gap-4">
+                  <h3 className="text-lg font-bold text-[var(--color-ink)]">Filters</h3>
                   {selectedFilters.size > 0 && (
-                    <button onClick={clearAllFilters} className="text-sm text-blue-600 hover:text-blue-800 font-medium">
+                    <button type="button" onClick={clearAllFilters} className="dir-link text-sm font-semibold">
                       Clear All
                     </button>
                   )}
                 </div>
 
-                <div className="mb-6 p-4 bg-blue-50 rounded-lg">
-                  <p className="text-2xl font-black text-blue-900">{filteredProviders.length}</p>
-                  <p className="text-sm text-blue-700">Providers Found</p>
-                </div>
+                <p className="mt-2 text-sm text-[var(--color-ink-soft)]">
+                  <span className="dir-num mr-1.5 text-2xl font-bold text-[var(--color-ink)]">{filteredProviders.length}</span>
+                  Providers Found
+                </p>
 
-                {/* Certifications */}
-                <div className="mb-8">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Certifications</h4>
-                  <div className="space-y-2">
-                    {filterCategories.certifications.map(filter => (
-                      <label key={filter.key} className="flex items-center gap-3 p-2 hover:bg-gray-50 rounded-lg cursor-pointer transition-colors">
-                        <input type="checkbox" checked={selectedFilters.has(filter.key)} onChange={() => handleFilterChange(filter.key)} className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" />
-                        <span className="text-sm text-gray-700 flex-1">{filter.label}</span>
-                        <span className="text-xs text-gray-500 font-medium">({filterCounts[filter.key] || 0})</span>
-                      </label>
-                    ))}
+                {([
+                  ['certifications', 'Certifications'],
+                  ['methods', 'Methods'],
+                  ['contracts', 'Contracts'],
+                  ['sectors', 'Sectors'],
+                  ['capabilities', 'Capabilities'],
+                  ['credentials', 'Credentials'],
+                ] as const).map(([group, title]) => (
+                  <div key={group} className="mt-5 border-t border-[var(--color-rule)] pt-4">
+                    <h4 className="text-base font-bold text-[var(--color-ink)]">{title}</h4>
+                    <div className="mt-2 space-y-0.5">
+                      {filterCategories[group].map(filter => (
+                        <label key={filter.key} className="flex cursor-pointer items-center gap-3 rounded-[4px] px-1.5 py-1.5 hover:bg-[var(--color-paper)]">
+                          <input
+                            type="checkbox"
+                            checked={selectedFilters.has(filter.key)}
+                            onChange={() => handleFilterChange(filter.key)}
+                            className="h-4 w-4 rounded-[3px] border-[var(--color-rule-strong)] bg-white accent-[var(--color-ink)]"
+                          />
+                          <span className="flex-1 text-sm text-[var(--color-ink-soft)]">{filter.label}</span>
+                          <span className="dir-num text-xs text-[var(--color-ink-mute)]">({filterCounts[filter.key] || 0})</span>
+                        </label>
+                      ))}
+                    </div>
                   </div>
-                </div>
-
-                {/* Methods */}
-                <div className="mb-8">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Methods</h4>
-                  <div className="space-y-2">
-                    {filterCategories.methods.map(filter => (
-                      <label key={filter.key} className="flex items-center gap-3 p-2 hover:bg-gray-50 rounded-lg cursor-pointer transition-colors">
-                        <input type="checkbox" checked={selectedFilters.has(filter.key)} onChange={() => handleFilterChange(filter.key)} className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" />
-                        <span className="text-sm text-gray-700 flex-1">{filter.label}</span>
-                        <span className="text-xs text-gray-500 font-medium">({filterCounts[filter.key] || 0})</span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Contracts */}
-                <div className="mb-8">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Contracts</h4>
-                  <div className="space-y-2">
-                    {filterCategories.contracts.map(filter => (
-                      <label key={filter.key} className="flex items-center gap-3 p-2 hover:bg-gray-50 rounded-lg cursor-pointer transition-colors">
-                        <input type="checkbox" checked={selectedFilters.has(filter.key)} onChange={() => handleFilterChange(filter.key)} className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" />
-                        <span className="text-sm text-gray-700 flex-1">{filter.label}</span>
-                        <span className="text-xs text-gray-500 font-medium">({filterCounts[filter.key] || 0})</span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Sectors */}
-                <div className="mb-8">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Sectors</h4>
-                  <div className="space-y-2">
-                    {filterCategories.sectors.map(filter => (
-                      <label key={filter.key} className="flex items-center gap-3 p-2 hover:bg-gray-50 rounded-lg cursor-pointer transition-colors">
-                        <input type="checkbox" checked={selectedFilters.has(filter.key)} onChange={() => handleFilterChange(filter.key)} className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" />
-                        <span className="text-sm text-gray-700 flex-1">{filter.label}</span>
-                        <span className="text-xs text-gray-500 font-medium">({filterCounts[filter.key] || 0})</span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Capabilities */}
-                <div className="mb-8">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Capabilities</h4>
-                  <div className="space-y-2">
-                    {filterCategories.capabilities.map(filter => (
-                      <label key={filter.key} className="flex items-center gap-3 p-2 hover:bg-gray-50 rounded-lg cursor-pointer transition-colors">
-                        <input type="checkbox" checked={selectedFilters.has(filter.key)} onChange={() => handleFilterChange(filter.key)} className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" />
-                        <span className="text-sm text-gray-700 flex-1">{filter.label}</span>
-                        <span className="text-xs text-gray-500 font-medium">({filterCounts[filter.key] || 0})</span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Credentials */}
-                <div className="mb-8">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Credentials</h4>
-                  <div className="space-y-2">
-                    {filterCategories.credentials.map(filter => (
-                      <label key={filter.key} className="flex items-center gap-3 p-2 hover:bg-gray-50 rounded-lg cursor-pointer transition-colors">
-                        <input type="checkbox" checked={selectedFilters.has(filter.key)} onChange={() => handleFilterChange(filter.key)} className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" />
-                        <span className="text-sm text-gray-700 flex-1">{filter.label}</span>
-                        <span className="text-xs text-gray-500 font-medium">({filterCounts[filter.key] || 0})</span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
+                ))}
               </div>
             </aside>
 
             {/* MAIN CONTENT */}
-            <main className="flex-1">
-              <div data-featured-slot />
-              {filteredProviders.length === 0 ? (
-                <div className="text-center py-12">
-                  <p className="text-gray-600 text-lg">No providers match your filters. Try adjusting your selection.</p>
+            <main className="min-w-0 flex-1">
+              {filteredProviders.length > 0 && (
+                <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
+                  <p className="text-sm font-semibold text-[var(--color-ink-soft)]">
+                    Showing <span className="dir-num">{filteredProviders.length}</span> providers
+                  </p>
+                  <select
+                    value={sortBy}
+                    onChange={(e) => { setSortBy(e.target.value); applyFilters(providers, selectedFilters); }}
+                    aria-label="Sort providers"
+                    className="h-10 rounded-[8px] border border-[var(--color-rule-strong)] bg-white px-3 text-sm font-semibold text-[var(--color-ink)] focus:border-[var(--color-ink)] focus:outline-none"
+                  >
+                    <option value="quality">Sort by Quality Score</option>
+                    <option value="name">Sort by Name</option>
+                  </select>
                 </div>
+              )}
+              {featured}
+              {filteredProviders.length === 0 ? (
+                <FirmListEmpty>No providers match your filters. Try adjusting your selection.</FirmListEmpty>
               ) : (
-                <>
-                  <div className="flex justify-between items-center mb-8">
-                    <p className="text-gray-600 font-medium">Showing {filteredProviders.length} providers</p>
-                    <select value={sortBy} onChange={(e) => { setSortBy(e.target.value); applyFilters(providers, selectedFilters); }} className="px-4 py-2 border-2 border-gray-300 rounded-lg font-medium text-gray-900">
-                      <option value="quality">Sort by Quality Score</option>
-                      <option value="name">Sort by Name</option>
-                    </select>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                    {filteredProviders.map(provider => (
-                      <div key={provider.canonical_id} className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all border-l-4 border-blue-600 p-6">
-                        <h3 className="text-2xl font-black text-gray-900 mb-2">
-                          <Link href={`/provider/${provider.slug}`} className="text-blue-600 hover:underline">
-                            {provider.name}
-                          </Link>
-                        </h3>
-
-                        {provider.google_review_count > 0 && (
-                          <div className="flex items-center gap-3 mb-3">
-                            {renderStars(provider.google_rating)}
-                            <span className="text-sm font-semibold text-gray-600">{provider.google_rating?.toFixed(1)} ({provider.google_review_count} {provider.google_review_count === 1 ? 'review' : 'reviews'})</span>
-                          </div>
-                        )}
-
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                          {provider.phone && (
-                            <div className="flex items-center gap-2">
-                              <Phone size={16} className="text-blue-600" />
-                              {isMobile ? (
-                                <a href={`tel:${provider.phone}`} className="text-sm text-blue-600 hover:underline">{provider.phone}</a>
-                              ) : (
-                                <span className="text-sm text-gray-700">{provider.phone}</span>
-                              )}
-                            </div>
-                          )}
-
-                          {provider.postcode && (
-                            <div className="flex items-center gap-2">
-                              <MapPin size={16} className="text-blue-600" />
-                              <span className="text-sm text-gray-700">{provider.postcode}</span>
-                            </div>
-                          )}
-                        </div>
-
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {provider.bpca_member && (
-                            <span className="inline-flex items-center gap-1 px-3 py-1 bg-blue-100 text-blue-800 text-xs font-bold rounded-full">
-                              <ShieldCheck size={14} /> BPCA Member
-                            </span>
-                          )}
-                          {provider.npta_member && (
-                            <span className="inline-flex items-center gap-1 px-3 py-1 bg-green-100 text-green-800 text-xs font-bold rounded-full">
-                              <Award size={14} /> NPTA Member
-                            </span>
-                          )}
-                          {provider.basis_prompt && (
-                            <span className="inline-flex items-center gap-1 px-3 py-1 bg-purple-100 text-purple-800 text-xs font-bold rounded-full">
-                              <CheckCircle2 size={14} /> BASIS PROMPT
-                            </span>
-                          )}
-                        </div>
-
-                        {provider.website && (
-                          <Link href={externalHref(provider.website)} target="_blank" rel="nofollow noopener noreferrer" className="inline-block px-4 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition text-sm">
-                            Visit Website →
-                          </Link>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </>
+                <FirmList>
+                  {filteredProviders.map(provider => (
+                    <FirmListItem key={provider.canonical_id}>
+                      <FirmEntry
+                        name={provider.name}
+                        slug={provider.slug}
+                        postcode={provider.postcode}
+                        rating={provider.google_rating}
+                        reviewCount={provider.google_review_count}
+                        phone={provider.phone}
+                        websiteHref={provider.website ? externalHref(provider.website) : null}
+                        tags={firmTags(provider)}
+                      />
+                    </FirmListItem>
+                  ))}
+                </FirmList>
               )}
             </main>
           </div>
@@ -579,101 +421,98 @@ export default function CommercialDirectoryClient({ initialProviders }: { initia
       </section>
 
       {/* HOW IT WORKS SECTION */}
-      <section className="relative bg-white py-16 border-b-2 border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-gray-900 mb-4">How It Works</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">Our methodology for finding the right commercial provider</p>
-          </div>
+      <section className="border-t border-[var(--color-rule)] bg-[var(--color-stock)] py-16 md:py-24">
+        <div className="dir-wrap">
+          <h2 className="dir-h2 text-[var(--color-ink)]">How It Works</h2>
+          <p className="mt-2 max-w-[68ch] text-[var(--color-ink-soft)]">Our methodology for finding the right commercial provider</p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-blue-50 to-white rounded-xl shadow-lg p-8 border-t-4 border-[#1e3a8a]">
-              <div className="text-5xl font-black text-[#1e3a8a] mb-4">1</div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">Rankings can&apos;t be bought</h3>
-              <p className="text-gray-600">Results are sorted by rating. Firms can pay for a clearly labelled Featured slot, never a higher rank. No lead fees, ever.</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-blue-50 to-white rounded-xl shadow-lg p-8 border-t-4 border-[#1e3a8a]">
-              <div className="text-5xl font-black text-[#1e3a8a] mb-4">2</div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">Transparent Data</h3>
-              <p className="text-gray-600">All provider information is displayed transparently. You see exactly what certifications, sectors, and capabilities each provider has.</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-blue-50 to-white rounded-xl shadow-lg p-8 border-t-4 border-[#1e3a8a]">
-              <div className="text-5xl font-black text-[#1e3a8a] mb-4">3</div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">Your Decision</h3>
-              <p className="text-gray-600">You decide which provider is right for your business. Filter by your specific needs and contact providers directly.</p>
-            </div>
-          </div>
+          <ol className="mt-8 grid grid-cols-1 gap-x-10 md:grid-cols-3">
+            <li className="border-t border-[var(--color-ink)] py-5">
+              <span className="dir-num dir-condensed text-3xl font-bold text-[var(--color-ink)]">1</span>
+              <h3 className="mt-2 text-lg font-bold text-[var(--color-ink)]">Rankings can&apos;t be bought</h3>
+              <p className="mt-2 leading-relaxed text-[var(--color-ink-soft)]">Results are sorted by rating. Firms can pay for a clearly labelled Featured slot, never a higher rank. No lead fees, ever.</p>
+            </li>
+            <li className="border-t border-[var(--color-ink)] py-5">
+              <span className="dir-num dir-condensed text-3xl font-bold text-[var(--color-ink)]">2</span>
+              <h3 className="mt-2 text-lg font-bold text-[var(--color-ink)]">Transparent Data</h3>
+              <p className="mt-2 leading-relaxed text-[var(--color-ink-soft)]">All provider information is displayed transparently. You see exactly what certifications, sectors, and capabilities each provider has.</p>
+            </li>
+            <li className="border-t border-[var(--color-ink)] py-5">
+              <span className="dir-num dir-condensed text-3xl font-bold text-[var(--color-ink)]">3</span>
+              <h3 className="mt-2 text-lg font-bold text-[var(--color-ink)]">Your Decision</h3>
+              <p className="mt-2 leading-relaxed text-[var(--color-ink-soft)]">You decide which provider is right for your business. Filter by your specific needs and contact providers directly.</p>
+            </li>
+          </ol>
         </div>
       </section>
 
-      {/* PRODUCTS PAGE LINK */}
-      <section className="relative bg-gray-50 py-12 border-t-2 border-gray-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-3">Looking for Product Recommendations?</h3>
-          <p className="text-gray-600 mb-6">Visit our Products page to see the most popular pest control products available today, organized by pest type. Includes user ratings and direct purchase links.</p>
-          <Link href="/products" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold text-lg">
-            View Home Products
-            <span>→</span>
-          </Link>
-        </div>
-      </section>
-
-      {/* COMMERCIAL GUIDES */}
-      <section className="max-w-7xl mx-auto px-4 py-12">
-        <div className="bg-gradient-to-r from-purple-50 to-blue-50 border border-purple-200 rounded-2xl p-8 text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-3">Running a Food Business?</h2>
-          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">Our commercial pest control guides cover EHO compliance, HACCP requirements, and choosing the right equipment for your business.</p>
-          <div className="flex flex-col items-center gap-4">
-            <Link href="/guides/commercial-pest-control" className="inline-block px-6 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-lg transition-colors text-sm">
-              Commercial Pest Control Hub →
+      {/* PRODUCTS PAGE LINK AND COMMERCIAL GUIDES */}
+      <section className="border-t border-[var(--color-rule)] bg-[var(--color-stock)] py-16 md:py-24">
+        <div className="dir-wrap grid grid-cols-1 gap-10 lg:grid-cols-2">
+          <div>
+            <h2 className="dir-h2 text-[var(--color-ink)]">Running a Food Business?</h2>
+            <p className="mt-2 max-w-[60ch] leading-relaxed text-[var(--color-ink-soft)]">Our commercial pest control guides cover EHO compliance, HACCP requirements, and choosing the right equipment for your business.</p>
+            <Link href="/guides/commercial-pest-control" className="dir-btn dir-btn-ink mt-5">
+              Commercial Pest Control Hub
+              <ArrowRight aria-hidden="true" className="h-4 w-4" strokeWidth={2} />
             </Link>
-            <div className="flex flex-wrap justify-center gap-3">
-              <Link href="/guides/restaurant-pest-control" className="text-blue-600 hover:underline font-semibold text-sm">
-                Restaurant Guide →
-              </Link>
-              <Link href="/best/commercial-fly-killers" className="text-blue-600 hover:underline font-semibold text-sm">
-                Fly Killer Reviews →
-              </Link>
-              <Link href="/guides/warehouse-pest-management" className="text-blue-600 hover:underline font-semibold text-sm">
-                Warehouse Pest Management Guide →
-              </Link>
-              <Link href="/guides/hotel-pest-control" className="text-blue-600 hover:underline font-semibold text-sm">
-                Hotel Pest Control Guide →
-              </Link>
-              <Link href="/best/commercial-insect-monitors" className="text-blue-600 hover:underline font-semibold text-sm">
-                Insect Monitor Reviews →
-              </Link>
-            </div>
+            <ul className="mt-5 border-b border-[var(--color-rule)]">
+              {[
+                { href: '/guides/restaurant-pest-control', label: 'Restaurant Guide' },
+                { href: '/best/commercial-fly-killers', label: 'Fly Killer Reviews' },
+                { href: '/guides/warehouse-pest-management', label: 'Warehouse Pest Management Guide' },
+                { href: '/guides/hotel-pest-control', label: 'Hotel Pest Control Guide' },
+                { href: '/best/commercial-insect-monitors', label: 'Insect Monitor Reviews' },
+              ].map(link => (
+                <li key={link.href} className="border-t border-[var(--color-rule)]">
+                  <Link href={link.href} className="flex items-center justify-between gap-4 py-3 font-semibold text-[var(--color-ink)] hover:underline">
+                    {link.label}
+                    <ArrowRight aria-hidden="true" className="h-4 w-4 text-[var(--color-ink-mute)]" strokeWidth={2} />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="lg:border-l lg:border-[var(--color-rule)] lg:pl-10">
+            <h3 className="text-xl font-bold text-[var(--color-ink)]">Looking for Product Recommendations?</h3>
+            <p className="mt-2 max-w-[60ch] leading-relaxed text-[var(--color-ink-soft)]">Visit our Products page to see the most popular pest control products available today, organized by pest type. Includes user ratings and direct purchase links.</p>
+            <Link href="/products" className="dir-link mt-4 inline-flex items-center gap-2 font-semibold">
+              View Home Products
+              <ArrowRight aria-hidden="true" className="h-4 w-4" strokeWidth={2} />
+            </Link>
           </div>
         </div>
       </section>
 
       {/* CROSS-LINKING */}
-      <section className="bg-gray-50 border-t border-gray-200 py-12">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-gray-700 mb-4">
-            Also compare pest control providers in{' '}
-            <Link href="/residential" className="text-blue-600 hover:underline font-semibold">
-              London Residential
-            </Link>
-            {' | '}
-            <Link href="/commercial" className="text-blue-600 hover:underline font-semibold">
-              London Commercial
-            </Link>
-            {' | '}
-            <Link href="/birmingham/commercial" className="text-blue-600 hover:underline font-semibold">
-              Birmingham Commercial
-            </Link>
-            {' | '}
-            <Link href="/manchester/commercial" className="text-blue-600 hover:underline font-semibold">
-              Manchester Commercial
-            </Link>
-          </p>
+      <section className="border-t border-[var(--color-rule)] bg-[var(--color-paper)] py-10">
+        <div className="dir-wrap">
+          <p className="text-[var(--color-ink-soft)]">Also compare pest control providers in</p>
+          <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-2">
+            <li>
+              <Link href="/residential" className="dir-link font-semibold">
+                London Residential
+              </Link>
+            </li>
+            <li>
+              <Link href="/commercial" className="dir-link font-semibold">
+                London Commercial
+              </Link>
+            </li>
+            <li>
+              <Link href="/birmingham/commercial" className="dir-link font-semibold">
+                Birmingham Commercial
+              </Link>
+            </li>
+            <li>
+              <Link href="/manchester/commercial" className="dir-link font-semibold">
+                Manchester Commercial
+              </Link>
+            </li>
+          </ul>
         </div>
       </section>
-
     </div>
   );
 }

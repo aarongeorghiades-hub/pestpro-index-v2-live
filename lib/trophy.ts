@@ -28,9 +28,9 @@ export function isTrophyProvider(provider: {
 
 /** Visitor-facing explanation, rendered next to the provider list. */
 export const TROPHY_LEGEND =
-  `🏆 marks providers with a Google rating of ${TROPHY_MIN_RATING} or higher from ` +
-  `${TROPHY_MIN_REVIEWS} or more reviews. It is calculated from Google review data — ` +
-  `it is not paid for and cannot be purchased.`;
+  // One template literal on purpose: the production build folded the old
+  // two-literal concatenation into "4.530", dropping the text between values.
+  `Top rated marks providers with a Google rating of ${TROPHY_MIN_RATING} or higher from ${TROPHY_MIN_REVIEWS} or more reviews. It is calculated from Google review data. It is not paid for and cannot be bought.`;
 
 /** Announced in place of the raw emoji by screen readers. */
 export const TROPHY_ARIA_LABEL =
