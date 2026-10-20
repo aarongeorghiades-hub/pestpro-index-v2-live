@@ -149,7 +149,7 @@ export default function Home({
                 descenders never meet the line below at any width. */}
             <h1 className="dir-display text-[clamp(2.5rem,5.9vw,4.6rem)] !leading-[1.12] text-[var(--color-ink)]">
               <span className="hero-line" style={{ '--i': 0 } as CSSProperties}>Pest control from</span>{' '}
-              <span className="hero-line" style={{ '--i': 1 } as CSSProperties}>local people,</span>{' '}
+              <span className="hero-line" style={{ '--i': 1 } as CSSProperties}>local pros,</span>{' '}
               <span className="hero-line whitespace-nowrap pb-[0.08em] pl-[0.28em]" style={{ '--i': 2 } as CSSProperties}><em className="dir-accent text-[var(--color-primary)]">for local people</em>.</span>
             </h1>
             <p className="hero-rise mt-7 max-w-[44ch] text-lg leading-relaxed text-[var(--color-ink-soft)] md:text-xl" style={{ '--i': 2 } as CSSProperties}>

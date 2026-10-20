@@ -167,7 +167,7 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
               <div>
                 <h3 className="text-xl font-bold">Featured</h3>
                 <p className="mt-1 text-sm font-semibold text-[var(--color-marigold-deep)]">
-                  Optional. Labelled Featured (paid).
+                  Optional. Labelled Featured · Sponsored.
                 </p>
               </div>
               <Includes items={FEATURED_INCLUDES} />
@@ -269,7 +269,7 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
             </p>
             <p className={`mt-4 text-lg ${BODY}`}>
               The Featured box, when a firm is in it, sits above the rating-sorted list and is headed
-              &ldquo;Featured (paid)&rdquo;. Limited Featured spots per area. The order inside the box
+              &ldquo;Featured · Sponsored&rdquo;. Limited Featured spots per area. The order inside the box
               changes each day. A standard listing stays free and stays in the rating order. Nothing on
               this site charges a fee per enquiry.
             </p>

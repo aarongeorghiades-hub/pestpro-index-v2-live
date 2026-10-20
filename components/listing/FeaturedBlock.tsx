@@ -20,8 +20,8 @@ export default function FeaturedBlock({
   // marigold edge and a small label. It stays plainly marked as paid, and the
   // note says the rated list below is unaffected.
   return (
-    <section aria-label="Featured paid listings" className="mb-10">
-      <h2 className="sr-only">Featured (paid)</h2>
+    <section aria-label="Featured sponsored listings" className="mb-10">
+      <h2 className="sr-only">Featured · Sponsored</h2>
       <ul className="space-y-3">
         {providers.map((provider) => (
           <li
@@ -32,7 +32,7 @@ export default function FeaturedBlock({
             <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-[var(--color-marigold-edge)]/70 px-5 py-3 md:px-7">
               <p className="flex items-center gap-2 text-[0.8125rem] font-bold text-[var(--color-ink)]">
                 <span className="dir-tab !bg-[var(--color-saffron)] !py-1 !text-[var(--color-ink)] !shadow-none">Featured</span>
-                <span className="font-semibold text-[var(--color-ink-soft)]">Paid placement</span>
+                <span className="font-semibold text-[var(--color-ink-soft)]">· Sponsored</span>
               </p>
               <Link
                 href="/professionals#how-featured-listings-work"
