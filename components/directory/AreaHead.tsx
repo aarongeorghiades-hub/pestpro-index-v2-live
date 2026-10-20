@@ -25,6 +25,7 @@ export default function AreaHead({
   children?: ReactNode;
 }) {
   return (
+    <>
     <header className={featured ? 'border-b border-[var(--color-marigold-edge)] bg-[var(--color-marigold-wash)]' : 'border-b border-[var(--color-ink)] bg-[var(--color-stock)]'}>
       <div className="dir-wrap pb-10 pt-6 md:pb-14 md:pt-8">
         <nav aria-label="Breadcrumb" className="text-[0.8125rem] text-[var(--color-ink-mute)]">
@@ -47,13 +48,8 @@ export default function AreaHead({
         </nav>
 
         <div className="mt-10 md:mt-14">
-          {(tab || label) && (
-            <div className="flex flex-wrap items-center gap-2">
-              {tab && <span className="dir-tab">{tab}</span>}
-              {label}
-            </div>
-          )}
-          <h1 className="dir-display mt-4 max-w-[18ch] text-[clamp(2.75rem,9vw,6rem)] text-[var(--color-ink)]">{title}</h1>
+          <h1 className="dir-display max-w-[18ch] text-[clamp(2.75rem,9vw,6.5rem)] text-[var(--color-ink)]">{title}</h1>
+          {label && <div className="mt-5">{label}</div>}
           {standfirst && (
             <div className="mt-5 max-w-[60ch] text-lg leading-relaxed text-[var(--color-ink-soft)] md:text-xl">{standfirst}</div>
           )}
@@ -61,6 +57,20 @@ export default function AreaHead({
         </div>
       </div>
     </header>
+    {tab && (
+      // THE RUNNING HEAD. The directory's thumb-tab, pinned under the site
+      // header so the place stays named all the way down a long list. It fades
+      // in once the page head has scrolled away (scroll-driven, CSS only).
+      <div className="dir-runhead sticky top-16 z-40 border-b border-[var(--color-rule-strong)] bg-[var(--color-stock)]">
+        <div className="dir-wrap flex h-10 items-center gap-3">
+          <span className="dir-tab !py-1">{tab}</span>
+          {typeof title === 'string' && (
+            <span className="truncate text-sm font-semibold text-[var(--color-ink)]">{title}</span>
+          )}
+        </div>
+      </div>
+    )}
+    </>
   );
 }
 

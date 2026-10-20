@@ -72,7 +72,7 @@ export default function FirmEntry({
           )}
           {hasRating ? (
             <span className="inline-flex items-center gap-1.5">
-              <Star aria-hidden="true" className="h-3.5 w-3.5 fill-[var(--color-marigold)] text-[var(--color-marigold)]" strokeWidth={0} />
+              <Star aria-hidden="true" className="h-3.5 w-3.5 fill-[var(--color-ink)] text-[var(--color-ink)]" strokeWidth={0} />
               <span className="dir-num font-semibold text-[var(--color-ink)]">{(rating as number).toFixed(1)}</span>
               {reviewCount ? (
                 <span className="dir-num">
@@ -106,9 +106,10 @@ export default function FirmEntry({
         <div className="flex flex-col gap-2 sm:flex-row md:flex-col md:items-end lg:flex-row lg:items-center">
           {phone && (
             <>
-              <a href={telHref(phone)} className="dir-btn dir-btn-ink w-full sm:w-auto md:hidden">
-                <Phone aria-hidden="true" className="h-4 w-4" strokeWidth={2.25} />
-                <span className="dir-num">Call {phone}</span>
+              <a href={telHref(phone)} className="dir-btn dir-btn-ink w-full !min-h-[3.25rem] sm:w-auto md:hidden">
+                <Phone aria-hidden="true" className="h-[1.125rem] w-[1.125rem]" strokeWidth={2.25} />
+                <span className="text-[0.8125rem] font-semibold text-white/75">Call</span>
+                <span className="dir-num dir-condensed text-[1.375rem] font-bold leading-none tracking-[-0.01em]">{phone}</span>
               </a>
               <span className="dir-num dir-condensed hidden whitespace-nowrap text-[1.625rem] font-bold leading-none tracking-[-0.01em] text-[var(--color-ink)] md:inline">
                 {phone}

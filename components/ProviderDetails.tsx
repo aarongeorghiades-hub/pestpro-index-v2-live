@@ -119,7 +119,7 @@ export default function ProviderDetails({
         label={
           isFeatured ? (
             <span className="rounded-[3px] border border-[var(--color-marigold-edge)] bg-[var(--color-stock)] px-2 py-[0.4rem] text-[0.8125rem] font-bold leading-none text-[var(--color-marigold-deep)]">
-              Featured
+              Featured · Paid placement
             </span>
           ) : null
         }
@@ -128,8 +128,8 @@ export default function ProviderDetails({
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-base md:text-lg">
             {rating != null && rating > 0 && (
               <span className="inline-flex items-center gap-2">
-                <Star aria-hidden="true" className="h-5 w-5 fill-[var(--color-marigold)] text-[var(--color-marigold)]" strokeWidth={0} />
-                <span className="dir-num font-bold text-[var(--color-ink)]">{rating}</span>
+                <Star aria-hidden="true" className="h-5 w-5 fill-[var(--color-ink)] text-[var(--color-ink)]" strokeWidth={0} />
+                <span className="dir-num font-bold text-[var(--color-ink)]">{rating.toFixed(1)}</span>
                 {reviewCount != null && reviewCount > 0 && (
                   <span className="dir-num">
                     from {reviewCount.toLocaleString()} Google {reviewCount === 1 ? 'review' : 'reviews'}
@@ -201,7 +201,7 @@ export default function ProviderDetails({
           {profileText && (
             <p
               className={`max-w-[62ch] text-lg leading-relaxed text-[var(--color-ink)] md:text-xl ${
-                isFeatured ? 'rounded-md border border-[var(--color-marigold-edge)] bg-[var(--color-marigold-wash)] p-6 md:p-8' : ''
+                isFeatured ? 'border-l-0 border-t border-[var(--color-marigold-edge)] pt-6' : ''
               }`}
             >
               {profileText}

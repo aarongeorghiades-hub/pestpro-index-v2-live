@@ -159,22 +159,24 @@ export default function Home({
               {providerCount !== null ? <>{formatCount(providerCount)} local firms across {areas.length} areas. </> : null}
               Sorted by Google rating. Rankings can&apos;t be bought: a firm can pay for a Featured slot, and it&apos;s always labelled.
             </p>
-            <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:max-w-[34rem]">
-              <Link href="/residential" className="group flex items-center justify-between gap-4 rounded-[4px] bg-[var(--color-ink)] px-5 py-4 text-white transition-colors hover:bg-[#1f3a2f]">
-                <span>
-                  <span className="block text-[0.8125rem] text-white/70">For homes</span>
-                  <span className="block text-lg font-bold leading-tight">Domestic pest control</span>
-                </span>
-                <ArrowRight aria-hidden="true" className="h-5 w-5 shrink-0 transition-transform duration-200 group-hover:translate-x-1" />
-              </Link>
-              <Link href="/commercial" className="group flex items-center justify-between gap-4 rounded-[4px] border border-[var(--color-ink)] px-5 py-4 text-[var(--color-ink)] transition-colors hover:bg-[var(--color-paper)]">
-                <span>
-                  <span className="block text-[0.8125rem] text-[var(--color-ink-mute)]">For businesses</span>
-                  <span className="block text-lg font-bold leading-tight">Commercial pest control</span>
-                </span>
-                <ArrowRight aria-hidden="true" className="h-5 w-5 shrink-0 transition-transform duration-200 group-hover:translate-x-1" />
-              </Link>
-            </div>
+            <ul className="mt-8 border-t-2 border-[var(--color-ink)] lg:max-w-[34rem]">
+              {[
+                { href: '/residential', title: 'Domestic pest control', note: 'Homes, flats and rentals' },
+                { href: '/commercial', title: 'Commercial pest control', note: 'Shops, kitchens, offices and landlords' },
+              ].map((way) => (
+                <li key={way.href} className="border-b border-[var(--color-rule-strong)]">
+                  <Link href={way.href} className="group flex items-center justify-between gap-4 py-4 text-[var(--color-ink)]">
+                    <span>
+                      <span className="block text-xl font-bold leading-tight group-hover:underline group-hover:underline-offset-4">{way.title}</span>
+                      <span className="mt-0.5 block text-sm text-[var(--color-ink-mute)]">{way.note}</span>
+                    </span>
+                    <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-[4px] bg-[var(--color-ink)] text-white transition-transform duration-200 group-hover:translate-x-1">
+                      <ArrowRight aria-hidden="true" className="h-5 w-5" />
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* The area index: the directory's thumb-tab, opened. */}
@@ -292,7 +294,7 @@ export default function Home({
             Browse providers across the UK. No sign-up, no forms. Pick your area and call a firm directly.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/pest-control/regions" className="dir-btn dir-btn-marigold">Browse all regions</Link>
+            <Link href="/pest-control/regions" className="dir-btn bg-white text-[var(--color-ink)] hover:bg-[var(--color-paper)]">Browse all regions</Link>
             <Link href="/professionals" className="dir-btn border border-white/30 text-white hover:border-white">
               Run a pest control firm?
             </Link>

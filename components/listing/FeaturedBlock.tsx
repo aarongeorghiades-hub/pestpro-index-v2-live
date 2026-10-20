@@ -21,25 +21,26 @@ export default function FeaturedBlock({
   // note says the rated list below is unaffected.
   return (
     <section aria-label="Featured paid listings" className="mb-10">
-      <div className="mb-3 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-        <h2 className="flex items-center gap-2 text-sm font-bold text-[var(--color-ink)]">
-          <span className="dir-tab">Featured</span>
-          <span className="font-semibold text-[var(--color-ink-soft)]">Paid placement</span>
-        </h2>
-        <Link
-          href="/professionals#how-featured-listings-work"
-          className="dir-link text-sm font-semibold"
-        >
-          How featured listings work
-        </Link>
-      </div>
+      <h2 className="sr-only">Featured (paid)</h2>
       <ul className="space-y-3">
         {providers.map((provider) => (
           <li
             key={String(provider.canonical_id)}
             data-featured-card
-            className="overflow-hidden rounded-md border border-[var(--color-marigold-edge)] bg-[var(--color-marigold-wash)] shadow-[0_1px_2px_rgba(19,36,29,0.06),0_8px_24px_-12px_rgba(107,80,0,0.25)]"
+            className="overflow-hidden rounded-md border border-[var(--color-marigold-edge)] bg-[var(--color-marigold-wash)]"
           >
+            <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-[var(--color-marigold-edge)] px-5 py-2.5 md:px-7">
+              <p className="flex items-center gap-2 text-[0.8125rem] font-bold text-[var(--color-ink)]">
+                <span className="dir-tab !py-1">Featured</span>
+                <span className="font-semibold text-[var(--color-marigold-deep)]">Paid placement</span>
+              </p>
+              <Link
+                href="/professionals#how-featured-listings-work"
+                className="text-[0.8125rem] font-semibold text-[var(--color-marigold-deep)] underline underline-offset-4 hover:text-[var(--color-ink)]"
+              >
+                How featured listings work
+              </Link>
+            </div>
             <div className="flex gap-5">
               {(provider.logoUrl || provider.photoUrl) && (
                 // eslint-disable-next-line @next/next/no-img-element

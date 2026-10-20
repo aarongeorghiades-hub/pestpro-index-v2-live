@@ -70,7 +70,7 @@ export default function BoroughIndexPage() {
         </div>
       </section>
 
-      <div data-featured-slot />
+      <div className="dir-wrap pt-10 empty:hidden" data-featured-slot />
 
       {/* Borough index, A to Z */}
       <section className="border-b border-[var(--color-rule-strong)]">

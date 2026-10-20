@@ -76,21 +76,8 @@ export default function SheffieldBoroughClient({ borough, initialProviders, also
         </p>
       </AreaHead>
 
-      {/* INTRO & COMMON PESTS */}
-      <section className="bg-[var(--color-stock)]">
-        <div className="dir-wrap grid gap-10 py-14 md:py-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.8fr)] lg:gap-16">
-          <p className="max-w-[68ch] text-lg leading-relaxed text-[var(--color-ink-soft)]">
-            {borough.intro}
-          </p>
-          <div className="border-t border-[var(--color-rule-strong)] pt-6">
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">Common Pests in {borough.name}</h2>
-            <p className="mt-4 max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">{borough.commonPests}</p>
-          </div>
-        </div>
-      </section>
-
       {/* PROVIDERS */}
-      <section className="border-t border-[var(--color-rule)] bg-[var(--color-stock)]">
+      <section className="bg-[var(--color-stock)]">
         <div className="dir-wrap py-14 md:py-16">
           <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">
             Pest Control Providers Serving {borough.name}
@@ -124,6 +111,19 @@ export default function SheffieldBoroughClient({ borough, initialProviders, also
             </FirmList>
           )}
           <AlsoCovering firms={alsoCovering} placeName={borough.name} />
+        </div>
+      </section>
+
+      {/* INTRO & COMMON PESTS */}
+      <section className="border-t border-[var(--color-rule)] bg-[var(--color-stock)]">
+        <div className="dir-wrap grid gap-10 py-14 md:py-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.8fr)] lg:gap-16">
+          <p className="max-w-[68ch] text-lg leading-relaxed text-[var(--color-ink-soft)]">
+            {borough.intro}
+          </p>
+          <div className="border-t border-[var(--color-rule-strong)] pt-6">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">Common Pests in {borough.name}</h2>
+            <p className="mt-4 max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">{borough.commonPests}</p>
+          </div>
         </div>
       </section>
 

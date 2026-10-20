@@ -37,7 +37,7 @@ export default function Footer() {
           <h3 className="dir-display mb-4 text-[clamp(2.75rem,7vw,5rem)] text-white">PestPro Index</h3>
           <p className="max-w-[34ch] text-lg leading-snug text-white/80">Local, independent pest controllers near you. No national chains.</p>
           </div>
-          <Link href="/professionals" className="dir-btn dir-btn-marigold self-start md:self-auto">
+          <Link href="/professionals" className="dir-btn self-start bg-white text-[var(--color-ink)] hover:bg-[var(--color-paper)] md:self-auto">
             List your firm
           </Link>
         </div>
@@ -179,7 +179,7 @@ export default function Footer() {
             <h4 className="mb-2 font-bold text-white">For Professionals</h4>
             <p>Grow your pest control business with PestPro Index. Get listed today.</p>
           </div>
-          <div>
+          <div className="hidden has-[p]:block">
             <h4 className="mb-2 font-bold text-white">Products</h4>
             <FooterAssociatesNotice cardCarryingRoutes={cardCarryingRoutes} />
           </div>

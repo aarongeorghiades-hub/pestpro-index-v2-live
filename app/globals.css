@@ -604,8 +604,8 @@
   .home-mark::before {
     content: "";
     position: absolute;
-    left: -0.06em;
-    right: -0.08em;
+    left: 0;
+    right: -0.04em;
     bottom: 0.06em;
     height: 0.36em;
     background: var(--color-marigold);
@@ -622,4 +622,21 @@
 @keyframes home-mark-draw {
   from { transform: skewX(-8deg) scaleX(0); }
   to { transform: skewX(-8deg) scaleX(1); }
+}
+
+/* The area running head: hidden at the top of the page (the H1 is in view),
+   eased in as the head scrolls away. Without scroll timelines it simply shows. */
+@layer components {
+  @supports (animation-timeline: scroll()) {
+    .dir-runhead {
+      animation: dir-runhead-in linear both;
+      animation-timeline: scroll(root);
+      animation-range: 120px 320px;
+    }
+  }
+}
+@keyframes dir-runhead-in {
+  from { opacity: 0; transform: translateY(-100%); visibility: hidden; }
+  1% { visibility: visible; }
+  to { opacity: 1; transform: none; visibility: visible; }
 }

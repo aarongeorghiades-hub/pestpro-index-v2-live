@@ -155,7 +155,10 @@ const nextConfig: NextConfig = {
       // Matches any second path segment that looks like a domain (contains a dot).
       // Covers the 37 indexed /:city/:website-domain 404s regardless of city.
       {
-        source: '/:city/:domain((?:www\\.)?[a-zA-Z0-9][a-zA-Z0-9\\-]*\\.[a-zA-Z0-9\\./\\-?=&_%+]*)',
+        // The first segment excludes the static asset folders in /public: without
+        // that, /badges/find-us.svg matched as a "domain" and redirected to
+        // /badges, which broke the listing badge image everywhere it is embedded.
+        source: '/:city((?!badges|images)[^/]+)/:domain((?:www\\.)?[a-zA-Z0-9][a-zA-Z0-9\\-]*\\.[a-zA-Z0-9\\./\\-?=&_%+]*)',
         destination: '/:city',
         permanent: true,
       },

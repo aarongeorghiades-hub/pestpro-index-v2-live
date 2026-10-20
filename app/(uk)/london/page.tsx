@@ -77,23 +77,12 @@ export default async function LondonHubPage() {
         <p className="max-w-[60ch] text-[0.9375rem] leading-relaxed text-[var(--color-ink-soft)]">
           Local firms for your home, and local firms for your business: shops, restaurants, offices, warehouses and landlords. No national chains, no commissions.
         </p>
-        <ul className="mt-6 flex flex-wrap gap-x-10 gap-y-4 border-t border-[var(--color-rule)] pt-5">
-          <li>
-            <span className="dir-display dir-num block text-[2rem] text-[var(--color-ink)]">{providerCount}</span>
-            <span className="mt-1 block text-sm text-[var(--color-ink-mute)]">Providers</span>
-          </li>
-          <li>
-            <span className="dir-display dir-num block text-[2rem] text-[var(--color-ink)]">{londonBoroughs.length}</span>
-            <span className="mt-1 block text-sm text-[var(--color-ink-mute)]">London Boroughs</span>
-          </li>
-          <li>
-            <span className="dir-display dir-num block text-[2rem] text-[var(--color-ink)]">Free</span>
-            <span className="mt-1 block text-sm text-[var(--color-ink-mute)]">No Referral Fees</span>
-          </li>
-        </ul>
+        <p className="dir-num mt-5 border-t border-[var(--color-rule)] pt-5 text-[0.9375rem] font-semibold text-[var(--color-ink)]">
+          {providerCount} providers · {londonBoroughs.length} london boroughs · no referral fees
+        </p>
       </AreaHead>
 
-      <div data-featured-slot />
+      <div className="dir-wrap pt-10 empty:hidden" data-featured-slot />
 
       {/* HOMES / BUSINESSES */}
       <section className="border-b border-[var(--color-rule-strong)]">

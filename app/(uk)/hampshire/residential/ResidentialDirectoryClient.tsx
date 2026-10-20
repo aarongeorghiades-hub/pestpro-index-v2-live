@@ -7,7 +7,7 @@ import { ArrowRight } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import SearchBar from '@/components/SearchBar';
 import Navigation from '@/components/Navigation';
-import AreaHead from '@/components/directory/AreaHead';
+import AreaHead, { LocalOnlyNote } from '@/components/directory/AreaHead';
 import FirmEntry from '@/components/directory/FirmEntry';
 import { FirmList, FirmListItem, FirmListEmpty } from '@/components/directory/FirmList';
 
@@ -220,29 +220,8 @@ export default function ResidentialDirectoryClient({ initialProviders }: { initi
         <p className="text-sm text-[var(--color-ink-mute)]">No endorsements · No commissions · Transparent, provider-stated information</p>
       </AreaHead>
 
-      {/* DIY PRODUCTS */}
-      <section className="bg-[var(--color-stock)] py-14 md:py-16">
-        <div className="dir-wrap">
-          <div className="max-w-[68ch]">
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">
-              Need DIY Products?
-            </h2>
-            <ul className="mt-5 list-disc space-y-2 pl-5 leading-relaxed text-[var(--color-ink-soft)] marker:text-[var(--color-ink-mute)]">
-              <li>Browse our curated selection of the most popular pest control products available today</li>
-              <li>Stop trawling the internet and just hoping for the best with what you spend your money on</li>
-              <li>Pick a product from our curated list organised by pest type</li>
-              <li>We choose products against sourced criteria: the legal position and the specifications each manufacturer states in its own listing</li>
-            </ul>
-            <Link href="/products" className="dir-btn dir-btn-line mt-6">
-              View Home Products
-              <ArrowRight aria-hidden="true" className="h-4 w-4" strokeWidth={2} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* FULL PROVIDER LIST */}
-      <section className="border-t border-[var(--color-rule-strong)] bg-[var(--color-stock)] py-14 md:py-16">
+      <section className="bg-[var(--color-stock)] py-14 md:py-16">
         <div className="dir-wrap">
           <div className="mb-8 max-w-[68ch]">
             <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">
@@ -251,6 +230,9 @@ export default function ResidentialDirectoryClient({ initialProviders }: { initi
             <p className="mt-3 leading-relaxed text-[var(--color-ink-soft)]">
               All {providers.length} residential providers with advanced filtering
             </p>
+            <div className="mt-4">
+              <LocalOnlyNote>We only list independent, local pest controllers. National chains are not included.</LocalOnlyNote>
+            </div>
           </div>
 
           {/* SEARCH BAR */}
@@ -388,6 +370,27 @@ export default function ResidentialDirectoryClient({ initialProviders }: { initi
               )}
             </main>
 
+          </div>
+        </div>
+      </section>
+
+      {/* DIY PRODUCTS */}
+      <section className="border-t border-[var(--color-rule-strong)] bg-[var(--color-stock)] py-14 md:py-16">
+        <div className="dir-wrap">
+          <div className="max-w-[68ch]">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">
+              Need DIY Products?
+            </h2>
+            <ul className="mt-5 list-disc space-y-2 pl-5 leading-relaxed text-[var(--color-ink-soft)] marker:text-[var(--color-ink-mute)]">
+              <li>Browse our curated selection of the most popular pest control products available today</li>
+              <li>Stop trawling the internet and just hoping for the best with what you spend your money on</li>
+              <li>Pick a product from our curated list organised by pest type</li>
+              <li>We choose products against sourced criteria: the legal position and the specifications each manufacturer states in its own listing</li>
+            </ul>
+            <Link href="/products" className="dir-btn dir-btn-line mt-6">
+              View Home Products
+              <ArrowRight aria-hidden="true" className="h-4 w-4" strokeWidth={2} />
+            </Link>
           </div>
         </div>
       </section>

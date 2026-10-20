@@ -150,7 +150,7 @@ export default function Navigation() {
           setMobileOpen(false);
         }
       }}
-      className="nav-header sticky top-0 z-50 border-b border-[var(--color-rule-strong)] bg-[var(--color-stock)]/95 backdrop-blur-[6px] supports-[backdrop-filter]:bg-[var(--color-stock)]/90">
+      className="nav-header sticky top-0 z-50 border-b border-[var(--color-rule-strong)] bg-[var(--color-stock)]">
       <div className="dir-wrap flex h-16 items-center justify-between gap-6">
         <Link href="/" aria-label="PestPro Index home" className="shrink-0">
           <Wordmark />
@@ -188,7 +188,7 @@ export default function Navigation() {
         </div>
 
         <div className="flex items-center gap-2">
-          <Link href="/professionals" className={`dir-btn hidden !min-h-10 !py-2 text-sm lg:inline-flex ${pathname === '/professionals' ? 'dir-btn-marigold' : 'dir-btn-ink'}`}>
+          <Link href="/professionals" className="dir-btn dir-btn-ink hidden !min-h-10 !py-2 text-sm lg:inline-flex">
             For professionals
           </Link>
           <button

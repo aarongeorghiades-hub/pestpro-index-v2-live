@@ -13,7 +13,7 @@ function stripeHref(value: string): string | null {
   return value.startsWith('https://') ? value : null;
 }
 
-const H2 = 'text-2xl md:text-3xl font-bold tracking-[-0.01em] text-[var(--color-ink)]';
+const H2 = 'dir-display text-[clamp(2.25rem,5vw,3.5rem)] text-[var(--color-ink)]';
 const BODY = 'text-[var(--color-ink-soft)] leading-relaxed';
 
 const STANDARD_INCLUDES = [
@@ -62,7 +62,7 @@ const WHY = [
   },
   {
     title: 'UK-wide coverage',
-    body: 'Covering London, Birmingham, Manchester, and Liverpool with pest control providers. Expanding across the UK.',
+    body: 'Area pages across England, Scotland, Wales and Northern Ireland, from London to Glasgow and Belfast.',
   },
 ];
 
@@ -122,18 +122,9 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
             </a>
           </div>
 
-          <dl className="mt-12 grid max-w-xl grid-cols-2 border-t border-[var(--color-rule-strong)]">
-            {providerCount !== null && (
-              <div className="border-r border-[var(--color-rule)] py-4 pr-4">
-                <dt className="text-sm text-[var(--color-ink-mute)]">Providers listed</dt>
-                <dd className="dir-num dir-display mt-1 text-4xl md:text-5xl">{providerCount.toLocaleString()}</dd>
-              </div>
-            )}
-            <div className={`py-4 ${providerCount !== null ? 'pl-4' : ''}`}>
-              <dt className="text-sm text-[var(--color-ink-mute)]">Lead fees</dt>
-              <dd className="dir-num dir-display mt-1 text-4xl md:text-5xl">£0</dd>
-            </div>
-          </dl>
+          <p className="dir-num mt-10 max-w-xl border-t border-[var(--color-rule-strong)] pt-4 text-[0.9375rem] font-semibold text-[var(--color-ink)]">
+            {providerCount !== null ? <>{providerCount.toLocaleString()} independent firms listed · </> : null}No lead fees · No commissions
+          </p>
         </div>
       </header>
 
