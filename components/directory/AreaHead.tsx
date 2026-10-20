@@ -1,5 +1,14 @@
 import Link from 'next/link';
-import type { ReactNode } from 'react';
+import { Children, isValidElement, type ReactNode } from 'react';
+
+// Plain text of a title node, for the running head (titles are sometimes
+// passed as fragments with interpolated names).
+function textOf(node: ReactNode): string {
+  if (typeof node === 'string' || typeof node === 'number') return String(node);
+  if (Array.isArray(node)) return node.map(textOf).join('');
+  if (isValidElement<{ children?: ReactNode }>(node)) return Children.toArray(node.props.children).map(textOf).join('');
+  return '';
+}
 
 export type Crumb = { label: string; href?: string };
 
@@ -27,7 +36,7 @@ export default function AreaHead({
   return (
     <>
     <header className={featured ? 'border-b border-[var(--color-marigold-edge)] bg-[var(--color-marigold-wash)]' : 'border-b border-[var(--color-ink)] bg-[var(--color-stock)]'}>
-      <div className="dir-wrap pb-10 pt-6 md:pb-14 md:pt-8">
+      <div className="dir-wrap pb-8 pt-5 md:pb-10 md:pt-6">
         <nav aria-label="Breadcrumb" className="text-[0.8125rem] text-[var(--color-ink-mute)]">
           <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
             {crumbs.map((crumb, i) => (
@@ -47,7 +56,7 @@ export default function AreaHead({
           </ol>
         </nav>
 
-        <div className="mt-10 md:mt-14">
+        <div className="mt-7 md:mt-9">
           <h1 className="dir-display max-w-[18ch] text-[clamp(2.75rem,9vw,6.5rem)] text-[var(--color-ink)]">{title}</h1>
           {label && <div className="mt-5">{label}</div>}
           {standfirst && (
@@ -61,12 +70,10 @@ export default function AreaHead({
       // THE RUNNING HEAD. The directory's thumb-tab, pinned under the site
       // header so the place stays named all the way down a long list. It fades
       // in once the page head has scrolled away (scroll-driven, CSS only).
-      <div className="dir-runhead sticky top-16 z-40 border-b border-[var(--color-rule-strong)] bg-[var(--color-stock)]">
+      <div className="dir-runhead sticky top-[65px] z-40 -mb-10 border-b border-[var(--color-rule-strong)] bg-[var(--color-stock)]">
         <div className="dir-wrap flex h-10 items-center gap-3">
           <span className="dir-tab !py-1">{tab}</span>
-          {typeof title === 'string' && (
-            <span className="truncate text-sm font-semibold text-[var(--color-ink)]">{title}</span>
-          )}
+          <span className="truncate text-sm font-semibold text-[var(--color-ink)]">{textOf(title)}</span>
         </div>
       </div>
     )}

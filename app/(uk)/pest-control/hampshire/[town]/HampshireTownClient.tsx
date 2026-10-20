@@ -76,7 +76,7 @@ export default function HampshireTownClient({ town, initialProviders, alsoCoveri
 
       {/* PROVIDERS */}
       <section className="bg-[var(--color-stock)]">
-        <div className="dir-wrap py-14 md:py-16">
+        <div className="dir-wrap pb-14 pt-8 md:pb-16 md:pt-10">
           <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">
             Pest Control Providers Serving {town.name}
           </h2>
