@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   robots: { index: false, follow: true },
   title: 'Commercial Pest Control Birmingham | Compare Providers',
-  description: 'Compare commercial pest control providers across Birmingham and the West Midlands. Filter by sector, certifications and contract types. No lead fees.',
+  description: 'Compare commercial pest control providers across Birmingham and the West Midlands. Filter by sector, certifications and contract types. No lead fees. Independent local firms only. No national chains.',
   alternates: {
     canonical: 'https://pestproindex.com/birmingham/commercial',
   },

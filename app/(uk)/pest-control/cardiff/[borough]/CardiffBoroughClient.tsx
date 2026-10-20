@@ -67,7 +67,7 @@ export default function CardiffBoroughClient({ borough, initialProviders, alsoCo
             {providers.length} {providers.length === 1 ? 'firm' : 'firms'} based in {borough.name}{alsoCovering.length > 0 ? ` · ${alsoCovering.length} ${alsoCovering.length === 1 ? 'firm' : 'firms'} also covering ${borough.name}` : ''}
           </p>
           <p className="text-sm sm:text-base md:text-lg font-semibold max-w-2xl drop-shadow-lg" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>
-            South Wales &middot; No lead fees &middot; No commissions
+            South Wales &middot; Independent local firms &middot; No national chains &middot; No lead fees &middot; No commissions
           </p>
         </div>
       </section>
@@ -92,6 +92,7 @@ export default function CardiffBoroughClient({ borough, initialProviders, alsoCo
             <h2 className="text-4xl font-black text-gray-900 mb-4">
               Pest Control Providers Serving {borough.name}
             </h2>
+            <p className="text-sm text-gray-600 mb-4 max-w-3xl mx-auto">We only list independent, local pest controllers who serve this area. National chains are not included, so this isn’t every firm that covers {borough.name}, just the local ones.</p>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Firms with a postcode in {borough.name}, sorted by rating
             </p>

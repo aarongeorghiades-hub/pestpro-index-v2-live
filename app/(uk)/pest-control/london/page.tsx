@@ -25,13 +25,13 @@ export async function generateMetadata(): Promise<Metadata> {
 
   const description =
     residential !== null && commercial !== null
-      ? `Find pest control in London. Compare ${formatCount(residential)} residential and ${formatCount(commercial)} commercial providers across all 33 boroughs. Google ratings, no lead fees, no commissions.`
-      : 'Find pest control in London. Compare residential and commercial providers across all 33 boroughs. Google ratings, no lead fees, no commissions.';
+      ? `Find independent local pest control in London, for homes and businesses. Compare ${formatCount(residential)} residential and ${formatCount(commercial)} commercial providers across all 33 boroughs. No national chains, no lead fees, no commissions.`
+      : 'Find independent local pest control in London, for homes and businesses. Compare residential and commercial providers across all 33 boroughs. No national chains, no lead fees, no commissions.';
 
   const shortDescription =
     residential !== null && commercial !== null
-      ? `Find pest control in London. Compare ${formatCount(residential)} residential and ${formatCount(commercial)} commercial providers across all 33 boroughs.`
-      : 'Find pest control in London. Compare residential and commercial providers across all 33 boroughs.';
+      ? `Find independent local pest control in London. Compare ${formatCount(residential)} residential and ${formatCount(commercial)} commercial providers across all 33 boroughs. No national chains.`
+      : 'Find independent local pest control in London. Compare residential and commercial providers across all 33 boroughs. No national chains.';
 
   return {
     title,
@@ -98,10 +98,13 @@ export default async function LondonPestControlHubPage() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter mb-4" style={{fontWeight: 900, letterSpacing: '-0.05em'}}>
             Pest Control in London
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl font-light mb-8 tracking-widest">
+          <p className="text-lg sm:text-xl md:text-2xl font-light mb-4 tracking-widest">
             {residential !== null
-              ? `${formatCount(residential)} providers across all 33 London boroughs`
-              : 'Providers across all 33 London boroughs'}
+              ? `${formatCount(residential)} independent local firms across all 33 London boroughs`
+              : 'Independent local firms across all 33 London boroughs'}
+          </p>
+          <p className="text-base sm:text-lg font-semibold max-w-3xl mx-auto">
+            Local firms for your home, and local firms for your business. No national chains, no lead fees.
           </p>
         </div>
       </section>
@@ -132,6 +135,7 @@ export default async function LondonPestControlHubPage() {
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-6">Finding Pest Control in London</h2>
+          <p className="text-sm text-gray-600 mb-4">We only list independent, local pest controllers who serve this area. National chains are not included, so this isn’t every firm that covers London, just the local ones.</p>
           <p className="text-lg text-gray-700 leading-relaxed mb-6">
             London is one of the most challenging pest environments in the UK. The combination of dense Victorian and Georgian housing, extensive underground infrastructure, a network of canals and rivers, and an enormous food and hospitality industry creates conditions that sustain significant pest populations year-round. Mice, rats, cockroaches, bed bugs, foxes and moths are all commonly reported across the capital, and effective treatment often depends on finding a provider who understands the specific property type, borough and pest involved.
           </p>
@@ -191,7 +195,7 @@ export default async function LondonPestControlHubPage() {
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4 text-center">Browse by London Borough</h2>
           <p className="text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-            Select your borough to learn about local pest issues and connect with providers in your area.
+            Select your borough to find independent local firms and learn about local pest issues.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {boroughs.map((borough) => (

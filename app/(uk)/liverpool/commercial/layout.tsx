@@ -3,13 +3,13 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   robots: { index: false, follow: true },
   title: 'Commercial Pest Control Liverpool | Business Pest Management',
-  description: 'Find commercial pest control providers in Liverpool & Merseyside. Compare services for offices, restaurants, warehouses and retail. BPCA certified, contract options available.',
+  description: 'Find commercial pest control providers in Liverpool & Merseyside. Compare services for offices, restaurants, warehouses and retail. BPCA certified, contract options available. Independent local firms only. No national chains.',
   alternates: {
     canonical: 'https://pestproindex.com/liverpool/commercial',
   },
   openGraph: {
     title: 'Commercial Pest Control Liverpool | Business Pest Management',
-    description: 'Find commercial pest control providers in Liverpool & Merseyside. Compare services for offices, restaurants, warehouses and retail. BPCA certified, contract options available.',
+    description: 'Find commercial pest control providers in Liverpool & Merseyside. Compare services for offices, restaurants, warehouses and retail. BPCA certified, contract options available. Independent local firms only. No national chains.',
     siteName: 'PestPro Index',
     locale: 'en_GB',
     type: 'website',
@@ -21,7 +21,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'Commercial Pest Control in Liverpool',
-    description: 'Find commercial pest control providers in Liverpool and Merseyside. Compare services for offices, restaurants, warehouses and retail. BPCA certified providers.',
+    description: 'Find commercial pest control providers in Liverpool and Merseyside. Compare services for offices, restaurants, warehouses and retail. BPCA certified providers. Independent local firms only. No national chains.',
     serviceType: 'Commercial Pest Control',
     areaServed: {
       '@type': 'City',

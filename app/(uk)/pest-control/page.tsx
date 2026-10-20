@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
     residentialCount == null || commercialCount == null
       ? 'Compare residential and commercial providers'
       : `Compare ${formatCount(residentialCount)} residential and ${formatCount(commercialCount)} commercial providers`
-  const description = `Find pest control providers across all ${boroughCount} London boroughs. ${compare}. No lead fees, no commissions.`
+  const description = `Find independent local pest controllers across all ${boroughCount} London boroughs, for homes and businesses. ${compare}. No national chains, no lead fees, no commissions.`
 
   return {
   title: 'Pest Control by London Borough',
@@ -67,7 +67,7 @@ export default function BoroughIndexPage() {
             Pest Control by London Borough
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl font-light mb-8 tracking-widest">
-            Find pest control providers in your London borough
+            Independent local pest controllers in your London borough. No national chains.
           </p>
         </div>
       </section>
@@ -75,8 +75,9 @@ export default function BoroughIndexPage() {
       {/* Intro Section */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4">
+          <p className="text-sm text-gray-600 mb-4">We only list independent, local pest controllers who serve this area. National chains are not included, so this isn’t every firm that covers London, just the local ones.</p>
           <p className="text-lg text-gray-700 leading-relaxed">
-            Find pest control providers in your London borough. Select your area below to learn about local pest issues and connect with providers.
+            Find independent pest controllers based in your London borough, for homes and businesses. Select your area below to learn about local pest issues and connect with providers.
           </p>
         </div>
       </section>

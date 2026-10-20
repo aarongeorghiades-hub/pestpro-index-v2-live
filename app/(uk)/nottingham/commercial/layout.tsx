@@ -3,13 +3,13 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   robots: { index: false, follow: true },
   title: 'Commercial Pest Control in Nottingham | Business Services',
-  description: 'Find commercial pest control services in Nottingham and the East Midlands. BPCA-certified providers for offices, restaurants, hotels, warehouses, and more.',
+  description: 'Find commercial pest control services in Nottingham and the East Midlands. BPCA-certified providers for offices, restaurants, hotels, warehouses, and more. Independent local firms only. No national chains.',
   alternates: {
     canonical: 'https://pestproindex.com/nottingham/commercial',
   },
   openGraph: {
     title: 'Commercial Pest Control in Nottingham | Business Services',
-    description: 'Find commercial pest control services in Nottingham and the East Midlands. BPCA-certified providers for offices, restaurants, hotels, warehouses, and more.',
+    description: 'Find commercial pest control services in Nottingham and the East Midlands. BPCA-certified providers for offices, restaurants, hotels, warehouses, and more. Independent local firms only. No national chains.',
     siteName: 'PestPro Index',
     locale: 'en_GB',
     type: 'website',
@@ -21,7 +21,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'Commercial Pest Control in Nottingham',
-    description: 'Find commercial pest control providers in Nottingham and the East Midlands. Compare services for offices, restaurants, warehouses and retail. BPCA certified providers.',
+    description: 'Find commercial pest control providers in Nottingham and the East Midlands. Compare services for offices, restaurants, warehouses and retail. BPCA certified providers. Independent local firms only. No national chains.',
     serviceType: 'Commercial Pest Control',
     areaServed: {
       '@type': 'City',

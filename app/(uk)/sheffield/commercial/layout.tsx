@@ -3,13 +3,13 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   robots: { index: false, follow: true },
   title: 'Sheffield & South Yorkshire Commercial Pest Control',
-  description: 'Commercial pest control services across Sheffield and South Yorkshire. Compare providers for offices, restaurants, hotels, warehouses and more.',
+  description: 'Commercial pest control services across Sheffield and South Yorkshire. Compare providers for offices, restaurants, hotels, warehouses and more. Independent local firms only. No national chains.',
   alternates: {
     canonical: 'https://pestproindex.com/sheffield/commercial',
   },
   openGraph: {
     title: 'Sheffield & South Yorkshire Commercial Pest Control',
-    description: 'Commercial pest control services across Sheffield and South Yorkshire. Compare providers for offices, restaurants, hotels, warehouses and more.',
+    description: 'Commercial pest control services across Sheffield and South Yorkshire. Compare providers for offices, restaurants, hotels, warehouses and more. Independent local firms only. No national chains.',
     siteName: 'PestPro Index',
     locale: 'en_GB',
     type: 'website',
@@ -21,7 +21,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'Commercial Pest Control in Sheffield & South Yorkshire',
-    description: 'Find commercial pest control providers across Sheffield and South Yorkshire. Compare services for offices, restaurants, warehouses and retail. BPCA certified providers.',
+    description: 'Find commercial pest control providers across Sheffield and South Yorkshire. Compare services for offices, restaurants, warehouses and retail. BPCA certified providers. Independent local firms only. No national chains.',
     serviceType: 'Commercial Pest Control',
     areaServed: {
       '@type': 'City',

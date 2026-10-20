@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   robots: { index: false, follow: true },
   title: 'Commercial Pest Control London | Compare Providers',
-  description: 'Compare commercial pest control providers across London. Filter by sector, certifications, contract types and services. No lead fees.',
+  description: 'Compare commercial pest control providers across London. Filter by sector, certifications, contract types and services. No lead fees. Independent local firms only. No national chains.',
   alternates: {
     canonical: 'https://pestproindex.com/commercial',
   },

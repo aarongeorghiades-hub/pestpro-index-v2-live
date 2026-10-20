@@ -3,13 +3,13 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   robots: { index: false, follow: true },
   title: 'Bristol & South West Commercial Pest Control',
-  description: 'Commercial pest control services across Bristol and the South West. Compare providers for offices, restaurants, hotels, warehouses and more.',
+  description: 'Commercial pest control services across Bristol and the South West. Compare providers for offices, restaurants, hotels, warehouses and more. Independent local firms only. No national chains.',
   alternates: {
     canonical: 'https://pestproindex.com/bristol/commercial',
   },
   openGraph: {
     title: 'Bristol & South West Commercial Pest Control',
-    description: 'Commercial pest control services across Bristol and the South West. Compare providers for offices, restaurants, hotels, warehouses and more.',
+    description: 'Commercial pest control services across Bristol and the South West. Compare providers for offices, restaurants, hotels, warehouses and more. Independent local firms only. No national chains.',
     siteName: 'PestPro Index',
     locale: 'en_GB',
     type: 'website',
@@ -21,7 +21,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'Commercial Pest Control in Bristol & South West',
-    description: 'Find commercial pest control providers across Bristol and the South West. Compare services for offices, restaurants, warehouses and retail. BPCA certified providers.',
+    description: 'Find commercial pest control providers across Bristol and the South West. Compare services for offices, restaurants, warehouses and retail. BPCA certified providers. Independent local firms only. No national chains.',
     serviceType: 'Commercial Pest Control',
     areaServed: {
       '@type': 'City',
