@@ -47,8 +47,9 @@ function shortSummary(value: unknown): string | null {
 }
 
 // Separate query from every organic list. Those lists sort by rating (or name)
-// and do not read tier. This function is the only place tier = 'featured' is
-// used for display. A missing column (migration not applied) returns [].
+// and do not read tier. Directory cards come from here; the provider profile
+// reads tier itself and styles a featured firm on its own page. A missing
+// column (migration not applied) returns [].
 export async function getFeaturedCards(query: FeaturedQuery, firmsShown: number): Promise<FeaturedCard[]> {
   try {
     const supabase = createServerClient();

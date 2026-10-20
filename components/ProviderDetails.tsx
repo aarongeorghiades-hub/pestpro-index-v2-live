@@ -65,6 +65,7 @@ type ProviderDetailsData = {
   google_rating?: number | null;
   google_review_count?: number | null;
   profile_text?: string | null;
+  tier?: string | null;
   postcode?: string | null;
   phone?: string | null;
   email?: string | null;
@@ -90,6 +91,8 @@ export default function ProviderDetails({
   const commercialLink = citySlug === 'london' ? '/commercial' : `/${citySlug}/commercial`;
   const rating = typeof provider.google_rating === 'number' ? provider.google_rating : null;
   const reviewCount = typeof provider.google_review_count === 'number' ? provider.google_review_count : null;
+  const isFeatured = provider.tier === 'featured';
+  const profileCopy = provider.profile_text || generateProfileText(provider);
 
   return (
     <div className="min-h-screen bg-white">
@@ -97,11 +100,24 @@ export default function ProviderDetails({
       <Navigation />
 
       {/* PROVIDER HEADER */}
-      <div className="bg-gradient-to-r from-blue-50 to-blue-100 border-b border-blue-200 py-12">
+      <div
+        className={
+          isFeatured
+            ? 'border-b border-[var(--color-ochre-edge)] bg-gradient-to-b from-[var(--color-ochre-wash)] to-white py-12 sm:py-14'
+            : 'bg-gradient-to-r from-blue-50 to-blue-100 border-b border-blue-200 py-12'
+        }
+      >
         <div className="max-w-4xl mx-auto px-4">
           <Link href={residentialLink} className="text-blue-600 hover:text-blue-800 font-semibold mb-4 inline-block">
             ← Back to {cityName} Residential
           </Link>
+          {isFeatured && (
+            <p className="mb-3">
+              <span className="inline-flex items-center rounded-full border border-[var(--color-ochre-edge)] bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.08em] text-[var(--color-ochre-deep)]">
+                Featured
+              </span>
+            </p>
+          )}
           <h1 className="text-4xl font-bold text-gray-900 mb-2">{provider.name}</h1>
           {rating != null && rating > 0 && (
             <div className="flex items-center gap-2 mt-2">
@@ -122,10 +138,16 @@ export default function ProviderDetails({
       {/* MAIN CONTENT */}
       <div className="max-w-4xl mx-auto px-4 py-12">
         {/* PROFILE TEXT (AUTO-GENERATED IF NULL) */}
-        {(provider.profile_text || generateProfileText(provider)) && (
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
-            <p className="text-gray-700 leading-relaxed">
-              {provider.profile_text || generateProfileText(provider)}
+        {profileCopy && (
+          <div
+            className={
+              isFeatured
+                ? 'mb-8 rounded-2xl border border-[var(--color-ochre-edge)] border-l-[3px] border-l-[var(--color-ochre)] bg-gradient-to-b from-[var(--color-ochre-wash)] to-white p-6 sm:p-8'
+                : 'bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8'
+            }
+          >
+            <p className={isFeatured ? 'text-lg leading-relaxed text-[var(--color-ink)]' : 'text-gray-700 leading-relaxed'}>
+              {profileCopy}
             </p>
           </div>
         )}
