@@ -68,6 +68,7 @@ type ProviderDetailsData = {
   google_rating?: number | null;
   google_review_count?: number | null;
   profile_text?: string | null;
+  tier?: string | null;
   postcode?: string | null;
   phone?: string | null;
   email?: string | null;
@@ -95,6 +96,8 @@ export default function ProviderDetails({
   const reviewCount = typeof provider.google_review_count === 'number' ? provider.google_review_count : null;
 
   const profileText = provider.profile_text || generateProfileText(provider);
+  // A Featured firm's own page carries the same quiet treatment as its card.
+  const isFeatured = provider.tier === 'featured';
   const topRated = isTrophyProvider({ google_rating: rating, google_review_count: reviewCount });
 
   const sectionHead = 'border-b-2 border-[var(--color-ink)] pb-2 text-lg font-bold text-[var(--color-ink)]';
@@ -112,6 +115,14 @@ export default function ProviderDetails({
           { label: String(provider.name ?? '') },
         ]}
         tab={cityName}
+        featured={isFeatured}
+        label={
+          isFeatured ? (
+            <span className="rounded-[3px] border border-[var(--color-marigold-edge)] bg-[var(--color-stock)] px-2 py-[0.4rem] text-[0.8125rem] font-bold leading-none text-[var(--color-marigold-deep)]">
+              Featured
+            </span>
+          ) : null
+        }
         title={provider.name}
         standfirst={
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-base md:text-lg">
@@ -188,7 +199,13 @@ export default function ProviderDetails({
 
         <div className="space-y-12 lg:order-1">
           {profileText && (
-            <p className="max-w-[62ch] text-lg leading-relaxed text-[var(--color-ink)] md:text-xl">{profileText}</p>
+            <p
+              className={`max-w-[62ch] text-lg leading-relaxed text-[var(--color-ink)] md:text-xl ${
+                isFeatured ? 'rounded-md border border-[var(--color-marigold-edge)] bg-[var(--color-marigold-wash)] p-6 md:p-8' : ''
+              }`}
+            >
+              {profileText}
+            </p>
           )}
 
           {(provider.business_residential || provider.commercial) && (

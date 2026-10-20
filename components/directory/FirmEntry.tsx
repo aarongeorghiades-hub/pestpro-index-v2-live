@@ -85,7 +85,11 @@ export default function FirmEntry({
           )}
         </p>
 
-        {summary && <p className="mt-3 max-w-[62ch] text-[0.9375rem] leading-relaxed text-[var(--color-ink-soft)]">{summary}</p>}
+        {summary && (
+          <p className={`mt-3 max-w-[62ch] leading-relaxed ${featured ? 'text-base text-[var(--color-ink)] md:text-[1.0625rem]' : 'text-[0.9375rem] text-[var(--color-ink-soft)]'}`}>
+            {summary}
+          </p>
+        )}
 
         {tags.length > 0 && (
           <ul className="mt-3 flex flex-wrap gap-1.5" aria-label="Services">

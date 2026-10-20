@@ -11,16 +11,21 @@ export default function AreaHead({
   tab,
   title,
   standfirst,
+  label,
+  featured = false,
   children,
 }: {
   crumbs: Crumb[];
   tab?: string;
   title: ReactNode;
   standfirst?: ReactNode;
+  /** A second small label beside the tab, e.g. "Featured". */
+  label?: ReactNode;
+  featured?: boolean;
   children?: ReactNode;
 }) {
   return (
-    <header className="border-b border-[var(--color-ink)] bg-[var(--color-stock)]">
+    <header className={featured ? 'border-b border-[var(--color-marigold-edge)] bg-[var(--color-marigold-wash)]' : 'border-b border-[var(--color-ink)] bg-[var(--color-stock)]'}>
       <div className="dir-wrap pb-10 pt-6 md:pb-14 md:pt-8">
         <nav aria-label="Breadcrumb" className="text-[0.8125rem] text-[var(--color-ink-mute)]">
           <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
@@ -42,7 +47,12 @@ export default function AreaHead({
         </nav>
 
         <div className="mt-10 md:mt-14">
-          {tab && <span className="dir-tab">{tab}</span>}
+          {(tab || label) && (
+            <div className="flex flex-wrap items-center gap-2">
+              {tab && <span className="dir-tab">{tab}</span>}
+              {label}
+            </div>
+          )}
           <h1 className="dir-display mt-4 max-w-[18ch] text-[clamp(2.75rem,9vw,6rem)] text-[var(--color-ink)]">{title}</h1>
           {standfirst && (
             <div className="mt-5 max-w-[60ch] text-lg leading-relaxed text-[var(--color-ink-soft)] md:text-xl">{standfirst}</div>
