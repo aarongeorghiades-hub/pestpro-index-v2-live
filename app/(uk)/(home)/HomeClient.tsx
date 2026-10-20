@@ -173,9 +173,9 @@ export default function Home({
       <section className="border-b border-[var(--color-rule)] bg-[var(--color-surface)] py-20 md:py-28">
         <div className="container relative z-10 mx-auto px-4 text-center">
           <h1 className="mb-4 text-4xl font-black tracking-tighter text-[var(--color-ink)] sm:text-6xl md:text-7xl" style={{fontWeight: 900, letterSpacing: '-0.04em'}}>PestPro Index</h1>
-          <p className="mx-auto mb-6 max-w-2xl text-lg text-[var(--color-ink-soft)] md:text-xl">The UK&rsquo;s neutral pest control directory</p>
+          <p className="mx-auto mb-6 max-w-2xl text-lg text-[var(--color-ink-soft)] md:text-xl">Local pest control, from local people</p>
           <p className="mx-auto mb-14 max-w-2xl text-base leading-relaxed text-[var(--color-ink-soft)]">
-            Find pest controllers near you. No lead fees. No commissions. Rankings can&apos;t be bought. Results are sorted by rating. Firms can pay for a clearly labelled Featured slot, never a higher rank.
+            Find independent pest controllers based in your area, for homes and businesses. No national chains, no call centres, no lead fees. Rankings can&apos;t be bought. Results are sorted by rating. Firms can pay for a clearly labelled Featured slot, never a higher rank.
           </p>
 
           {/* Stats. The labels were set ALL-CAPS with tracking-widest — an

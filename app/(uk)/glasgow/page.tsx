@@ -81,13 +81,13 @@ export default async function GlasgowHubPage() {
             className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-6 max-w-2xl drop-shadow-lg"
             style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}
           >
-            Find local pest control providers across Glasgow &amp; Central Scotland
+            Independent pest controllers based in and around Glasgow &amp; Central Scotland
           </p>
           <p
             className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-8 max-w-2xl drop-shadow-lg"
             style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}
           >
-            Compare residential and commercial services. No endorsements, no commissions — just transparent, provider-stated information.
+            Local firms for your home, and local firms for your business: shops, restaurants, offices, warehouses and landlords. No national chains, no commissions.
           </p>
         </div>
       </section>
@@ -119,6 +119,7 @@ export default async function GlasgowHubPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-black text-gray-900 mb-4">Browse by Service Type</h2>
+            <p className="text-sm text-gray-600 mb-4 max-w-3xl mx-auto">We only list independent, local pest controllers who serve this area. National chains are not included, so this isn’t every firm that covers Glasgow, just the local ones.</p>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Whether you need help at home or protection for your business, find the right provider for your needs.
             </p>

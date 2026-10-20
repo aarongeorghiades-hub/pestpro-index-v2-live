@@ -301,7 +301,8 @@ export default function CommercialDirectoryClient({ initialProviders }: { initia
             {filteredProviders.length} Providers in Brighton & Sussex
           </p>
           <p className="text-xl text-white font-semibold max-w-3xl leading-relaxed drop-shadow-[0_6px_16px_rgba(0,0,0,0.85)] opacity-95">
-            Find certified commercial pest control providers with advanced filtering by certifications, capabilities, and business sectors.
+            Local commercial pest control in Brighton. Independent firms near your premises for contracts, inspections and urgent call-outs, filtered by sector and accreditation.</p>
+          <p className="text-sm text-white/90 max-w-3xl mt-3">We only list independent, local pest controllers who serve this area. National chains are not included, so this isn’t every firm that covers Brighton, just the local ones.
           </p>
         </div>
       </section>
