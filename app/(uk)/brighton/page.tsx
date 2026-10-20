@@ -1,7 +1,8 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
+import { ArrowRight } from 'lucide-react';
 import Navigation from '@/components/Navigation';
+import AreaHead, { LocalOnlyNote } from '@/components/directory/AreaHead';
 import { countForSlug } from '@/lib/regionCounts';
 import { brightonBoroughs } from '@/app/(uk)/pest-control/brighton/brighton-boroughs';
 
@@ -59,207 +60,174 @@ export default async function BrightonHubPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[var(--color-stock)]">
       <Navigation />
 
-      {/* FAQ SCHEMA */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      {/* HERO SECTION */}
-      <section className="relative h-[500px] overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/brighton-skyline.png"
-            alt="Brighton skyline"
-            fill
-            className="object-cover opacity-95"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#1e3a8a]/50 via-[#2563eb]/45 to-[#1e3a8a]/50"></div>
-        </div>
-
-        <div className="relative h-full flex flex-col items-center justify-center text-center text-white px-4">
-          <h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 max-w-3xl drop-shadow-lg"
-            style={{ textShadow: '0 4px 6px rgba(0,0,0,0.3)' }}
-          >
-            Pest Control in Brighton
-          </h1>
-          <p
-            className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-6 max-w-2xl drop-shadow-lg"
-            style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}
-          >
-            Independent pest controllers based in and around Brighton &amp; East Sussex
-          </p>
-          <p
-            className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-8 max-w-2xl drop-shadow-lg"
-            style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}
-          >
-            Local firms for your home, and local firms for your business: shops, restaurants, offices, warehouses and landlords. No national chains, no commissions.
-          </p>
-        </div>
-      </section>
-
-      {/* STATS BAR */}
-      <section className="bg-gradient-to-r from-[#1e3a8a] to-[#2563eb] py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center text-white">
-            <div>
-              <p className="text-4xl font-black">{providerCount}</p>
-              <p className="text-lg font-semibold opacity-90">Providers</p>
-            </div>
-            <div>
-              <p className="text-4xl font-black">{brightonBoroughs.length}</p>
-              <p className="text-lg font-semibold opacity-90">Districts Covered</p>
-            </div>
-            <div>
-              <p className="text-4xl font-black">Free</p>
-              <p className="text-lg font-semibold opacity-90">No Referral Fees</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <AreaHead
+        crumbs={[{ label: 'Home', href: '/' }, { label: 'Brighton' }]}
+        tab="South East"
+        title="Pest Control in Brighton"
+        standfirst={<>Independent pest controllers based in and around Brighton &amp; East Sussex</>}
+      >
+        <p className="max-w-[60ch] text-[0.9375rem] leading-relaxed text-[var(--color-ink-soft)]">
+          Local firms for your home, and local firms for your business: shops, restaurants, offices, warehouses and landlords. No national chains, no commissions.
+        </p>
+        <ul className="mt-6 flex flex-wrap gap-x-10 gap-y-4 border-t border-[var(--color-rule)] pt-5">
+          <li>
+            <span className="dir-display dir-num block text-[2rem] text-[var(--color-ink)]">{providerCount}</span>
+            <span className="mt-1 block text-sm text-[var(--color-ink-mute)]">Providers</span>
+          </li>
+          <li>
+            <span className="dir-display dir-num block text-[2rem] text-[var(--color-ink)]">{brightonBoroughs.length}</span>
+            <span className="mt-1 block text-sm text-[var(--color-ink-mute)]">Districts Covered</span>
+          </li>
+          <li>
+            <span className="dir-display dir-num block text-[2rem] text-[var(--color-ink)]">Free</span>
+            <span className="mt-1 block text-sm text-[var(--color-ink-mute)]">No Referral Fees</span>
+          </li>
+        </ul>
+      </AreaHead>
 
       <div data-featured-slot />
 
-      {/* SERVICE TYPE CARDS */}
-      <section className="relative bg-gradient-to-br from-blue-50 to-white py-16 border-b-2 border-blue-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-gray-900 mb-4">Browse by Service Type</h2>
-            <p className="text-sm text-gray-600 mb-4 max-w-3xl mx-auto">We only list independent, local pest controllers who serve this area. National chains are not included, so this isn’t every firm that covers Brighton, just the local ones.</p>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+      {/* HOMES / BUSINESSES */}
+      <section className="border-b border-[var(--color-rule-strong)]">
+        <div className="dir-wrap py-14 md:py-20">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">Browse by Service Type</h2>
+          <div className="mt-4 space-y-3">
+            <LocalOnlyNote>We only list independent, local pest controllers who serve this area. National chains are not included, so this isn’t every firm that covers Brighton, just the local ones.</LocalOnlyNote>
+            <p className="max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">
               Whether you need help at home or protection for your business, find the right provider for your needs.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-8 border-t-4 border-[#2563eb]">
-              <div className="text-4xl mb-4">🏠</div>
-              <h3 className="text-2xl font-black text-gray-900 mb-3">Residential Pest Control</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Find pest control providers for your home across Brighton and East Sussex.
-                Filter by pest type, service features, and compare ratings from real customers.
+          <div className="dir-rise mt-10 grid border-t-2 border-[var(--color-ink)] md:grid-cols-2">
+            <div className="border-b border-[var(--color-rule-strong)] py-8 md:border-b-0 md:border-r md:py-10 md:pr-10">
+              <h3 className="dir-display text-[clamp(2.5rem,6vw,4rem)] text-[var(--color-ink)]">For homes</h3>
+              <p className="mt-4 max-w-[48ch] leading-relaxed text-[var(--color-ink-soft)]">
+                Find pest control providers for your home across Brighton and East Sussex. Filter by pest type, service features, and compare ratings from real customers.
               </p>
-              <Link
-                href="/brighton/residential"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#1e3a8a] to-[#2563eb] text-white font-bold rounded-xl hover:from-[#2563eb] hover:to-[#3b82f6] transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
+              <Link href="/brighton/residential" className="dir-btn dir-btn-ink mt-6">
                 Browse Residential Providers
-                <span>→</span>
+                <ArrowRight size={16} aria-hidden="true" />
               </Link>
             </div>
-
-            <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-8 border-t-4 border-[#f59e0b]">
-              <div className="text-4xl mb-4">🏢</div>
-              <h3 className="text-2xl font-black text-gray-900 mb-3">Commercial Pest Control</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
+            <div className="py-8 md:py-10 md:pl-10">
+              <h3 className="dir-display text-[clamp(2.5rem,6vw,4rem)] text-[var(--color-ink)]">For businesses</h3>
+              <p className="mt-4 max-w-[48ch] leading-relaxed text-[var(--color-ink-soft)]">
                 Compare certified commercial pest control providers with advanced filtering by certifications, capabilities, and business sectors.
               </p>
-              <Link
-                href="/brighton/commercial"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#1e3a8a] to-[#2563eb] text-white font-bold rounded-xl hover:from-[#2563eb] hover:to-[#3b82f6] transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
+              <Link href="/brighton/commercial" className="dir-btn dir-btn-ink mt-6">
                 Browse Commercial Providers
-                <span>→</span>
+                <ArrowRight size={16} aria-hidden="true" />
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* BROWSE BY DISTRICT */}
-      <section className="relative bg-white py-16 border-b-2 border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-gray-900 mb-4">Browse by District</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Find pest control providers in your area of Brighton and East Sussex. Select your district to see local providers and area-specific pest information.
-            </p>
-          </div>
+      {/* AREA INDEX, A TO Z */}
+      <section className="border-b border-[var(--color-rule-strong)]">
+        <div className="dir-wrap py-14 md:py-20">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">Browse by District</h2>
+          <p className="mt-4 max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">
+            Find pest control providers in your area of Brighton and East Sussex. Select your district to see local providers and area-specific pest information.
+          </p>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            {brightonBoroughs.map((borough) => (
-              <Link
-                key={borough.slug}
-                href={`/pest-control/brighton/${borough.slug}`}
-                className="bg-gradient-to-br from-blue-50 to-white rounded-xl shadow-md hover:shadow-lg transition-all p-4 text-center border border-blue-100 hover:border-blue-300 hover:-translate-y-1 duration-200"
-              >
-                <span className="text-2xl mb-2 block">📍</span>
-                <span className="text-sm font-bold text-gray-900 leading-tight block">{borough.name}</span>
-              </Link>
-            ))}
-          </div>
+          <ul className="mt-8 columns-1 gap-x-10 sm:columns-2 lg:columns-3">
+            {[...brightonBoroughs]
+              .sort((a, b) => a.name.localeCompare(b.name))
+              .map((borough) => (
+                <li key={borough.slug} className="break-inside-avoid border-t border-[var(--color-rule)]">
+                  <Link
+                    href={`/pest-control/brighton/${borough.slug}`}
+                    className="dir-link flex items-baseline justify-between gap-4 py-3 font-semibold"
+                  >
+                    <span>{borough.name}</span>
+                  </Link>
+                </li>
+              ))}
+          </ul>
         </div>
       </section>
 
-      {/* COMMON PESTS IN BRIGHTON */}
-      <section className="relative bg-gradient-to-br from-gray-50 to-white py-16 border-b-2 border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-gray-900 mb-4">Common Pests in Brighton</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+      {/* COMMON PESTS */}
+      <section className="border-b border-[var(--color-rule-strong)]">
+        <div className="dir-wrap grid gap-10 py-14 md:py-20 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">Common Pests in Brighton</h2>
+            <p className="mt-4 max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">
               Brighton&apos;s coastal location brings distinctive pest challenges. Seagulls are one of the most visible issues, while rats and mice thrive near the seafront and older Victorian drainage. The busy tourism and hospitality sector means bed bugs and cockroaches are a growing concern in hotels and restaurants.
             </p>
           </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          <ul className="columns-2 gap-x-8 self-start border-t border-[var(--color-ink)] sm:columns-3">
             {[
-              { label: 'Rats', slug: 'rats', icon: '🐀' },
-              { label: 'Mice', slug: 'mice', icon: '🐁' },
-              { label: 'Wasps', slug: 'wasps', icon: '🐝' },
-              { label: 'Bed Bugs', slug: 'bed-bugs', icon: '🛏️' },
-              { label: 'Cockroaches', slug: 'cockroaches', icon: '🪳' },
-              { label: 'Ants', slug: 'ants', icon: '🐜' },
-              { label: 'Moths', slug: 'moths', icon: '🦋' },
-              { label: 'Fleas', slug: 'fleas', icon: '🔬' },
-              { label: 'Squirrels', slug: 'squirrels', icon: '🐿️' },
-              { label: 'Silverfish', slug: 'silverfish', icon: '🐛' },
+              { label: 'Rats', slug: 'rats' },
+              { label: 'Mice', slug: 'mice' },
+              { label: 'Wasps', slug: 'wasps' },
+              { label: 'Bed Bugs', slug: 'bed-bugs' },
+              { label: 'Cockroaches', slug: 'cockroaches' },
+              { label: 'Ants', slug: 'ants' },
+              { label: 'Moths', slug: 'moths' },
+              { label: 'Fleas', slug: 'fleas' },
+              { label: 'Squirrels', slug: 'squirrels' },
+              { label: 'Silverfish', slug: 'silverfish' },
             ].map((pest) => (
-              <Link
-                key={pest.slug}
-                href={`/pest/${pest.slug}`}
-                className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all p-4 text-center border border-gray-100 hover:border-blue-300 hover:-translate-y-1 duration-200"
-              >
-                <span className="text-3xl mb-2 block">{pest.icon}</span>
-                <span className="text-sm font-bold text-gray-900 block">{pest.label}</span>
-              </Link>
+              <li key={pest.slug} className="break-inside-avoid border-b border-[var(--color-rule)]">
+                <Link href={`/pest/${pest.slug}`} className="dir-link block py-2.5 font-semibold">
+                  {pest.label}
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
       {/* CROSS-CITY LINKS */}
-      <section className="bg-gray-50 border-t border-gray-200 py-12">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Pest Control in Other Cities</h2>
-          <p className="text-gray-700 mb-4">
-            Also compare pest control providers in{' '}
-            <Link href="/bristol/residential" className="text-blue-600 hover:underline font-semibold">Bristol</Link>
-            {' | '}
-            <Link href="/manchester/residential" className="text-blue-600 hover:underline font-semibold">Manchester</Link>
-            {' | '}
-            <Link href="/leeds/residential" className="text-blue-600 hover:underline font-semibold">Leeds</Link>
-            {' | '}
-            <Link href="/birmingham/residential" className="text-blue-600 hover:underline font-semibold">Birmingham</Link>
-            {' | '}
-            <Link href="/glasgow/residential" className="text-blue-600 hover:underline font-semibold">Glasgow</Link>
-            {' | '}
-            <Link href="/residential" className="text-blue-600 hover:underline font-semibold">London</Link>
-            {' | '}
-            <Link href="/edinburgh/residential" className="text-blue-600 hover:underline font-semibold">Edinburgh</Link>
-            {' | '}
-            <Link href="/leicester/residential" className="text-blue-600 hover:underline font-semibold">Leicester</Link>
-            {' | '}
-            <Link href="/hampshire/residential" className="text-blue-600 hover:underline font-semibold">Hampshire</Link>
-            {' | '}
-            <Link href="/coventry/residential" className="text-blue-600 hover:underline font-semibold">Coventry</Link>
-            {' | '}
-            <Link href="/belfast/residential" className="text-blue-600 hover:underline font-semibold">Belfast</Link>
-          </p>
+      <section className="bg-[var(--color-paper)]">
+        <div className="dir-wrap py-12">
+          <h2 className="text-xl font-bold text-[var(--color-ink)]">Pest Control in Other Cities</h2>
+          <p className="mt-2 text-[var(--color-ink-soft)]">Also compare pest control providers in:</p>
+          <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
+            <li>
+              <Link href="/bristol/residential" className="dir-link font-semibold">Bristol</Link>
+            </li>
+            <li>
+              <Link href="/manchester/residential" className="dir-link font-semibold">Manchester</Link>
+            </li>
+            <li>
+              <Link href="/leeds/residential" className="dir-link font-semibold">Leeds</Link>
+            </li>
+            <li>
+              <Link href="/birmingham/residential" className="dir-link font-semibold">Birmingham</Link>
+            </li>
+            <li>
+              <Link href="/glasgow/residential" className="dir-link font-semibold">Glasgow</Link>
+            </li>
+            <li>
+              <Link href="/residential" className="dir-link font-semibold">London</Link>
+            </li>
+            <li>
+              <Link href="/edinburgh/residential" className="dir-link font-semibold">Edinburgh</Link>
+            </li>
+            <li>
+              <Link href="/leicester/residential" className="dir-link font-semibold">Leicester</Link>
+            </li>
+            <li>
+              <Link href="/hampshire/residential" className="dir-link font-semibold">Hampshire</Link>
+            </li>
+            <li>
+              <Link href="/coventry/residential" className="dir-link font-semibold">Coventry</Link>
+            </li>
+            <li>
+              <Link href="/belfast/residential" className="dir-link font-semibold">Belfast</Link>
+            </li>
+          </ul>
         </div>
       </section>
     </div>

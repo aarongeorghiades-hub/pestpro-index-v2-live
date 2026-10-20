@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { ArrowRight } from 'lucide-react';
 import Navigation from '@/components/Navigation';
+import AreaHead from '@/components/directory/AreaHead';
 import { getRegionBySlug, getAllRegions } from '../data/regions';
 import { cityTarget, countForTarget, countsByRegion, withCount } from '@/lib/regionCounts';
 import { formatCount } from '@/lib/formatCount';
@@ -85,135 +87,85 @@ export default async function DynamicPage({ params }: Props) {
     };
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-[#0f172a] via-[#1e3a8a] to-[#0f172a]">
+      <div className="min-h-screen bg-[var(--color-stock)]">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
         />
         <Navigation />
 
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-[#1e293b] via-[#1e3a8a] to-[#2563eb] text-white py-32">
-          {/* Layer 1: Center glow */}
-          <div className="absolute inset-0" style={{background: 'radial-gradient(ellipse 800px 600px at center 20%, rgba(59, 130, 246, 0.5) 0%, transparent 60%)'}}></div>
-          
-          {/* Layer 2: Edge vignette */}
-          <div className="absolute inset-0" style={{background: 'radial-gradient(ellipse at center, transparent 20%, rgba(15, 23, 42, 0.85) 100%)'}}></div>
-          
-          {/* Layer 3: Bottom darkening */}
-          <div className="absolute inset-0" style={{background: 'linear-gradient(to bottom, transparent 0%, rgba(15, 23, 42, 0.3) 100%)'}}></div>
-          
-          <div className="container mx-auto px-4 text-center relative z-10">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter mb-4" style={{fontWeight: 900, letterSpacing: '-0.05em'}}>
-              Pest Control in {region.name}
-            </h1>
-            {region.status === 'live' && (
-              <div className="inline-block px-4 py-2 bg-green-500 text-white font-bold rounded-full text-sm mb-6">
-                ✓ LIVE
-              </div>
-            )}
-            {region.status === 'coming-soon' && (
-              <div className="inline-block px-4 py-2 bg-blue-400 text-white font-bold rounded-full text-sm mb-6">
-                COMING SOON
-              </div>
-            )}
-          </div>
-        </section>
+        <AreaHead
+          crumbs={[
+            { label: 'Home', href: '/' },
+            { label: 'Regions', href: '/pest-control/regions' },
+            { label: region.name },
+          ]}
+          tab={region.status === 'coming-soon' ? `${region.name} · Coming soon` : region.name}
+          title={<>Pest Control in {region.name}</>}
+          standfirst={withCount(region.description, regionTotal)}
+        />
 
-        {/* Description Section */}
-        <section className="py-16 bg-transparent">
-          <div className="max-w-4xl mx-auto px-4">
-            <p className="text-lg text-white/90 leading-relaxed">
-              {withCount(region.description, regionTotal)}
-            </p>
-          </div>
-        </section>
-
-        {/* Cities/Areas Section */}
-        <section className="py-16 bg-transparent">
-          <div className="max-w-6xl mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-black text-white mb-8 text-center">
+        {/* Cities/Areas index */}
+        <section className="border-b border-[var(--color-rule-strong)]">
+          <div className="dir-wrap py-14 md:py-20">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">
               {region.status === 'live' ? 'Browse by Area' : 'Planned Coverage'}
             </h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {region.cities.map((city) => (
-                <div
-                  key={city.slug}
-                  className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-2xl p-6 border-[3px] border-white/40 hover:border-white/60 transition-all duration-300"
-                >
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-xl font-bold text-white">{city.name}</h3>
-                    {city.status === 'live' && (
-                      <span className="px-2 py-1 bg-green-500/20 text-green-300 text-xs font-bold rounded">
-                        LIVE
-                      </span>
+
+            <ul className="mt-8 grid gap-x-10 sm:grid-cols-2 lg:grid-cols-3">
+              {[...region.cities]
+                .sort((a, b) => a.name.localeCompare(b.name))
+                .map((city) => (
+                  <li key={city.slug} className="border-t border-[var(--color-rule)] py-4">
+                    <div className="flex items-baseline justify-between gap-4">
+                      <h3 className="font-bold text-[var(--color-ink)]">{city.name}</h3>
+                      {cityCounts[city.slug] !== undefined && cityCounts[city.slug] !== null ? (
+                        <span className="dir-num text-sm text-[var(--color-ink-mute)]">
+                          {formatCount(cityCounts[city.slug] as number)} providers
+                        </span>
+                      ) : city.status === 'coming-soon' ? (
+                        <span className="text-sm text-[var(--color-ink-mute)]">Coming soon</span>
+                      ) : null}
+                    </div>
+                    {(city.residentialLink || city.commercialLink || city.areasLink) && (
+                      <div className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-[0.9375rem]">
+                        {city.residentialLink && (
+                          <Link href={city.residentialLink} className="dir-link font-semibold">
+                            Browse Residential Providers
+                          </Link>
+                        )}
+                        {city.commercialLink && (
+                          <Link href={city.commercialLink} className="dir-link font-semibold">
+                            Browse Commercial Providers
+                          </Link>
+                        )}
+                        {city.areasLink && (
+                          <Link href={city.areasLink} className="dir-link font-semibold">
+                            Browse by Borough
+                          </Link>
+                        )}
+                      </div>
                     )}
-                    {city.status === 'coming-soon' && (
-                      <span className="px-2 py-1 bg-amber-500/20 text-amber-300 text-xs font-bold rounded">
-                        SOON
-                      </span>
-                    )}
-                  </div>
-
-                  {cityCounts[city.slug] !== undefined && cityCounts[city.slug] !== null && (
-                    <p className="text-sm text-white/80 mb-4">
-                      {formatCount(cityCounts[city.slug] as number)} providers
-                    </p>
-                  )}
-
-                  {city.residentialLink && (
-                    <Link
-                      href={city.residentialLink}
-                      className="inline-block text-amber-400 hover:text-amber-300 font-semibold text-sm"
-                    >
-                      Browse Residential Providers →
-                    </Link>
-                  )}
-
-                  {city.commercialLink && (
-                    <Link
-                      href={city.commercialLink}
-                      className="inline-block text-amber-400 hover:text-amber-300 font-semibold text-sm mt-2"
-                    >
-                      Browse Commercial Providers →
-                    </Link>
-                  )}
-
-                  {city.areasLink && (
-                    <Link
-                      href={city.areasLink}
-                      className="inline-block text-amber-400 hover:text-amber-300 font-semibold text-sm"
-                    >
-                      Browse by Borough →
-                    </Link>
-                  )}
-                </div>
-              ))}
-            </div>
+                  </li>
+                ))}
+            </ul>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-24 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
-          <div className="max-w-4xl mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-black mb-8">
-              {region.status === 'live' 
-                ? `Are you a pest control provider in ${region.name}?`
-                : `Are you a pest control provider in ${region.name}?`
-              }
+        {/* Provider CTA */}
+        <section className="bg-[var(--color-paper)]">
+          <div className="dir-wrap py-14 md:py-16">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">
+              {`Are you a pest control provider in ${region.name}?`}
             </h2>
-            <p className="text-lg mb-12 text-blue-100">
+            <p className="mt-4 max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">
               {region.status === 'live'
-                ? 'Contact us to get listed on PestPro Index — no lead fees, no commissions, just honest directory listings.'
-                : `We're expanding to your area soon. Contact us to get listed when we launch — no lead fees, no commissions.`
-              }
+                ? 'Contact us to get listed on PestPro Index. No lead fees, no commissions, just honest directory listings.'
+                : `We're expanding to your area soon. Contact us to get listed when we launch. No lead fees, no commissions.`}
             </p>
-            <Link
-              href="/contact"
-              className="inline-block px-8 py-4 bg-white text-blue-600 font-bold rounded-xl hover:bg-blue-50 transition-all"
-            >
-              Get Listed →
+            <Link href="/contact" className="dir-btn dir-btn-ink mt-6">
+              Get Listed
+              <ArrowRight size={16} aria-hidden="true" />
             </Link>
           </div>
         </section>

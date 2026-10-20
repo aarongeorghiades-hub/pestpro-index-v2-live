@@ -26,9 +26,9 @@ export default function ListingBadge({ slug }: { slug?: string | null }) {
   }
 
   return (
-    <div className="mt-6 rounded-xl border border-gray-200 bg-gray-50 p-4 text-left">
-      <h2 className="text-lg font-black text-gray-900">Find us on PestPro Index</h2>
-      <p className="mt-1 text-sm text-gray-600">
+    <div className="mt-6 rounded-[4px] border border-[var(--color-rule-strong)] bg-[var(--color-stock)] p-5 text-left">
+      <h2 className="text-lg font-bold text-[var(--color-ink)]">Find us on PestPro Index</h2>
+      <p className="mt-1 text-sm leading-relaxed text-[var(--color-ink-soft)]">
         {example
           ? 'After your listing is claimed, put this on your website. Replace your-listing with the last part of your listing address.'
           : 'Copy this onto your website. It links to your listing.'}
@@ -41,13 +41,13 @@ export default function ListingBadge({ slug }: { slug?: string | null }) {
         readOnly
         value={snippet}
         rows={3}
-        className="mt-3 w-full rounded-lg border border-gray-300 bg-white p-2 font-mono text-xs text-gray-800"
+        className="mt-3 w-full rounded-[4px] border border-[var(--color-rule-strong)] bg-white p-2 font-mono text-xs text-[var(--color-ink)] focus:border-[var(--color-ink)] focus:outline-none"
         onFocus={(event) => event.currentTarget.select()}
       />
       <button
         type="button"
         onClick={copy}
-        className="mt-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-bold text-white hover:bg-blue-700"
+        className="dir-btn dir-btn-ink mt-2"
       >
         {copied ? 'Copied' : 'Copy snippet'}
       </button>

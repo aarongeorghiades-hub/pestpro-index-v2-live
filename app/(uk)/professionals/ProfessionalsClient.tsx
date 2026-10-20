@@ -1,11 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import { ChevronDown, CheckCircle, Users, TrendingUp, Lock, Target } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import ListingBadge from '@/components/listing/ListingBadge';
 import { PROFESSIONALS_FAQS } from '@/lib/professionalsFaq';
-import { useState, useEffect, useRef, useCallback } from 'react';
 
 const FEATURED_MONTHLY = (process.env.NEXT_PUBLIC_STRIPE_FEATURED_MONTHLY_LINK || '').trim();
 const FEATURED_ANNUAL = (process.env.NEXT_PUBLIC_STRIPE_FEATURED_ANNUAL_LINK || '').trim();
@@ -14,588 +13,350 @@ function stripeHref(value: string): string | null {
   return value.startsWith('https://') ? value : null;
 }
 
+const H2 = 'text-2xl md:text-3xl font-bold tracking-[-0.01em] text-[var(--color-ink)]';
+const BODY = 'text-[var(--color-ink-soft)] leading-relaxed';
+
+const STANDARD_INCLUDES = [
+  'Listed, and sorted by rating',
+  'Your company details, contact information and service areas',
+  'Certifications and accreditations',
+  'Review rating, where one is available',
+  'Free to claim',
+];
+
+const FEATURED_INCLUDES = [
+  'A labelled spot above the list on your area pages',
+  'Logo, photos and a fuller description',
+  'Limited Featured spots per area',
+  "Cancel with one full calendar month's notice",
+  'Does not change your place in the rating order',
+];
+
+const STEPS = [
+  {
+    title: 'Create your profile',
+    body: 'Submit your business details (name, contact details, address and postcode) for review.',
+  },
+  {
+    title: 'Complete your listing',
+    body: 'Tell us the areas you cover, the pests you treat, whether you serve homes or businesses, and a short description of your work.',
+  },
+  {
+    title: 'Get found',
+    body: 'Your listing shows your phone number, email and website. Customers contact you directly.',
+  },
+];
+
+const WHY = [
+  {
+    title: 'No lead fees',
+    body: 'Unlike Checkatrade, Bark, or Rated People, we never charge per enquiry.',
+  },
+  {
+    title: "Rankings can't be bought",
+    body: 'Results are sorted by rating. Firms can pay for a clearly labelled Featured slot, never a higher rank.',
+  },
+  {
+    title: 'Transparent',
+    body: 'Customers see real reviews, real certifications, real coverage. A Featured slot is labelled as paid and sits apart from the rating order.',
+  },
+  {
+    title: 'UK-wide coverage',
+    body: 'Covering London, Birmingham, Manchester, and Liverpool with pest control providers. Expanding across the UK.',
+  },
+];
+
+const PUBLICATIONS = [
+  { href: 'https://bpca.org.uk/ppc-magazine', name: 'Professional Pest Controller', note: 'Official BPCA magazine, free quarterly' },
+  { href: 'https://pestmagazine.co.uk/', name: 'Pest Magazine', note: 'Independent trade publication, supports CPD' },
+  { href: 'https://www.pestcontrolnews.com/', name: 'Pest Control News', note: 'Free trade magazine, regulatory focus' },
+  { href: 'https://www.pctonline.com/', name: 'Pest Control Technology', note: 'US monthly, industry trends and technology' },
+];
+
+function Includes({ items }: { items: string[] }) {
+  return (
+    <ul className="space-y-2 text-[0.9375rem] text-[var(--color-ink-soft)]">
+      {items.map((item) => (
+        <li key={item} className="flex gap-3">
+          <span aria-hidden="true" className="mt-[0.6em] h-px w-3 flex-shrink-0 bg-[var(--color-ink-mute)]" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 // providerCount is counted server-side in page.tsx so the figure is present in
 // the initial HTML for crawlers and no-JS visitors. It is null only when that
-// query failed — in which case the stat tile is omitted and the hero sentence
+// query failed, in which case the count line is omitted and the standfirst
 // runs without a number. There is never a fallback figure.
 export default function ProfessionalsClient({ providerCount }: { providerCount: number | null }) {
-  const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
-  // Seeded with the real count so the server-rendered HTML carries the number;
-  // the scroll animation then counts up to the same value on the client.
-  const [displayCount, setDisplayCount] = useState(providerCount ?? 0);
-  const statsRef = useRef(null);
-  const [hasAnimated, setHasAnimated] = useState(false);
-
-
-
   const faqItems = PROFESSIONALS_FAQS;
   const monthlyHref = stripeHref(FEATURED_MONTHLY);
   const annualHref = stripeHref(FEATURED_ANNUAL);
 
-  const animateStats = useCallback((target: number) => {
-    const duration = 2000;
-    const start = Date.now();
-
-    const animate = () => {
-      const elapsed = Date.now() - start;
-      const progress = Math.min(elapsed / duration, 1);
-      setDisplayCount(Math.floor(target * progress));
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      }
-    };
-
-    animate();
-  }, []);
-
-  // Count up on scroll. Skipped entirely when the count is unavailable, and the
-  // tile already shows the correct figure before this runs, so a visitor who
-  // never scrolls to it still sees the real number.
-  useEffect(() => {
-    if (providerCount === null) return;
-
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting && !hasAnimated) {
-        setHasAnimated(true);
-        animateStats(providerCount);
-      }
-    }, { threshold: 0.5 });
-
-    if (statsRef.current) {
-      observer.observe(statsRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [hasAnimated, providerCount, animateStats]);
-
   return (
-    <div className="min-h-screen bg-white">
-      <style>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes slideInLeft {
-          from {
-            opacity: 0;
-            transform: translateX(-30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        @keyframes pulse-glow {
-          0%, 100% {
-            box-shadow: 0 0 0 0 rgba(251, 146, 60, 0.7);
-          }
-          50% {
-            box-shadow: 0 0 0 10px rgba(251, 146, 60, 0);
-          }
-        }
-
-        @keyframes float {
-          0%, 100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
-        }
-
-        @keyframes shimmer {
-          0% {
-            background-position: -1000px 0;
-          }
-          100% {
-            background-position: 1000px 0;
-          }
-        }
-
-        .animate-fade-in-up {
-          animation: fadeInUp 0.6s ease-out forwards;
-        }
-
-        .animate-slide-in-left {
-          animation: slideInLeft 0.6s ease-out forwards;
-        }
-
-        .animate-pulse-glow {
-          animation: pulse-glow 2s infinite;
-        }
-
-        .animate-float {
-          animation: float 3s ease-in-out infinite;
-        }
-
-        .hero-text {
-          animation: fadeInUp 0.8s ease-out;
-        }
-
-        .stat-item {
-          transition: all 0.3s ease;
-        }
-
-        .stat-item:hover {
-          transform: translateY(-8px);
-          filter: drop-shadow(0 12px 24px rgba(37, 99, 235, 0.2));
-        }
-
-        .card-hover {
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .card-hover:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
-        }
-
-        .step-connector {
-          position: relative;
-        }
-
-        @media (min-width: 768px) {
-          .step-connector::after {
-            content: '';
-            position: absolute;
-            top: 48px;
-            left: 60%;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(to right, #2563eb, transparent);
-          }
-
-          .step-connector:last-child::after {
-            display: none;
-          }
-        }
-
-        .icon-bounce {
-          animation: float 2s ease-in-out infinite;
-        }
-
-        .accordion-button {
-          transition: all 0.3s ease;
-        }
-
-        .accordion-button:hover {
-          background-color: #f3f4f6;
-        }
-      `}</style>
-
-      {/* Navigation */}
+    <div className="min-h-screen bg-[var(--color-stock)] text-[var(--color-ink)]">
       <Navigation />
 
-      {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-[#0a1628] via-[#1e3a8a] to-[#0a1628] py-32 overflow-hidden" style={{
-        backgroundImage: 'url(/professionals-hero-bg.png)',
-        backgroundSize: 'cover',
-        backgroundPosition: typeof window !== 'undefined' && window.innerWidth < 768 ? 'center center' : 'right center',
-        backgroundAttachment: 'fixed'
-      }}>
-        {/* Dark overlay for text readability - reduced opacity for better image visibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/65 via-[#0a1628]/60 to-[#0a1628]/50"></div>
-        
-        {/* Animated background gradient */}
-        <div className="absolute inset-0 bg-gradient-radial from-blue-500/20 via-transparent to-transparent animate-pulse"></div>
-        
-        {/* Grid pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, rgb(59, 130, 246) 1px, transparent 0)',
-            backgroundSize: '48px 48px'
-          }}></div>
-        </div>
-        
-        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white mb-8 leading-[0.9] tracking-tight hero-text drop-shadow-lg">
-            <div className="text-center">Grow Your</div>
-            <div className="text-center">Pest Control</div>
-            <div className="text-center">Business</div>
+      {/* Hero */}
+      <header className="border-b border-[var(--color-ink)] bg-[var(--color-stock)]">
+        <div className="dir-wrap pb-12 pt-12 md:pb-16 md:pt-20">
+          <h1 className="dir-display max-w-[16ch] text-[clamp(2.75rem,9vw,6rem)] text-[var(--color-ink)]">
+            List your pest control firm for free
           </h1>
-          
-          <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-blue-100/95 max-w-3xl mx-auto leading-relaxed font-semibold text-center mb-10 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            Join <span className="font-bold text-white">{providerCount !== null ? `${providerCount.toLocaleString()} UK providers` : 'UK providers'}</span> on a directory of <span className="font-bold text-white">local, independent pest controllers</span>. No national chains. No lead fees. No commissions. Just customers finding you.
+          <p className="mt-6 max-w-[60ch] text-lg leading-relaxed text-[var(--color-ink-soft)] md:text-xl">
+            PestPro Index is a directory of local, independent pest controllers. Customers find you on
+            the page for your area and contact you directly. A standard listing costs nothing. A
+            Featured spot is optional.
           </p>
+          <p className="mt-4 text-[0.9375rem] font-semibold text-[var(--color-ink)]">
+            Independent local firms · No national chains · No lead fees · No commissions
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link href="/professionals/submit" className="dir-btn dir-btn-ink px-6 text-base">
+              Create your free listing
+            </Link>
+            <a href="#rates" className="dir-btn dir-btn-line px-6 text-base">
+              See Featured rates
+            </a>
+          </div>
 
-          <Link
-            href="/professionals/submit"
-            className="block md:inline-block w-full md:w-auto px-6 md:px-10 py-3 md:py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold text-base md:text-lg rounded-xl hover:from-amber-600 hover:to-amber-700 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 animate-fade-in-up text-center"
-            style={{ animationDelay: '0.4s' }}
-          >
-            Create Your Free Listing On Our Database
-          </Link>
-        </div>
-      </div>
-
-      {/* Stats Bar */}
-      <div className="bg-white border-b-2 border-gray-100 py-16" ref={statsRef}>
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-2 gap-4 md:gap-8 max-w-2xl mx-auto">
+          <dl className="mt-12 grid max-w-xl grid-cols-2 border-t border-[var(--color-rule-strong)]">
             {providerCount !== null && (
-              <div className="stat-item text-center group">
-                <div className="flex justify-center mb-2">
-                  <Users className="w-6 md:w-8 h-6 md:h-8 text-blue-600" />
-                </div>
-                <div className="text-3xl md:text-5xl font-black text-blue-600 mb-2">{displayCount.toLocaleString()}</div>
-                <div className="text-xs md:text-sm text-gray-600 font-semibold">Providers Listed</div>
+              <div className="border-r border-[var(--color-rule)] py-4 pr-4">
+                <dt className="text-sm text-[var(--color-ink-mute)]">Providers listed</dt>
+                <dd className="dir-num dir-display mt-1 text-4xl md:text-5xl">{providerCount.toLocaleString()}</dd>
               </div>
             )}
-            <div className="stat-item text-center group">
-              <div className="flex justify-center mb-2">
-                <Lock className="w-6 md:w-8 h-6 md:h-8 text-blue-600" />
-              </div>
-              <div className="text-3xl md:text-5xl font-black text-blue-600 mb-2">£0</div>
-              <div className="text-xs md:text-sm text-gray-600 font-semibold">Lead Fees</div>
+            <div className={`py-4 ${providerCount !== null ? 'pl-4' : ''}`}>
+              <dt className="text-sm text-[var(--color-ink-mute)]">Lead fees</dt>
+              <dd className="dir-num dir-display mt-1 text-4xl md:text-5xl">£0</dd>
             </div>
-          </div>
+          </dl>
         </div>
-      </div>
+      </header>
 
-      {/* Pricing Tiers */}
-      <div className="bg-gradient-to-br from-gray-50 via-white to-gray-50 py-24">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-5xl font-black text-gray-900 mb-4 text-center">Simple Pricing</h2>
-          <p className="text-xl text-gray-600 text-center mb-20 max-w-3xl mx-auto">
+      {/* Rate card */}
+      <section id="rates" className="scroll-mt-24 bg-[var(--color-stock)] py-16 md:py-24">
+        <div className="dir-wrap">
+          <h2 className={H2}>Simple pricing</h2>
+          <p className={`mt-3 max-w-[60ch] text-lg ${BODY}`}>
             A standard listing is free, always. Featured is optional.
           </p>
 
-          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
-            <div className="card-hover bg-white rounded-2xl shadow-lg border-2 border-gray-200 p-10">
-              <h3 className="text-3xl font-bold text-gray-900 mb-2">Standard listing</h3>
-              <p className="text-sm font-semibold text-gray-600 mb-2">Free, always</p>
-              <div className="mb-8">
-                <span className="text-5xl font-black text-blue-600">£0</span>
-              </div>
-              <ul className="space-y-4 mb-10">
-                <li className="flex gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Listed, and sorted by rating</span>
-                </li>
-                <li className="flex gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Your company details, contact information and service areas</span>
-                </li>
-                <li className="flex gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Certifications and accreditations</span>
-                </li>
-                <li className="flex gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Review rating, where one is available</span>
-                </li>
-                <li className="flex gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Free to claim</span>
-                </li>
-              </ul>
-              <Link
-                href="/professionals/submit"
-                className="block w-full text-center px-6 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-all"
-              >
-                Create Your Free Listing
-              </Link>
+          <div className="mt-10 border-y border-[var(--color-ink)]">
+            <div
+              aria-hidden="true"
+              className="hidden grid-cols-[13rem_1fr_9rem_15rem] gap-6 border-b border-[var(--color-rule-strong)] px-4 py-3 text-sm text-[var(--color-ink-mute)] lg:grid"
+            >
+              <span>Listing</span>
+              <span>What you get</span>
+              <span>Price</span>
+              <span />
             </div>
 
-            <div className="card-hover bg-white rounded-2xl shadow-lg border-2 border-amber-400 p-10">
-              <h3 className="text-3xl font-bold text-gray-900 mb-2">Featured</h3>
-              <p className="text-sm font-semibold text-amber-800 mb-2">Optional. Labelled Featured (paid).</p>
-              <div className="mb-2">
-                <span className="text-5xl font-black text-blue-600">£12</span>
-                <span className="text-gray-600 font-semibold">/month</span>
+            {/* Standard */}
+            <div className="grid gap-5 px-4 py-7 lg:grid-cols-[13rem_1fr_9rem_15rem] lg:gap-6">
+              <div>
+                <h3 className="text-xl font-bold">Standard listing</h3>
+                <p className="mt-1 text-sm text-[var(--color-ink-mute)]">Free, always</p>
               </div>
-              <p className="text-gray-700 mb-6">or £120/year. First 30 days free. Cancel with one full calendar month&apos;s notice.</p>
-              <ul className="space-y-4 mb-10">
-                <li className="flex gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">A labelled spot above the list on your area pages</span>
-                </li>
-                <li className="flex gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Logo, photos and a fuller description</span>
-                </li>
-                <li className="flex gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Limited Featured spots per area</span>
-                </li>
-                <li className="flex gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Cancel with one full calendar month&apos;s notice</span>
-                </li>
-                <li className="flex gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Does not change your place in the rating order</span>
-                </li>
-              </ul>
+              <Includes items={STANDARD_INCLUDES} />
+              <p className="dir-num dir-display text-4xl">£0</p>
+              <div>
+                <Link href="/professionals/submit" className="dir-btn dir-btn-ink w-full">
+                  Create your free listing
+                </Link>
+              </div>
+            </div>
+
+            {/* Featured */}
+            <div className="grid gap-5 border-t border-[var(--color-rule-strong)] bg-[var(--color-marigold-wash)] px-4 py-7 lg:grid-cols-[13rem_1fr_9rem_15rem] lg:gap-6">
+              <div>
+                <h3 className="text-xl font-bold">Featured</h3>
+                <p className="mt-1 text-sm font-semibold text-[var(--color-marigold-deep)]">
+                  Optional. Labelled Featured (paid).
+                </p>
+              </div>
+              <Includes items={FEATURED_INCLUDES} />
+              <div>
+                <p className="dir-num dir-display text-4xl">£12</p>
+                <p className="text-sm text-[var(--color-ink-mute)]">a month, or £120 a year</p>
+              </div>
               <div className="space-y-3">
                 {monthlyHref ? (
                   <a
                     href={monthlyHref}
-                    className="block w-full text-center px-6 py-3 bg-amber-500 text-white font-bold rounded-lg hover:bg-amber-600 transition-all"
+                    className="dir-btn dir-btn-ink w-full"
                   >
                     £12 / month
                   </a>
                 ) : (
                   <Link
                     href="/professionals/submit?tier=featured"
-                    className="block w-full text-center px-6 py-3 bg-amber-500 text-white font-bold rounded-lg hover:bg-amber-600 transition-all"
+                    className="dir-btn dir-btn-ink w-full"
                   >
-                    Register interest — £12 / month
+                    Register interest, £12 / month
                   </Link>
                 )}
                 {annualHref ? (
                   <a
                     href={annualHref}
-                    className="block w-full text-center px-6 py-3 border-2 border-amber-500 text-amber-800 font-bold rounded-lg hover:bg-amber-50 transition-all"
+                    className="dir-btn dir-btn-line w-full"
                   >
                     £120 / year
                   </a>
                 ) : (
                   <Link
                     href="/professionals/submit?tier=featured"
-                    className="block w-full text-center px-6 py-3 border-2 border-amber-500 text-amber-800 font-bold rounded-lg hover:bg-amber-50 transition-all"
+                    className="dir-btn dir-btn-line w-full"
                   >
-                    Register interest — £120 / year
+                    Register interest, £120 / year
                   </Link>
                 )}
               </div>
-              <p className="mt-4 text-sm leading-relaxed text-gray-600">
-                By subscribing you agree to give one full calendar month&apos;s notice to cancel; your listing stays Featured until the notice period ends.
-              </p>
             </div>
           </div>
-          <p className="text-center text-gray-600 mt-8 max-w-3xl mx-auto">
-            Rankings can&apos;t be bought. Results are sorted by rating. A Featured slot is labelled and sits apart from that order. No lead fees, ever.
-          </p>
-        </div>
-      </div>
 
-      {/* How It Works */}
-      <div className="max-w-7xl mx-auto px-4 py-24">
-        <h2 className="text-5xl font-black text-gray-900 mb-4 text-center">How It Works</h2>
-        <p className="text-xl text-gray-600 text-center mb-20 max-w-3xl mx-auto">
-          Get listed in three simple steps
-        </p>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="step-connector text-center">
-            <div className="w-24 h-24 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-full flex items-center justify-center text-4xl font-black mx-auto mb-6 shadow-lg">
-              1
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-3">Create Your Profile</h3>
-            <p className="text-gray-600 text-lg">
-              Submit your business details — name, contact details, address and postcode — for review.
+          <div className="mt-6 grid gap-3 text-sm leading-relaxed text-[var(--color-ink-soft)] md:grid-cols-2 md:gap-10">
+            <p>
+              First 30 days free. By subscribing you agree to give one full calendar month&apos;s notice
+              to cancel; your listing stays Featured until the notice period ends.
             </p>
-          </div>
-
-          <div className="step-connector text-center">
-            <div className="w-24 h-24 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-full flex items-center justify-center text-4xl font-black mx-auto mb-6 shadow-lg">
-              2
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-3">Complete Your Listing</h3>
-            <p className="text-gray-600 text-lg">
-              Tell us the areas you cover, the pests you treat, whether you serve homes or businesses, and a short description of your work.
+            <p>
+              Rankings can&apos;t be bought. Results are sorted by rating. A Featured slot is labelled and
+              sits apart from that order. No lead fees, ever.
             </p>
-          </div>
-
-          <div className="step-connector text-center">
-            <div className="w-24 h-24 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-full flex items-center justify-center text-4xl font-black mx-auto mb-6 shadow-lg">
-              3
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-3">Get Found</h3>
-            <p className="text-gray-600 text-lg">
-              Your listing shows your phone number, email and website. Customers contact you directly.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Why PestPro Index */}
-      <div className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 py-24">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-5xl font-black text-white mb-4 text-center">Why PestPro Index</h2>
-          <p className="text-xl text-blue-100 text-center mb-20 max-w-3xl mx-auto">
-            We're different from other directories
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="card-hover bg-blue-800/50 rounded-xl p-8 shadow-lg border-l-4 border-blue-300 hover:border-blue-200 hover:bg-blue-800/70">
-              <div className="flex gap-4 mb-4">
-                <Lock className="w-8 h-8 text-blue-300 flex-shrink-0" />
-                <h3 className="text-xl font-bold text-white">No Lead Fees</h3>
-              </div>
-              <p className="text-blue-100">
-                Unlike Checkatrade, Bark, or Rated People, we never charge per enquiry.
-              </p>
-            </div>
-
-            <div className="card-hover bg-blue-800/50 rounded-xl p-8 shadow-lg border-l-4 border-blue-300 hover:border-blue-200 hover:bg-blue-800/70">
-              <div className="flex gap-4 mb-4">
-                <TrendingUp className="w-8 h-8 text-blue-300 flex-shrink-0" />
-                <h3 className="text-xl font-bold text-white">Rankings can&apos;t be bought</h3>
-              </div>
-              <p className="text-blue-100">
-                Results are sorted by rating. Firms can pay for a clearly labelled Featured slot, never a higher rank.
-              </p>
-            </div>
-
-            <div className="card-hover bg-blue-800/50 rounded-xl p-8 shadow-lg border-l-4 border-blue-300 hover:border-blue-200 hover:bg-blue-800/70">
-              <div className="flex gap-4 mb-4">
-                <Users className="w-8 h-8 text-blue-300 flex-shrink-0" />
-                <h3 className="text-xl font-bold text-white">Transparent</h3>
-              </div>
-              <p className="text-blue-100">
-                Customers see real reviews, real certifications, real coverage. A Featured slot is labelled as paid and sits apart from the rating order.
-              </p>
-            </div>
-
-            <div className="card-hover bg-blue-800/50 rounded-xl p-8 shadow-lg border-l-4 border-blue-300 hover:border-blue-200 hover:bg-blue-800/70">
-              <div className="flex gap-4 mb-4">
-                <Target className="w-8 h-8 text-blue-300 flex-shrink-0" />
-                <h3 className="text-xl font-bold text-white">UK-Wide Coverage</h3>
-              </div>
-              <p className="text-blue-100">
-                Covering London, Birmingham, Manchester, and Liverpool with pest control providers. Expanding across the UK.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* How featured listings work */}
-      <div id="how-featured-listings-work" className="max-w-3xl mx-auto px-4 py-16 scroll-mt-24">
-        <h2 className="text-3xl font-black text-gray-900 mb-4">How featured listings work</h2>
-        <p className="text-lg text-gray-700 leading-relaxed mb-4">
-          Rankings can&apos;t be bought. Results are sorted by rating. Firms can pay for a clearly labelled Featured slot, never a higher rank. No lead fees, ever.
-        </p>
-        <p className="text-lg text-gray-700 leading-relaxed">
-          The Featured box, when a firm is in it, sits above the rating-sorted list and is headed &ldquo;Featured (paid)&rdquo;. Limited Featured spots per area. The order inside the box changes each day. A standard listing stays free and stays in the rating order. Nothing on this site charges a fee per enquiry.
-        </p>
-        <p className="text-lg text-gray-700 leading-relaxed mt-4">
-          Featured is £12 a month or £120 a year. First 30 days free. Cancel with one full calendar month&apos;s notice. The slot can show a logo, photos and a fuller description.
-        </p>
-        <ListingBadge />
-      </div>
-
-      {/* FAQ Section */}
-      <div className="max-w-4xl mx-auto px-4 py-24">
-        <h2 className="text-5xl font-black text-gray-900 mb-4 text-center">Frequently Asked Questions</h2>
-        <p className="text-xl text-gray-600 text-center mb-16">
-          Everything you need to know about listing on PestPro Index
-        </p>
-
-        <div className="space-y-4">
-          {faqItems.map((item, idx) => (
-            <div key={idx} className="bg-white rounded-xl shadow-md border-2 border-gray-100 overflow-hidden transition-all">
-              <button
-                onClick={() => setExpandedFaq(expandedFaq === idx ? null : idx)}
-                className="accordion-button w-full px-8 py-6 flex items-center justify-between"
-              >
-                <h3 className="text-lg font-bold text-gray-900 text-left">{item.question}</h3>
-                <ChevronDown 
-                  className={`w-6 h-6 text-blue-600 flex-shrink-0 transition-transform duration-300 ${expandedFaq === idx ? 'rotate-180' : ''}`}
-                />
-              </button>
-              {/* The answer is ALWAYS mounted so it is present in the server
-                  HTML and readable without JavaScript. Collapse is done with
-                  CSS (a zero-height grid row) rather than by unmounting, which
-                  keeps the accordion behaving exactly as before while making
-                  the text crawlable. */}
-              <div
-                className={`grid transition-all duration-300 ${
-                  expandedFaq === idx ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
-                }`}
-                aria-hidden={expandedFaq !== idx}
-              >
-                <div className="overflow-hidden">
-                  <div className="px-8 py-6 bg-gradient-to-r from-blue-50 to-blue-100 border-t-2 border-gray-100">
-                    <p className="text-gray-700 text-lg leading-relaxed">{item.answer}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Final CTA */}
-      <div className="relative bg-gradient-to-r from-blue-950 via-blue-900 to-blue-950 py-24 overflow-hidden">
-        {/* Decorative background */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, rgb(255, 255, 255) 1px, transparent 0)',
-            backgroundSize: '48px 48px'
-          }}></div>
-        </div>
-
-        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-5xl font-black text-white mb-4">Ready to Reach More Customers?</h2>
-          <p className="text-2xl text-blue-200 mb-12">
-            Join the UK's fastest-growing pest control directory
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/professionals/submit"
-              className="px-10 py-4 bg-white text-blue-600 font-bold text-lg rounded-xl hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
-            >
-              Create Your Free Listing
-            </Link>
-            <Link
-              href="/contact"
-              className="px-10 py-4 border-2 border-white text-white font-bold text-lg rounded-xl hover:bg-white/10 transition-all"
-            >
-              Contact Us
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      {/* INDUSTRY PUBLICATIONS QUICK LINKS */}
-      <section className="relative bg-gradient-to-br from-blue-50 to-white py-16 border-t border-gray-200">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-xl p-8 shadow-sm border border-blue-100">
-            <div className="mb-10">
-              <div className="relative inline-block">
-                <h3 className="text-3xl font-black text-gray-900 mb-2">📰 Industry Publications</h3>
-                <div className="h-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full w-16 mt-2"></div>
-              </div>
-              <p className="text-gray-700 mt-4">Stay informed with the leading pest control trade publications.</p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 mb-8">
-              <a href="https://bpca.org.uk/ppc-magazine" target="_blank" rel="noopener noreferrer" className="group relative bg-white p-5 rounded-lg border-l-4 border-blue-600 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                <h4 className="font-bold text-gray-900 mb-2 text-sm group-hover:text-blue-600 transition-colors">Professional Pest Controller</h4>
-                <p className="text-xs text-gray-600">Official BPCA magazine, free quarterly</p>
-              </a>
-              <a href="https://pestmagazine.co.uk/" target="_blank" rel="noopener noreferrer" className="group relative bg-white p-5 rounded-lg border-l-4 border-blue-600 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                <h4 className="font-bold text-gray-900 mb-2 text-sm group-hover:text-blue-600 transition-colors">Pest Magazine</h4>
-                <p className="text-xs text-gray-600">Independent trade publication, supports CPD</p>
-              </a>
-              <a href="https://www.pestcontrolnews.com/" target="_blank" rel="noopener noreferrer" className="group relative bg-white p-5 rounded-lg border-l-4 border-blue-600 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                <h4 className="font-bold text-gray-900 mb-2 text-sm group-hover:text-blue-600 transition-colors">Pest Control News</h4>
-                <p className="text-xs text-gray-600">Free trade magazine, regulatory focus</p>
-              </a>
-              <a href="https://www.pctonline.com/" target="_blank" rel="noopener noreferrer" className="group relative bg-white p-5 rounded-lg border-l-4 border-blue-600 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                <h4 className="font-bold text-gray-900 mb-2 text-sm group-hover:text-blue-600 transition-colors">Pest Control Technology</h4>
-                <p className="text-xs text-gray-600">US monthly, industry trends and technology</p>
-              </a>
-            </div>
-
-            <div className="text-center pt-4 border-t border-gray-100">
-              <Link href="/resources" className="inline-block px-6 py-2.5 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-200">See all resources →</Link>
-            </div>
           </div>
         </div>
       </section>
 
+      {/* How it works */}
+      <section className="border-t border-[var(--color-rule)] bg-[var(--color-paper)] py-16 md:py-24">
+        <div className="dir-wrap">
+          <h2 className={H2}>How it works</h2>
+          <p className={`mt-3 text-lg ${BODY}`}>Get listed in three steps.</p>
+          <ol className="mt-10 grid gap-x-10 md:grid-cols-3">
+            {STEPS.map((step, i) => (
+              <li key={step.title} className="dir-entry pb-6 pt-5">
+                <span className="dir-num dir-display text-5xl text-[var(--color-ink)]">{i + 1}</span>
+                <h3 className="mt-3 text-xl font-bold">{step.title}</h3>
+                <p className={`mt-2 ${BODY}`}>{step.body}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* Why PestPro Index */}
+      <section className="py-16 md:py-24">
+        <div className="dir-wrap">
+          <h2 className={H2}>Why PestPro Index</h2>
+          <ul className="mt-10 grid gap-x-12 md:grid-cols-2">
+            {WHY.map((item) => (
+              <li key={item.title} className="dir-entry py-6">
+                <h3 className="text-xl font-bold">{item.title}</h3>
+                <p className={`mt-2 max-w-[52ch] ${BODY}`}>{item.body}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* How featured listings work */}
+      <section
+        id="how-featured-listings-work"
+        className="scroll-mt-24 border-t border-[var(--color-rule)] bg-[var(--color-paper)] py-16 md:py-24"
+      >
+        <div className="dir-wrap grid gap-10 lg:grid-cols-[minmax(0,68ch)_1fr]">
+          <div>
+            <h2 className={H2}>How featured listings work</h2>
+            <p className={`mt-5 text-lg ${BODY}`}>
+              Rankings can&apos;t be bought. Results are sorted by rating. Firms can pay for a clearly
+              labelled Featured slot, never a higher rank. No lead fees, ever.
+            </p>
+            <p className={`mt-4 text-lg ${BODY}`}>
+              The Featured box, when a firm is in it, sits above the rating-sorted list and is headed
+              &ldquo;Featured (paid)&rdquo;. Limited Featured spots per area. The order inside the box
+              changes each day. A standard listing stays free and stays in the rating order. Nothing on
+              this site charges a fee per enquiry.
+            </p>
+            <p className={`mt-4 text-lg ${BODY}`}>
+              Featured is £12 a month or £120 a year. First 30 days free. Cancel with one full calendar
+              month&apos;s notice. The slot can show a logo, photos and a fuller description.
+            </p>
+          </div>
+          <div className="lg:pt-2">
+            <ListingBadge />
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 md:py-24">
+        <div className="dir-wrap">
+          <h2 className={H2}>Frequently asked questions</h2>
+          <p className={`mt-3 text-lg ${BODY}`}>About listing on PestPro Index.</p>
+          <div className="mt-10 max-w-[68ch] border-b border-[var(--color-rule-strong)]">
+            {faqItems.map((item) => (
+              <details key={item.question} className="group border-t border-[var(--color-rule-strong)]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-5 [&::-webkit-details-marker]:hidden">
+                  <h3 className="text-lg font-bold text-[var(--color-ink)]">{item.question}</h3>
+                  <ChevronDown
+                    aria-hidden="true"
+                    className="h-5 w-5 flex-shrink-0 text-[var(--color-ink-mute)] transition-transform duration-200 group-open:rotate-180"
+                  />
+                </summary>
+                <p className={`pb-6 ${BODY}`}>{item.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final call to action */}
+      <section className="border-y border-[var(--color-ink)] bg-[var(--color-stock)] py-16 md:py-20">
+        <div className="dir-wrap flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+          <div>
+            <h2 className="dir-display text-[clamp(2.25rem,6vw,4rem)]">Get your firm listed</h2>
+            <p className={`mt-4 max-w-[52ch] text-lg ${BODY}`}>
+              A standard listing is free and stays in the rating order. Questions first? Get in touch.
+            </p>
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row md:flex-shrink-0">
+            <Link href="/professionals/submit" className="dir-btn dir-btn-ink px-6 text-base">
+              Create your free listing
+            </Link>
+            <Link href="/contact" className="dir-btn dir-btn-line px-6 text-base">
+              Contact us
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Industry publications */}
+      <section className="bg-[var(--color-paper)] py-14">
+        <div className="dir-wrap">
+          <h2 className="text-xl font-bold">Industry publications</h2>
+          <p className={`mt-2 ${BODY}`}>The leading pest control trade publications.</p>
+          <ul className="mt-6 grid border-t border-[var(--color-rule-strong)] sm:grid-cols-2 lg:grid-cols-4">
+            {PUBLICATIONS.map((pub) => (
+              <li key={pub.href} className="border-b border-[var(--color-rule)] py-4 sm:pr-6">
+                <a href={pub.href} target="_blank" rel="noopener noreferrer" className="dir-link font-semibold">
+                  {pub.name}
+                </a>
+                <p className="mt-1 text-sm text-[var(--color-ink-mute)]">{pub.note}</p>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6">
+            <Link href="/resources" className="dir-link font-semibold">
+              See all resources
+            </Link>
+          </p>
+        </div>
+      </section>
     </div>
   );
 }

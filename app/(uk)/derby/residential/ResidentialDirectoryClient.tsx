@@ -1,13 +1,15 @@
 'use client';
-import { useState, useEffect, useMemo } from 'react';
-import { isTrophyProvider, TROPHY_LEGEND, TROPHY_ARIA_LABEL } from '@/lib/trophy';
+import { useState, useMemo } from 'react';
 import { PESTS } from '@/lib/pests';
 import { externalHref } from '@/lib/externalUrl';
 import Link from 'next/link';
-import Image from 'next/image';
+import { ArrowRight } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import SearchBar from '@/components/SearchBar';
 import Navigation from '@/components/Navigation';
+import AreaHead from '@/components/directory/AreaHead';
+import FirmEntry from '@/components/directory/FirmEntry';
+import { FirmList, FirmListItem, FirmListEmpty } from '@/components/directory/FirmList';
 
 // ============================================================================
 // HELPER FUNCTIONS
@@ -88,19 +90,8 @@ export default function ResidentialDirectoryClient({ initialProviders }: { initi
   const [filters, setFilters] = useState({ pests: [] as string[], services: [] as string[] });
   const [sortBy, setSortBy] = useState('quality');
   const [searchResults, setSearchResults] = useState<Provider[] | null>(null);
-  const [isMobile, setIsMobile] = useState(false);
   const pathname = usePathname();
 
-  // Mobile detection hook
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   // ============================================================================
   // FILTER AND SORT LOGIC
@@ -208,96 +199,56 @@ export default function ResidentialDirectoryClient({ initialProviders }: { initi
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[var(--color-stock)]">
       <Navigation />
 
-      <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 text-sm text-gray-500">
-        <Link href="/" className="hover:text-blue-600">Home</Link>
-        <span className="mx-2">/</span>
-        <Link href="/pest-control" className="hover:text-blue-600">Pest Control</Link>
-        <span className="mx-2">/</span>
-        <span className="text-gray-700">Derby</span>
-      </nav>
+      <AreaHead
+        crumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Pest Control', href: '/pest-control' },
+          { label: 'Derby' },
+        ]}
+        tab="Derby"
+        title={<>Residential Pest Control Services in Derby</>}
+        standfirst={
+          <>
+            <span className="dir-num font-semibold text-[var(--color-ink)]">{providers.length} Providers in Derby &amp; Derbyshire</span>.{' '}
+            Filter by pest type and service features across our complete directory.
+          </>
+        }
+      >
+        <p className="text-sm text-[var(--color-ink-mute)]">No endorsements · No commissions · Transparent, provider-stated information</p>
+      </AreaHead>
 
-      {/* HERO SECTION */}
-      <section className="relative h-[500px] overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/derby-skyline.png"
-            alt="Derby skyline illustration"
-            fill
-            className="object-cover opacity-95"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#1e3a8a]/50 via-[#2563eb]/45 to-[#1e3a8a]/50"></div>
-        </div>
-
-        <div className="relative h-full flex flex-col items-center justify-center text-center text-white px-4">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 max-w-3xl drop-shadow-lg" style={{textShadow: '0 4px 6px rgba(0,0,0,0.3)'}}>
-            Residential Pest Control Services in Derby
-          </h1>
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-6 max-w-2xl drop-shadow-lg" style={{textShadow: '0 2px 4px rgba(0,0,0,0.3)'}}>
-            {providers.length} Providers in Derby &amp; Derbyshire
-          </p>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-8 max-w-2xl drop-shadow-lg" style={{textShadow: '0 2px 4px rgba(0,0,0,0.3)'}}>
-            Filter by pest type and service features across our complete directory. No endorsements, no commissions—just transparent, provider-stated information.
-          </p>
-        </div>
-      </section>
-
-      {/* DIY vs PROFESSIONAL SECTION */}
-      <section className="relative bg-gradient-to-br from-blue-50 to-white py-16 border-b-2 border-blue-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            {/* RIGHT: PRODUCTS LINK */}
-            <div className="text-left flex flex-col justify-between">
-              <h2 className="text-4xl font-black text-gray-900 mb-0">
-                Need DIY Products?
-              </h2>
-              {/* 4 Bullets */}
-              <div className="flex-grow flex flex-col justify-between py-4">
-                <div className="flex items-start gap-3">
-                  <span className="text-blue-600 text-xl mt-1">✓</span>
-                  <p className="text-gray-700">Browse our curated selection of the most popular pest control products available today</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-blue-600 text-xl mt-1">✓</span>
-                  <p className="text-gray-700">Stop trawling the internet and just hoping for the best with what you spend your money on</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-blue-600 text-xl mt-1">✓</span>
-                  <p className="text-gray-700">Pick a product from our curated list organised by pest type</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-blue-600 text-xl mt-1">✓</span>
-                  <p className="text-gray-700">We choose products against sourced criteria — the legal position and the specifications each manufacturer states in its own listing</p>
-                </div>
-              </div>
-
-              {/* Button */}
-              <Link
-                href="/products"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#1e3a8a] to-[#2563eb] text-white text-lg font-bold rounded-xl hover:from-[#2563eb] hover:to-[#3b82f6] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
-              >
-                View Home Products
-                <span>→</span>
-              </Link>
-            </div>
-
+      {/* DIY PRODUCTS */}
+      <section className="bg-[var(--color-stock)] py-14 md:py-16">
+        <div className="dir-wrap">
+          <div className="max-w-[68ch]">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">
+              Need DIY Products?
+            </h2>
+            <ul className="mt-5 list-disc space-y-2 pl-5 leading-relaxed text-[var(--color-ink-soft)] marker:text-[var(--color-ink-mute)]">
+              <li>Browse our curated selection of the most popular pest control products available today</li>
+              <li>Stop trawling the internet and just hoping for the best with what you spend your money on</li>
+              <li>Pick a product from our curated list organised by pest type</li>
+              <li>We choose products against sourced criteria: the legal position and the specifications each manufacturer states in its own listing</li>
+            </ul>
+            <Link href="/products" className="dir-btn dir-btn-line mt-6">
+              View Home Products
+              <ArrowRight aria-hidden="true" className="h-4 w-4" strokeWidth={2} />
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* SECTION 3: FULL PROVIDER LIST */}
-      <section className="relative bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-          {/* Section Title */}
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-gray-900 mb-4">
+      {/* FULL PROVIDER LIST */}
+      <section className="border-t border-[var(--color-rule-strong)] bg-[var(--color-stock)] py-14 md:py-16">
+        <div className="dir-wrap">
+          <div className="mb-8 max-w-[68ch]">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">
               Full List of Derby &amp; Derbyshire Pest Control Providers
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="mt-3 leading-relaxed text-[var(--color-ink-soft)]">
               All {providers.length} residential providers with advanced filtering
             </p>
           </div>
@@ -311,19 +262,19 @@ export default function ResidentialDirectoryClient({ initialProviders }: { initi
             />
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-8">
+          <div className="flex flex-col gap-10 lg:flex-row">
 
             {/* FILTER SIDEBAR */}
-            <aside className="w-full lg:w-80 lg:flex-shrink-0">
-              <div className="bg-white rounded-2xl shadow-lg p-6 lg:sticky lg:top-24 border border-gray-100 max-h-[calc(100vh-7rem)] overflow-y-auto">
+            <aside className="w-full lg:w-72 lg:flex-shrink-0">
+              <div className="border-t border-[var(--color-ink)] pt-4 lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto">
 
                 {/* Filter Header */}
-                <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-xl font-bold text-gray-900">Filters</h3>
+                <div className="flex items-center justify-between">
+                  <h3 className="text-lg font-bold text-[var(--color-ink)]">Filters</h3>
                   {(filters.pests.length > 0 || filters.services.length > 0) && (
                     <button
                       onClick={clearFilters}
-                      className="text-sm text-blue-600 hover:text-blue-800 font-medium"
+                      className="dir-link text-sm font-semibold"
                     >
                       Clear All
                     </button>
@@ -331,136 +282,109 @@ export default function ResidentialDirectoryClient({ initialProviders }: { initi
                 </div>
 
                 {/* Results Count */}
-                <div className="mb-6 p-4 bg-blue-50 rounded-lg">
-                  <p className="text-2xl font-black text-blue-900">{filteredProvidersMemo.length}</p>
-                  <p className="text-sm text-blue-700">Providers Found</p>
-                </div>
+                <p className="mt-3 text-sm text-[var(--color-ink-soft)]">
+                  <span className="dir-num text-2xl font-bold text-[var(--color-ink)]">{filteredProvidersMemo.length}</span>{' '}
+                  Providers Found
+                </p>
 
                 {/* Pest Type Filters */}
-                <div className="mb-8">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                <fieldset className="mt-6 border-t border-[var(--color-rule)] pt-4">
+                  <legend className="float-left mb-3 w-full text-sm font-bold text-[var(--color-ink)]">
                     Pest Type
-                  </h3>
-                  <div className="space-y-2">
+                  </legend>
+                  <div className="clear-left space-y-0.5">
                     {pestFilters.map(filter => (
-                      <label key={filter.value} className="flex items-center gap-3 p-2 hover:bg-gray-50 rounded-lg cursor-pointer transition-colors">
+                      <label key={filter.value} className="flex cursor-pointer items-center gap-3 rounded-[3px] px-1 py-1.5 hover:bg-[var(--color-paper)]">
                         <input
                           type="checkbox"
                           checked={filters.pests.includes(filter.value)}
                           onChange={() => handleFilterChange('pests', filter.value)}
-                          className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                          className="h-4 w-4 rounded-[4px] border-[var(--color-rule-strong)] bg-white accent-[var(--color-ink)]"
                         />
-                        <span className="text-sm text-gray-700 flex-1">{filter.label}</span>
-                        <span className="text-xs text-gray-500 font-medium">
-                          ({getFilterCount(filter.value)})
+                        <span className="flex-1 text-sm text-[var(--color-ink-soft)]">{filter.label}</span>
+                        <span className="dir-num text-xs text-[var(--color-ink-mute)]">
+                          {getFilterCount(filter.value)}
                         </span>
                       </label>
                     ))}
                   </div>
-                </div>
+                </fieldset>
 
                 {/* Service Feature Filters */}
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                <fieldset className="mt-6 border-t border-[var(--color-rule)] pt-4">
+                  <legend className="float-left mb-3 w-full text-sm font-bold text-[var(--color-ink)]">
                     Service Features
-                  </h3>
-                  <div className="space-y-2">
+                  </legend>
+                  <div className="clear-left space-y-0.5">
                     {serviceFilters.map(filter => (
-                      <label key={filter.value} className="flex items-center gap-3 p-2 hover:bg-gray-50 rounded-lg cursor-pointer transition-colors">
+                      <label key={filter.value} className="flex cursor-pointer items-center gap-3 rounded-[3px] px-1 py-1.5 hover:bg-[var(--color-paper)]">
                         <input
                           type="checkbox"
                           checked={filters.services.includes(filter.value)}
                           onChange={() => handleFilterChange('services', filter.value)}
-                          className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                          className="h-4 w-4 rounded-[4px] border-[var(--color-rule-strong)] bg-white accent-[var(--color-ink)]"
                         />
-                        <span className="text-sm text-gray-700 flex-1">{filter.label}</span>
-                        <span className="text-xs text-gray-500 font-medium">
-                          ({getFilterCount(filter.value)})
+                        <span className="flex-1 text-sm text-[var(--color-ink-soft)]">{filter.label}</span>
+                        <span className="dir-num text-xs text-[var(--color-ink-mute)]">
+                          {getFilterCount(filter.value)}
                         </span>
                       </label>
                     ))}
                   </div>
-                </div>
+                </fieldset>
 
               </div>
             </aside>
 
-            {/* PROVIDER CARDS GRID */}
-            <main className="flex-1">
+            {/* PROVIDER LIST */}
+            <main className="min-w-0 flex-1">
+              <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+                <p className="text-sm text-[var(--color-ink-soft)]">
+                  Showing <span className="dir-num font-semibold text-[var(--color-ink)]">{filteredProvidersMemo.length}</span> providers
+                </p>
+                <label className="flex items-center gap-2 text-sm text-[var(--color-ink-soft)]">
+                  Sort
+                  <select
+                    value={sortBy}
+                    onChange={(e) => setSortBy(e.target.value)}
+                    className="h-10 rounded-[4px] border border-[var(--color-rule-strong)] bg-white px-3 text-sm font-semibold text-[var(--color-ink)] focus:border-[var(--color-ink)] focus:outline-none"
+                  >
+                    <option value="quality">By Rating</option>
+                    <option value="name">By Name (A-Z)</option>
+                  </select>
+                </label>
+              </div>
               <div data-featured-slot />
               {loading ? (
-                <div className="text-center py-12">
-                  <p className="text-gray-600">Loading providers...</p>
-                </div>
+                <FirmListEmpty>Loading providers...</FirmListEmpty>
               ) : filteredProvidersMemo.length === 0 ? (
-                <div className="text-center py-12">
-                  <p className="text-gray-600 text-lg mb-4">No providers match your filters</p>
-                  <button
-                    onClick={clearFilters}
-                    className="text-blue-600 hover:text-blue-800 font-medium"
-                  >
+                <FirmListEmpty>
+                  No providers match your filters.{' '}
+                  <button onClick={clearFilters} className="dir-link font-semibold">
                     Clear all filters
                   </button>
-                </div>
+                </FirmListEmpty>
               ) : (
-                <>
-                  <div className="flex justify-between items-center mb-8">
-                    <p className="text-gray-600 font-medium">Showing {filteredProvidersMemo.length} providers</p>
-                    <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className="px-4 py-2 border-2 border-gray-300 rounded-lg font-medium text-gray-900">
-                      <option value="quality">By Rating</option>
-                      <option value="name">By Name (A-Z)</option>
-                    </select>
-                  </div>
-                  <p className="text-sm text-gray-600 mb-6">{TROPHY_LEGEND}</p>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {filteredProvidersMemo.map(provider => {
-                    const isTrophy = isTrophyProvider(provider);
-                    const borderClass = isTrophy ? 'border-l-4 border-amber-500' : 'border-l-4 border-[#1e3a8a]';
-
-                    return (
-                      <div key={provider.canonical_id} className={`bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 ${borderClass}`}>
-                        {isTrophy && <div className="text-2xl mb-2" role="img" aria-label={TROPHY_ARIA_LABEL}>🏆</div>}
-                        <h3 className="font-bold text-base text-gray-900 mb-2 leading-tight line-clamp-2">
-                          <Link href={`/provider/${provider.slug}`} className="text-blue-600 hover:underline">
-                            {provider.name}
-                          </Link>
-                        </h3>
-                        {provider.postcode && (
-                          <div className="flex items-start gap-1 mb-2 text-xs text-gray-600">
-                            <span className="text-red-500">📍</span>
-                            <span className="line-clamp-1">{provider.postcode}</span>
-                          </div>
-                        )}
-                        {provider.google_rating && (
-                          <div className="flex items-center gap-1 mb-3">
-                            <span className="text-yellow-500">⭐</span>
-                            <span className="text-sm font-bold text-gray-900">{provider.google_rating.toFixed(1)}</span>
-                            <span className="text-xs text-gray-600">({provider.google_review_count})</span>
-                          </div>
-                        )}
-                        <div className="space-y-2">
-                          {provider.phone && (
-                            isMobile ? (
-                              <a href={`tel:${provider.phone}`} className="block text-center px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold rounded-lg whitespace-nowrap overflow-hidden text-ellipsis">
-                                📞 {provider.phone}
-                              </a>
-                            ) : (
-                              <span className="block text-center px-3 py-2 bg-blue-600 text-white text-sm font-bold rounded-lg cursor-default whitespace-nowrap overflow-hidden text-ellipsis">
-                                📞 {provider.phone}
-                              </span>
-                            )
-                          )}
-                          {provider.website && (
-                            <a href={externalHref(provider.website)} target="_blank" rel="nofollow noopener noreferrer" className="block text-center px-3 py-2 border border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 text-sm font-semibold rounded-lg">
-                              Website
-                            </a>
-                          )}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-                </>
+                <FirmList>
+                  {filteredProvidersMemo.map(provider => (
+                    <FirmListItem key={provider.canonical_id ?? provider.slug}>
+                      <FirmEntry
+                        name={provider.name}
+                        slug={provider.slug}
+                        postcode={provider.postcode}
+                        rating={provider.google_rating}
+                        reviewCount={provider.google_review_count}
+                        phone={provider.phone}
+                        websiteHref={provider.website ? externalHref(provider.website) : null}
+                        tags={[
+                          provider.service_emergency_24_7 ? '24/7 emergency' : null,
+                          provider.service_bpca_certified ? 'BPCA certified' : null,
+                          provider.service_eco_friendly ? 'Eco-friendly' : null,
+                        ].filter((t): t is string => t !== null)}
+                      />
+                    </FirmListItem>
+                  ))}
+                </FirmList>
               )}
             </main>
 
@@ -469,166 +393,171 @@ export default function ResidentialDirectoryClient({ initialProviders }: { initi
       </section>
 
       {/* FIND SPECIALISTS BY PEST TYPE */}
-      <section className="bg-gradient-to-br from-blue-50 to-white border-t-2 border-blue-200 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-black text-gray-900 mb-2">Find Specialists by Pest Type</h2>
-            <p className="text-gray-600">Browse Derby providers who specialise in specific pests</p>
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
-            <Link href="/pest-control/derby/rats" className="flex items-center justify-center gap-2 px-4 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all font-semibold text-sm text-gray-800">🐀 Rats</Link>
-            <Link href="/pest-control/derby/mice" className="flex items-center justify-center gap-2 px-4 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all font-semibold text-sm text-gray-800">🐁 Mice</Link>
-            <Link href="/pest-control/derby/wasps" className="flex items-center justify-center gap-2 px-4 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all font-semibold text-sm text-gray-800">🐝 Wasps</Link>
-            <Link href="/pest-control/derby/bed-bugs" className="flex items-center justify-center gap-2 px-4 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all font-semibold text-sm text-gray-800">🛏️ Bed Bugs</Link>
-            <Link href="/pest-control/derby/cockroaches" className="flex items-center justify-center gap-2 px-4 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all font-semibold text-sm text-gray-800">🪳 Cockroaches</Link>
-            <Link href="/pest-control/derby/ants" className="flex items-center justify-center gap-2 px-4 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all font-semibold text-sm text-gray-800">🐜 Ants</Link>
-            <Link href="/pest-control/derby/fleas" className="flex items-center justify-center gap-2 px-4 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all font-semibold text-sm text-gray-800">🦟 Fleas</Link>
-            <Link href="/pest-control/derby/foxes" className="flex items-center justify-center gap-2 px-4 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all font-semibold text-sm text-gray-800">🦊 Foxes</Link>
-            <Link href="/pest-control/derby/moths" className="flex items-center justify-center gap-2 px-4 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all font-semibold text-sm text-gray-800">🦋 Moths</Link>
-            <Link href="/pest-control/derby/pigeons" className="flex items-center justify-center gap-2 px-4 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all font-semibold text-sm text-gray-800">🐦 Pigeons</Link>
-          </div>
+      <section className="border-t border-[var(--color-rule-strong)] bg-[var(--color-stock)] py-14">
+        <div className="dir-wrap">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">Find Specialists by Pest Type</h2>
+          <p className="mt-2 text-[var(--color-ink-soft)]">Browse Derby providers who specialise in specific pests</p>
+          <ul className="mt-6 columns-2 gap-x-8 border-t border-[var(--color-rule-strong)] sm:columns-3 md:columns-5 [&>li]:break-inside-avoid">
+            <li className="border-b border-[var(--color-rule)] py-2.5">
+              <Link href="/pest-control/derby/rats" className="dir-link font-semibold">Rats</Link>
+            </li>
+            <li className="border-b border-[var(--color-rule)] py-2.5">
+              <Link href="/pest-control/derby/mice" className="dir-link font-semibold">Mice</Link>
+            </li>
+            <li className="border-b border-[var(--color-rule)] py-2.5">
+              <Link href="/pest-control/derby/wasps" className="dir-link font-semibold">Wasps</Link>
+            </li>
+            <li className="border-b border-[var(--color-rule)] py-2.5">
+              <Link href="/pest-control/derby/bed-bugs" className="dir-link font-semibold">Bed Bugs</Link>
+            </li>
+            <li className="border-b border-[var(--color-rule)] py-2.5">
+              <Link href="/pest-control/derby/cockroaches" className="dir-link font-semibold">Cockroaches</Link>
+            </li>
+            <li className="border-b border-[var(--color-rule)] py-2.5">
+              <Link href="/pest-control/derby/ants" className="dir-link font-semibold">Ants</Link>
+            </li>
+            <li className="border-b border-[var(--color-rule)] py-2.5">
+              <Link href="/pest-control/derby/fleas" className="dir-link font-semibold">Fleas</Link>
+            </li>
+            <li className="border-b border-[var(--color-rule)] py-2.5">
+              <Link href="/pest-control/derby/foxes" className="dir-link font-semibold">Foxes</Link>
+            </li>
+            <li className="border-b border-[var(--color-rule)] py-2.5">
+              <Link href="/pest-control/derby/moths" className="dir-link font-semibold">Moths</Link>
+            </li>
+            <li className="border-b border-[var(--color-rule)] py-2.5">
+              <Link href="/pest-control/derby/pigeons" className="dir-link font-semibold">Pigeons</Link>
+            </li>
+          </ul>
         </div>
       </section>
 
       {/* DIY GUIDES */}
-      <section className="bg-white border-t border-gray-200 py-8">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-gray-900 font-bold mb-2">DIY First? Read Our Guides</p>
-          <p className="text-gray-600 text-sm mb-4">Expert advice to help you tackle pest problems yourself</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/guides/how-to-get-rid-of-rats" className="text-blue-600 hover:underline font-semibold text-sm">
-              How to Get Rid of Rats →
-            </Link>
-            <Link href="/best/rat-traps" className="text-blue-600 hover:underline font-semibold text-sm">
-              Best Rat Traps UK 2026 →
-            </Link>
-            <Link href="/guides/how-to-get-rid-of-mice" className="text-blue-600 hover:underline font-semibold text-sm">
-              How to Get Rid of Mice →
-            </Link>
-            <Link href="/best/mouse-traps" className="text-blue-600 hover:underline font-semibold text-sm">
-              Best Mouse Traps UK 2026 →
-            </Link>
-            <Link href="/guides/wasp-nest-removal" className="text-blue-600 hover:underline font-semibold text-sm">
-              Wasp Nest Removal Guide →
-            </Link>
-            <Link href="/best/wasp-killers" className="text-blue-600 hover:underline font-semibold text-sm">
-              Best Wasp Killers UK 2026 →
-            </Link>
-            <Link href="/guides/how-to-get-rid-of-bed-bugs" className="text-blue-600 hover:underline font-semibold text-sm">
-              How to Get Rid of Bed Bugs →
-            </Link>
-            <Link href="/best/bed-bug-treatments" className="text-blue-600 hover:underline font-semibold text-sm">
-              Best Bed Bug Treatments UK 2026 →
-            </Link>
-            <Link href="/guides/how-to-get-rid-of-cockroaches" className="text-blue-600 hover:underline font-semibold text-sm">
-              How to Get Rid of Cockroaches →
-            </Link>
-            <Link href="/best/cockroach-killers" className="text-blue-600 hover:underline font-semibold text-sm">
-              Best Cockroach Killers UK 2026 →
-            </Link>
-            <Link href="/guides/how-to-get-rid-of-fleas" className="text-blue-600 hover:underline font-semibold text-sm">
-              How to Get Rid of Fleas →
-            </Link>
-            <Link href="/best/flea-treatments" className="text-blue-600 hover:underline font-semibold text-sm">
-              Best Flea Treatments UK 2026 →
-            </Link>
-            <Link href="/guides/how-to-get-rid-of-ants" className="text-blue-600 hover:underline font-semibold text-sm">
-              How to Get Rid of Ants →
-            </Link>
-            <Link href="/best/ant-killers" className="text-blue-600 hover:underline font-semibold text-sm">
-              Best Ant Killers UK 2026 →
-            </Link>
-            <Link href="/guides/how-to-get-rid-of-squirrels" className="text-blue-600 hover:underline font-semibold text-sm">
-              How to Get Rid of Squirrels →
-            </Link>
-            <Link href="/best/squirrel-deterrents" className="text-blue-600 hover:underline font-semibold text-sm">
-              Best Squirrel Deterrents UK 2026 →
-            </Link>
-            <Link href="/guides/pigeon-control" className="text-blue-600 hover:underline font-semibold text-sm">
-              Pigeon Control Guide →
-            </Link>
-            <Link href="/best/bird-deterrents" className="text-blue-600 hover:underline font-semibold text-sm">
-              Best Bird Deterrents UK 2026 →
-            </Link>
-            <Link href="/guides/how-to-get-rid-of-moths" className="text-blue-600 hover:underline font-semibold text-sm">
-              How to Get Rid of Moths →
-            </Link>
-            <Link href="/best/moth-killers" className="text-blue-600 hover:underline font-semibold text-sm">
-              Best Moth Killers UK →
-            </Link>
-          </div>
+      <section className="border-t border-[var(--color-rule-strong)] bg-[var(--color-stock)] py-12">
+        <div className="dir-wrap">
+          <p className="text-lg font-bold text-[var(--color-ink)]">DIY First? Read Our Guides</p>
+          <p className="mt-1 text-sm text-[var(--color-ink-soft)]">Expert advice to help you tackle pest problems yourself</p>
+          <ul className="mt-5 columns-1 gap-x-8 border-t border-[var(--color-rule-strong)] text-sm sm:columns-2 lg:columns-3 [&>li]:break-inside-avoid">
+            <li className="border-b border-[var(--color-rule)] py-2.5">
+              <Link href="/guides/how-to-get-rid-of-rats" className="dir-link font-semibold">How to Get Rid of Rats</Link>
+            </li>
+            <li className="border-b border-[var(--color-rule)] py-2.5">
+              <Link href="/best/rat-traps" className="dir-link font-semibold">Best Rat Traps UK 2026</Link>
+            </li>
+            <li className="border-b border-[var(--color-rule)] py-2.5">
+              <Link href="/guides/how-to-get-rid-of-mice" className="dir-link font-semibold">How to Get Rid of Mice</Link>
+            </li>
+            <li className="border-b border-[var(--color-rule)] py-2.5">
+              <Link href="/best/mouse-traps" className="dir-link font-semibold">Best Mouse Traps UK 2026</Link>
+            </li>
+            <li className="border-b border-[var(--color-rule)] py-2.5">
+              <Link href="/guides/wasp-nest-removal" className="dir-link font-semibold">Wasp Nest Removal Guide</Link>
+            </li>
+            <li className="border-b border-[var(--color-rule)] py-2.5">
+              <Link href="/best/wasp-killers" className="dir-link font-semibold">Best Wasp Killers UK 2026</Link>
+            </li>
+            <li className="border-b border-[var(--color-rule)] py-2.5">
+              <Link href="/guides/how-to-get-rid-of-bed-bugs" className="dir-link font-semibold">How to Get Rid of Bed Bugs</Link>
+            </li>
+            <li className="border-b border-[var(--color-rule)] py-2.5">
+              <Link href="/best/bed-bug-treatments" className="dir-link font-semibold">Best Bed Bug Treatments UK 2026</Link>
+            </li>
+            <li className="border-b border-[var(--color-rule)] py-2.5">
+              <Link href="/guides/how-to-get-rid-of-cockroaches" className="dir-link font-semibold">How to Get Rid of Cockroaches</Link>
+            </li>
+            <li className="border-b border-[var(--color-rule)] py-2.5">
+              <Link href="/best/cockroach-killers" className="dir-link font-semibold">Best Cockroach Killers UK 2026</Link>
+            </li>
+            <li className="border-b border-[var(--color-rule)] py-2.5">
+              <Link href="/guides/how-to-get-rid-of-fleas" className="dir-link font-semibold">How to Get Rid of Fleas</Link>
+            </li>
+            <li className="border-b border-[var(--color-rule)] py-2.5">
+              <Link href="/best/flea-treatments" className="dir-link font-semibold">Best Flea Treatments UK 2026</Link>
+            </li>
+            <li className="border-b border-[var(--color-rule)] py-2.5">
+              <Link href="/guides/how-to-get-rid-of-ants" className="dir-link font-semibold">How to Get Rid of Ants</Link>
+            </li>
+            <li className="border-b border-[var(--color-rule)] py-2.5">
+              <Link href="/best/ant-killers" className="dir-link font-semibold">Best Ant Killers UK 2026</Link>
+            </li>
+            <li className="border-b border-[var(--color-rule)] py-2.5">
+              <Link href="/guides/how-to-get-rid-of-squirrels" className="dir-link font-semibold">How to Get Rid of Squirrels</Link>
+            </li>
+            <li className="border-b border-[var(--color-rule)] py-2.5">
+              <Link href="/best/squirrel-deterrents" className="dir-link font-semibold">Best Squirrel Deterrents UK 2026</Link>
+            </li>
+            <li className="border-b border-[var(--color-rule)] py-2.5">
+              <Link href="/guides/pigeon-control" className="dir-link font-semibold">Pigeon Control Guide</Link>
+            </li>
+            <li className="border-b border-[var(--color-rule)] py-2.5">
+              <Link href="/best/bird-deterrents" className="dir-link font-semibold">Best Bird Deterrents UK 2026</Link>
+            </li>
+            <li className="border-b border-[var(--color-rule)] py-2.5">
+              <Link href="/guides/how-to-get-rid-of-moths" className="dir-link font-semibold">How to Get Rid of Moths</Link>
+            </li>
+            <li className="border-b border-[var(--color-rule)] py-2.5">
+              <Link href="/best/moth-killers" className="dir-link font-semibold">Best Moth Killers UK</Link>
+            </li>
+          </ul>
         </div>
       </section>
 
       {/* CROSS-LINKING */}
-      <section className="bg-gray-50 border-t border-gray-200 py-12">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-gray-700 mb-4">
-            Also compare pest control providers in{' '}
-            <Link href="/residential" className="text-blue-600 hover:underline font-semibold">
-              London Residential
-            </Link>
-            {' | '}
-            <Link href="/commercial" className="text-blue-600 hover:underline font-semibold">
-              London Commercial
-            </Link>
-            {' | '}
-            <Link href="/birmingham/residential" className="text-blue-600 hover:underline font-semibold">
-              Birmingham Residential
-            </Link>
-            {' | '}
-            <Link href="/bradford/residential" className="text-blue-600 hover:underline font-semibold">
-              Bradford Residential
-            </Link>
-            {' | '}
-            <Link href="/brighton/residential" className="text-blue-600 hover:underline font-semibold">
-              Brighton Residential
-            </Link>
-            {' | '}
-            <Link href="/bristol/residential" className="text-blue-600 hover:underline font-semibold">
-              Bristol Residential
-            </Link>
-            {' | '}
-            <Link href="/cardiff/residential" className="text-blue-600 hover:underline font-semibold">
-              Cardiff Residential
-            </Link>
-            {' | '}
-            <Link href="/edinburgh/residential" className="text-blue-600 hover:underline font-semibold">
-              Edinburgh Residential
-            </Link>
-            {' | '}
-            <Link href="/glasgow/residential" className="text-blue-600 hover:underline font-semibold">
-              Glasgow Residential
-            </Link>
-            {' | '}
-            <Link href="/leeds/residential" className="text-blue-600 hover:underline font-semibold">
-              Leeds Residential
-            </Link>
-            {' | '}
-            <Link href="/leicester/residential" className="text-blue-600 hover:underline font-semibold">
-              Leicester Residential
-            </Link>
-            {' | '}
-            <Link href="/liverpool/residential" className="text-blue-600 hover:underline font-semibold">
-              Liverpool Residential
-            </Link>
-            {' | '}
-            <Link href="/manchester/residential" className="text-blue-600 hover:underline font-semibold">
-              Manchester Residential
-            </Link>
-            {' | '}
-            <Link href="/newcastle/residential" className="text-blue-600 hover:underline font-semibold">
-              Newcastle Residential
-            </Link>
-            {' | '}
-            <Link href="/nottingham/residential" className="text-blue-600 hover:underline font-semibold">
-              Nottingham Residential
-            </Link>
-            {' | '}
-            <Link href="/sheffield/residential" className="text-blue-600 hover:underline font-semibold">
-              Sheffield Residential
-            </Link>
-          </p>
+      <section className="border-t border-[var(--color-rule)] bg-[var(--color-paper)] py-8">
+        <div className="dir-wrap">
+          <div className="flex flex-col gap-3 md:flex-row md:items-baseline md:gap-6">
+            <p className="text-sm text-[var(--color-ink-soft)]">Also compare pest control providers in</p>
+            <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
+              <li>
+                <Link href="/residential" className="dir-link font-semibold">London Residential</Link>
+              </li>
+              <li>
+                <Link href="/commercial" className="dir-link font-semibold">London Commercial</Link>
+              </li>
+              <li>
+                <Link href="/birmingham/residential" className="dir-link font-semibold">Birmingham Residential</Link>
+              </li>
+              <li>
+                <Link href="/bradford/residential" className="dir-link font-semibold">Bradford Residential</Link>
+              </li>
+              <li>
+                <Link href="/brighton/residential" className="dir-link font-semibold">Brighton Residential</Link>
+              </li>
+              <li>
+                <Link href="/bristol/residential" className="dir-link font-semibold">Bristol Residential</Link>
+              </li>
+              <li>
+                <Link href="/cardiff/residential" className="dir-link font-semibold">Cardiff Residential</Link>
+              </li>
+              <li>
+                <Link href="/edinburgh/residential" className="dir-link font-semibold">Edinburgh Residential</Link>
+              </li>
+              <li>
+                <Link href="/glasgow/residential" className="dir-link font-semibold">Glasgow Residential</Link>
+              </li>
+              <li>
+                <Link href="/leeds/residential" className="dir-link font-semibold">Leeds Residential</Link>
+              </li>
+              <li>
+                <Link href="/leicester/residential" className="dir-link font-semibold">Leicester Residential</Link>
+              </li>
+              <li>
+                <Link href="/liverpool/residential" className="dir-link font-semibold">Liverpool Residential</Link>
+              </li>
+              <li>
+                <Link href="/manchester/residential" className="dir-link font-semibold">Manchester Residential</Link>
+              </li>
+              <li>
+                <Link href="/newcastle/residential" className="dir-link font-semibold">Newcastle Residential</Link>
+              </li>
+              <li>
+                <Link href="/nottingham/residential" className="dir-link font-semibold">Nottingham Residential</Link>
+              </li>
+              <li>
+                <Link href="/sheffield/residential" className="dir-link font-semibold">Sheffield Residential</Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 

@@ -7,13 +7,13 @@ import { HONEYPOT_FIELD } from '@/lib/providerSubmissions';
 import ListingBadge from '@/components/listing/ListingBadge';
 
 const inputClass =
-  'w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-600 text-gray-900';
-const labelClass = 'block text-sm font-bold text-gray-900 mb-2';
+  'w-full px-4 border border-[var(--color-rule-strong)] rounded-[4px] bg-white focus:outline-none focus:border-[var(--color-ink)] text-[var(--color-ink)]';
+const labelClass = 'block text-sm font-bold text-[var(--color-ink)] mb-2';
 
 function FieldError({ message }: { message?: string }) {
   if (!message) return null;
   return (
-    <p className="mt-2 text-sm font-semibold text-red-600 flex items-center gap-1.5">
+    <p className="mt-2 text-sm font-semibold text-[var(--color-warn)] flex items-center gap-1.5">
       <AlertCircle className="w-4 h-4 flex-shrink-0" />
       {message}
     </p>
@@ -85,15 +85,15 @@ export default function ClaimForm({
 
   if (!slug) {
     return (
-      <div className="max-w-xl mx-auto px-4 py-16">
-        <div className="bg-white rounded-2xl border-2 border-gray-200 p-8 shadow-lg">
-          <h1 className="text-3xl font-black text-gray-900 mb-4">Claim a listing</h1>
-          <p className="text-gray-700 mb-6">
+      <div className="dir-wrap max-w-2xl py-12 md:py-16">
+        <div className="border-t border-[var(--color-ink)] pt-8">
+          <h1 className="dir-display text-5xl text-[var(--color-ink)] mb-5">Claim a listing</h1>
+          <p className="text-[var(--color-ink-soft)] leading-relaxed mb-6">
             {notFound
               ? 'We could not find an active listing for that link. Open the claim link from the provider page.'
               : 'Open this page from the listing itself. Every provider page has a link that says “Is this your business? Claim this listing”.'}
           </p>
-          <Link href="/professionals" className="text-blue-600 font-semibold hover:underline">
+          <Link href="/professionals" className="dir-link font-semibold">
             Back to For Professionals
           </Link>
         </div>
@@ -103,11 +103,11 @@ export default function ClaimForm({
 
   if (submitted) {
     return (
-      <div className="max-w-xl mx-auto px-4 py-16">
-        <div className="bg-white rounded-2xl border-2 border-green-200 p-10 shadow-lg text-center">
-          <CheckCircle className="w-14 h-14 text-green-500 mx-auto mb-4" />
-          <h1 className="text-3xl font-black text-gray-900 mb-3">Claim received</h1>
-          <p className="text-gray-700">
+      <div className="dir-wrap max-w-2xl py-12 md:py-16">
+        <div className="border-t border-[var(--color-ink)] pt-8">
+          <CheckCircle className="w-10 h-10 text-[var(--color-ok)] mb-4" />
+          <h1 className="dir-display text-5xl text-[var(--color-ink)] mb-5">Claim received</h1>
+          <p className="text-[var(--color-ink-soft)] leading-relaxed">
             Thanks. We will email {email.trim()} if we need anything else. Claiming is free. It only
             confirms that you run this business. It does not check qualifications, and it does not
             buy a Featured slot. Nothing on the listing changes until we have looked at it.
@@ -119,10 +119,10 @@ export default function ClaimForm({
   }
 
   return (
-    <div className="max-w-xl mx-auto px-4 py-16">
-      <div className="bg-white rounded-2xl border-2 border-gray-200 p-8 shadow-lg">
-        <h1 className="text-3xl font-black text-gray-900 mb-3">Claim this listing</h1>
-        <p className="text-gray-700 mb-2">
+    <div className="dir-wrap max-w-2xl py-12 md:py-16">
+      <div className="border-t border-[var(--color-ink)] pt-8">
+        <h1 className="dir-display text-5xl text-[var(--color-ink)] mb-5">Claim this listing</h1>
+        <p className="text-[var(--color-ink)] mb-2">
           {providerName ? (
             <>
               You are claiming <strong>{providerName}</strong>.
@@ -131,7 +131,7 @@ export default function ClaimForm({
             'Tell us this listing is yours.'
           )}
         </p>
-        <p className="text-gray-600 text-sm mb-8">
+        <p className="text-[var(--color-ink-soft)] text-sm leading-relaxed mb-8">
           Claiming is free. It only confirms that you run this business. We do not check
           qualifications, and it does not buy a Featured slot. Nothing on the listing changes until
           we have looked at it. No lead fees, ever.
@@ -146,7 +146,7 @@ export default function ClaimForm({
           autoComplete="email"
           value={email}
           onChange={(event) => setEmail(event.target.value)}
-          className={inputClass}
+          className={`${inputClass} h-12`}
         />
         <FieldError message={fieldErrors.email || fieldErrors.slug} />
 
@@ -159,7 +159,7 @@ export default function ClaimForm({
           onChange={(event) => setMessage(event.target.value)}
           maxLength={1000}
           rows={4}
-          className={inputClass}
+          className={`${inputClass} py-3`}
           placeholder="For example, the best email or phone number to reach you on."
         />
         <FieldError message={fieldErrors.message} />
@@ -188,13 +188,13 @@ export default function ClaimForm({
           />
         </div>
 
-        {submitError && <p className="mt-6 text-sm font-semibold text-red-600">{submitError}</p>}
+        {submitError && <p className="mt-6 text-sm font-semibold text-[var(--color-warn)]">{submitError}</p>}
 
         <button
           type="button"
           onClick={handleSubmit}
           disabled={submitting}
-          className="mt-8 block w-full text-center px-6 py-4 bg-blue-600 text-white font-bold text-lg rounded-xl hover:bg-blue-700 disabled:opacity-60"
+          className="dir-btn dir-btn-ink mt-8 w-full h-12 text-base disabled:opacity-60"
         >
           {submitting ? (
             <span className="flex items-center justify-center gap-2">

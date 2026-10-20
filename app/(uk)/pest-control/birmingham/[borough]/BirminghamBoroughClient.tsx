@@ -1,12 +1,14 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { isTrophyProvider, TROPHY_LEGEND, TROPHY_ARIA_LABEL } from '@/lib/trophy';
-import { externalHref } from '@/lib/externalUrl';
 import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
+import { externalHref } from '@/lib/externalUrl';
 import Navigation from '@/components/Navigation';
 import CityPestLinks from '@/components/CityPestLinks';
 import AlsoCovering from '@/components/listing/AlsoCovering';
+import AreaHead, { LocalOnlyNote } from '@/components/directory/AreaHead';
+import FirmEntry from '@/components/directory/FirmEntry';
+import { FirmList, FirmListItem, FirmListEmpty } from '@/components/directory/FirmList';
 import { cityDirectoryHref } from '@/lib/seo';
 import type { BirminghamBoroughData } from '../birmingham-boroughs';
 
@@ -30,161 +32,122 @@ interface Provider {
   service_bpca_certified: boolean;
 }
 
+// Provider-stated service facts only, shown as small tags on each entry.
+function serviceTags(provider: Provider): string[] {
+  const tags: string[] = [];
+  if (provider.service_emergency_24_7) tags.push('24/7 emergency');
+  if (provider.service_bpca_certified) tags.push('BPCA certified');
+  if (provider.service_eco_friendly) tags.push('Eco-friendly');
+  return tags;
+}
+
 export default function BirminghamBoroughClient({ borough, initialProviders, alsoCovering = [] }: { borough: BirminghamBoroughData; initialProviders: Provider[]; alsoCovering?: { canonical_id?: number; name: string; slug: string; postcode: string | null; phone: string | null; website: string | null; google_rating: number | null; google_review_count: number | null; baseLabel: string }[] }) {
   // Providers are fetched server-side and passed in as a prop so the full list
   // is present in the initial HTML.
   const providers = initialProviders;
-  const loading = false;
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[var(--color-stock)]">
       <Navigation />
 
-      <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 text-sm text-gray-500">
-        <Link href="/" className="hover:text-blue-600">Home</Link>
-        <span className="mx-2">/</span>
-        <Link href="/pest-control" className="hover:text-blue-600">Pest Control</Link>
-        <span className="mx-2">/</span>
-        <Link href={cityDirectoryHref('birmingham')} className="hover:text-blue-600">Birmingham</Link>
-        <span className="mx-2">/</span>
-        <span className="text-gray-700">{borough.name}</span>
-      </nav>
-
-      {/* HERO */}
-      <section className="relative h-[400px] overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050812]/70 via-[#1e3a8a]/60 to-[#050812]/70"></div>
-        </div>
-        <div className="relative h-full flex flex-col items-center justify-center text-center text-white px-4">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 max-w-3xl drop-shadow-lg" style={{ textShadow: '0 4px 6px rgba(0,0,0,0.3)' }}>
-            Pest Control in {borough.name}
-          </h1>
-          <p className="text-lg sm:text-xl md:text-2xl font-bold mb-4 max-w-2xl drop-shadow-lg" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>
-            {providers.length} {providers.length === 1 ? 'firm' : 'firms'} based in {borough.name}{alsoCovering.length > 0 ? ` · ${alsoCovering.length} ${alsoCovering.length === 1 ? 'firm' : 'firms'} also covering ${borough.name}` : ''}
-          </p>
-          <p className="text-sm sm:text-base md:text-lg font-semibold max-w-2xl drop-shadow-lg" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>
-            West Midlands &middot; Independent local firms &middot; No national chains &middot; No lead fees &middot; No commissions
-          </p>
-        </div>
-      </section>
+      <AreaHead
+        crumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Pest Control', href: '/pest-control' },
+          { label: 'Birmingham', href: cityDirectoryHref('birmingham') },
+          { label: borough.name },
+        ]}
+        tab="West Midlands"
+        title={<>Pest Control in {borough.name}</>}
+        standfirst={
+          <>
+            <span className="dir-num">{providers.length}</span> {providers.length === 1 ? 'firm' : 'firms'} based in {borough.name}
+            {alsoCovering.length > 0 && (
+              <>
+                {' · '}
+                <span className="dir-num">{alsoCovering.length}</span> {alsoCovering.length === 1 ? 'firm' : 'firms'} also covering {borough.name}
+              </>
+            )}
+          </>
+        }
+      >
+        <p className="text-[0.9375rem] font-semibold text-[var(--color-ink)]">
+          Independent local firms · No national chains · No lead fees · No commissions
+        </p>
+      </AreaHead>
 
       {/* INTRO & COMMON PESTS */}
-      <section className="py-16 bg-gradient-to-br from-blue-50 to-white border-b-2 border-blue-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-lg text-gray-700 leading-relaxed mb-8">
+      <section className="bg-[var(--color-stock)]">
+        <div className="dir-wrap grid gap-10 py-14 md:py-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.8fr)] lg:gap-16">
+          <p className="max-w-[68ch] text-lg leading-relaxed text-[var(--color-ink-soft)]">
             {borough.intro}
           </p>
-          <div className="bg-white rounded-2xl shadow-lg p-8 border-l-4 border-[#1e3a8a]">
-            <h2 className="text-2xl font-black text-gray-900 mb-4">Common Pests in {borough.name}</h2>
-            <p className="text-gray-700 leading-relaxed">{borough.commonPests}</p>
+          <div className="border-t border-[var(--color-rule-strong)] pt-6">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">Common Pests in {borough.name}</h2>
+            <p className="mt-4 max-w-[68ch] leading-relaxed text-[var(--color-ink-soft)]">{borough.commonPests}</p>
           </div>
         </div>
       </section>
 
-      {/* PROVIDER CARDS */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-gray-900 mb-4">
-              Pest Control Providers Serving {borough.name}
-            </h2>
-            <p className="text-sm text-gray-600 mb-4 max-w-3xl mx-auto">We only list independent, local pest controllers who serve this area. National chains are not included, so this isn’t every firm that covers {borough.name}, just the local ones.</p>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Firms with a postcode in {borough.name}, sorted by rating
-            </p>
+      {/* PROVIDERS */}
+      <section className="border-t border-[var(--color-rule)] bg-[var(--color-stock)]">
+        <div className="dir-wrap py-14 md:py-16">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[var(--color-ink)] md:text-3xl">
+            Pest Control Providers Serving {borough.name}
+          </h2>
+          <div className="mt-4">
+            <LocalOnlyNote>We only list independent, local pest controllers who serve this area. National chains are not included, so this isn’t every firm that covers {borough.name}, just the local ones.</LocalOnlyNote>
           </div>
+          <p className="mb-6 mt-3 text-sm text-[var(--color-ink-mute)]">
+            Firms with a postcode in {borough.name}, sorted by rating
+          </p>
 
           <div data-featured-slot />
-          {loading ? (
-            <div className="text-center py-12">
-              <p className="text-gray-600">Loading providers...</p>
-            </div>
-          ) : providers.length === 0 ? (
-            <div className="text-center py-12">
-              <p className="text-gray-600 text-lg">No firm with a postcode in this area is listed yet.</p>
-            </div>
+          {providers.length === 0 ? (
+            <FirmListEmpty>No firm with a postcode in this area is listed yet.</FirmListEmpty>
           ) : (
-            <>
-              <p className="text-gray-600 font-medium mb-8">Showing {providers.length} providers sorted by rating</p>
-              <p className="text-sm text-gray-600 mb-6">{TROPHY_LEGEND}</p>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {providers.map(provider => {
-                  const isTrophy = isTrophyProvider(provider);
-                  const borderClass = isTrophy ? 'border-l-4 border-amber-500' : 'border-l-4 border-[#1e3a8a]';
-
-                  return (
-                    <div key={provider.canonical_id} className={`bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 ${borderClass}`}>
-                      {isTrophy && <div className="text-2xl mb-2" role="img" aria-label={TROPHY_ARIA_LABEL}>🏆</div>}
-                      <h3 className="font-bold text-base text-gray-900 mb-2 leading-tight line-clamp-2">
-                        <Link href={`/provider/${provider.slug}`} className="text-blue-600 hover:underline">
-                          {provider.name}
-                        </Link>
-                      </h3>
-                      {provider.postcode && (
-                        <div className="flex items-start gap-1 mb-2 text-xs text-gray-600">
-                          <span className="text-red-500">📍</span>
-                          <span className="line-clamp-1">{provider.postcode}</span>
-                        </div>
-                      )}
-                      {provider.google_rating && (
-                        <div className="flex items-center gap-1 mb-3">
-                          <span className="text-yellow-500">⭐</span>
-                          <span className="text-sm font-bold text-gray-900">{provider.google_rating.toFixed(1)}</span>
-                          <span className="text-xs text-gray-600">({provider.google_review_count})</span>
-                        </div>
-                      )}
-                      <div className="space-y-2">
-                        {provider.phone && (
-                          isMobile ? (
-                            <a href={`tel:${provider.phone}`} className="block text-center px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold rounded-lg whitespace-nowrap overflow-hidden text-ellipsis">
-                              📞 {provider.phone}
-                            </a>
-                          ) : (
-                            <span className="block text-center px-3 py-2 bg-blue-600 text-white text-sm font-bold rounded-lg cursor-default whitespace-nowrap overflow-hidden text-ellipsis">
-                              📞 {provider.phone}
-                            </span>
-                          )
-                        )}
-                        {provider.website && (
-                          <a href={externalHref(provider.website)} target="_blank" rel="nofollow noopener noreferrer" className="block text-center px-3 py-2 border border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 text-sm font-semibold rounded-lg">
-                            Website
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </>
+            <FirmList>
+              {providers.map((provider) => (
+                <FirmListItem key={provider.canonical_id ?? provider.slug}>
+                  <FirmEntry
+                    name={provider.name}
+                    slug={provider.slug}
+                    postcode={provider.postcode}
+                    rating={provider.google_rating}
+                    reviewCount={provider.google_review_count}
+                    phone={provider.phone}
+                    websiteHref={provider.website ? externalHref(provider.website) : null}
+                    tags={serviceTags(provider)}
+                  />
+                </FirmListItem>
+              ))}
+            </FirmList>
           )}
           <AlsoCovering firms={alsoCovering} placeName={borough.name} />
         </div>
       </section>
 
       {/* BACK LINK & CROSS-LINKING */}
-      <section className="bg-gray-50 border-t border-gray-200 py-12">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-gray-700 mb-4">
-            <Link href="/birmingham/residential" className="text-blue-600 hover:underline font-semibold">
-              &larr; Back to Birmingham Residential
-            </Link>
-            {' | '}
-            <Link href="/birmingham/commercial" className="text-blue-600 hover:underline font-semibold">
-              Birmingham Commercial
-            </Link>
-            {' | '}
-            <Link href="/pest-control/west-midlands" className="text-blue-600 hover:underline font-semibold">
-              West Midlands Region
-            </Link>
-          </p>
+      <section className="border-t border-[var(--color-rule)] bg-[var(--color-paper)]">
+        <div className="dir-wrap py-8">
+          <ul className="flex flex-wrap items-center gap-x-8 gap-y-3 text-[0.9375rem]">
+            <li>
+              <Link href="/birmingham/residential" className="dir-link inline-flex items-center gap-1.5 font-semibold">
+                <ArrowLeft aria-hidden="true" className="h-4 w-4" strokeWidth={2} />
+                Back to Birmingham Residential
+              </Link>
+            </li>
+            <li>
+              <Link href="/birmingham/commercial" className="dir-link font-semibold">
+                Birmingham Commercial
+              </Link>
+            </li>
+            <li>
+              <Link href="/pest-control/west-midlands" className="dir-link font-semibold">
+                West Midlands Region
+              </Link>
+            </li>
+          </ul>
         </div>
       </section>
 

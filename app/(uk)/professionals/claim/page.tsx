@@ -21,7 +21,7 @@ export default async function ClaimPage({
   const provider = slug ? await getActiveProviderBySlug(slug) : null;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white">
+    <div className="min-h-screen bg-[var(--color-stock)]">
       <Navigation />
       <ClaimForm
         slug={provider?.slug || ''}

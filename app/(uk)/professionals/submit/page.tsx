@@ -16,15 +16,15 @@ import {
 } from '@/lib/providerSubmissions';
 
 const inputClass =
-  'w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-600 text-gray-900';
-const labelClass = 'block text-sm font-bold text-gray-900 mb-2';
-const sectionClass = 'bg-white rounded-2xl shadow-lg border-2 border-gray-200 p-8 md:p-10';
-const sectionHeading = 'text-2xl font-bold text-gray-900 mb-6';
+  'w-full h-12 px-4 border border-[var(--color-rule-strong)] rounded-[4px] bg-white focus:outline-none focus:border-[var(--color-ink)] text-[var(--color-ink)]';
+const labelClass = 'block text-sm font-bold text-[var(--color-ink)] mb-2';
+const sectionClass = 'border-t border-[var(--color-ink)] pt-6 pb-4';
+const sectionHeading = 'text-2xl md:text-3xl font-bold tracking-[-0.01em] text-[var(--color-ink)] mb-6';
 
 function FieldError({ message }: { message?: string }) {
   if (!message) return null;
   return (
-    <p className="mt-2 text-sm font-semibold text-red-600 flex items-center gap-1.5">
+    <p className="mt-2 text-sm font-semibold text-[var(--color-warn)] flex items-center gap-1.5">
       <AlertCircle className="w-4 h-4 flex-shrink-0" />
       {message}
     </p>
@@ -141,24 +141,24 @@ function SubmitForm() {
 
   if (submitted) {
     return (
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="bg-white rounded-2xl border-2 border-green-200 p-12 shadow-lg text-center">
-          <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-6" />
-          <h2 className="text-3xl font-black text-gray-900 mb-4">Submission Received</h2>
-          <p className="text-lg text-gray-700 mb-8">
+      <div className="dir-wrap max-w-3xl py-16 md:py-20">
+        <div className="border-t border-[var(--color-ink)] pt-8">
+          <CheckCircle className="w-10 h-10 text-[var(--color-ok)] mb-4" />
+          <h2 className="dir-display text-5xl text-[var(--color-ink)] mb-5">Submission received</h2>
+          <p className="text-lg text-[var(--color-ink-soft)] leading-relaxed mb-8">
             Thanks, {name.trim()}. We&apos;ve got your details and will review your listing
             shortly. If we need anything else, we&apos;ll be in touch.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3">
             <Link
               href="/professionals"
-              className="inline-block px-6 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-all"
+              className="dir-btn dir-btn-ink"
             >
               Back to Professionals
             </Link>
             <Link
               href="/"
-              className="inline-block px-6 py-3 border-2 border-gray-300 text-gray-700 font-bold rounded-lg hover:bg-gray-50 transition-all"
+              className="dir-btn dir-btn-line"
             >
               Back to Home
             </Link>
@@ -169,14 +169,14 @@ function SubmitForm() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-8">
+    <div className="dir-wrap max-w-4xl py-12 md:py-16 space-y-10">
       {/* 1. Your business */}
       <section className={sectionClass}>
         <h2 className={sectionHeading}>Your business</h2>
         <div className="space-y-6">
           <div>
             <label htmlFor="name" className={labelClass}>
-              Business name <span className="text-red-600">*</span>
+              Business name <span className="text-[var(--color-warn)]">*</span>
             </label>
             <input
               id="name"
@@ -220,7 +220,7 @@ function SubmitForm() {
               <FieldError message={fieldErrors.phone} />
             </div>
           </div>
-          <p className="text-sm text-gray-600 -mt-2">
+          <p className="text-sm text-[var(--color-ink-mute)] -mt-2">
             Give us at least one of email or phone so we can reach you.
           </p>
 
@@ -273,20 +273,20 @@ function SubmitForm() {
       {/* 2. Areas covered */}
       <section className={sectionClass}>
         <h2 className={sectionHeading}>Areas covered</h2>
-        <p className="text-gray-600 mb-6">Tick every area you actively work in.</p>
+        <p className="text-[var(--color-ink-soft)] mb-6">Tick every area you actively work in.</p>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
           {REGIONS.map((region) => (
             <label
               key={region.slug}
-              className="flex items-center gap-3 px-4 py-3 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition-all"
+              className="flex items-center gap-3 px-4 py-3 border border-[var(--color-rule-strong)] rounded-[4px] bg-white cursor-pointer hover:border-[var(--color-ink)] transition-colors"
             >
               <input
                 type="checkbox"
                 checked={regions.includes(region.slug)}
                 onChange={() => toggle(regions, region.slug, setRegions)}
-                className="w-4 h-4 accent-blue-600 flex-shrink-0"
+                className="w-4 h-4 accent-[var(--color-ink)] flex-shrink-0"
               />
-              <span className="text-gray-700 font-semibold text-sm">{region.label}</span>
+              <span className="text-[var(--color-ink)] font-semibold text-sm">{region.label}</span>
             </label>
           ))}
         </div>
@@ -299,20 +299,20 @@ function SubmitForm() {
         <div className="space-y-8">
           {PEST_GROUPS.map((group) => (
             <div key={group.group}>
-              <h3 className="text-lg font-bold text-gray-900 mb-4">{group.group}</h3>
+              <h3 className="text-lg font-bold text-[var(--color-ink)] mb-4">{group.group}</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
                 {group.pests.map((pest) => (
                   <label
                     key={pest.key}
-                    className="flex items-center gap-3 px-4 py-3 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition-all"
+                    className="flex items-center gap-3 px-4 py-3 border border-[var(--color-rule-strong)] rounded-[4px] bg-white cursor-pointer hover:border-[var(--color-ink)] transition-colors"
                   >
                     <input
                       type="checkbox"
                       checked={pests.includes(pest.key)}
                       onChange={() => toggle(pests, pest.key, setPests)}
-                      className="w-4 h-4 accent-blue-600 flex-shrink-0"
+                      className="w-4 h-4 accent-[var(--color-ink)] flex-shrink-0"
                     />
-                    <span className="text-gray-700 font-semibold text-sm">{pest.label}</span>
+                    <span className="text-[var(--color-ink)] font-semibold text-sm">{pest.label}</span>
                   </label>
                 ))}
               </div>
@@ -326,23 +326,23 @@ function SubmitForm() {
       <section className={sectionClass}>
         <h2 className={sectionHeading}>Who you serve</h2>
         <div className="grid sm:grid-cols-2 gap-3">
-          <label className="flex items-center gap-3 px-4 py-3 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition-all">
+          <label className="flex items-center gap-3 px-4 py-3 border border-[var(--color-rule-strong)] rounded-[4px] bg-white cursor-pointer hover:border-[var(--color-ink)] transition-colors">
             <input
               type="checkbox"
               checked={businessResidential}
               onChange={(e) => setBusinessResidential(e.target.checked)}
-              className="w-4 h-4 accent-blue-600 flex-shrink-0"
+              className="w-4 h-4 accent-[var(--color-ink)] flex-shrink-0"
             />
-            <span className="text-gray-700 font-semibold">Residential customers</span>
+            <span className="text-[var(--color-ink)] font-semibold">Residential customers</span>
           </label>
-          <label className="flex items-center gap-3 px-4 py-3 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition-all">
+          <label className="flex items-center gap-3 px-4 py-3 border border-[var(--color-rule-strong)] rounded-[4px] bg-white cursor-pointer hover:border-[var(--color-ink)] transition-colors">
             <input
               type="checkbox"
               checked={commercial}
               onChange={(e) => setCommercial(e.target.checked)}
-              className="w-4 h-4 accent-blue-600 flex-shrink-0"
+              className="w-4 h-4 accent-[var(--color-ink)] flex-shrink-0"
             />
-            <span className="text-gray-700 font-semibold">Commercial customers</span>
+            <span className="text-[var(--color-ink)] font-semibold">Commercial customers</span>
           </label>
         </div>
       </section>
@@ -359,14 +359,14 @@ function SubmitForm() {
           onChange={(e) => setProfileText(e.target.value.slice(0, PROFILE_TEXT_MAX))}
           rows={6}
           maxLength={PROFILE_TEXT_MAX}
-          className={inputClass}
+          className={`${inputClass} h-auto py-3`}
           placeholder="Years of experience, qualifications, what makes your service different..."
         />
         <div className="mt-2 flex justify-between items-center">
           <FieldError message={fieldErrors.profile_text} />
           <span
             className={`text-sm font-semibold ml-auto ${
-              profileText.length >= PROFILE_TEXT_MAX ? 'text-amber-600' : 'text-gray-500'
+              profileText.length >= PROFILE_TEXT_MAX ? 'text-[var(--color-warn)]' : 'text-[var(--color-ink-mute)]'
             }`}
           >
             {profileText.length} / {PROFILE_TEXT_MAX}
@@ -383,10 +383,10 @@ function SubmitForm() {
           {TIERS.map((tier) => (
             <label
               key={tier.value}
-              className={`flex items-start gap-3 px-4 py-4 border-2 rounded-lg cursor-pointer transition-all ${
+              className={`flex items-start gap-3 px-4 py-4 border rounded-[4px] cursor-pointer transition-colors ${
                 tierInterest === tier.value
-                  ? 'border-blue-600 bg-blue-50'
-                  : 'border-gray-200 hover:border-blue-400 hover:bg-blue-50/50'
+                  ? 'border-[var(--color-ink)] bg-[var(--color-paper)]'
+                  : 'border-[var(--color-rule-strong)] bg-white hover:border-[var(--color-ink)]'
               }`}
             >
               <input
@@ -395,17 +395,17 @@ function SubmitForm() {
                 value={tier.value}
                 checked={tierInterest === tier.value}
                 onChange={() => setTierInterest(tier.value)}
-                className="w-4 h-4 accent-blue-600 flex-shrink-0 mt-1"
+                className="w-4 h-4 accent-[var(--color-ink)] flex-shrink-0 mt-1"
               />
               <span>
-                <span className="block text-gray-900 font-bold">{tier.label}</span>
-                <span className="block text-sm text-gray-600">{tier.hint}</span>
+                <span className="block text-[var(--color-ink)] font-bold">{tier.label}</span>
+                <span className="block text-sm text-[var(--color-ink-soft)]">{tier.hint}</span>
               </span>
             </label>
           ))}
         </div>
         <FieldError message={fieldErrors.tier_interest} />
-        <p className="mt-4 text-sm text-gray-600">
+        <p className="mt-4 text-sm text-[var(--color-ink-soft)]">
           Choosing Featured records your interest. Nothing is charged from this form.
           Rankings can&apos;t be bought. No lead fees, ever.
         </p>
@@ -441,12 +441,12 @@ function SubmitForm() {
       {/* Submit */}
       <div className={sectionClass}>
         {submitError && (
-          <div className="mb-6 rounded-lg border-2 border-red-200 bg-red-50 p-4 flex items-start gap-3">
-            <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+          <div className="mb-6 rounded-[4px] border border-[var(--color-warn-edge)] bg-[var(--color-warn-wash)] p-4 flex items-start gap-3">
+            <AlertCircle className="w-5 h-5 text-[var(--color-warn)] flex-shrink-0 mt-0.5" />
             <div>
-              <p className="font-bold text-red-800">{submitError}</p>
-              <p className="text-sm text-red-700 mt-1">
-                Your answers are still here — you can submit again.
+              <p className="font-bold text-[var(--color-warn)]">{submitError}</p>
+              <p className="text-sm text-[var(--color-ink-soft)] mt-1">
+                Your answers are still here. You can submit again.
               </p>
             </div>
           </div>
@@ -456,7 +456,7 @@ function SubmitForm() {
           type="button"
           onClick={handleSubmit}
           disabled={submitting}
-          className="block w-full text-center px-6 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold text-lg rounded-xl hover:from-amber-600 hover:to-amber-700 transition-all shadow-lg hover:shadow-xl disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:shadow-lg"
+          className="dir-btn dir-btn-ink w-full h-12 text-base disabled:opacity-60 disabled:cursor-not-allowed"
         >
           {submitting ? (
             <span className="flex items-center justify-center gap-2">
@@ -464,11 +464,11 @@ function SubmitForm() {
               Submitting...
             </span>
           ) : (
-            'Submit Your Listing'
+            'Submit your listing'
           )}
         </button>
 
-        <p className="text-sm text-gray-600 text-center mt-4">
+        <p className="text-sm text-[var(--color-ink-mute)] mt-4">
           We&apos;ll review your details before your listing goes live.
         </p>
       </div>
@@ -478,25 +478,25 @@ function SubmitForm() {
 
 export default function SubmitPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white">
+    <div className="min-h-screen bg-[var(--color-stock)] text-[var(--color-ink)]">
       <Navigation />
 
-      <div className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-4">
-            Create Your Listing
+      <header className="border-b border-[var(--color-ink)] bg-[var(--color-stock)]">
+        <div className="dir-wrap max-w-4xl pb-10 pt-12 md:pb-14 md:pt-16">
+          <h1 className="dir-display text-[clamp(2.75rem,8vw,5rem)] text-[var(--color-ink)]">
+            Create your listing
           </h1>
-          <p className="text-xl text-blue-100">
+          <p className="mt-5 max-w-[60ch] text-lg leading-relaxed text-[var(--color-ink-soft)] md:text-xl">
             Tell us about your business and we&apos;ll get you listed. No lead fees, no
             commissions.
           </p>
         </div>
-      </div>
+      </header>
 
       <Suspense
         fallback={
           <div className="max-w-4xl mx-auto px-4 py-20 text-center">
-            <Loader2 className="w-8 h-8 animate-spin text-blue-600 mx-auto" />
+            <Loader2 className="w-8 h-8 animate-spin text-[var(--color-ink-mute)] mx-auto" />
           </div>
         }
       >

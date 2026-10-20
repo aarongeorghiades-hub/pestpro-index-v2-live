@@ -23,16 +23,16 @@
      blue lowest, i.e. warm). Ours inverts that relationship: BLUE IS THE
      HIGHEST CHANNEL on every ground tone below, so the paper reads cool-neutral
      and never sepia. */
-  --color-paper: #f5f7f8; /* 245 247 248 — B > G > R */
-  --color-paper-sunk: #eceff2; /* recessed bands, still cool */
+  --color-paper: #f6f7f5; /* 245 247 248 — B > G > R */
+  --color-paper-sunk: #edf0ec; /* recessed bands, still cool */
   --color-surface: #ffffff; /* cards and panels sit ABOVE the paper */
 
   /* INK — deep navy, not black and not a tinted near-black.
      ANTI-TARGET: #0B0B0B / #111111, the near-black tell. Ours is unmistakably
      a hue: blue is 25 points above red, and it is nowhere near 0. */
-  --color-ink: #1a2433; /* 26 36 51 */
-  --color-ink-soft: #47566b; /* body copy at length */
-  --color-ink-mute: #6d7c90; /* captions, meta, disabled */
+  --color-ink: #13241d; /* 26 36 51 */
+  --color-ink-soft: #3f5048; /* body copy at length */
+  --color-ink-mute: #5f6f67; /* captions, meta, disabled */
 
   /* PRIMARY ACCENT — muted ochre. Verdicts, CTAs, rank-1 emphasis.
      ANTI-TARGET: #D97757, Anthropic terracotta (217 119 87). Ours is
@@ -53,8 +53,8 @@
   --color-teal-edge: #bcd3d6;
 
   /* STRUCTURE */
-  --color-rule: #dde3e8; /* hairlines and table rules */
-  --color-rule-strong: #c3ccd6;
+  --color-rule: #dde3de; /* hairlines and table rules */
+  --color-rule-strong: #b9c4bc;
 
   /* SEMANTIC — STATUS, NOT BRAND.
      A warning must read as a warning; flattening it into the brand ochre would
@@ -72,7 +72,17 @@
   /* TYPEFACE. Geist Sans is the ONLY typeface. Geist Mono is reserved for
      genuine spec and measurement figures and is never used decoratively —
      see .spec-figure below, which is its only consumer. */
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-archivo), var(--font-geist-sans);
+
+  /* LOCAL DIRECTORY (2026-10 redesign). Marigold is the directory's one accent:
+     it owns the area tab, the active state and the Featured wash, nothing else.
+     Text never sits in marigold itself; -deep carries text at 7:1 on white. */
+  --color-marigold: #f2b705;
+  --color-marigold-deep: #6b5000;
+  --color-marigold-wash: #fdf7e1;
+  --color-marigold-edge: #e7cd73;
+  --color-stock: #ffffff;
+  --font-display: var(--font-archivo), var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -126,7 +136,7 @@
   body {
     background: var(--background);
     color: var(--foreground);
-    font-family: var(--font-geist-sans, Arial), Arial, Helvetica, sans-serif;
+    font-family: var(--font-archivo, var(--font-geist-sans, Arial)), Arial, Helvetica, sans-serif;
   }
 }
 
@@ -431,4 +441,185 @@
     letter-spacing: -0.01em;
     color: var(--color-ink);
   }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   LOCAL DIRECTORY — the shared grammar of the UK directory estate.
+   Display type is Archivo at a condensed width; numbers are tabular so phone
+   numbers and counts line up down a column like a printed directory.
+   ══════════════════════════════════════════════════════════════════════════ */
+@layer base {
+  ::selection {
+    background: var(--color-marigold);
+    color: var(--color-ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  a {
+    text-underline-offset: 0.18em;
+    text-decoration-thickness: 1px;
+  }
+  html {
+    scrollbar-color: var(--color-rule-strong) transparent;
+  }
+}
+
+@layer components {
+  .dir-display {
+    font-family: var(--font-display);
+    font-stretch: 72%;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 0.92;
+    text-wrap: balance;
+  }
+  .dir-condensed {
+    font-stretch: 80%;
+  }
+  .dir-num {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+  }
+  .dir-wrap {
+    width: 100%;
+    max-width: 76rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .dir-wrap {
+      padding-inline: 2rem;
+    }
+  }
+
+  /* The area tab: a marigold thumb-tab, as on the edge of a printed directory. */
+  .dir-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--color-marigold);
+    color: var(--color-ink);
+    font-weight: 700;
+    font-size: 0.8125rem;
+    line-height: 1;
+    padding: 0.45rem 0.7rem 0.4rem;
+    border-radius: 3px;
+  }
+
+  /* Entries are separated by hairline rules that draw in from the left as the
+     entry scrolls into view. Pure CSS scroll-driven animation: browsers
+     without view timelines simply show the rule. */
+  .dir-entry {
+    position: relative;
+  }
+  .dir-entry::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 1px;
+    background: var(--color-rule-strong);
+    transform-origin: left center;
+  }
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .dir-entry::before {
+        animation: dir-rule-draw linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 60%;
+      }
+      .dir-rise {
+        animation: dir-rise linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 45%;
+      }
+    }
+  }
+
+  .dir-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+    padding: 0.6rem 1.1rem;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    line-height: 1.1;
+    transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .dir-btn:active {
+    transform: translateY(1px);
+  }
+  .dir-btn-ink {
+    background: var(--color-ink);
+    color: var(--color-stock);
+  }
+  .dir-btn-ink:hover {
+    background: #1f3a2f;
+  }
+  .dir-btn-line {
+    border: 1px solid var(--color-rule-strong);
+    color: var(--color-ink);
+    background: var(--color-stock);
+  }
+  .dir-btn-line:hover {
+    border-color: var(--color-ink);
+  }
+  .dir-btn-marigold {
+    background: var(--color-marigold);
+    color: var(--color-ink);
+  }
+  .dir-btn-marigold:hover {
+    background: #ffc61a;
+  }
+
+  .dir-link {
+    color: var(--color-ink);
+    text-decoration: underline;
+    text-decoration-color: var(--color-rule-strong);
+    transition: text-decoration-color 0.18s ease;
+  }
+  .dir-link:hover {
+    text-decoration-color: var(--color-ink);
+  }
+}
+
+@keyframes dir-rule-draw {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes dir-rise {
+  from { opacity: 0.001; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Homepage signature: a marigold highlighter stroke drawn once behind the word
+   "local", the way you would mark an entry in a printed directory. Visible by
+   default; the draw-in only runs when motion is welcome. */
+@layer components {
+  .home-mark::before {
+    content: "";
+    position: absolute;
+    left: -0.06em;
+    right: -0.08em;
+    bottom: 0.06em;
+    height: 0.36em;
+    background: var(--color-marigold);
+    border-radius: 2px;
+    transform-origin: left center;
+    transform: skewX(-8deg);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .home-mark::before {
+      animation: home-mark-draw 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+    }
+  }
+}
+@keyframes home-mark-draw {
+  from { transform: skewX(-8deg) scaleX(0); }
+  to { transform: skewX(-8deg) scaleX(1); }
 }
