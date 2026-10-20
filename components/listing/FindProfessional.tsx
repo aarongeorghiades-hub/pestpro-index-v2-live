@@ -64,7 +64,7 @@ export default function FindProfessional() {
         Rather call a professional? Find pest control near you
       </h2>
       <p className="mt-2 max-w-2xl text-gray-600">
-        Enter a postcode or choose an area. The directory is sorted by rating. A Featured firm, when one is listed, sits in a separate box labelled Featured (paid).
+        Enter a postcode or choose an area. The directory is sorted by rating. A Featured firm, when one is listed, sits in a separate box labelled Featured · Sponsored.
       </p>
       <form onSubmit={onSubmit} className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-end">
         <label className="block flex-1 text-sm font-semibold text-gray-900">

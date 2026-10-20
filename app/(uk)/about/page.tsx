@@ -88,7 +88,7 @@ export default async function AboutPage() {
         <h2 className="text-3xl font-black text-gray-900 mb-4 mt-10">How we fund the site &amp; stay independent</h2>
         <p className="text-gray-700 leading-relaxed mb-4">
           The directory is free to use, and a basic listing stays free. Rankings can&apos;t be bought. An optional
-          Featured slot is labelled as paid and does not change the rating order. The site is also partly supported by
+          Featured slot is labelled Sponsored and does not change the rating order. The site is also partly supported by
           affiliate commissions on some of the pest control <em>products</em> we link to — for
           example, products available through Amazon. Which products we feature is decided before any of that, and on
           different grounds: each product page sets out the situation you are actually dealing with, the legal position
