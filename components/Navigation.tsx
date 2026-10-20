@@ -95,8 +95,8 @@ const RESOURCE_PREFIXES = ['/blog', '/resources', '/frequently-asked-questions',
 export function Wordmark({ inverse = false }: { inverse?: boolean }) {
   return (
     <span className={`inline-flex items-baseline gap-1.5 text-[1.375rem] leading-none ${inverse ? 'text-white' : 'text-[var(--color-ink)]'}`}>
-      <span className="dir-display text-[1.625rem]">PestPro</span>
-      <span className="rounded-[4px] bg-[var(--color-ink)] px-1.5 py-[3px] font-sans text-[0.75rem] font-semibold leading-none tracking-[0.01em] text-white">Index</span>
+      <span className="font-[family-name:var(--font-caslon)] text-[2rem] font-bold leading-none tracking-[-0.03em] md:text-[2.25rem]">PestPro</span>
+      <span className="translate-y-[-0.2em] rounded-[6px] bg-[var(--color-primary)] px-2 py-[5px] font-sans text-[0.875rem] font-semibold leading-none tracking-[0.01em] text-white">Index</span>
     </span>
   );
 }
@@ -132,8 +132,10 @@ export default function Navigation() {
 
 
   const topLink = (active: boolean) =>
-    `relative px-3 py-2 text-sm font-semibold transition-colors duration-150 ${
-      active ? 'text-[var(--color-ink)] after:absolute after:inset-x-3 after:-bottom-[17px] after:h-[3px] after:bg-[var(--color-marigold)]' : 'text-[var(--color-ink-soft)] hover:text-[var(--color-ink)]'
+    `relative rounded-full px-4 py-2.5 text-base font-semibold transition-[background-color,color] duration-200 ${
+      active
+        ? 'bg-[var(--color-primary)] text-white'
+        : 'text-[var(--color-ink)] hover:bg-[var(--color-paper-sunk)] hover:text-[var(--color-primary)]'
     }`;
 
   const panelLink = 'block py-1.5 text-sm text-[var(--color-ink-soft)] hover:text-[var(--color-ink)] hover:underline underline-offset-4';
@@ -151,12 +153,12 @@ export default function Navigation() {
         }
       }}
       className="nav-header sticky top-0 z-50 border-b border-[var(--color-rule)] bg-[var(--color-stock)]">
-      <div className="dir-wrap flex h-16 items-center justify-between gap-6">
+      <div className="dir-wrap flex h-[76px] items-center justify-between gap-6">
         <Link href="/" aria-label="PestPro Index home" className="shrink-0">
           <Wordmark />
         </Link>
 
-        <div className="hidden items-center gap-1 lg:flex">
+        <div className="hidden items-center gap-1.5 lg:flex">
           <button
             type="button"
             aria-expanded={menu === 'find'}
@@ -188,7 +190,7 @@ export default function Navigation() {
         </div>
 
         <div className="flex items-center gap-2">
-          <Link href="/professionals" className="dir-btn dir-btn-ink hidden !min-h-10 !py-2 text-sm lg:inline-flex">
+          <Link href="/professionals" className={`dir-btn hidden !min-h-11 px-5 text-base lg:inline-flex ${pathname.startsWith('/professionals') ? 'dir-btn-marigold' : 'dir-btn-ink'}`}>
             For professionals
           </Link>
           <button
@@ -233,7 +235,7 @@ export default function Navigation() {
         </div>
       )}
       {menu === 'guides' && (
-        <div id="nav-guides" className="dir-panel absolute inset-x-0 top-full hidden max-h-[calc(100vh-4rem)] overflow-y-auto border-b border-[var(--color-rule)] bg-[var(--color-stock)] shadow-[0_18px_40px_-24px_rgba(19,36,29,0.35)] lg:block">
+        <div id="nav-guides" className="dir-panel absolute inset-x-0 top-full hidden max-h-[calc(100vh-76px)] overflow-y-auto border-b border-[var(--color-rule)] bg-[var(--color-stock)] shadow-[0_18px_40px_-24px_rgba(19,36,29,0.35)] lg:block">
           <div className="dir-wrap grid grid-cols-[1fr_3fr_1.4fr] gap-10 py-8">
             <div>
               <p className={panelHead}>Start here</p>
@@ -253,7 +255,7 @@ export default function Navigation() {
 
       {/* Mobile menu: every group is a native <details>, so it works by touch and keyboard alike. */}
       {mobileOpen && (
-        <div id="nav-mobile" className="dir-panel max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-[var(--color-rule)] bg-[var(--color-stock)] lg:hidden">
+        <div id="nav-mobile" className="dir-panel max-h-[calc(100dvh-76px)] overflow-y-auto border-t border-[var(--color-rule)] bg-[var(--color-stock)] lg:hidden">
           <div className="dir-wrap py-4">
             <ul className="divide-y divide-[var(--color-rule)] border-b border-[var(--color-rule)]">
               <li><Link href="/" className="block py-3.5 text-lg font-semibold text-[var(--color-ink)]">Home</Link></li>

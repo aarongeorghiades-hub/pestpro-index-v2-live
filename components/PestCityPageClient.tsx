@@ -1,5 +1,7 @@
 'use client';
 
+import type { ReactNode } from 'react';
+
 import { externalHref } from '@/lib/externalUrl';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight, BookOpen, Phone, ShoppingCart } from 'lucide-react';
@@ -53,7 +55,7 @@ function serviceTags(provider: Provider): string[] {
   return tags;
 }
 
-export default function PestCityPageClient({ city, pest, initialProviders, initialIsFallback, areas }: Props) {
+export default function PestCityPageClient({ featured, city, pest, initialProviders, initialIsFallback, areas }: Props & { featured?: ReactNode }) {
   const providers = initialProviders;
   const isFallback = initialIsFallback ?? false;
 
@@ -180,7 +182,7 @@ export default function PestCityPageClient({ city, pest, initialProviders, initi
             </FirmListEmpty>
           ) : (
             <>
-              <div data-featured-slot />
+              {featured}
               <FirmList>
                 {providers.map((provider) => (
                   <FirmListItem key={provider.canonical_id ?? provider.slug}>

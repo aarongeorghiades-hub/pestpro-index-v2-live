@@ -31,12 +31,12 @@ export default function FeaturedBlock({
           >
             <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-[var(--color-marigold-edge)]/70 px-5 py-3 md:px-7">
               <p className="flex items-center gap-2 text-[0.8125rem] font-bold text-[var(--color-ink)]">
-                <span className="dir-tab !py-1">Featured</span>
-                <span className="font-semibold text-[var(--color-marigold-deep)]">Paid placement</span>
+                <span className="dir-tab !bg-[var(--color-saffron)] !py-1 !text-[var(--color-ink)] !shadow-none">Featured</span>
+                <span className="font-semibold text-[var(--color-ink-soft)]">Paid placement</span>
               </p>
               <Link
                 href="/professionals#how-featured-listings-work"
-                className="hidden text-[0.8125rem] font-semibold text-[var(--color-marigold-deep)] underline underline-offset-4 hover:text-[var(--color-ink)] sm:inline"
+                className="hidden text-[0.8125rem] font-semibold text-[var(--color-primary)] underline underline-offset-4 hover:text-[var(--color-ink)] sm:inline"
               >
                 How featured listings work
               </Link>
@@ -70,7 +70,9 @@ export default function FeaturedBlock({
       <p className="mt-3 text-xs leading-relaxed text-[var(--color-ink-mute)]">
         {context === 'finder'
           ? 'These firms pay for a labelled slot on their area page. Paying does not change the rating order of the directory.'
-          : 'These firms pay for this slot. It is separate from the list below, which is sorted by rating. Paying does not change that order.'}{' '}
+          : providers.length === 1
+            ? 'This firm pays for this slot. It is separate from the list below, which is sorted by rating. Paying does not change that order.'
+            : 'These firms pay for this slot. It is separate from the list below, which is sorted by rating. Paying does not change that order.'}{' '}
         <Link href="/professionals#how-featured-listings-work" className="dir-link font-semibold text-[var(--color-ink-soft)] sm:hidden">
           How featured listings work
         </Link>

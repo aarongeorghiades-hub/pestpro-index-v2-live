@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import type { CSSProperties } from 'react';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import { formatCount } from '@/lib/formatCount';
@@ -144,29 +145,37 @@ export default function Home({
       <section className="border-b border-[var(--color-rule)]">
         <div className="dir-wrap grid gap-12 pb-16 pt-12 md:pb-24 md:pt-20 lg:grid-cols-[1.2fr_1fr] lg:gap-20">
           <div>
-            <h1 className="dir-display max-w-[14ch] text-[clamp(2.75rem,6.8vw,5.5rem)] text-[var(--color-ink)]">
-              Pest control from local people, <em className="dir-accent">for local people</em>.
+            {/* Three set lines: the leading is fixed per line, so the italic
+                descenders never meet the line below at any width. */}
+            <h1 className="dir-display text-[clamp(2.5rem,5.9vw,4.6rem)] !leading-[1.12] text-[var(--color-ink)]">
+              <span className="hero-line" style={{ '--i': 0 } as CSSProperties}>Pest control from</span>{' '}
+              <span className="hero-line" style={{ '--i': 1 } as CSSProperties}>local people,</span>{' '}
+              <span className="hero-line whitespace-nowrap pb-[0.08em] pl-[0.28em]" style={{ '--i': 2 } as CSSProperties}><em className="dir-accent text-[var(--color-primary)]">for local people</em>.</span>
             </h1>
-            <p className="mt-6 max-w-[44ch] text-lg leading-relaxed text-[var(--color-ink-soft)] md:text-xl">
+            <p className="hero-rise mt-7 max-w-[44ch] text-lg leading-relaxed text-[var(--color-ink-soft)] md:text-xl" style={{ '--i': 2 } as CSSProperties}>
               Find an independent pest controller based in your area, for your home or your business.
               No national chains, no call centres, no lead fees.
             </p>
-            <p className="dir-num mt-4 max-w-[48ch] text-base leading-relaxed text-[var(--color-ink-mute)]">
+            <p className="hero-rise dir-num mt-4 max-w-[48ch] text-base leading-relaxed text-[var(--color-ink-mute)]" style={{ '--i': 3 } as CSSProperties}>
               {providerCount !== null ? <>{formatCount(providerCount)} local firms across {areas.length} areas. </> : null}
               Sorted by Google rating. Rankings can&apos;t be bought: a firm can pay for a Featured slot, and it&apos;s always labelled.
             </p>
             <ul className="mt-10 grid gap-3 lg:max-w-[34rem]">
               {[
-                { href: '/residential', title: 'Domestic pest control', note: 'Homes, flats and rentals' },
-                { href: '/commercial', title: 'Commercial pest control', note: 'Shops, kitchens, offices and landlords' },
-              ].map((way) => (
-                <li key={way.href} className="dir-card dir-card-hover">
-                  <Link href={way.href} className="group flex h-full items-center justify-between gap-4 rounded-[12px] px-5 py-4 text-[var(--color-ink)]">
+                { href: '/residential', title: 'Domestic pest control', note: 'Homes, flats and rentals', tone: 'primary' },
+                { href: '/commercial', title: 'Commercial pest control', note: 'Shops, kitchens, offices and landlords', tone: 'saffron' },
+              ].map((way, i) => (
+                <li
+                  key={way.href}
+                  className={`hero-rise dir-card dir-card-hover !border-transparent ${way.tone === 'primary' ? '!bg-[var(--color-primary)] text-white' : '!bg-[var(--color-saffron-wash)] !border-[var(--color-marigold-edge)] text-[var(--color-ink)]'}`}
+                  style={{ '--i': 4 + i } as CSSProperties}
+                >
+                  <Link href={way.href} className="group flex h-full items-center justify-between gap-4 rounded-[12px] px-5 py-[1.125rem]">
                     <span>
                       <span className="block text-lg font-semibold leading-tight">{way.title}</span>
-                      <span className="mt-0.5 block text-sm text-[var(--color-ink-mute)]">{way.note}</span>
+                      <span className={`mt-0.5 block text-sm ${way.tone === 'primary' ? 'text-[var(--color-on-primary-soft)]' : 'text-[var(--color-ink-soft)]'}`}>{way.note}</span>
                     </span>
-                    <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-[8px] bg-[var(--color-ink)] text-white transition-transform duration-300 group-hover:translate-x-0.5">
+                    <span className={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-[8px] transition-transform duration-300 group-hover:translate-x-1 ${way.tone === 'primary' ? 'bg-[var(--color-saffron)] text-[var(--color-ink)]' : 'bg-[var(--color-primary)] text-white'}`}>
                       <ArrowRight aria-hidden="true" className="h-4 w-4" />
                     </span>
                   </Link>
@@ -176,21 +185,21 @@ export default function Home({
           </div>
 
           {/* The area index: the directory's thumb-tab, opened. */}
-          <div className="dir-card self-start px-6 pb-5 pt-6 md:px-7">
-            <h2 className="flex items-baseline justify-between border-b border-[var(--color-ink)] pb-3 text-base font-semibold text-[var(--color-ink)]">
+          <div className="dir-card self-start px-5 pb-5 pt-6 md:px-6">
+            <h2 className="flex items-baseline justify-between pb-4 text-base font-semibold text-[var(--color-ink)]">
               <span>Choose your area</span>
               <span className="text-[0.8125rem] font-semibold text-[var(--color-ink-mute)]">Local firms</span>
             </h2>
-            <ul className="sm:columns-2 sm:gap-8 lg:columns-1">
-              {areas.map((area) => (
-                <li key={area.slug} className="break-inside-avoid border-b border-[var(--color-rule)] last:border-b-0">
+            <ul className="columns-2 gap-2 sm:columns-3 lg:columns-2">
+              {areas.map((area, i) => (
+                <li key={area.slug} className="hero-rise mb-2 break-inside-avoid" style={{ '--i': 6 + i } as CSSProperties}>
                   <Link
                     href={area.href}
-                    className="group -mx-2 flex items-baseline justify-between gap-4 rounded-md px-2 py-[0.55rem] text-[var(--color-ink)] transition-colors duration-200 hover:bg-[var(--color-paper)]"
+                    className={`group flex items-baseline justify-between gap-3 rounded-[10px] px-3.5 py-3 text-[var(--color-ink)] transition-[background-color,color,transform] duration-200 hover:-translate-y-px hover:bg-[var(--color-primary)] hover:text-white bg-[var(--color-primary-wash)]`}
                   >
-                    <span className="text-[1rem] font-medium">{area.label}</span>
+                    <span className="text-[1rem] font-semibold">{area.label}</span>
                     {area.count !== null && (
-                      <span className="dir-num text-base text-[var(--color-ink-mute)] group-hover:text-[var(--color-ink)]">{formatCount(area.count)}</span>
+                      <span className="dir-num text-sm font-semibold text-[var(--color-primary)] group-hover:text-[var(--color-saffron)]">{formatCount(area.count)}</span>
                     )}
                   </Link>
                 </li>
@@ -204,29 +213,40 @@ export default function Home({
       </section>
 
       {/* HOW THE LIST WORKS: the rules, set like the front matter of a directory. */}
-      <section className="bg-[var(--color-paper)]">
-        <div className="dir-wrap grid gap-10 py-24 md:py-32 lg:grid-cols-[1fr_1.6fr] lg:gap-24">
-          <h2 className="dir-display dir-reveal text-[clamp(2.25rem,4.6vw,3.5rem)] text-[var(--color-ink)]">How this directory works</h2>
-          <dl className="border-t border-[var(--color-ink)]">
+      <section className="rules-chapter bg-[var(--color-primary)] text-white">
+        <div className="rules-frame">
+        <div className="dir-wrap grid gap-10 py-24 md:py-16 lg:grid-cols-[1fr_1.5fr] lg:gap-24">
+          <div>
+            <h2 className="dir-display text-[clamp(2.25rem,4.6vw,3.75rem)] text-white">How this directory works</h2>
+            <p className="mt-5 max-w-[34ch] text-lg leading-relaxed text-[var(--color-on-primary-soft)]">
+              Four rules, the same on every page. Keep scrolling and they read themselves out.
+            </p>
+          </div>
+          <div className="relative pl-7">
+            <span aria-hidden="true" className="absolute inset-y-0 left-0 w-[3px] rounded-full bg-white/15" />
+            <span aria-hidden="true" className="rule-rail-fill absolute inset-y-0 left-0 w-[3px] rounded-full bg-[var(--color-saffron)]" />
+          <dl>
             {[
               ['Local firms only', 'Every firm listed is an independent pest controller based in, or serving, the area you pick. National chains are not included.'],
               ['Sorted by rating', 'Lists are ordered by Google rating. Top rated means 4.5 or higher from 30 or more reviews, worked out from Google data.'],
               ['Featured is paid, and labelled', 'A firm can pay for a Featured slot above the list. It is always marked, and it never changes the rating order.'],
               ['You call them directly', 'No booking fees, no lead fees, no commissions, no call centre in the middle. Pick a firm and ring it.'],
-            ].map(([term, detail]) => (
-              <div key={term} className="grid gap-2 border-b border-[var(--color-rule-strong)] py-6 md:grid-cols-[14rem_1fr] md:gap-8">
-                <dt className="text-lg font-bold leading-snug text-[var(--color-ink)]">{term}</dt>
-                <dd className="max-w-[56ch] leading-relaxed text-[var(--color-ink-soft)]">{detail}</dd>
+            ].map(([term, detail], i) => (
+              <div key={term} className="rule-item grid gap-2 border-b border-white/12 py-6 last:border-b-0 md:grid-cols-[14rem_1fr] md:gap-8" style={{ '--i': i } as CSSProperties}>
+                <dt className="text-xl font-semibold leading-snug text-white">{term}</dt>
+                <dd className="max-w-[56ch] text-[1.0625rem] leading-relaxed text-[var(--color-on-primary-soft)]">{detail}</dd>
               </div>
             ))}
           </dl>
+          </div>
+        </div>
         </div>
       </section>
 
       {/* WHY IT EXISTS */}
-      <section className="border-y border-[var(--color-rule)]">
+      <section className="why-band bg-[var(--color-saffron-wash)]">
         <div className="dir-wrap grid gap-10 py-24 md:py-32 lg:grid-cols-[1fr_1.6fr] lg:gap-24">
-          <h2 className="dir-display dir-reveal text-[clamp(2.25rem,4.6vw,3.5rem)] text-[var(--color-ink)]">
+          <h2 className="dir-display text-[clamp(2.25rem,4.6vw,3.5rem)] text-[var(--color-ink)]">
             Why we built it
           </h2>
           <div className="max-w-[62ch] space-y-5 text-base leading-relaxed text-[var(--color-ink-soft)]">
@@ -249,11 +269,11 @@ export default function Home({
       </section>
 
       {/* DO IT YOURSELF */}
-      <section>
+      <section className="ground-drift">
         <div className="dir-wrap py-24 md:py-32">
           <div className="grid gap-6 lg:grid-cols-[1fr_1.6fr] lg:gap-20">
             <div>
-              <h2 className="dir-display dir-reveal text-[clamp(2.25rem,4.6vw,3.5rem)] text-[var(--color-ink)]">Sort it yourself</h2>
+              <h2 className="dir-display text-[clamp(2.25rem,4.6vw,3.5rem)] text-[var(--color-ink)]">Sort it yourself</h2>
               <p className="mt-4 max-w-[36ch] leading-relaxed text-[var(--color-ink-soft)]">
                 Guides, product reviews and costs for when a small problem doesn&apos;t need a call-out yet.
               </p>
@@ -283,14 +303,14 @@ export default function Home({
       </section>
 
       {/* SPECIALISTS BY CITY + CLOSE */}
-      <section className="bg-[var(--color-forest)] text-white">
+      <section className="bg-[var(--color-primary)] text-white">
         <div className="dir-wrap py-24 md:py-32">
           <h2 className="dir-display max-w-[16ch] text-[clamp(2.5rem,6.5vw,5rem)]">Find a local firm today.</h2>
           <p className="mt-5 max-w-[48ch] text-lg leading-relaxed text-white/75">
             Browse providers across the UK. No sign-up, no forms. Pick your area and call a firm directly.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/pest-control/regions" className="dir-btn bg-white text-[var(--color-ink)] hover:bg-[var(--color-paper)]">Browse all regions</Link>
+            <Link href="/pest-control/regions" className="dir-btn dir-btn-marigold">Browse all regions</Link>
             <Link href="/professionals" className="dir-btn border border-white/30 text-white hover:border-white">
               Run a pest control firm?
             </Link>

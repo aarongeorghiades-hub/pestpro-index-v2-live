@@ -6,6 +6,7 @@ import AreaHead, { LocalOnlyNote } from '@/components/directory/AreaHead';
 import { countForSlug } from '@/lib/regionCounts';
 import { localCounts } from '@/lib/areaDirectory';
 import { hampshireTowns } from '@/lib/hampshire-towns';
+import FeaturedHere from '@/components/listing/FeaturedHere';
 
 export const dynamic = 'force-dynamic';
 
@@ -88,7 +89,7 @@ export default async function HampshireHubPage() {
         </p>
       </AreaHead>
 
-      <div className="dir-wrap pt-10 empty:hidden" data-featured-slot />
+      <div className="dir-wrap pt-10 empty:hidden"><FeaturedHere /></div>
 
       {/* HOMES / BUSINESSES */}
       <section className="border-b border-[var(--color-rule-strong)]">

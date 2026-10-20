@@ -82,7 +82,18 @@
   --color-marigold-wash: #fcf7e8;
   --color-marigold-edge: #e9d39a;
   --color-stock: #ffffff;
-  --color-forest: #11261d;
+  --color-forest: #0b2f24;
+  /* BRAND PALETTE (round 3). Deep bottle green is the primary: bands, primary
+     buttons, active nav. Saffron is the warm accent: Featured, the promise
+     rail, accent buttons. Apricot is a soft warm tint for area cards. */
+  --color-primary: #0e3b2e;
+  --color-primary-hover: #0b2f24;
+  --color-primary-soft: #cfe1d6;
+  --color-primary-wash: #e8f1ec;
+  --color-on-primary-soft: #b9d3c5;
+  --color-saffron: #f0a830;
+  --color-saffron-wash: #fdf1d8;
+  --color-apricot-wash: #fbe7d6;
   --font-accent: var(--font-caslon), Georgia, serif;
   --font-display: var(--font-archivo), var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -474,7 +485,7 @@
     font-family: var(--font-caslon-display), Georgia, serif;
     font-weight: 400;
     letter-spacing: -0.03em;
-    line-height: 0.98;
+    line-height: 1.08;
     text-wrap: balance;
   }
   .dir-h2 {
@@ -575,11 +586,11 @@
     transform: translateY(1px);
   }
   .dir-btn-ink {
-    background: var(--color-ink);
+    background: var(--color-primary);
     color: var(--color-stock);
   }
   .dir-btn-ink:hover {
-    background: var(--color-forest);
+    background: var(--color-primary-hover);
   }
   .dir-btn-line {
     border: 1px solid var(--color-rule-strong);
@@ -590,7 +601,7 @@
     border-color: var(--color-ink);
   }
   .dir-btn-marigold {
-    background: var(--color-marigold);
+    background: var(--color-saffron);
     color: var(--color-ink);
   }
   .dir-btn-marigold:hover {
@@ -699,7 +710,7 @@
       .dir-reveal {
         animation: dir-reveal linear both;
         animation-timeline: view();
-        animation-range: entry 0% entry 40%;
+        animation-range: entry 0% entry 25%;
       }
     }
   }
@@ -709,7 +720,7 @@
   }
 }
 @keyframes dir-reveal {
-  from { opacity: 0.001; transform: translateY(14px); }
+  from { opacity: 0.35; transform: translateY(8px); }
   to { opacity: 1; transform: none; }
 }
 @keyframes dir-panel-in {
@@ -717,3 +728,111 @@
   to { opacity: 1; transform: none; }
 }
 
+
+/* ══════════════════════════════════════════════════════════════════════════
+   HOMEPAGE SCROLL CHAPTERS (scroll-craft score, round 3)
+   hero: kinetic lines + staggered area cascade (time-based, on load)
+   rules: PINNED chapter, promises light in turn on a saffron rail (the peak)
+   why: saffron band wipes open (clip-path)
+   guides: ground drifts from white to the green wash (ink text throughout)
+   Compositor-only properties (opacity, transform, clip-path) plus one
+   background-color drift; no element changes size, so nothing shifts.
+   Every effect is off under prefers-reduced-motion and absent where scroll
+   timelines are unsupported, leaving the static, fully visible page.
+   ══════════════════════════════════════════════════════════════════════════ */
+@layer components {
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-line {
+      display: block;
+      animation: hero-line-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-delay: calc(var(--i, 0) * 110ms + 80ms);
+    }
+    .hero-rise {
+      animation: hero-rise-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-delay: calc(var(--i, 0) * 45ms + 350ms);
+    }
+  }
+  .hero-line { display: block; }
+
+  /* The promise rail: the chapter is taller than the screen on md+, its inner
+     frame sticks, and each promise lights as the chapter scrolls through. */
+  .rules-chapter {
+    view-timeline-name: --rules;
+    view-timeline-axis: block;
+  }
+  @media (min-width: 768px) {
+    .rules-chapter { height: 230vh; }
+    .rules-frame {
+      position: sticky;
+      top: 76px;
+      min-height: calc(100vh - 76px);
+      display: flex;
+      align-items: center;
+    }
+  }
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) and (min-width: 768px) {
+      .rule-item {
+        animation: rule-light linear both;
+        animation-timeline: --rules;
+        animation-range: contain calc(var(--i) * 18% - 6%) contain calc(var(--i) * 18% + 10%);
+      }
+      .rule-rail-fill {
+        transform-origin: top;
+        animation: rail-fill linear both;
+        animation-timeline: --rules;
+        animation-range: contain 0% contain 80%;
+      }
+      .why-band {
+        animation: band-wipe linear both;
+        animation-timeline: view();
+        animation-range: entry 10% entry 70%;
+      }
+      .ground-drift {
+        animation: ground-drift linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 70%;
+      }
+    }
+  }
+}
+@keyframes hero-line-in {
+  from { opacity: 0; transform: translateY(0.35em); clip-path: inset(-0.3em -0.4em 100% -0.4em); }
+  to { opacity: 1; transform: none; clip-path: inset(-0.3em -0.4em -0.4em -0.4em); }
+}
+@keyframes hero-rise-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes rule-light {
+  from { opacity: 0.5; transform: translateX(-6px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes rail-fill {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+@keyframes band-wipe {
+  from { clip-path: inset(0 3% 0 3% round 20px); }
+  to { clip-path: inset(0 0 0 0 round 0); }
+}
+@keyframes ground-drift {
+  from { background-color: var(--color-stock); }
+  to { background-color: var(--color-primary-wash); }
+}
+
+/* Area head on the deep green band: page-supplied lines keep their own ink
+   classes, so remap the ink family to the on-green tones inside the band.
+   In the utilities layer on purpose: a components-layer rule loses to any
+   utility, whatever its specificity. */
+@layer utilities {
+  .area-head-dark .text-\[var\(--color-ink\)\] { color: #ffffff; }
+  .area-head-dark .text-\[var\(--color-ink-soft\)\] { color: var(--color-on-primary-soft); }
+  .area-head-dark .text-\[var\(--color-ink-mute\)\] { color: var(--color-on-primary-soft); }
+  .area-head-dark nav a:hover { color: #ffffff; }
+  .area-head-dark .fill-\[var\(--color-ink\)\] { fill: var(--color-saffron); color: var(--color-saffron); }
+  .area-head-dark .border-\[var\(--color-ink\)\]\/70 { border-color: rgba(255, 255, 255, 0.7); }
+}
+@layer base {
+  select { border-radius: 8px; }
+}

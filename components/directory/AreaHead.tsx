@@ -35,7 +35,7 @@ export default function AreaHead({
 }) {
   return (
     <>
-    <header className={featured ? 'border-b border-[var(--color-marigold-edge)] bg-[var(--color-marigold-wash)]' : 'border-b border-[var(--color-rule)] bg-[var(--color-stock)]'}>
+    <header className={featured ? 'border-b border-[var(--color-marigold-edge)] bg-[var(--color-marigold-wash)]' : 'area-head-dark border-b border-[var(--color-primary-hover)] bg-[var(--color-primary)] text-white'}>
       <div className="dir-wrap pb-8 pt-5 md:pb-10 md:pt-6">
         <nav aria-label="Breadcrumb" className="text-[0.8125rem] text-[var(--color-ink-mute)]">
           <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
@@ -70,7 +70,7 @@ export default function AreaHead({
       // THE RUNNING HEAD. The directory's thumb-tab, pinned under the site
       // header so the place stays named all the way down a long list. It fades
       // in once the page head has scrolled away (scroll-driven, CSS only).
-      <div className="dir-runhead sticky top-[65px] z-40 -mb-10 border-b border-[var(--color-rule)] bg-[var(--color-stock)]">
+      <div className="dir-runhead sticky top-[77px] z-40 -mb-10 border-b border-[var(--color-rule)] bg-[var(--color-stock)]">
         <div className="dir-wrap flex h-10 items-center gap-3">
           <span className="dir-tab !py-1">{tab}</span>
           <span className="truncate text-sm font-semibold text-[var(--color-ink)]">{textOf(title)}</span>

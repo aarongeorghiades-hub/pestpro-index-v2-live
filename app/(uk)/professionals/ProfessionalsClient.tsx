@@ -100,10 +100,10 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
       <Navigation />
 
       {/* Hero */}
-      <header className="border-b border-[var(--color-rule)] bg-[var(--color-stock)]">
+      <header className="border-b border-[var(--color-marigold-edge)] bg-[var(--color-saffron-wash)]">
         <div className="dir-wrap pb-12 pt-12 md:pb-16 md:pt-20">
           <h1 className="dir-display max-w-[16ch] text-[clamp(2.75rem,9vw,6rem)] text-[var(--color-ink)]">
-            List your pest control firm for free
+            List your pest control firm <em className="dir-accent text-[var(--color-primary)]">for free</em>
           </h1>
           <p className="mt-6 max-w-[60ch] text-lg leading-relaxed text-[var(--color-ink-soft)] md:text-xl">
             PestPro Index is a directory of local, independent pest controllers. Customers find you on
@@ -224,7 +224,7 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
       </section>
 
       {/* How it works */}
-      <section className="border-t border-[var(--color-rule)] bg-[var(--color-paper)] py-20 md:py-28">
+      <section className="border-t border-[var(--color-primary-soft)] bg-[var(--color-primary-wash)] py-20 md:py-28">
         <div className="dir-wrap">
           <h2 className={H2}>How it works</h2>
           <p className={`mt-3 text-lg ${BODY}`}>Get listed in three steps.</p>

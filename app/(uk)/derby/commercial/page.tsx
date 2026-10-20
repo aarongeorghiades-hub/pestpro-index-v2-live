@@ -2,6 +2,7 @@ import { createServerClient } from '@/utils/supabase-server';
 import { inCity } from '@/lib/serviceArea';
 import CommercialDirectoryClient, { type Provider } from './CommercialDirectoryClient';
 import type { Metadata } from 'next';
+import FeaturedHere from '@/components/listing/FeaturedHere';
 
 // Commercial directory pages are pruned from the index (thin/duplicate service-lead content).
 export const metadata: Metadata = { robots: { index: false, follow: true } };
@@ -25,5 +26,5 @@ export default async function CommercialPage() {
     .or('regions.cs.["derby"]');
   if (error) console.error('[SSR fetch] derby-commercial:', error.message);
   const providers = inCity((data || []).map((p: any) => ({ ...p, postcode: p.postcode || extractPostcode(p.address) })), 'derby');
-  return <CommercialDirectoryClient initialProviders={providers as Provider[]} />;
+  return <CommercialDirectoryClient featured={<FeaturedHere />} initialProviders={providers as Provider[]} />;
 }

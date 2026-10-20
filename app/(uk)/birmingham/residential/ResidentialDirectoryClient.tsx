@@ -1,5 +1,5 @@
 'use client';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, type ReactNode } from 'react';
 import { formatCount } from '@/lib/formatCount';
 import { PESTS } from '@/lib/pests';
 import { externalHref } from '@/lib/externalUrl';
@@ -98,7 +98,7 @@ export interface Provider {
 // MAIN COMPONENT
 // ============================================================================
 
-export default function ResidentialDirectoryClient({ initialProviders }: { initialProviders: Provider[] }) {
+export default function ResidentialDirectoryClient({ featured, initialProviders }: { featured?: ReactNode; initialProviders: Provider[] }) {
   const providers = initialProviders;
   const loading = false;
   const [filters, setFilters] = useState({ pests: [] as string[], services: [] as string[] });
@@ -350,7 +350,7 @@ export default function ResidentialDirectoryClient({ initialProviders }: { initi
                   </select>
                 </label>
               </div>
-              <div data-featured-slot />
+              {featured}
               {loading ? (
                 <FirmListEmpty>Loading providers...</FirmListEmpty>
               ) : filteredProvidersMemo.length === 0 ? (

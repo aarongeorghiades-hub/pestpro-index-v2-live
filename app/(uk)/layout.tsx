@@ -1,6 +1,5 @@
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Footer from '@/components/Footer';
-import FeaturedSlot from '@/components/listing/FeaturedSlot';
 import ListingClickTracker from '@/components/listing/ListingClickTracker';
 import { awaabBannerRoutes } from '@/lib/awaabBannerRoutes';
 
@@ -24,11 +23,12 @@ import { awaabBannerRoutes } from '@/lib/awaabBannerRoutes';
 // which only the server can read. Neither can do both, so the set is measured
 // here and handed over — the same seam and the same remedy as the footer
 // earnings statement at S64 R2/R3.
+// The Featured block is server-rendered in place by components/listing/
+// FeaturedHere.tsx; the old client portal (FeaturedSlot) is no longer mounted.
 export default function UkLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <ListingClickTracker />
-      <FeaturedSlot />
       <AnnouncementBar routes={awaabBannerRoutes()} />
       {children}
       <Footer />

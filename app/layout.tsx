@@ -36,8 +36,8 @@ const archivo = Archivo({
 const caslon = Libre_Caslon_Text({
   variable: "--font-caslon",
   subsets: ["latin"],
-  weight: ["400"],
-  style: ["italic"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
 });
 
 // Libre Caslon Display sets the headings; Archivo carries text, UI and the

@@ -3,6 +3,7 @@ import { inCity } from '@/lib/serviceArea';
 import ResidentialDirectoryClient, { type Provider } from './ResidentialDirectoryClient';
 import ListingSchema from '@/components/ListingSchema';
 import { cityDirectoryMetadata } from '@/lib/seo';
+import FeaturedHere from '@/components/listing/FeaturedHere';
 
 export const dynamic = 'force-dynamic';
 
@@ -38,7 +39,7 @@ export default async function ResidentialPage() {
           { name: 'Leicester', url: '/leicester/residential' },
         ]}
       />
-      <ResidentialDirectoryClient initialProviders={providers as Provider[]} />
+      <ResidentialDirectoryClient featured={<FeaturedHere />} initialProviders={providers as Provider[]} />
     </>
   );
 }

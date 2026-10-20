@@ -1,5 +1,7 @@
 'use client';
 
+import type { ReactNode } from 'react';
+
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { externalHref } from '@/lib/externalUrl';
@@ -41,7 +43,7 @@ function serviceTags(provider: Provider): string[] {
   return tags;
 }
 
-export default function LeedsBoroughClient({ borough, initialProviders, alsoCovering = [] }: { borough: LeedsBoroughData; initialProviders: Provider[]; alsoCovering?: { canonical_id?: number; name: string; slug: string; postcode: string | null; phone: string | null; website: string | null; google_rating: number | null; google_review_count: number | null; baseLabel: string }[] }) {
+export default function LeedsBoroughClient({ featured, borough, initialProviders, alsoCovering = [] }: { featured?: ReactNode; borough: LeedsBoroughData; initialProviders: Provider[]; alsoCovering?: { canonical_id?: number; name: string; slug: string; postcode: string | null; phone: string | null; website: string | null; google_rating: number | null; google_review_count: number | null; baseLabel: string }[] }) {
   const providers = initialProviders;
 
   return (
@@ -87,7 +89,7 @@ export default function LeedsBoroughClient({ borough, initialProviders, alsoCove
             Firms with a postcode in {borough.name}, sorted by rating
           </p>
 
-          <div data-featured-slot />
+          {featured}
           {providers.length === 0 ? (
             <FirmListEmpty>No firm with a postcode in this area is listed yet.</FirmListEmpty>
           ) : (

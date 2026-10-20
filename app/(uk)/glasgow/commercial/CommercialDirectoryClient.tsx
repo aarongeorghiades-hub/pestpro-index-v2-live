@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import { externalHref } from '@/lib/externalUrl';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -141,7 +141,7 @@ function firmTags(provider: Provider): string[] {
   return tags;
 }
 
-export default function CommercialDirectoryClient({ initialProviders }: { initialProviders: Provider[] }) {
+export default function CommercialDirectoryClient({ featured, initialProviders }: { featured?: ReactNode; initialProviders: Provider[] }) {
   const providers = initialProviders;
   const [filteredProviders, setFilteredProviders] = useState<Provider[]>(() => {
     const sorted = [...initialProviders];
@@ -410,7 +410,7 @@ export default function CommercialDirectoryClient({ initialProviders }: { initia
                   </select>
                 </div>
               )}
-              <div data-featured-slot />
+              {featured}
               {filteredProviders.length === 0 ? (
                 <FirmListEmpty>No providers match your filters. Try adjusting your selection.</FirmListEmpty>
               ) : (

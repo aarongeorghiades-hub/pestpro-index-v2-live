@@ -119,7 +119,7 @@ export default function ProviderDetails({
         label={
           isFeatured ? (
             <span className="flex items-center gap-2 text-[0.8125rem] font-semibold text-[var(--color-marigold-deep)]">
-              <span className="dir-tab !py-1">Featured</span>
+              <span className="dir-tab !bg-[var(--color-saffron)] !py-1 !text-[var(--color-ink)] !shadow-none">Featured</span>
               Paid placement
             </span>
           ) : null

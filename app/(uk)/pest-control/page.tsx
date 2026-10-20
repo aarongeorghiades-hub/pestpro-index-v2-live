@@ -6,6 +6,7 @@ import { getAllBoroughs } from './borough-data';
 import { Metadata } from 'next';
 import { formatCount } from '@/lib/formatCount';
 import { countForTarget } from '@/lib/regionCounts';
+import FeaturedHere from '@/components/listing/FeaturedHere';
 
 export async function generateMetadata(): Promise<Metadata> {
   // Both figures use the same filters as the pages they describe, so the
@@ -70,7 +71,7 @@ export default function BoroughIndexPage() {
         </div>
       </section>
 
-      <div className="dir-wrap pt-10 empty:hidden" data-featured-slot />
+      <div className="dir-wrap pt-10 empty:hidden"><FeaturedHere /></div>
 
       {/* Borough index, A to Z */}
       <section className="border-b border-[var(--color-rule-strong)]">

@@ -5,6 +5,7 @@ import Navigation from '@/components/Navigation';
 import AreaHead, { LocalOnlyNote } from '@/components/directory/AreaHead';
 import { countForSlug } from '@/lib/regionCounts';
 import { liverpoolBoroughs } from '@/app/(uk)/pest-control/liverpool/liverpool-boroughs';
+import FeaturedHere from '@/components/listing/FeaturedHere';
 
 export const dynamic = 'force-dynamic';
 
@@ -82,7 +83,7 @@ export default async function LiverpoolHubPage() {
         </p>
       </AreaHead>
 
-      <div className="dir-wrap pt-10 empty:hidden" data-featured-slot />
+      <div className="dir-wrap pt-10 empty:hidden"><FeaturedHere /></div>
 
       {/* HOMES / BUSINESSES */}
       <section className="border-b border-[var(--color-rule-strong)]">
