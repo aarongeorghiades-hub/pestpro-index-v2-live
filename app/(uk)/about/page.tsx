@@ -6,14 +6,14 @@ import Navigation from '@/components/Navigation';
 // Component (no force-dynamic needed; this keeps it cacheable for SEO/perf).
 export const metadata: Metadata = {
   // Layout template appends "| PestPro Index" — keep a single brand suffix.
-  title: 'About PestPro Index — Neutral UK Pest Control Directory',
+  title: 'About PestPro Index — Local, Independent Pest Controllers',
   description:
-    'PestPro Index is a neutral UK pest control directory. Every basic listing is free — no lead fees, no commissions. Rankings can\'t be bought. Read who we are, how we stay independent, and our affiliate disclosure.',
+    'PestPro Index lists local, independent pest controllers near you. Every basic listing is free — no lead fees, no commissions. Rankings can\'t be bought. No national chains. Read who we are, how we stay independent, and our affiliate disclosure.',
   alternates: { canonical: 'https://pestproindex.com/about' },
   openGraph: {
     title: 'About PestPro Index',
     description:
-      'A neutral UK pest control directory — no lead fees, no commissions. Rankings can\'t be bought. How we operate and stay independent.',
+      'Local, independent pest controllers near you — no lead fees, no commissions, no national chains. Rankings can\'t be bought. How we operate and stay independent.',
     url: 'https://pestproindex.com/about',
     siteName: 'PestPro Index',
     locale: 'en_GB',
@@ -28,7 +28,7 @@ export default async function AboutPage() {
     name: 'PestPro Index',
     url: 'https://pestproindex.com',
     description:
-      'A neutral UK pest control directory. Basic listings are free, with no lead fees or commissions. Rankings can\'t be bought.',
+      'A directory of local, independent pest controllers. Basic listings are free, with no lead fees or commissions. Rankings can\'t be bought. No national chains.',
     parentOrganization: { '@type': 'Organization', name: 'ENA Enterprises Ltd' },
   };
 
@@ -54,7 +54,7 @@ export default async function AboutPage() {
             About PestPro Index
           </h1>
           <p className="text-lg sm:text-xl font-light text-blue-100 max-w-2xl mx-auto">
-            A neutral UK pest control directory — free to list, free to use, with no lead fees or commissions. Rankings can&apos;t be bought.
+            Local, independent pest controllers near you — free to list, free to use, with no lead fees or commissions. Rankings can&apos;t be bought. No national chains.
           </p>
         </div>
       </section>
@@ -63,7 +63,7 @@ export default async function AboutPage() {
         {/* Who we are */}
         <h2 className="text-3xl font-black text-gray-900 mb-4">Who we are</h2>
         <p className="text-gray-700 leading-relaxed mb-4">
-          PestPro Index is a neutral directory of pest control providers across the United Kingdom. We exist to make
+          PestPro Index lists local, independent pest controllers across the United Kingdom. National chains are not included. We exist to make
           finding a local pest controller straightforward and transparent: you can compare providers by location, the
           pests they treat, their certifications and their public Google review data, then contact them directly.
         </p>

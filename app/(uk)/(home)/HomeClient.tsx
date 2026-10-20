@@ -113,7 +113,7 @@ export default function Home({
     '@type': 'Organization',
     'name': 'PestPro Index',
     'url': 'https://pestproindex.com',
-    'description': 'The UK\'s neutral pest control and pest removal directory. Compare providers with transparent information. No lead fees or commissions.',
+    'description': 'Find independent, local pest controllers near you, for domestic and commercial pest control. Only firms based in and serving your area. No national chains, no lead fees.',
     'logo': {
       '@type': 'ImageObject',
       'url': 'https://pestproindex.com/logo-header.png',
@@ -299,11 +299,11 @@ export default function Home({
             </p>
 
             <p className="text-xl font-semibold text-[var(--color-ink)] bg-[var(--color-teal-wash)] p-6 rounded-2xl border-l-4 border-[var(--color-teal)]">
-              PestPro Index is a neutral directory. No lead fees. No commissions. No pay-per-enquiry. Every provider gets listed. Rankings can&apos;t be bought: results are sorted by rating. Firms can pay for a clearly labelled Featured slot, never a higher rank. Reviews, certifications, service areas, specialisms — organised so you can make your own informed decision.
+              PestPro Index lists local, independent pest controllers near you. No national chains. No lead fees. No commissions. No pay-per-enquiry. Rankings can&apos;t be bought: results are sorted by rating. Firms can pay for a clearly labelled Featured slot, never a higher rank. Reviews, certifications, service areas, specialisms — organised so you can make your own informed decision.
             </p>
 
             <p>
-              Whether you need pest control or pest removal services, we bring available data on professionals across the UK to your fingertips so you can find the right service on your terms. A neutral directory designed for transparency, not transactions.
+              Whether you need pest control or pest removal services, we bring available data on local, independent firms to your fingertips so you can find the right service on your terms. For homes and businesses. No national chains.
             </p>
           </div>
         </div>

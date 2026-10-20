@@ -38,7 +38,7 @@ export default async function RegionsIndexPage() {
             Pest Control Across the UK
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl font-light mb-8 max-w-3xl mx-auto">
-            PestPro Index is building the UK's most comprehensive neutral pest control directory. Browse by region to find providers near you.
+            PestPro Index lists local, independent pest controllers. Browse by region to find providers near you. National chains are not included.
           </p>
         </div>
       </section>

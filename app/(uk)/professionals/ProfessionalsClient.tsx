@@ -223,7 +223,7 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
           </h1>
           
           <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-blue-100/95 max-w-3xl mx-auto leading-relaxed font-semibold text-center mb-10 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            Join <span className="font-bold text-white">{providerCount !== null ? `${providerCount.toLocaleString()} UK providers` : 'UK providers'}</span> on the UK's only <span className="font-bold text-white">neutral pest control directory</span>. No lead fees. No commissions. Just customers finding you.
+            Join <span className="font-bold text-white">{providerCount !== null ? `${providerCount.toLocaleString()} UK providers` : 'UK providers'}</span> on a directory of <span className="font-bold text-white">local, independent pest controllers</span>. No national chains. No lead fees. No commissions. Just customers finding you.
           </p>
 
           <Link

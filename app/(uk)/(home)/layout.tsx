@@ -1,13 +1,15 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "PestPro Index — The UK's Neutral Pest Control Directory",
+  title: {
+    absolute: 'PestPro Index: Local, Independent Pest Controllers Near You',
+  },
   description: 'Find independent, local pest controllers near you, for domestic and commercial pest control. Only firms based in and serving your area. No national chains, no lead fees.',
   alternates: {
     canonical: 'https://pestproindex.com',
   },
   openGraph: {
-    title: "PestPro Index — The UK's Neutral Pest Control Directory",
+    title: 'PestPro Index: Local, Independent Pest Controllers Near You',
     description: 'Find independent, local pest controllers near you, for domestic and commercial pest control. Only firms based in and serving your area. No national chains, no lead fees.',
     siteName: 'PestPro Index',
     locale: 'en_GB',
@@ -15,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary',
-    title: "PestPro Index — The UK's Neutral Pest Control Directory",
+    title: 'PestPro Index: Local, Independent Pest Controllers Near You',
     description: 'Find independent, local pest controllers near you, for domestic and commercial pest control. Only firms based in and serving your area. No national chains, no lead fees.',
   },
 }

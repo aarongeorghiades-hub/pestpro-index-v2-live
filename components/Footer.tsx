@@ -34,7 +34,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="mb-12">
           <h3 className="text-[var(--color-paper)] text-xl font-bold mb-2">PestPro Index</h3>
-          <p>The UK&apos;s neutral pest control directory</p>
+          <p>Local, independent pest controllers near you</p>
         </div>
         <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-12 mb-12">
           <details className="footer-group">

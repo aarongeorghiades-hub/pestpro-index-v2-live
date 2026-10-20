@@ -1,6 +1,6 @@
 # PestPro Index London v2
 
-London's neutral pest control directory - a Next.js application featuring 483 providers with comprehensive filtering and search capabilities.
+A directory of local, independent pest controllers — a Next.js application featuring 483 providers with comprehensive filtering and search capabilities.
 
 ## Tech Stack
 
@@ -16,7 +16,7 @@ London's neutral pest control directory - a Next.js application featuring 483 pr
 - Hero with dark blue gradient and 3-layer overlay effects
 - Stats: 481 residential, 457 commercial, 328 verified reviews
 - Three category cards with premium shadows
-- Trust section highlighting neutrality commitment
+- Trust section on local, independent firms
 
 ### 2. Residential (`/residential`)
 - 481 providers from Supabase
