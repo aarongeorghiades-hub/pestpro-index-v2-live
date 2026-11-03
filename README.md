@@ -1,0 +1,1 @@
+Screenshots for the US revamp PR (branch us-revamp-uk-chrome-joro-picks). Not code. Before = production build of main 39e7db7 (BUILD_ID mifK_z4nyiHW69BoGEhJu); after = production build of the PR branch (BUILD_ID QIGpxmUW3m2F6uwI_yFh0). Captured headless Chrome at 1440x900 and 390x844.
