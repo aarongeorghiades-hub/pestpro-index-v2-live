@@ -171,7 +171,7 @@ export default function JoroSpiderWebsPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="joro-spider-webs" />}
       title="Joro Spider Webs"
-      subtitle="One extendable cobweb pole for taking Joro webs down from eaves and doorways without a ladder."
+      subtitle="Two extendable cobweb poles for taking Joro webs down from eaves and doorways without a ladder."
       lastUpdated="August 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: 'Joro Spider', href: '/us/joro-spider' }}
@@ -182,7 +182,7 @@ export default function JoroSpiderWebsPage() {
       schemas={[articleSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        The pick is the EVERSPROUT duster and pole, which extends from 5 to 12 feet and has a head that winds up silk. It suits webs strung high on eaves or across a doorway.
+        The picks are the EVERSPROUT duster and pole, which extends from 5 to 12 feet and has a head that winds up silk, and the U.S. Duster Co. pole, which its listing says reaches 20 feet. Both suit webs strung high on eaves or across a doorway.
       </p>
 
       <h2 id="how-big">How Big They Get</h2>
@@ -248,7 +248,7 @@ export default function JoroSpiderWebsPage() {
       </p>
 
       <p>
-        The tool below is a telescoping duster, named because taking a web down by hand is the only removal method the sources on this page describe.
+        The tools below are telescoping dusters, named because taking a web down by hand is the only removal method the sources on this page describe.
       </p>
 
       <UsToolCard
@@ -262,11 +262,21 @@ export default function JoroSpiderWebsPage() {
         asin="B075L7QWP4"
       />
 
+      <UsToolCard
+        name="U.S. Duster Co. Cobweb Duster, 3-Stage Aluminum Telescoping Pole, 20 ft Reach"
+        whatItDoes={[
+          'Three-stage aluminum telescoping pole, listed with an extendable reach of 20 feet',
+          'Medium-stiff bristles; the listing names high ceilings, corners, ceiling fans and outdoor spaces among its uses',
+          'A physical removal tool only — it contains no pesticide and makes no chemical claim',
+        ]}
+        asin="B073SDTNSX"
+      />
+
       <p>
-        One tool, named plainly. We have not built a ranking, a comparison table, or a
-        &ldquo;top picks&rdquo; category around a single item, because a table of one is not a
-        comparison. Any telescoping duster of similar length does the same job; this one is named
-        so the description points at something specific rather than at a shopping category.
+        Two tools, named plainly. They also head this page in the top picks box, in no ranked
+        order. There is no comparison table, because two dusters that do the same job do not need
+        one. Any telescoping duster of similar length does the same job; these are named so the
+        description points at something specific rather than at a shopping category.
       </p>
 
       <h2 id="why-so-big">Why So Big</h2>

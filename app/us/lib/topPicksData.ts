@@ -299,6 +299,7 @@ export const US_TOP_PICKS: Record<string, UsBoxWords> = {
     note: null,
     picks: [
       { asin: "B075L7QWP4", label: "Cobweb duster and pole", reason: "For high webs on eaves: a pole extending from 5 to 12 feet with a head that winds up silk." },
+      { asin: "B073SDTNSX", label: "Cobweb duster, 20 ft reach", reason: "For webs on eaves and gutter lines: a three-stage aluminum pole with a listed reach of 20 feet." },
     ],
     excluded: [],
   },
