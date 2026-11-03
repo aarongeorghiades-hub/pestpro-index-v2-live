@@ -274,6 +274,27 @@ export const US_TOP_PICKS: Record<string, UsBoxWords> = {
     ],
     excluded: [],
   },
+  "are-joro-spiders-dangerous": {
+    note: null,
+    picks: [
+      { asin: "B073SDTNSX", label: "Cobweb duster, 20 ft reach", reason: "For webs on eaves and gutter lines: a three-stage aluminum pole with a listed reach of 20 feet." },
+    ],
+    excluded: [],
+  },
+  "joro-spider": {
+    note: null,
+    picks: [
+      { asin: "B073SDTNSX", label: "Cobweb duster, 20 ft reach", reason: "For webs on eaves and gutter lines: a three-stage aluminum pole with a listed reach of 20 feet." },
+    ],
+    excluded: [],
+  },
+  "joro-spider-range": {
+    note: null,
+    picks: [
+      { asin: "B073SDTNSX", label: "Cobweb duster, 20 ft reach", reason: "For webs on eaves and gutter lines: a three-stage aluminum pole with a listed reach of 20 feet." },
+    ],
+    excluded: [],
+  },
   "joro-spider-webs": {
     note: null,
     picks: [

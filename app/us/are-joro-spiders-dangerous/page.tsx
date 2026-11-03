@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
+import UsToolCard from '../components/UsToolCard';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import { SourceList, type Source } from '../components/UsSources';
 import { JORO_NAV, JORO_HOME } from '../components/joroNav';
@@ -167,6 +169,7 @@ const relatedPages = [
 export default function AreJoroSpidersDangerousPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="are-joro-spiders-dangerous" />}
       title="Are Joro Spiders Dangerous?"
       subtitle="A four-inch spider hanging at face height in a golden web is an alarming thing to walk into. The research on what it can actually do to you is reassuring, with one honest caveat that has nothing to do with people."
       lastUpdated="August 2026"
@@ -300,6 +303,22 @@ export default function AreJoroSpidersDangerousPage() {
         None of that changes the answer to the question in the title. It changes the answer to a
         different question, about the spiders around them rather than about you.
       </p>
+
+      <p>
+        If a web is blocking a doorway or an eave, the duster below is a long-reach pole for
+        taking it down by hand. The page on{' '}
+        <Link href="/us/joro-spider-webs">Joro spider webs</Link> covers clearing one safely.
+      </p>
+
+      <UsToolCard
+        name="U.S. Duster Co. Cobweb Duster, 3-Stage Aluminum Telescoping Pole, 20 ft Reach"
+        whatItDoes={[
+          'Three-stage aluminum telescoping pole, listed with an extendable reach of 20 feet',
+          'Medium-stiff bristles; the listing names high ceilings, corners, ceiling fans and outdoor spaces among its uses',
+          'A physical removal tool only — it contains no pesticide and makes no chemical claim',
+        ]}
+        asin="B073SDTNSX"
+      />
 
       <h2 id="faq">Questions</h2>
       <UsFaq faqs={faqs} />

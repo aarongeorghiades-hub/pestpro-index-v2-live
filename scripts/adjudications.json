@@ -640,8 +640,9 @@
     },
     "us/products": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "4caa27baee76"
+      "date": "2026-11-03",
+      "fingerprint": "fedc5f28017a",
+      "note": "S77: derived card index; B073SDTNSX entered it because the Joro pages now card it (PM brief 2026-11-03). Ordering is derived, not authored."
     },
     "us/rats": {
       "judgement": "correct-as-built",
@@ -684,6 +685,24 @@
       "date": "2026-10-06",
       "fingerprint": "21ffd31dd68a",
       "note": "S70 R5 PM ruling (Law 195 extended to /us): top-picks box added in the hero, ahead of the existing cards; cards and guide sections unmoved; one-line safety/law note in the box where real."
+    },
+    "us/joro-spider": {
+      "judgement": "correct-as-built",
+      "date": "2026-11-03",
+      "fingerprint": "6d323421b6b9",
+      "note": "S77 PM brief 2026-11-03: add the Our top picks box with verified Amazon products to the Joro pages; B073SDTNSX verified by fetch (title U.S. Duster Co. cobweb duster, 20 ft reach). Card placed before the Questions heading, after every identification, harm and range section (Law 180); passive tool, no box note."
+    },
+    "us/are-joro-spiders-dangerous": {
+      "judgement": "correct-as-built",
+      "date": "2026-11-03",
+      "fingerprint": "d084ae2365a8",
+      "note": "S77 PM brief 2026-11-03: add the Our top picks box with verified Amazon products to the Joro pages; B073SDTNSX verified by fetch (title U.S. Duster Co. cobweb duster, 20 ft reach). Card placed before the Questions heading, after every identification, harm and range section (Law 180); passive tool, no box note."
+    },
+    "us/joro-spider-range": {
+      "judgement": "correct-as-built",
+      "date": "2026-11-03",
+      "fingerprint": "b14dfc4a7f22",
+      "note": "S77 PM brief 2026-11-03: add the Our top picks box with verified Amazon products to the Joro pages; B073SDTNSX verified by fetch (title U.S. Duster Co. cobweb duster, 20 ft reach). Card placed before the Questions heading, after every identification, harm and range section (Law 180); passive tool, no box note."
     }
   }
 }
