@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
+import UsToolCard from '../components/UsToolCard';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import { SourceList, AsOf, type Source } from '../components/UsSources';
 import { JORO_NAV, JORO_HOME } from '../components/joroNav';
@@ -136,6 +138,7 @@ const relatedPages = [
 export default function JoroSpiderPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="joro-spider" />}
       title="Joro Spider: Identification, Origin, and How It Spreads"
       subtitle="A large, unmistakably yellow orb-weaver that arrived in Georgia by accident and has been moving outward ever since. Here is what it is, how to recognize it, and where it came from."
       lastUpdated="August 2026"
@@ -303,6 +306,22 @@ export default function JoroSpiderPage() {
         </AsOf>
         , with sporadic finds in the months either side.
       </p>
+
+      <p>
+        If a web is blocking a doorway or an eave, the duster below is a long-reach pole for
+        taking it down by hand. The page on{' '}
+        <Link href="/us/joro-spider-webs">Joro spider webs</Link> covers clearing one safely.
+      </p>
+
+      <UsToolCard
+        name="U.S. Duster Co. Cobweb Duster, 3-Stage Aluminum Telescoping Pole, 20 ft Reach"
+        whatItDoes={[
+          'Three-stage aluminum telescoping pole, listed with an extendable reach of 20 feet',
+          'Medium-stiff bristles; the listing names high ceilings, corners, ceiling fans and outdoor spaces among its uses',
+          'A physical removal tool only — it contains no pesticide and makes no chemical claim',
+        ]}
+        asin="B073SDTNSX"
+      />
 
       <h2 id="faq">Questions</h2>
       <UsFaq faqs={faqs} />

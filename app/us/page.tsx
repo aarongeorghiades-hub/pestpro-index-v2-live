@@ -524,6 +524,7 @@ export default function UsHubPage() {
       homeHref={HUB_HOME}
       clusterNav={HUB_NAV}
       schemas={[collectionSchema, breadcrumbSchema]}
+      isHub
     >
       <p>
         This is the index for the US side of PestPro Index. The groups below are arranged

@@ -1,5 +1,52 @@
 import Link from 'next/link';
 import ProgressRail from '@/components/ProgressRail';
+import UsHeader from './UsHeader';
+
+const SITE = 'https://pestproindex.com';
+const US_HOME = '/us';
+
+type Crumb = { label: string; href: string | null };
+
+// S77 — ONE TRAIL, TWO SURFACES. The visible breadcrumb and the BreadcrumbList
+// JSON-LD are built from the same array, so they cannot disagree. Before this they
+// were written separately and disagreed on most routes: /us/ants showed "US Pest
+// Guides / Household Ants" while its schema listed "Household Ants" alone. Two
+// sources of truth that disagree are a defect (Law 41); the overlap law says an
+// edit to one surface must reach its twin.
+//
+// "Home" is the US home, /us, never the UK "/". A parent that IS /us is not
+// repeated after it: "Home / US Pest Guides" would be two links to one page. On
+// the hub itself the trail is "Home" alone, as the current page, not a link to
+// itself — so every /us trail starts with Home. A lone root crumb stays
+// ink-mute like every breadcrumb; only a current page at the END of a longer
+// trail is lifted to ink, as on the UK estate.
+function buildTrail(title: string, isHub: boolean, parent?: { label: string; href: string }): Crumb[] {
+  if (isHub) return [{ label: 'Home', href: null }];
+  const trail: Crumb[] = [{ label: 'Home', href: US_HOME }];
+  if (parent && parent.href !== US_HOME) trail.push({ label: parent.label, href: parent.href });
+  trail.push({ label: title, href: null });
+  return trail;
+}
+
+type Schema = { '@type'?: string; itemListElement?: { item?: string }[] } & Record<string, unknown>;
+
+// A page's own BreadcrumbList supplies one fact the layout does not have: the
+// page's canonical URL, as its last item. Everything else is rebuilt from the trail.
+function deriveBreadcrumbSchema(schema: Schema, trail: Crumb[]): Schema {
+  if (schema['@type'] !== 'BreadcrumbList') return schema;
+  const items = schema.itemListElement ?? [];
+  const selfUrl = items.length ? items[items.length - 1].item : undefined;
+  if (!selfUrl) throw new Error('UsPageLayout: BreadcrumbList has no item URL for the current page');
+  return {
+    ...schema,
+    itemListElement: trail.map((c, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: c.label,
+      item: c.href ? `${SITE}${c.href}` : selfUrl,
+    })),
+  };
+}
 
 // Layout for the US estate.
 //
@@ -58,6 +105,8 @@ interface UsPageLayoutProps {
   // directly after the byline so it sits in the first mobile screen. The cards and
   // every guide section below stay exactly where they were.
   topPicks?: React.ReactNode;
+  // S77: set only by app/us/page.tsx. The hub is the root of the breadcrumb trail.
+  isHub?: boolean;
 }
 
 export default function UsPageLayout({
@@ -73,7 +122,9 @@ export default function UsPageLayout({
   homeHref,
   clusterNav,
   topPicks,
+  isHub = false,
 }: UsPageLayoutProps) {
+  const trail = buildTrail(title, isHub, breadcrumbParent);
   return (
     <div className="min-h-screen bg-[var(--color-paper)]">
       {/* THE RAIL TAKES EVERY tocItem, AND THAT IS NOT WHAT GuideLayout DOES.
@@ -95,40 +146,44 @@ export default function UsPageLayout({
         <script
           key={i}
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(deriveBreadcrumbSchema(schema as Schema, trail)) }}
         />
       ))}
 
-      {/* US header. Deliberately self-contained: the wordmark links to the US
-          cluster hub, never to the UK home page. */}
-      <header className="bg-[var(--color-ink)]">
-        <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
-          <Link href={homeHref} className="text-lg font-black tracking-tight text-[var(--color-paper)]">
-            PestPro Index <span className="text-[var(--color-ochre)]">US</span>
-          </Link>
-          <nav className="hidden items-center gap-5 text-sm font-semibold text-[var(--color-paper)]/75 sm:flex">
-            {clusterNav.map((item) => (
-              <Link key={item.href} href={item.href} className="transition-colors hover:text-[var(--color-paper)]">{item.title}</Link>
-            ))}
-          </nav>
-        </div>
-      </header>
+      {/* S77: the UK header's look, US links only. See UsHeader.tsx. */}
+      <UsHeader homeHref={homeHref} clusterNav={clusterNav} />
 
       {/* Hero */}
       <section className={`border-b border-[var(--color-rule)] bg-[var(--color-surface)] ${topPicks ? 'py-5 md:py-12' : 'py-12 md:py-16'}`}>
         <div className="max-w-4xl mx-auto px-4">
-          <nav className={`${topPicks ? 'mb-3 md:mb-6' : 'mb-6'} flex items-center gap-2 text-sm text-[var(--color-ink-mute)]`}>
-            {breadcrumbParent ? (
-              <>
-                <Link href={breadcrumbParent.href} className="transition-colors hover:text-[var(--color-teal-deep)]">
-                  {breadcrumbParent.label}
-                </Link>
-                <span>/</span>
-                <span className={topPicks ? 'hidden text-[var(--color-ink)] sm:inline' : 'text-[var(--color-ink)]'}>{title}</span>
-              </>
-            ) : (
-              <span className="text-[var(--color-ink)]">{title}</span>
-            )}
+          <nav
+            aria-label="Breadcrumb"
+            className={`${topPicks ? 'mb-3 flex-nowrap sm:flex-wrap md:mb-6' : 'mb-6 flex-wrap'} flex items-center gap-x-2 gap-y-1 text-sm text-[var(--color-ink-mute)]`}
+          >
+            {trail.map((c, i) => {
+              // The current page always shows, so a trail never ends on a link or a
+              // bare "/". On a phone with a top-picks box it is held to ONE line and
+              // truncated, so the box stays in the first screen (S70 R5) — the old
+              // layout hid it outright, which left the reader with "Home" alone.
+              const clampOnPhone = !c.href && Boolean(topPicks) && trail.length > 1;
+              return (
+                <span key={i} className={`flex items-center gap-2 ${clampOnPhone ? 'min-w-0' : 'shrink-0'}`}>
+                  {i > 0 && <span aria-hidden="true">/</span>}
+                  {c.href ? (
+                    <Link href={c.href} className="shrink-0 whitespace-nowrap transition-colors hover:text-[var(--color-primary)]">
+                      {c.label}
+                    </Link>
+                  ) : (
+                    <span
+                      aria-current="page"
+                      className={`${trail.length > 1 ? 'text-[var(--color-ink)]' : ''} ${clampOnPhone ? 'min-w-0 truncate sm:whitespace-normal' : ''}`}
+                    >
+                      {c.label}
+                    </span>
+                  )}
+                </span>
+              );
+            })}
           </nav>
 
           <h1 className={`${topPicks ? 'mb-2 text-2xl md:mb-4' : 'mb-4 text-3xl'} font-black leading-tight text-[var(--color-ink)] sm:text-4xl md:text-5xl`}>{title}</h1>
@@ -210,16 +265,8 @@ export default function UsPageLayout({
         </section>
       )}
 
-      {/* US footer. No UK links. */}
-      <footer className="bg-[var(--color-ink)] py-10 text-[var(--color-paper)]/60">
-        <div className="max-w-7xl mx-auto px-4 text-sm">
-          <p className="font-bold text-white mb-2">PestPro Index US</p>
-          <p className="max-w-3xl">
-            Independent, research-based information on pests in the United States. We are
-            not a pest control company and we do not sell pest control services.
-          </p>
-        </div>
-      </footer>
+      {/* S77: the US footer is now one band, in app/us/layout.tsx. The identity
+          line and the research sentence that printed here moved into it verbatim. */}
     </div>
   );
 }
