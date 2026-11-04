@@ -79,6 +79,10 @@ export default function UsLayout({ children }: { children: React.ReactNode }) {
               <li><Link href="/cookies" className={link}>Cookie Policy</Link></li>
               <li><button type="button" data-cookie-preferences="" className={link}>Cookie preferences</button></li>
             </ul>
+            {/* S78 PM ruling 2026-11-04: the UK footer's company line, copied
+                verbatim from components/Footer.tsx so the two estates state the
+                same company facts (Law 132). */}
+            <p className="m-0">ENA Enterprises Ltd, company number 17257845, ICO registration ZC164333</p>
             <p className="m-0">&copy; 2026 PestPro Index</p>
           </div>
         </div>
