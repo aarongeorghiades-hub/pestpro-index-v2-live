@@ -32,7 +32,7 @@ type NavLink = { title: string; href: string };
 
 const US_HOME = '/us';
 
-export default function UsHeader({ homeHref, clusterNav }: { homeHref: string; clusterNav: NavLink[] }) {
+export default function UsHeader({ clusterNav }: { clusterNav: NavLink[] }) {
   const pathname = usePathname() || '';
   const [open, setOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
@@ -69,7 +69,12 @@ export default function UsHeader({ homeHref, clusterNav }: { homeHref: string; c
         {/* The UK wordmark exactly, with nothing appended: the logo is one lockup
             across both estates. The US identity is carried by the footer name and
             the accessible label. */}
-        <Link href={homeHref} aria-label="PestPro Index US home" className="shrink-0">
+        {/* S78 PM ruling 2026-11-04: the wordmark goes to the US home, /us, on
+            every /us page, as the UK wordmark goes to "/". It previously followed
+            each cluster's homeHref (the Joro pages pointed at /us/joro-spider).
+            /us is outside G7's /us/<slug> pattern, and /us/joro-spider stays
+            linked from JORO_NAV, so the G7 link graph does not change. */}
+        <Link href={US_HOME} aria-label="PestPro Index US home" className="shrink-0">
           <Wordmark />
         </Link>
 

@@ -95,8 +95,10 @@ interface UsPageLayoutProps {
   relatedPages?: RelatedLink[];
   children: React.ReactNode;
   schemas: object[];
-  // Where the wordmark points. Should be this cluster's hub. REQUIRED: there is no
-  // default, so a cluster cannot inherit another cluster's home pointer by omission.
+  // Formerly where the wordmark pointed (this cluster's hub). Since S78 the
+  // wordmark goes to /us on every page by PM ruling and this prop is NOT READ.
+  // It stays in the type only because all 61 pages pass it; removing it is a
+  // separate cleanup across those files.
   homeHref: string;
   // The header nav for this cluster. Never links out of its own cluster. REQUIRED
   // for the same reason.
@@ -119,7 +121,8 @@ export default function UsPageLayout({
   relatedPages = [],
   children,
   schemas,
-  homeHref,
+  // homeHref is still accepted (every page passes it) but no longer read: S78
+  // pointed the wordmark at /us everywhere by PM ruling. See UsHeader.
   clusterNav,
   topPicks,
   isHub = false,
@@ -151,7 +154,7 @@ export default function UsPageLayout({
       ))}
 
       {/* S77: the UK header's look, US links only. See UsHeader.tsx. */}
-      <UsHeader homeHref={homeHref} clusterNav={clusterNav} />
+      <UsHeader clusterNav={clusterNav} />
 
       {/* Hero */}
       <section className={`border-b border-[var(--color-rule)] bg-[var(--color-surface)] ${topPicks ? 'py-5 md:py-12' : 'py-12 md:py-16'}`}>
