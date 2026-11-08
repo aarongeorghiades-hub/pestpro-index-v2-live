@@ -6,7 +6,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { CAMEL_CRICKETS_NAV, CAMEL_CRICKETS_HOME } from '../components/camelCricketsNav';
 
 const URL = 'https://pestproindex.com/us/camel-crickets';
-const TITLE = 'Camel Crickets: The Chirp Test, and the Damp Basement';
+const TITLE = 'Camel Crickets in a Damp Basement';
 const DESCRIPTION =
   'Camel crickets do not chirp, so a chirping basement is a different insect. Identification, why they come in, and where four extension sources disagree.';
 

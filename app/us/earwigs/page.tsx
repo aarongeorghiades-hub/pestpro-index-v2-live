@@ -6,7 +6,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { EARWIGS_NAV, EARWIGS_HOME } from '../components/earwigsNav';
 
 const URL = 'https://pestproindex.com/us/earwigs';
-const TITLE = 'Earwigs: Can Those Pincers Actually Hurt You?';
+const TITLE = 'Earwigs: Harmless to People, and How to Keep Them Out';
 const DESCRIPTION =
   'Six sources answer the pincer question, and three disagree about what the pincers are for. Then the mulch and the door sill that put earwigs indoors.';
 

@@ -7,7 +7,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { CARPETBEETLES_NAV, CARPETBEETLES_HOME } from '../components/carpetBeetlesNav';
 
 const URL = 'https://pestproindex.com/us/carpet-beetles';
-const TITLE = 'Carpet Beetles: What Stops the Fabric Damage';
+const TITLE = 'Carpet Beetles: How to Stop Damage to Clothes and Fabric';
 const DESCRIPTION =
   'Fourteen extension publications on carpet beetles: why cleaning and exclusion come first, four freezing figures that disagree, and the narrow set of products supported.';
 

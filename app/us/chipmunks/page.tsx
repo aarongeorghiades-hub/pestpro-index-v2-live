@@ -7,7 +7,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { CHIPMUNK_NAV, CHIPMUNK_HOME } from '../components/chipmunkNav';
 
 const URL = 'https://pestproindex.com/us/chipmunks';
-const TITLE = 'Chipmunks: When Control Is Actually Warranted';
+const TITLE = 'Chipmunks: When to Trap Them or Seal Them Out';
 const DESCRIPTION =
   'Four of five extension sources make control conditional on numbers or burrowing against a structure. The structural case, separated from the garden nuisance case.';
 

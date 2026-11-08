@@ -8,7 +8,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { CHIGGERS_NAV, CHIGGERS_HOME } from '../components/chiggersNav';
 
 const URL = 'https://pestproindex.com/us/chiggers';
-const TITLE = 'Chiggers: They Don\'t Burrow and Don\'t Drink Blood';
+const TITLE = 'Chiggers: How to Avoid Bites, and They Don\'t Burrow';
 const DESCRIPTION =
   'Three university extension services correct the same two myths. What chiggers actually are, why the itch starts hours after the mite is gone, and what treats it.';
 

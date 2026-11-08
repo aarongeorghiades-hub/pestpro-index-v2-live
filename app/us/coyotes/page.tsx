@@ -7,7 +7,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { COYOTE_NAV, COYOTE_HOME } from '../components/coyoteNav';
 
 const URL = 'https://pestproindex.com/us/coyotes';
-const TITLE = 'Coyotes: The Fence Spec and Who Handles Removal';
+const TITLE = 'Coyotes: How to Fence Them Out and Who Removes Them';
 const DESCRIPTION =
   'The coyote-resistant fence spec given to the inch, the live disagreement over whether hazing works, and why removal is handed to agencies rather than a homeowner.';
 

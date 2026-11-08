@@ -8,7 +8,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { FLIES_NAV, FLIES_HOME } from '../components/fliesNav';
 
 const URL = 'https://pestproindex.com/us/flies';
-const TITLE = 'House Flies: What They Carry, and How';
+const TITLE = 'House Flies: Clean Up First, Then Trap Them';
 const DESCRIPTION =
   'House flies cannot bite. Extension sources say they carry contamination from filth onto food mechanically. Four publications, 1999 to 2025, and the products that help.';
 

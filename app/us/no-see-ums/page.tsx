@@ -8,7 +8,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { NOSEEUMS_NAV, NOSEEUMS_HOME } from '../components/noSeeUmsNav';
 
 const URL = 'https://pestproindex.com/us/no-see-ums';
-const TITLE = 'No-See-Ums: The Fly That Beats Window Screens';
+const TITLE = 'No-See-Ums: How They Get Through Window Screens';
 const DESCRIPTION =
   'Three extension services say ordinary window screening doesn\'t keep biting midges out. The mesh number that does, from the University of Arizona.';
 

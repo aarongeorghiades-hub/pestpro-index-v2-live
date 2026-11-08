@@ -8,7 +8,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { GROUNDHOG_NAV, GROUNDHOG_HOME } from '../components/groundhogNav';
 
 const URL = 'https://pestproindex.com/us/groundhogs';
-const TITLE = 'Groundhogs: The Fence Spec, and What State Law Says';
+const TITLE = 'Groundhogs: Fences, Traps and What Your State Allows';
 const DESCRIPTION =
   'Three states classify the groundhog three ways, and one bans relocating a trapped one. The burrow, the structural damage, and four fence specs that disagree.';
 

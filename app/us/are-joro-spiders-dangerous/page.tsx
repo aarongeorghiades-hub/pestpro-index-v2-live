@@ -8,7 +8,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { JORO_NAV, JORO_HOME } from '../components/joroNav';
 
 const URL = 'https://pestproindex.com/us/are-joro-spiders-dangerous';
-const TITLE = 'Are Joro Spiders Dangerous? What Research Says';
+const TITLE = 'Are Joro Spiders Dangerous?';
 const DESCRIPTION =
   'Joro spider bites, venom and the risk to pets, from university research. What has been established, what is still uncertain, and the one honest caveat that remains.';
 

@@ -8,7 +8,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { ANTS_NAV, ANTS_HOME } from '../components/antsNav';
 
 const URL = 'https://pestproindex.com/us/ants';
-const TITLE = 'Household Ants: Which Bait Reaches the Nest';
+const TITLE = 'Household Ants: Which Bait Gets Back to the Nest';
 const DESCRIPTION =
   'Odorous house, pavement, carpenter and pharaoh ants, kept separate. Which bait reaches each species\' nest, from five extension publications, 1996 to 2024.';
 

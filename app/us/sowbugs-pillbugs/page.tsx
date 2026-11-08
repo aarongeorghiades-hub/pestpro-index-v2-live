@@ -6,7 +6,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { SOWBUGS_PILLBUGS_NAV, SOWBUGS_PILLBUGS_HOME } from '../components/sowbugsPillbugsNav';
 
 const URL = 'https://pestproindex.com/us/sowbugs-pillbugs';
-const TITLE = 'Sowbugs and Pillbugs: The Roly-Poly Is Not an Insect';
+const TITLE = 'Roly-Polies in the House: Sowbugs and Pillbugs';
 const DESCRIPTION =
   'It breathes through gills, which is why it dies in your basement. The one test that tells the two apart, and why seven sources say control is unnecessary.';
 

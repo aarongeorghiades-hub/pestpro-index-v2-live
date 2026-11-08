@@ -8,7 +8,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { SILVERFISH_NAV, SILVERFISH_HOME } from '../components/silverfishNav';
 
 const URL = 'https://pestproindex.com/us/silverfish';
-const TITLE = 'Silverfish vs Firebrats: Different Needs';
+const TITLE = 'Silverfish vs Firebrats: How They Differ';
 const DESCRIPTION =
   'Silverfish scrape paper rather than biting; firebrats look similar but want opposite conditions. Six extension publications, three disagreeing on warm-or-cool.';
 

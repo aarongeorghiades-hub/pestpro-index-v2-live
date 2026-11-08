@@ -8,7 +8,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { FUNGUS_GNATS_NAV, FUNGUS_GNATS_HOME } from '../components/fungusGnatsNav';
 
 const URL = 'https://pestproindex.com/us/fungus-gnats';
-const TITLE = 'Fungus Gnats: The Problem Is the Watering Can';
+const TITLE = 'Fungus Gnats in Houseplants: Dry the Soil First';
 const DESCRIPTION =
   'The adults are the symptom and the wet soil is the cause. Six sources on drying the top inch, Bti in the soil, yellow traps, and one flat disagreement.';
 

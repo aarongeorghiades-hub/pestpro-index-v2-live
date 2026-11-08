@@ -6,7 +6,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { MILLIPEDES_NAV, MILLIPEDES_HOME } from '../components/millipedesNav';
 
 const URL = 'https://pestproindex.com/us/millipedes';
-const TITLE = 'Millipedes in the House: Why the Invasion Ends by Itself';
+const TITLE = 'Millipedes in the House: Wait, Then Vacuum';
 const DESCRIPTION =
   'They arrive after wet weather and die within a day or two. Two sources call them harmless, a third says do not pick one up, and this page carries both.';
 

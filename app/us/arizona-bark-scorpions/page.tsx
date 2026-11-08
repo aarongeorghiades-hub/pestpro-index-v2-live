@@ -9,7 +9,7 @@ import { BARKSCORPION_NAV, BARKSCORPION_HOME } from '../components/barkScorpionN
 
 const URL = 'https://pestproindex.com/us/arizona-bark-scorpions';
 const TITLE =
-  'Arizona Bark Scorpions: ID and the Sting';
+  'Arizona Bark Scorpions: How to Identify One, and the Sting';
 const DESCRIPTION =
   'The only scorpion of medical concern in the US, per the University of Arizona. How to tell it from harmless desert species, and what a sting actually does.';
 

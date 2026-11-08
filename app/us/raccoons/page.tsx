@@ -5,7 +5,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { RACCOON_NAV, RACCOON_HOME } from '../components/raccoonNav';
 
 const URL = 'https://pestproindex.com/us/raccoons';
-const TITLE = 'Raccoons: Rolled Turf, Attic Entry and Damage';
+const TITLE = 'Raccoons in the Attic and the Yard';
 const DESCRIPTION =
   'How to tell raccoon lawn damage from other diggers, the measured mesh and chimney specs extension services give, and what agencies say about rabies and roundworm.';
 

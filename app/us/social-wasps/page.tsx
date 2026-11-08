@@ -7,7 +7,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { SOCIAL_WASP_NAV, SOCIAL_WASP_HOME } from '../components/socialWaspNav';
 
 const URL = 'https://pestproindex.com/us/social-wasps';
-const TITLE = 'Social Wasps: Yellowjackets, Wasps and Hornets';
+const TITLE = 'Yellowjackets, Paper Wasps and Hornets';
 const DESCRIPTION =
   'Why most American \'hornets\' are yellowjackets, why a wasp leaves no stinger to remove, and four sting-treatment positions this page reports rather than settles.';
 

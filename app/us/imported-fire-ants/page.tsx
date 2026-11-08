@@ -8,7 +8,7 @@ import { FIREANT_NAV, FIREANT_HOME } from '../components/fireAntNav';
 
 const URL = 'https://pestproindex.com/us/imported-fire-ants';
 const TITLE =
-  'Imported Fire Ants: ID and the Two-Step Method';
+  'Imported Fire Ants: How to Identify Them and the Two-Step Treatment';
 const DESCRIPTION =
   'A federal regulation defines which ants the name covers. Texas A&M\'s two-step control method, with its own rates, temperatures and timing, plus what a sting does.';
 

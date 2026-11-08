@@ -8,7 +8,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { RECLUSE_NAV, RECLUSE_HOME } from '../components/brownRecluseNav';
 
 const URL = 'https://pestproindex.com/us/brown-recluse-spiders';
-const TITLE = 'Brown Recluse Spiders: Where Sources Disagree';
+const TITLE = 'Brown Recluse Spiders: How to Identify Them and Keep Them Out';
 const DESCRIPTION =
   'Extension services disagree about the violin marking, how far the range runs, and whether insecticides help. Every position is set out, not smoothed over.';
 
