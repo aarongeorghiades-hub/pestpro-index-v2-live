@@ -7,7 +7,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { MOLEVOLE_NAV, MOLEVOLE_HOME } from '../components/moleVoleControlNav';
 
 const URL = 'https://pestproindex.com/us/mole-and-vole-control';
-const TITLE = 'Mole and Vole Control: Traps, Oil and Bait';
+const TITLE = 'Mole and Vole Control: Traps, Repellent and Bait';
 const DESCRIPTION =
   'What extension services publish on moles and voles: a countable trapping criterion, a disputed castor-oil repellent, one general-use bait, and one class you can\'t apply.';
 

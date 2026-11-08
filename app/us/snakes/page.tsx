@@ -8,7 +8,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { SNAKE_NAV, SNAKE_HOME } from '../components/snakeNav';
 
 const URL = 'https://pestproindex.com/us/snakes';
-const TITLE = 'Snakes: The Fence Spec, and Law by State';
+const TITLE = 'Snakes: How to Keep Them Out, and the Law';
 const DESCRIPTION =
   'A snake-proof fence four sources specify differently, a repellent class five say doesn\'t work, protection law that changes at the state line, and conflicting first aid.';
 

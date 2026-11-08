@@ -8,7 +8,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { HOUSE_MICE_NAV, HOUSE_MICE_HOME } from '../components/houseMiceNav';
 
 const URL = 'https://pestproindex.com/us/house-mice';
-const TITLE = 'House Mice: ID, the Quarter-Inch Rule, and Traps';
+const TITLE = 'House Mice: How to Trap Them and Seal Gaps';
 const DESCRIPTION =
   'How to tell a house mouse from a deer mouse, the quarter-inch entry gap five sources name independently, and where sources disagree on glue boards.';
 

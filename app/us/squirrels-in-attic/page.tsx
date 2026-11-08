@@ -7,7 +7,7 @@ import UsToolCard from '../components/UsToolCard';
 import { SQUIRRELS_ATTIC_HOME, SQUIRRELS_ATTIC_NAV } from '../components/squirrelsInAtticNav';
 
 const URL = 'https://pestproindex.com/us/squirrels-in-attic';
-const TITLE = 'Squirrels in the Attic: Signs, Exclusion and Repair';
+const TITLE = 'Squirrels in the Attic: Signs, Getting Them Out and Repairs';
 const DESCRIPTION =
   'How tree squirrels enter an attic, the exclusion and repair specs extension services publish, matched live-trap dimensions, and when to call a professional.';
 

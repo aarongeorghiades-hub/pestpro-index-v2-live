@@ -8,7 +8,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { OVERWINTERING_NAV, OVERWINTERING_HOME } from '../components/overwinteringNav';
 
 const URL = 'https://pestproindex.com/us/asian-lady-beetles';
-const TITLE = 'Asian Lady Beetles vs Ladybugs: What to Check';
+const TITLE = 'Asian Lady Beetles vs Ladybugs: How to Know the Difference';
 const DESCRIPTION =
   'The multicolored Asian lady beetle massing on siding in fall is not the native ladybug. The M-shaped mark, the staining fluid, the biting, and the allergy link.';
 

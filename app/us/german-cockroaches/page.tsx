@@ -8,7 +8,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { GERMAN_ROACH_NAV, GERMAN_ROACH_HOME } from '../components/germanCockroachNav';
 
 const URL = 'https://pestproindex.com/us/german-cockroaches';
-const TITLE = 'German Cockroaches: Why Bait Station Size Matters';
+const TITLE = 'German Cockroaches: Small Bait Stations and Gel Bait';
 const DESCRIPTION =
   'The cockroach that lives indoors and can\'t survive outside. The small bait stations UF/IFAS says it needs, and four positions on treating it yourself.';
 

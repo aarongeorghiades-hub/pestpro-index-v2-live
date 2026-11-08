@@ -8,7 +8,7 @@ import { SourceList, AsOf, type Source } from '../components/UsSources';
 import { GOPHER_NAV, GOPHER_HOME } from '../components/gopherNav';
 
 const URL = 'https://pestproindex.com/us/best-gopher-traps';
-const TITLE = 'Gopher Traps: What the Evidence Supports';
+const TITLE = 'Gopher Traps: Where to Put Them and Which Type';
 const DESCRIPTION =
   'Extension sources agree on two trap mechanisms and where to set them. One extension trial compared three models — what it measured, and what to buy.';
 

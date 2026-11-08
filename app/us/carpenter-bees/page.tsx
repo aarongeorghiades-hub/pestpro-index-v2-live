@@ -8,7 +8,7 @@ import UsToolCard from '../components/UsToolCard';
 import { CARPENTER_BEES_HOME, CARPENTER_BEES_NAV } from '../components/carpenterBeesNav';
 
 const URL = 'https://pestproindex.com/us/carpenter-bees';
-const TITLE = 'Carpenter Bees: Timber Damage, and Why the Sources Say Wait';
+const TITLE = 'Carpenter Bees: Holes in Wood and When to Leave Them';
 const DESCRIPTION =
   'Identification against bumblebees, the boring behavior that causes the damage, repair specs, and why several extension sources caution against killing them.';
 

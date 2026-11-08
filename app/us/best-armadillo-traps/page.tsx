@@ -8,7 +8,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { ARMADILLO_NAV, ARMADILLO_HOME } from '../components/armadilloNav';
 
 const URL = 'https://pestproindex.com/us/best-armadillo-traps';
-const TITLE = 'Armadillo Traps: What a Field Study Found';
+const TITLE = 'Armadillo Traps: Choosing the Right Size and Placement';
 const DESCRIPTION =
   'A University of Georgia study tested 11 baits and a lure and found none improved capture — placement, wings and trap size did. The spec, and the traps that meet it.';
 

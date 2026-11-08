@@ -8,7 +8,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { RATS_NAV, RATS_HOME } from '../components/ratsNav';
 
 const URL = 'https://pestproindex.com/us/rats';
-const TITLE = 'Rats: Identification and the Two Gap Figures';
+const TITLE = 'Rats in the House: Norway or Roof Rat, Traps and Sealing';
 const DESCRIPTION =
   'Norway rat vs. roof rat, and both vs. a mouse. The half-inch a rat can squeeze through against the quarter-inch sources say to seal to, from eight sources.';
 

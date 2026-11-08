@@ -8,7 +8,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { OVERWINTERING_NAV, OVERWINTERING_HOME } from '../components/overwinteringNav';
 
 const URL = 'https://pestproindex.com/us/boxelder-bugs';
-const TITLE = 'Boxelder Bugs: ID, the Tree Link, and Control';
+const TITLE = 'Boxelder Bugs in the House: How to Keep Them Out';
 const DESCRIPTION =
   'How to identify a boxelder bug, why one tree species explains an infestation, whether they bite or stain, and what extension services say about keeping them out.';
 

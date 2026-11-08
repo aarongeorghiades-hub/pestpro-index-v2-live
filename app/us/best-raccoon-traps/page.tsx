@@ -8,7 +8,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { RACCOON_NAV, RACCOON_HOME } from '../components/raccoonNav';
 
 const URL = 'https://pestproindex.com/us/best-raccoon-traps';
-const TITLE = 'Raccoon Cage Traps: Which Meet the Minimum Size';
+const TITLE = 'Raccoon Traps: What Size Cage to Use';
 const DESCRIPTION =
   'Iowa State Extension publishes a minimum cage size for raccoons. Six listed cage traps measured against that one figure, and nothing else claimed about them.';
 

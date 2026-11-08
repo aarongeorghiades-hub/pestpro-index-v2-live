@@ -7,7 +7,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { PALMETTO_NAV, PALMETTO_HOME } from '../components/palmettoNav';
 
 const URL = 'https://pestproindex.com/us/palmetto-bugs';
-const TITLE = 'Palmetto Bugs: One Name, Several Insects';
+const TITLE = 'What Is a Palmetto Bug?';
 const DESCRIPTION =
   'University of Georgia Extension calls it a catch-all term. One insect it covers is flightless and can\'t breed indoors — which one you have changes what to do.';
 

@@ -8,7 +8,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { WIDOW_NAV, WIDOW_HOME } from '../components/blackWidowNav';
 
 const URL = 'https://pestproindex.com/us/black-widow-spiders';
-const TITLE = 'Black Widow Spiders: Where Sources Disagree';
+const TITLE = 'Black Widow Spiders: Identification, Bites and Web Removal';
 const DESCRIPTION =
   'Nine points where extension services disagree — whether the hourglass is reliable, how long a bite lasts, whether insecticides help. Every position, with its source.';
 

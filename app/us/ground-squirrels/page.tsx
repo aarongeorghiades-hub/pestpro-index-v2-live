@@ -5,7 +5,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { GS_NAV, GS_HOME } from '../components/groundSquirrelNav';
 
 const URL = 'https://pestproindex.com/us/ground-squirrels';
-const TITLE = 'Ground Squirrels: Why No Product Is Named Here';
+const TITLE = 'Ground Squirrels: Trapping, Fumigation and the Rules';
 const DESCRIPTION =
   'Extension sources name a trap spec and a fumigant homeowners can buy — but the Amazon listings checked don\'t evidence either. The methods, and why nothing is carded.';
 

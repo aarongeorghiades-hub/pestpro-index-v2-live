@@ -9,7 +9,7 @@ import { SourceList, AsOf, type Source } from '../components/UsSources';
 import { OVERWINTERING_NAV, OVERWINTERING_HOME } from '../components/overwinteringNav';
 
 const URL = 'https://pestproindex.com/us/best-stink-bug-traps';
-const TITLE = 'Stink Bug Traps: What the Research Found';
+const TITLE = 'Stink Bug Traps: DIY and Store-Bought';
 const DESCRIPTION =
   'The only controlled test found compared a homemade light-and-water trap to store-bought models. What it measured, how to build the trap, and commercial options.';
 

@@ -8,7 +8,7 @@ import { SourceList, type Source } from '../components/UsSources';
 import { TICKS_NAV, TICKS_HOME } from '../components/ticksNav';
 
 const URL = 'https://pestproindex.com/us/ticks';
-const TITLE = 'Ticks: What Prevents Bites, and Removing One';
+const TITLE = 'Ticks: How to Prevent Bites and Remove One';
 const DESCRIPTION =
   'The clothing treatment concentration and repellent ingredients sources name, the nine-foot lawn edge where most deer ticks live, and the removal steps.';
 

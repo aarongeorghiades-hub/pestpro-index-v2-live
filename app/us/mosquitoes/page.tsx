@@ -8,7 +8,7 @@ import UsToolCard from '../components/UsToolCard';
 import { MOSQUITOES_HOME, MOSQUITOES_NAV } from '../components/mosquitoesNav';
 
 const URL = 'https://pestproindex.com/us/mosquitoes';
-const TITLE = 'Mosquitoes: Standing Water, Larvicide and Yard Control';
+const TITLE = 'Mosquitoes: Standing Water and Yard Control';
 const DESCRIPTION =
   'Breeding sites and source reduction, Bti and methoprene larvicides, adult control options, repellents, and what several sources say does not work.';
 

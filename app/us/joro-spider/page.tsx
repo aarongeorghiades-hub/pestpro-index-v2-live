@@ -8,7 +8,7 @@ import { SourceList, AsOf, type Source } from '../components/UsSources';
 import { JORO_NAV, JORO_HOME } from '../components/joroNav';
 
 const URL = 'https://pestproindex.com/us/joro-spider';
-const TITLE = 'Joro Spider: Identification, Origin and Spread';
+const TITLE = 'Joro Spider: What It Looks Like and Where It Came From';
 const DESCRIPTION =
   'What a Joro spider looks like, where Trichonephila clavata came from, how to tell it from lookalikes, and how it travels — sourced to university research.';
 
